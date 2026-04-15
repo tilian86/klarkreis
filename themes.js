@@ -738,6 +738,294 @@ window.THEMES = {
         ])
       }
     }
+  },
+
+  // =====================================================================
+  // FRAGEABEND: ARBEIT & BERUFUNG
+  // =====================================================================
+  frageabend_arbeit: {
+    title: 'Frageabend: Arbeit & Berufung',
+    category: 'Frageabend',
+    lead: 'Ein Abend über das, was wir 40 Stunden pro Woche tun — und ob es uns noch gehört. Für Menschen, die sich fragen, ob ihr Job sie noch beheimatet.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxbjqrLpObJ-WD47GvSPuVQIAi2NVN5ZnoVNgvrsdtCZLaj4qrsZF2HrzHhwsJxLgvnVJILKatnzlr-owOjC4Vwjsj8zZLzjxILS_tEIw2mEMKfb-zeXJMntnWcVcuPa9PYApGzgjcOkjrCAXO4pfQeKu2mkuLgmuZAib-diXx3G3-UD0YnoBhDw7Ce18lglGHQsmkYnYtlXA3uXQy7ubFaeStRwPaH_tvjawicIlIFmIJNz1hbpyZCZKx3FSF1NFKo_bj2ggPwLZZ',
+    philosophy1: 'Arbeit ist nicht nur Lohnerwerb. Sie strukturiert unsere Wochen, prägt unsere Identität, beantwortet die Frage „Was machst du eigentlich?“. Und doch sprechen wir selten ehrlich darüber.',
+    philosophy2: 'An diesem Abend geht es nicht um Karriere-Coaching. Es geht um Reibung und Resonanz: wo gehört dir deine Arbeit noch, wo nicht? Wo hast du sie mal geliebt, wo nicht mehr?',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 30 Min.',
+        people: '3-6 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie geht es dir mit deiner Arbeit?', duration: 10*60,
+            hostNote: 'Reihum, ein ehrlicher Satz. Nicht „läuft“ — was ist wirklich los?',
+            question: 'Wie geht es dir mit deiner Arbeit gerade — in einem Satz?' },
+          { name: 'Einstieg', title: 'Arbeit als Spiegel', duration: 6*60,
+            hostNote: 'Host liest vor.',
+            quote: { text: 'The two most important days in your life are the day you are born and the day you find out why.', author: 'Mark Twain' },
+            description: 'Wir verbringen ein Drittel unserer wachen Zeit mit Arbeit. Sie ist Identität, Geld, Sinn, Frust, Berufung — manchmal alles gleichzeitig. Heute schauen wir ehrlich drauf: wie viel von dir steckt da drin? Wo gibt sie dir was zurück, wo nimmt sie nur?' },
+          { name: 'Flow & Stillstand', title: 'Wann fließt deine Zeit?', duration: 18*60,
+            hostNote: 'Eine Frage nach der anderen. Reihum.',
+            items: [
+              { accent: 'Frage 1', text: 'Wann warst du zuletzt in deiner Arbeit so vertieft, dass du die Zeit vergessen hast — was hast du da gemacht?' },
+              { accent: 'Frage 2', text: 'Welche Tätigkeit würdest du machen, auch wenn niemand dich dafür bezahlen würde?' },
+              { accent: 'Frage 3', text: 'Wann hast du in deinem Job zuletzt einen echten Moment von Sinn gespürt — und wann das letzte Mal von Leere?' },
+              { accent: 'Frage 4', text: 'Was frisst Energie in deiner Woche, ohne dass es einen klaren Output hat?' }
+            ] },
+          { name: 'Andere Karriere', title: 'Das parallele Leben', duration: 18*60,
+            hostNote: 'Hier darf es spielerisch werden — aber bitte konkret.',
+            items: [
+              { accent: 'Frage 5', text: 'Was ist deine „andere Karriere“ — das Leben, das du auch hättest führen können?' },
+              { accent: 'Frage 6', text: 'Wenn dein heutiges Ich mit 22 wäre — würde es deinen jetzigen Job wählen?' },
+              { accent: 'Frage 7', text: 'Was würdest du tun, wenn Geld keine Rolle spielte — und was, wenn Status keine Rolle spielte? (Nicht dasselbe.)' },
+              { accent: 'Frage 8', text: 'Welcher Beruf von Freund:innen oder Bekannten fasziniert dich heimlich?' }
+            ] },
+          { name: 'Sinn & Wert', title: 'Wofür arbeitest du eigentlich?', duration: 18*60,
+            hostNote: 'Tieferer Abschnitt. Zeit lassen.',
+            items: [
+              { accent: 'Frage 9', text: 'Was ist die ehrlichste Antwort auf die Frage „Warum machst du diesen Job?“ — jenseits von Geld?' },
+              { accent: 'Frage 10', text: 'Wenn du in 20 Jahren auf dein Berufsleben zurückblickst — woran wirst du es messen?' },
+              { accent: 'Frage 11', text: 'Was machst du heute, was dich in 10 Jahren wahrscheinlich nicht mehr ausfüllt?' },
+              { accent: 'Frage 12', text: 'Wenn du eine Person ein Jahr lang in deinen Job einarbeiten müsstest — was würdest du sagen, was wirklich wichtig ist? Nicht im Lehrplan.' }
+            ] },
+          { name: 'Schritt', title: 'Eine kleine Veränderung', duration: 10*60,
+            hostNote: 'Reihum. Konkret, nicht groß.',
+            question: 'Welche eine Sache an deiner Arbeit könntest du diese Woche anders machen — und was würde das verändern?' },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 10*60,
+            hostNote: 'Ein Wort oder ein Satz.',
+            question: 'Welche Frage hat dich heute am meisten beschäftigt — und was tust du damit?' }
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie ist deine Arbeitswoche?', duration: 7*60,
+            hostNote: 'Beide nacheinander, 3 Min. Andere:r hört zu.',
+            question: 'Wie geht es dir gerade mit deiner Arbeit?' },
+          { name: 'Einstieg', title: 'Arbeit als Spiegel', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'The two most important days in your life are the day you are born and the day you find out why.', author: 'Mark Twain' },
+            description: 'Ein Drittel unserer wachen Zeit. Identität, Geld, Sinn, Frust. Heute schauen wir gemeinsam, was dir Arbeit gerade gibt — und nimmt.' },
+          { name: 'Flow', title: 'Wann fließt die Zeit?', duration: 15*60,
+            hostNote: 'Je 7 Minuten pro Frage.',
+            items: [
+              { accent: 'Frage 1', text: 'Wann warst du zuletzt in deiner Arbeit so vertieft, dass du die Zeit vergessen hast?' },
+              { accent: 'Frage 2', text: 'Welche Tätigkeit würdest du machen, auch wenn niemand dich dafür bezahlen würde?' }
+            ] },
+          { name: 'Andere Karriere', title: 'Das parallele Leben', duration: 15*60,
+            hostNote: 'Hier darf es spielerisch werden.',
+            items: [
+              { accent: 'Frage 3', text: 'Was ist deine „andere Karriere“ — das Leben, das du auch hättest führen können?' },
+              { accent: 'Frage 4', text: 'Was würdest du tun, wenn Geld keine Rolle spielte — und was, wenn Status keine Rolle spielte?' }
+            ] },
+          { name: 'Sinn', title: 'Wofür arbeitest du eigentlich?', duration: 15*60,
+            hostNote: 'Tiefer. Nachfragen ist erlaubt.',
+            items: [
+              { accent: 'Frage 5', text: 'Was ist die ehrlichste Antwort auf die Frage „Warum machst du diesen Job?“?' },
+              { accent: 'Frage 6', text: 'Wenn du in 20 Jahren zurückblickst — woran wirst du dein Berufsleben messen?' }
+            ] },
+          { name: 'Abschluss', title: 'Eine Veränderung', duration: 8*60,
+            hostNote: 'Konkret, sichtbar.',
+            question: 'Welche eine Sache wirst du diese Woche anders machen — und wie kann ich dich dabei unterstützen?' }
+        ])
+      }
+    }
+  },
+
+  // =====================================================================
+  // FRAGEABEND: STILLE BEREICHE
+  // Achtung: nur für vertraute Gruppen!
+  // =====================================================================
+  frageabend_tief: {
+    title: 'Frageabend: Stille Bereiche',
+    category: 'Frageabend',
+    lead: 'Für Gruppen, die sich kennen. Fragen, die im normalen Gespräch nie gestellt werden — und manchmal das Wichtigste sind. Bitte nur, wenn ihr einander vertraut.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBx3zc_372HZ2FnhMqRihODyYdH0O6QMhHorRxsi1pNG5H6yo27lR3uFj5kEpa_bZr6NyMTZMkNLzxhVFFrWOAWg62u4rwi9mqyFdCHrVY3-O-ZOBWT-4kuNVD5hHIfeuAHO8OfvTaFZmYMfj-kYak3WqVQZF6RIYra-FyBU_I2AjVbDZVt0JjNJj2RSBpOn2Us3TyGl-oc_Da2fdvd3_WYWlkDPaFgXfDXm_5WLY5Q9p-ssyPjMUjYVmwfk1RS19Dq2edt7wPpu1R2',
+    philosophy1: 'Es gibt einen Bereich in jedem Menschen, der selten Worte bekommt: die leise Sorge, das ungesagte „eigentlich“, die Frage, die wir uns nicht selbst stellen wollen.',
+    philosophy2: 'Dieser Abend ist nicht für jede Gruppe. Er funktioniert nur, wenn ihr einander vertraut — keine erste Begegnung, keine Networking-Runde. Was hier gesagt wird, bleibt im Raum. „Pass“ ist immer okay, oft sogar das Richtige.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe (Vertraut)',
+        duration: '~1 Std. 40 Min.',
+        people: '3-5 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Womit kommst du heute hier an?', duration: 12*60,
+            hostNote: 'Reihum, ein ehrlicher Satz. Auch Schwere darf da sein.',
+            question: 'Was hast du diese Woche mit dir herumgetragen, was du noch niemandem erzählt hast?' },
+          { name: 'Einstieg', title: 'Was wir uns nicht erzählen', duration: 8*60,
+            hostNote: 'Host liest langsam vor. Danach 1 Minute Stille.',
+            quote: { text: 'Die Menschen sind wie bunte Glasfenster: Sie funkeln und leuchten, wenn die Sonne scheint; doch nach Anbruch der Dunkelheit wird ihre wahre Schönheit nur offenbar, wenn sie ein inneres Licht haben.', author: 'Elisabeth Kübler-Ross' },
+            description: 'In jedem Menschen gibt es einen Bereich, der selten Worte bekommt. Eine Sorge, eine Sehnsucht, ein „eigentlich“, das nie ausgesprochen wird. Heute schaffen wir Raum für genau das. Nicht alles muss geteilt werden. Aber das Ungesagte darf hier landen, wenn es will.\n\nWichtig: keine Bewertung. Kein Ratschlag. Nur zuhören. Was hier gesagt wird, bleibt im Raum.' },
+          { name: 'Was du nicht aussprichst', title: 'Was du selten sagst', duration: 18*60,
+            hostNote: 'Eine Frage nach der anderen. Pause vor dem Antworten erlaubt — und „pass“ jederzeit.',
+            items: [
+              { accent: 'Frage 1', text: 'Worüber denkst du abends manchmal nach, was du tagsüber verdrängst?' },
+              { accent: 'Frage 2', text: 'Was würdest du sagen, wenn niemand zuhörte — und du wüsstest, dass es keine Folgen hat?' },
+              { accent: 'Frage 3', text: 'Welche Frage hast du Angst, dir selbst zu stellen?' }
+            ] },
+          { name: 'Ängste', title: 'Was dich klein macht', duration: 18*60,
+            hostNote: 'Tiefer. Achte auf den Energie-Level der Gruppe.',
+            items: [
+              { accent: 'Frage 4', text: 'Was ist eine Sorge, die du mit anderen nicht teilst — und warum nicht?' },
+              { accent: 'Frage 5', text: 'Wovor hast du heimlich Angst, was die meisten Menschen wahrscheinlich nicht ahnen?' },
+              { accent: 'Frage 6', text: 'Was wäre, wenn deine größte Angst tatsächlich einträte — wie würde dein Leben aussehen?' }
+            ] },
+          { name: 'Was bleibt unausgesprochen', title: 'Worüber du nie redest', duration: 18*60,
+            hostNote: 'Achtsam. Wer pause braucht, bekommt sie.',
+            items: [
+              { accent: 'Frage 7', text: 'Was hast du noch nie jemandem erzählt, was eigentlich Erzählens wert wäre?' },
+              { accent: 'Frage 8', text: 'Welches Gefühl trägst du oft mit dir, ohne es zu benennen?' },
+              { accent: 'Frage 9', text: 'Welche Beziehung in deinem Leben fühlt sich gerade nicht gut an, und du sprichst nicht darüber?' }
+            ] },
+          { name: 'Was hält dich', title: 'Und was trägt dich trotzdem', duration: 12*60,
+            hostNote: 'Wechsel der Energie — von schwer zu hell. Das ist wichtig nach den vorigen Fragen.',
+            items: [
+              { accent: 'Frage 10', text: 'Welcher Satz, den jemand mal zu dir gesagt hat, trägt dich noch heute?' },
+              { accent: 'Frage 11', text: 'Was ist eine kleine tägliche Handlung, die dich stabil hält?' },
+              { accent: 'Frage 12', text: 'Welche Person würde es merken, wenn du plötzlich nicht mehr da wärst — und merkst du es bei ihr?' }
+            ] },
+          { name: 'Abschluss', title: 'Was bleibt', duration: 10*60,
+            hostNote: 'Reihum, ein Satz oder ein Wort. Was hier gesagt wurde, bleibt hier.',
+            question: 'Was nimmst du aus diesem Abend mit — und was lässt du hier?' }
+        ])
+      },
+      pair: {
+        label: 'Zu zweit (Vertraut)',
+        duration: '~1 Std. 15 Min.',
+        people: '2 Personen, die einander vertrauen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie ehrlich bist du heute?', duration: 8*60,
+            hostNote: 'Beide nacheinander.',
+            question: 'Was hast du diese Woche mit dir herumgetragen, was du noch niemandem erzählt hast?' },
+          { name: 'Einstieg', title: 'Raum für das Ungesagte', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Die Schönheit und Heiligkeit des Lebens erschließt sich in der Tiefe, nicht in der Vielzahl der Beschäftigungen.', author: 'Johannes Hartl' },
+            description: 'Heute keine kleinen Fragen. Wir öffnen einen Raum für das, was selten gesagt wird. Beide haben gleich viel Platz, beide hören gleich gut zu. „Pass“ ist okay. Was hier gesagt wird, bleibt zwischen uns.' },
+          { name: 'Was du nicht aussprichst', title: 'Was du selten sagst', duration: 18*60,
+            hostNote: 'Je 8 Minuten erzählen, der andere nur zuhören.',
+            items: [
+              { accent: 'Frage 1', text: 'Worüber denkst du abends nach, was du tagsüber verdrängst?' },
+              { accent: 'Frage 2', text: 'Welche Frage hast du Angst, dir selbst zu stellen?' }
+            ] },
+          { name: 'Ängste', title: 'Was dich klein macht', duration: 15*60,
+            hostNote: 'Achtsam.',
+            items: [
+              { accent: 'Frage 3', text: 'Was ist eine Sorge, die du mit anderen nicht teilst — und warum nicht?' },
+              { accent: 'Frage 4', text: 'Wovor hast du heimlich Angst, was die meisten Menschen wahrscheinlich nicht ahnen?' }
+            ] },
+          { name: 'Was hält dich', title: 'Und was trägt dich', duration: 12*60,
+            hostNote: 'Aufhellen, nicht abrupt.',
+            items: [
+              { accent: 'Frage 5', text: 'Welcher Satz, den jemand mal zu dir gesagt hat, trägt dich noch heute?' },
+              { accent: 'Frage 6', text: 'Welche kleine tägliche Handlung hält dich stabil?' }
+            ] },
+          { name: 'Abschluss', title: 'Was zwischen uns bleibt', duration: 8*60,
+            hostNote: 'Ein Satz pro Person.',
+            question: 'Was hat sich heute zwischen uns verändert — und was nehme ich mit?' }
+        ])
+      }
+    }
+  },
+
+  // =====================================================================
+  // FRAGEABEND: HUMOR & ABSURDES
+  // =====================================================================
+  frageabend_humor: {
+    title: 'Frageabend: Humor & Absurdes',
+    category: 'Frageabend',
+    lead: 'Wenn der ernste Abend einfach nicht passt. Fragen, die Quatsch erlauben — und durch Quatsch oft mehr verraten als ehrliche Antworten.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKT8rovh0Bg2sBiYCzihK4d2xg68wZRDcA5CVOfjhFK8Lq_xMt-JauAkJiVQjLFp9UUeQl2Ol7emWI9MuGnPjDSas-kTya6GMXgxEvJUGMj0J94FU8-qWfiIZyzhrGNrYE2JlcZ7JbTcpgJHPQhr9GPUr46yrXhA6QwreP3M-rC0bxglm3EuO1vjc5S56wa1T3L8l1YaGCa7CqeH1qG__3IKcDU-TDTwFQsxP4NuXcMihsY_JcQdKl7XoCvvO-E0LcQjjz6s-UdEHn',
+    philosophy1: 'Manchmal ist der gerade Weg in einen Menschen die völlig schräge Frage. „Welcher Instagram-Filter beschreibt deine Persönlichkeit?“ verrät oft mehr als „Was machst du beruflich?“.',
+    philosophy2: 'Heute kein psychologisches Tiefbohren — sondern hypothetische Szenarien, paradoxe Wahlen und Alltagsphilosophie. Lacht viel. Aber hört auch auf das, was hinter dem Lachen liegt.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 20 Min.',
+        people: '3-8 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie albern bist du heute?', duration: 8*60,
+            hostNote: 'Reihum, eine Geste oder ein Geräusch reicht.',
+            question: 'Auf einer Skala von „bügelfeucht“ bis „Karneval“ — wo bist du heute?' },
+          { name: 'Einstieg', title: 'Quatsch ist auch Erkenntnis', duration: 4*60,
+            hostNote: 'Eine:r liest schnell vor.',
+            quote: { text: 'Der einzige Mensch, der sich vernünftig benimmt, ist mein Schneider. Er nimmt jedesmal neu Maß, wenn er mich trifft.', author: 'George Bernard Shaw' },
+            description: 'Heute keine Tiefseetauchgänge. Hypothetische Szenarien, absurde Präferenzen, Pop-Kultur-Dechiffrierung. Wer am schnellsten antwortet, gewinnt nichts. Wer kreativ scheitert, gewinnt alle.' },
+          { name: 'Hypothetisch', title: 'Wenn das wahr wäre…', duration: 18*60,
+            hostNote: 'Schnelle Runden. Nicht groß überlegen.',
+            items: [
+              { accent: 'Frage 1', text: 'Welche historische Figur würde im Gruppenchat ständig auf „Nachricht gelesen“ machen — und warum gerade die?' },
+              { accent: 'Frage 2', text: 'Bei einer Zombie-Apokalypse: Welches völlig unnütze Hobby würde dich überleben lassen?' },
+              { accent: 'Frage 3', text: 'Du erbst ein Schloss — verlost es als Instagram-Gewinnspiel oder gründest eine Sekte? Erkläre den Plan.' },
+              { accent: 'Frage 4', text: 'Welche zwei Promis würdest du zu einer Dinner-Party einladen, damit sie sich streiten?' }
+            ] },
+          { name: 'Absurde Wahlen', title: 'Paradoxe Präferenzen', duration: 15*60,
+            hostNote: 'Eine Wahl treffen, kurz begründen.',
+            items: [
+              { accent: 'Frage 5', text: 'Würdest du lieber ein Jahr lang nur durch GIFs kommunizieren — oder jeden Satz mit einer Lüge beginnen?' },
+              { accent: 'Frage 6', text: 'Alle deine Fotos sehen ab heute aus wie Stockbilder — oder jedes Gespräch beginnt mit „Schon mal im Gefängnis gewesen?“' },
+              { accent: 'Frage 7', text: 'Dein Kühlschrank reproduziert mysteriös eine Zutat unbegrenzt — welche soll es sein und warum?' },
+              { accent: 'Frage 8', text: 'Würdest du lieber wissen, wann du stirbst — oder wie?' }
+            ] },
+          { name: 'Pop & Kultur', title: 'Medien, neu sortiert', duration: 15*60,
+            hostNote: 'Frech sein erlaubt.',
+            items: [
+              { accent: 'Frage 9', text: 'Welcher Film müsste neu verfilmt werden — aber als TikTok-Tanzchallenge?' },
+              { accent: 'Frage 10', text: 'Welche Sportart sollte mit völlig falschen Regeln olympisch werden?' },
+              { accent: 'Frage 11', text: 'Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten — nicht dein Aussehen?' },
+              { accent: 'Frage 12', text: 'Welche App sollte dringend eine „Das war Sarkasmus!“-Autokorrektur einführen?' }
+            ] },
+          { name: 'Alltag absurd', title: 'Banales neu gedacht', duration: 12*60,
+            hostNote: 'Beobachtungsgabe vor Witz.',
+            items: [
+              { accent: 'Frage 13', text: 'Welche völlig normale Handlung wirkt auf dich wie ein Verbrechen? (z.B. Jemand sortiert Äpfel im Supermarkt um.)' },
+              { accent: 'Frage 14', text: 'Welche völlig sinnlose Fähigkeit hast du in den letzten Jahren perfektioniert?' },
+              { accent: 'Frage 15', text: 'Welcher Wikipedia-Artikel sollte gelöscht werden, um maximales Chaos zu verursachen?' }
+            ] },
+          { name: 'Abschluss', title: 'Und was war wirklich?', duration: 8*60,
+            hostNote: 'Kurzer Tonwechsel: Welche Frage hat unter dem Quatsch etwas Echtes gezeigt?',
+            question: 'Welche absurde Antwort heute hat dir am meisten über jemanden verraten?' }
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~50 Min.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie albern bist du heute?', duration: 5*60,
+            hostNote: 'Eine Geste oder ein Geräusch reicht.',
+            question: 'Auf einer Skala von „bügelfeucht“ bis „Karneval“ — wo bist du?' },
+          { name: 'Einstieg', title: 'Quatsch ist auch Erkenntnis', duration: 4*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Der einzige Mensch, der sich vernünftig benimmt, ist mein Schneider.', author: 'George Bernard Shaw' },
+            description: 'Heute keine Tiefseetauchgänge. Schräge Fragen, alberne Antworten, ehrliches Lachen. Beide gleich viel Platz, beide gleich frei zu spinnen.' },
+          { name: 'Hypothetisch', title: 'Wenn das wahr wäre…', duration: 12*60,
+            hostNote: 'Wer schneller antwortet, gewinnt nichts.',
+            items: [
+              { accent: 'Frage 1', text: 'Welche historische Figur würde im Gruppenchat ständig auf „Nachricht gelesen“ machen?' },
+              { accent: 'Frage 2', text: 'Du erbst ein Schloss — was machst du damit?' },
+              { accent: 'Frage 3', text: 'Welche zwei Promis würdest du zu einer Dinner-Party einladen, damit sie sich streiten?' }
+            ] },
+          { name: 'Paradoxe Wahlen', title: 'Entweder — oder', duration: 12*60,
+            hostNote: 'Schnell wählen, kurz begründen.',
+            items: [
+              { accent: 'Frage 4', text: 'Würdest du lieber ein Jahr lang nur durch GIFs kommunizieren — oder jeden Satz mit einer Lüge beginnen?' },
+              { accent: 'Frage 5', text: 'Würdest du lieber wissen, wann du stirbst — oder wie?' },
+              { accent: 'Frage 6', text: 'Dein Kühlschrank reproduziert eine Zutat unbegrenzt — welche?' }
+            ] },
+          { name: 'Pop', title: 'Medien neu sortiert', duration: 10*60,
+            hostNote: 'Frech sein erlaubt.',
+            items: [
+              { accent: 'Frage 7', text: 'Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten?' },
+              { accent: 'Frage 8', text: 'Welcher Film müsste als TikTok-Tanzchallenge neu verfilmt werden?' },
+              { accent: 'Frage 9', text: 'Welche App sollte dringend eine „Das war Sarkasmus!“-Autokorrektur einführen?' }
+            ] },
+          { name: 'Abschluss', title: 'Und was war wirklich?', duration: 5*60,
+            hostNote: 'Tonwechsel: kurz ehrlich.',
+            question: 'Welche absurde Antwort von mir heute hat dir am meisten über mich verraten?' }
+        ])
+      }
+    }
   }
 
 };
