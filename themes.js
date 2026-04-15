@@ -596,6 +596,117 @@ window.THEMES = {
     }
   }
 
+,
+
+  // =====================================================================
+  // FRAGEABEND — Karten-Flow, Fragen nach Kategorien statt Stations-Reflexion
+  // Anders als die Reflexions-Abende: leichter, spielerischer, kennenlernend.
+  // =====================================================================
+  frageabend: {
+    title: 'Ein Abend mit guten Fragen',
+    category: 'Begegnung',
+    lead: 'Kein Thema, keine Landkarte — nur Fragen, die sich nicht jeden Tag stellen lassen. Ideal für neue Gruppen, Dates oder Freund:innen, die sich nochmal neu kennenlernen wollen.',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxbjqrLpObJ-WD47GvSPuVQIAi2NVN5ZnoVNgvrsdtCZLaj4qrsZF2HrzHhwsJxLgvnVJILKatnzlr-owOjC4Vwjsj8zZLzjxILS_tEIw2mEMKfb-zeXJMntnWcVcuPa9PYApGzgjcOkjrCAXO4pfQeKu2mkuLgmuZAib-diXx3G3-UD0YnoBhDw7Ce18lglGHQsmkYnYtlXA3uXQy7ubFaeStRwPaH_tvjawicIlIFmIJNz1hbpyZCZKx3FSF1NFKo_bj2ggPwLZZ',
+    philosophy1: 'Gute Fragen tun etwas, was Aussagen nicht können: sie öffnen. Sie laden eine Person ein, von sich zu erzählen — ohne dass es sich wie Verhör anfühlt.',
+    philosophy2: 'Dieser Abend hat keine Landkarte, kein Modell, keinen therapeutischen Bogen. Nur eine kuratierte Auswahl an Fragen, sortiert von leicht zu tief. Ihr entscheidet spontan, wer antwortet, wie lange, ob eine Frage übersprungen wird.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 40 Min.',
+        people: '3-8 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie kommst du heute an?', duration: 10*60,
+            hostNote: 'Reihum, ein Wort oder ein kurzer Satz. Nicht mehr.',
+            question: 'Welches Wort beschreibt am besten, wie du heute hier ankommst?' },
+          { name: 'Einstieg', title: 'Wie dieser Abend funktioniert', duration: 6*60,
+            hostNote: 'Host liest kurz vor, dann legt ihr los.',
+            quote: { text: 'Viele Dinge zu wissen bedeutet noch nicht, sie zu verstehen.', author: 'Heraklit' },
+            description: 'Wir haben heute kein Thema — nur Fragen. Der Host liest pro Runde eine Frage vor. Wer Lust hat, antwortet. Wenn du passen willst, sag „pass“ — kein Problem. Keine Rückfragen, kein „aber bei dir…“, einfach zuhören. Bei jeder Station gibt es 3–4 Fragen, du musst nicht auf alle antworten. Wichtig: Ehrlich sein ist besser als klug klingen.' },
+          { name: 'Leichtes', title: 'Zum Einsteigen', duration: 18*60,
+            hostNote: 'Eine Frage nach der anderen. Reihum oder wer zuerst Lust hat.',
+            items: [
+              { accent: 'Frage 1', text: 'Was ist eine kleine Sache im Alltag, die dich unverhältnismäßig glücklich macht?' },
+              { accent: 'Frage 2', text: 'Was hast du zuletzt zum allerersten Mal in deinem Leben gemacht?' },
+              { accent: 'Frage 3', text: 'Welche kleine Sache lässt dich sofort nostalgisch werden?' },
+              { accent: 'Frage 4', text: 'Gibt es etwas, das andere Leute oft an dir falsch einschätzen?' }
+            ] },
+          { name: 'Über dich', title: 'Ein bisschen näher', duration: 20*60,
+            hostNote: 'Jetzt etwas persönlicher. Wer passen will, passt.',
+            items: [
+              { accent: 'Frage 5', text: 'Wenn dein Leben gerade ein Buch wäre — welchen Titel hätte es?' },
+              { accent: 'Frage 6', text: 'Welches „unsichtbare Tattoo“ trägst du — also welche Erfahrung prägt dich, obwohl man es dir nicht ansieht?' },
+              { accent: 'Frage 7', text: 'Angenommen, du könntest einen Tag mit deinem 15-jährigen Ich verbringen — was würdet ihr besprechen?' },
+              { accent: 'Frage 8', text: 'Welche Eigenschaft an dir möchtest du unbedingt behalten, selbst wenn du mal 100 Jahre alt bist?' }
+            ] },
+          { name: 'Werte & Haltung', title: 'Wofür du stehst', duration: 20*60,
+            hostNote: 'Tiefer. Zeit lassen zwischen den Antworten.',
+            items: [
+              { accent: 'Frage 9', text: 'Wenn du eine Sache an der Gesellschaft sofort ändern könntest — welche wäre das und warum?' },
+              { accent: 'Frage 10', text: 'Welche Frage würdest du gerne mit „Ja“ beantworten können, kannst es aber (noch) nicht?' },
+              { accent: 'Frage 11', text: 'Gibt es eine Erfahrung, die sich erst wie ein Misserfolg angefühlt hat, sich aber als wertvolle Lektion entpuppte?' },
+              { accent: 'Frage 12', text: 'Welche kleine Entscheidung in deinem Leben hat überraschend große Auswirkungen gehabt?' }
+            ] },
+          { name: 'Träume', title: 'Abenteuer & Träume', duration: 15*60,
+            hostNote: 'Hier darf es groß werden.',
+            items: [
+              { accent: 'Frage 13', text: 'Was würdest du gerne ausprobieren, hast dich aber bisher nie getraut?' },
+              { accent: 'Frage 14', text: 'Angenommen, du hättest ab morgen ein Jahr frei von allen Verpflichtungen und genug Geld — wie würdest du dieses Jahr verbringen?' },
+              { accent: 'Frage 15', text: 'Wenn du eine Fähigkeit von einem Tier übernehmen könntest — welche wäre das und warum?' }
+            ] },
+          { name: 'Zum Ausklingen', title: 'Leichte Abschluss-Runde', duration: 12*60,
+            hostNote: 'Auflockerung vor dem Schluss.',
+            items: [
+              { accent: 'Frage 16', text: 'Wenn dein Leben als Netflix-Serie erscheinen würde — welches Genre wäre es, und wie hieße die aktuelle Staffel?' },
+              { accent: 'Frage 17', text: 'Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten — nicht dein Aussehen?' },
+              { accent: 'Frage 18', text: 'Welche kleine Geste von jemand anderem kann dich sofort für diese Person einnehmen?' }
+            ] },
+          { name: 'Abschluss', title: 'Deine Frage des Abends', duration: 10*60,
+            hostNote: 'Reihum, ein Satz.',
+            question: 'Welche Frage hat dich heute am meisten beschäftigt — und warum?' }
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 10 Min.',
+        people: '2 Personen (Date, Paar, Freundschaft)',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie ist der Tag gelaufen?', duration: 8*60,
+            hostNote: 'Beide nacheinander. 3 Minuten. Andere:r hört zu, ohne zu reagieren.',
+            question: 'Wie geht es dir gerade — ehrlich, nicht höflich?' },
+          { name: 'Einstieg', title: 'Wie das heute läuft', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Viele Dinge zu wissen bedeutet noch nicht, sie zu verstehen.', author: 'Heraklit' },
+            description: 'Heute keine großen Themen. Nur Fragen. Abwechselnd: eine:r stellt, andere:r antwortet so lange wie es sich richtig anfühlt. Dann tauschen. „Pass“ geht immer — kein Druck, kein Drängen. Gut zuhören ist die eigentliche Kunst.' },
+          { name: 'Kennenlernen', title: 'Ein bisschen näher', duration: 20*60,
+            hostNote: 'Je 5 Minuten pro Frage. Wer mag, fragt nach.',
+            items: [
+              { accent: 'Frage 1', text: 'Wenn dein Leben gerade ein Buch wäre — welchen Titel hätte es?' },
+              { accent: 'Frage 2', text: 'Welches „unsichtbare Tattoo“ trägst du — was prägt dich, obwohl man es dir nicht ansieht?' },
+              { accent: 'Frage 3', text: 'Was hast du zuletzt zum allerersten Mal in deinem Leben gemacht?' },
+              { accent: 'Frage 4', text: 'Gibt es etwas, das andere Leute an dir oft falsch einschätzen?' }
+            ] },
+          { name: 'Werte', title: 'Tiefer rein', duration: 18*60,
+            hostNote: 'Etwas länger Zeit lassen. Nachfragen ist erwünscht.',
+            items: [
+              { accent: 'Frage 5', text: 'Welche Erfahrung hat sich erst wie ein Misserfolg angefühlt — und war später eine wertvolle Lektion?' },
+              { accent: 'Frage 6', text: 'Welche Frage würdest du gerne mit „Ja“ beantworten können, kannst es aber (noch) nicht?' },
+              { accent: 'Frage 7', text: 'Welche kleine Entscheidung in deinem Leben hat überraschend große Auswirkungen gehabt?' }
+            ] },
+          { name: 'Träume', title: 'Und wenn alles möglich wäre?', duration: 15*60,
+            hostNote: 'Lass die Antwort ungeformt stehen — nicht gleich erklären.',
+            items: [
+              { accent: 'Frage 8', text: 'Was würdest du gerne ausprobieren, hast dich aber nie getraut?' },
+              { accent: 'Frage 9', text: 'Wenn du ein Jahr frei hättest und genug Geld — wie würdest du es verbringen?' },
+              { accent: 'Frage 10', text: 'Angenommen, dein zukünftiges Ich schreibt dir einen Brief — was würde darin stehen?' }
+            ] },
+          { name: 'Abschluss', title: 'Was heute bei dir hängen bleibt', duration: 8*60,
+            hostNote: 'Ein Satz pro Person.',
+            question: 'Welche Antwort von mir hat dich heute überrascht — und welche Frage möchtest du nochmal im Kopf haben?' }
+        ])
+      }
+    }
+  }
+
 };
 
 // Post-process: set theme.id, derive totalMinutes per format
