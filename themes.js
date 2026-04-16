@@ -1,4 +1,4 @@
-// Central data store for all Wertenackt themes.
+// Central data store for all KlarKreis themes.
 //
 // Each theme has:
 //   id, title, category, lead, image, philosophy1, philosophy2, featured?
@@ -14,7 +14,7 @@
 //   quote?  {text, author}  — rendered as styled blockquote (usually in Einstieg-Station)
 //   type?   'feedback'  — renders a feedback form instead of normal content
 
-window.WERTENACKT_FEEDBACK_EMAIL = 'florian.s.thiel+wertenackt@gmail.com';
+window.KLARKREIS_FEEDBACK_EMAIL = 'florian.s.thiel+klarkreis@gmail.com';
 
 const FEEDBACK_STATION = {
   name: 'Feedback',
