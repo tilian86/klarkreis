@@ -65,6 +65,8 @@
     localStorage.setItem(STORAGE_KEY, String(v));
   }
 
+  const _activePlayers = new Set();
+
   class Player {
     constructor(container, src, opts = {}) {
       this.container = (typeof container === 'string') ? document.querySelector(container) : container;
@@ -74,6 +76,7 @@
       this.speed = getSpeed();
       this.render();
       this.bind();
+      _activePlayers.add(this);
     }
 
     render() {
@@ -212,17 +215,33 @@
     }
     destroy() {
       this.audio.pause();
-      this.audio.src = '';
-      this.container.innerHTML = '';
+      this.audio.removeAttribute('src');
+      this.audio.load();
+      _activePlayers.delete(this);
+      if (this.container) this.container.innerHTML = '';
     }
   }
 
+  function pauseAll() {
+    _activePlayers.forEach(p => { try { p.audio.pause(); } catch (_) {} });
+  }
+  function destroyAll() {
+    Array.from(_activePlayers).forEach(p => p.destroy());
+  }
+
   // Convenience: probiert ob die Datei existiert (HEAD), mounted nur dann.
+  // Respektiert globalen Audio-On/Off-Toggle (localStorage 'klarkreis_audio_off' === '1' → kein mount).
   function mountIfExists(container, src, opts) {
+    if (localStorage.getItem('klarkreis_audio_off') === '1') return Promise.resolve(null);
     return fetch(src, { method: 'HEAD' }).then(r => {
       if (!r.ok) return null;
       return new Player(container, src, opts || {});
     }).catch(() => null);
+  }
+  function isAudioOff() { return localStorage.getItem('klarkreis_audio_off') === '1'; }
+  function setAudioOff(off) {
+    localStorage.setItem('klarkreis_audio_off', off ? '1' : '0');
+    if (off) destroyAll();
   }
 
   // Slug-Helper (muss synchron sein mit Build-Skript)
@@ -243,7 +262,11 @@
   window.KlarKreisPlayer = {
     mount: (container, src, opts) => new Player(container, src, opts || {}),
     mountIfExists,
+    pauseAll,
+    destroyAll,
     audioPath,
     introPath,
+    isAudioOff,
+    setAudioOff,
   };
 })();

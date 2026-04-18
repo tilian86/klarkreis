@@ -47,6 +47,10 @@ body { background-color: #FBF9F4; }
         <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 block">Timer</span>
         <span id="timer" class="font-headline text-3xl font-light tracking-tight text-primary-container tabular-nums">00:00</span>
       </div>
+      <button id="audioToggleBtn" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Audio für diesen Abend ausschalten">
+        <span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
+        <span class="audio-toggle-label font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Audio an</span>
+      </button>
       <a id="closeLink" href="thema.html" class="p-2 hover:bg-surface-container transition-colors rounded-lg">
         <span class="material-symbols-outlined text-on-surface-variant">close</span>
       </a>
@@ -192,6 +196,16 @@ el.closeLink.href = 'thema.html?id=' + encodeURIComponent(themaId);
 el.themeLabel.textContent = theme.title + ' · ' + format.label;
 document.title = theme.title + ' — KlarKreis';
 
+// Audio-Toggle einrichten
+document.getElementById('audioToggleBtn').addEventListener('click', () => {
+  const newOff = !KlarKreisPlayer.isAudioOff();
+  KlarKreisPlayer.setAudioOff(newOff);
+  renderAudioToggle();
+  // Re-mount für aktuelle Station wenn Audio jetzt an, sonst destroy passiert in setAudioOff
+  if (!newOff) mountStationAudio(stations[currentIdx], currentIdx);
+});
+renderAudioToggle();
+
 // Build star buttons once
 const starRow = el.feedbackForm.querySelector('[role="radiogroup"]');
 for (let i = 1; i <= 5; i++) {
@@ -272,16 +286,27 @@ function hideAllContentBoxes() {
   el.questionBox.classList.add('hidden');
   el.itemsBox.classList.add('hidden');
   el.feedbackForm.classList.add('hidden');
-  document.getElementById('audioMount').innerHTML = '';
+  KlarKreisPlayer.destroyAll();
 }
 
 function mountStationAudio(station, idx) {
   if (station.type === 'feedback') return;
-  const src = KlarKreisPlayer.audioPath(themaId, formatKey, idx, station.name);
+  if (KlarKreisPlayer.isAudioOff()) return;
+  // Station kann expliziten audio-Pfad haben (z.B. Solo zeigt auf group-Audio).
+  const src = station.audio || KlarKreisPlayer.audioPath(themaId, formatKey, idx, station.name);
   KlarKreisPlayer.mountIfExists('#audioMount', src, {
     title: 'Vorlesen lassen',
     compact: true
   });
+}
+
+function renderAudioToggle() {
+  const btn = document.getElementById('audioToggleBtn');
+  if (!btn) return;
+  const off = KlarKreisPlayer.isAudioOff();
+  btn.querySelector('.material-symbols-outlined').textContent = off ? 'volume_off' : 'volume_up';
+  btn.querySelector('.audio-toggle-label').textContent = off ? 'Audio aus' : 'Audio an';
+  btn.title = off ? 'Audio einschalten' : 'Audio für diesen Abend ausschalten';
 }
 
 function render() {
