@@ -34,6 +34,7 @@
 .kk-player .kk-progress-buffered{position:absolute;left:0;top:0;bottom:0;background:rgba(67,72,67,.18);width:0%;border-radius:999px}
 .kk-player .kk-speed{appearance:none;border:1px solid rgba(67,72,67,.18);background:#fff;border-radius:6px;padding:2px 4px;font-size:.7rem;color:#1b3022;font-weight:600;font-family:inherit;cursor:pointer;text-align:center}
 .kk-player .kk-speed:hover{border-color:#924c00}
+.kk-player .kk-credit{font-size:.62rem;color:#737973;opacity:.7;letter-spacing:.05em;margin-top:.15rem}
 .kk-player.kk-loading .kk-row{opacity:.5;pointer-events:none}
 .kk-player.kk-error{display:none}
 @media (max-width:480px){
@@ -108,6 +109,7 @@
               ${SPEEDS.map(v => `<option value="${v}"${v === this.speed ? ' selected' : ''}>${v}×</option>`).join('')}
             </select>
           </div>
+          <div class="kk-credit">KI-Stimme · generiert mit ElevenLabs</div>
         </div>`;
       this.root = this.container.querySelector('.kk-player');
       this.btnPlay = this.root.querySelector('.kk-play');
