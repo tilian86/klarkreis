@@ -1349,6 +1349,240 @@ window.THEMES = {
 
 };
 
+// =====================================================================
+// SOLO-MODUS für alle Themen, die noch keinen haben
+// Für Menschen, die ein Thema allein reflektieren wollen — schreibend,
+// atmend, hörend. Kein „Reihum", kein Gegenüber — ein innerer Raum.
+// =====================================================================
+const SOLO_FORMATS = {
+
+  werte: {
+    label: 'Allein', duration: '~30 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Was steht gerade zwischen dir und deinem Leben?', duration: 3*60,
+        hostNote: 'Drei tiefe Atemzüge. Stift und Zettel bereitlegen.',
+        question: 'Wenn du ehrlich bist: was steht diese Woche zwischen dir und dem Leben, das du eigentlich führen willst?' },
+      { name: 'Einstieg', title: 'Werte zeigen sich, wo es weh tut', duration: 4*60,
+        hostNote: 'Still lesen. Einmal.',
+        description: 'Auf Postern stehen Werte wie „Ehrlichkeit, Familie, Gesundheit". Im Alltag leben wir oft andere: Effizienz, Bequemlichkeit, Anerkennung. Das ist nicht schlimm — aber es lohnt sich, den Unterschied zu sehen. Werte zeigen sich nicht in Aussagen. Sie zeigen sich in dem, worüber du dich ärgerst, wofür du Zeit opferst, was dich nachts wach hält.' },
+      { name: 'Ärger', title: 'Der letzte Ärger als Spiegel', duration: 6*60,
+        hostNote: 'Schreiben. Nicht zensieren — erst ausschütten, dann nachdenken.',
+        question: 'Worüber hast du dich in den letzten Tagen wirklich geärgert? Welcher Wert wurde da verletzt, dass es so weh tat?' },
+      { name: 'Stolz', title: 'Der letzte stille Stolz', duration: 5*60,
+        hostNote: 'Schreiben. Kein Lebenslauf-Stolz — ein kleiner Moment.',
+        question: 'Welcher Moment der letzten Wochen hat dich still stolz gemacht? Und welchen Wert hast du da ausgelebt?' },
+      { name: 'Drei Sätze', title: 'Mir ist wirklich wichtig …', duration: 7*60,
+        hostNote: 'Schreibe drei Sätze. Die zweite Fassung ist oft ehrlicher als die erste.',
+        description: 'Kein Lebenskonzept. Drei ehrliche Sätze, die gerade stimmen — auch wenn sie sich morgen ändern. Lass dir Zeit für die Formulierung. Was nicht durch die Zähne will, ist oft noch nicht wahr.',
+        question: '„Mir ist wirklich wichtig …" — dreimal vollenden.' },
+      { name: 'Schritt', title: 'Ein kleiner Schritt', duration: 5*60,
+        hostNote: 'Schreibe auf einen Zettel — und nimm ihn mit.',
+        question: 'An welcher konkreten Stelle diese Woche wirst du einen dieser Werte leben — auch wenn es unbequem ist?' }
+    ])
+  },
+
+  prioritaeten: {
+    label: 'Allein', duration: '~30 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Was ist diese Woche laut?', duration: 3*60,
+        hostNote: 'Drei tiefe Atemzüge. Handy weg.',
+        question: 'Was ist diese Woche am lautesten in deinem Kopf — und wird dadurch leiser, was dir wichtig ist?' },
+      { name: 'Einstieg', title: 'Das Vier-Öfen-Modell', duration: 4*60,
+        hostNote: 'Still lesen.',
+        description: 'Stell dir vier Öfen vor, jeder braucht Holz zum Brennen: Arbeit, Beziehungen, Selbstsorge, ein persönliches Projekt. Keiner kann dauerhaft volle Lohe sein. Aber wenn zwei ausgehen, merkst du es lange nicht — bis es kalt wird. Heute schaust du nach, welche Öfen du gerade fütterst — und welche nicht.' },
+      { name: 'Check', title: 'Vier Öfen — wie brennt es gerade?', duration: 10*60,
+        hostNote: 'Für jeden Ofen: voll / mittel / niedrig / aus. Ein Satz Begründung.',
+        description: 'Keine Bewertung, nur Beobachtung. Manche Öfen sind absichtlich runtergefahren — das ist okay. Es geht um Klarheit.',
+        items: [
+          { accent: 'Ofen 1', label: 'Arbeit & Berufung', text: 'Was du tust, um Wirkung in der Welt zu haben.' },
+          { accent: 'Ofen 2', label: 'Beziehungen', text: 'Partner, Familie, Freunde — die Menschen, die dich tragen.' },
+          { accent: 'Ofen 3', label: 'Selbstsorge', text: 'Schlaf, Bewegung, Ernährung, stille Zeit — dein Körper und Geist.' },
+          { accent: 'Ofen 4', label: 'Projekt / Seele', text: 'Das eine Vorhaben, das nur du machen kannst — und das dich nährt.' }
+        ] },
+      { name: 'Preis', title: 'Was kostet deine aktuelle Prioritätensetzung?', duration: 6*60,
+        hostNote: 'Schreibe ehrlich. Niemand sieht das außer dir.',
+        question: 'Wen oder was zahlt aktuell den Preis für das, was bei dir gerade brennt — und was ist ausgegangen?' },
+      { name: 'Verschiebung', title: 'Eine konkrete Verschiebung', duration: 4*60,
+        hostNote: 'Schreibe auf einen Zettel — und nimm ihn mit.',
+        question: 'Welcher Ofen bekommt nächste Woche mehr Holz — und wo nimmst du es her? Ein konkreter Schritt.' }
+    ])
+  },
+
+  stehe: {
+    label: 'Allein', duration: '~30 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Wie ehrlich bist du diese Woche gewesen?', duration: 3*60,
+        hostNote: 'Drei tiefe Atemzüge. Ganz da sein.',
+        question: 'Wann hast du diese Woche etwas nicht gesagt, obwohl du es gewusst hast?' },
+      { name: 'Einstieg', title: 'Drei Ebenen des Einstehens', duration: 4*60,
+        hostNote: 'Still lesen.',
+        description: 'Wofür du stehst, zeigt sich auf drei Ebenen: bei dir selbst (wo ziehst du innere Grenzen?), im Nahbereich (was sagst du Menschen, die dir wichtig sind?) und draußen (wo öffnest du den Mund, wenn es Mut kostet?). Jede Ebene hat ihre eigene Schwelle.' },
+      { name: 'Bei dir', title: 'Für dich selbst', duration: 6*60,
+        hostNote: 'Schreibe. Sei nicht nett mit dir — sei ehrlich.',
+        question: 'Wo hörst du dich selbst gerade am wenigsten — welchen inneren Satz drückst du weg?' },
+      { name: 'Nahbereich', title: 'Für die Menschen, die dich kennen', duration: 6*60,
+        hostNote: 'Schreibe. Konkret werden, keine Abstraktionen.',
+        question: 'Welchem Menschen in deinem Leben müsstest du diese Woche etwas sagen — und was genau?' },
+      { name: 'Außen', title: 'Für das, was du nicht kennst', duration: 5*60,
+        hostNote: 'Schreibe.',
+        question: 'Wofür würdest du in einem fremden Raum den Mund aufmachen — auch wenn es Reibung kostet?' },
+      { name: 'Schritt', title: 'Eine Grenze, ein Satz', duration: 4*60,
+        hostNote: 'Schreibe auf einen Zettel — und nimm ihn mit.',
+        question: 'Welche Grenze ziehst du diese Woche — oder welchen Satz sagst du laut? Ein konkreter Akt.' }
+    ])
+  },
+
+  tag: {
+    label: 'Allein', duration: '~25 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Wann war ein Tag zuletzt wirklich deiner?', duration: 3*60,
+        hostNote: 'Drei tiefe Atemzüge.',
+        question: 'Wann hast du das letzte Mal einen Tag gehabt, nach dem du gesagt hast: „Der war richtig"?' },
+      { name: 'Einstieg', title: 'Drei Säulen eines guten Tages', duration: 3*60,
+        hostNote: 'Still lesen.',
+        description: 'Ein guter Tag braucht drei Dinge nicht in gleicher Menge, aber ein wenig von jeder: Flow (etwas, in dem du dich vergisst), Verbindung (ein Mensch, mit dem du wirklich sprichst), und Sinn (eine Geste, die über dich hinausweist). Fehlt eine Säule zu lange, kippt das Gebäude.' },
+      { name: 'Rückblick', title: 'Dein letzter wirklich guter Tag', duration: 6*60,
+        hostNote: 'Schreibe konkret — die Reihenfolge der Stunden.',
+        question: 'Beschreibe einen Tag aus den letzten Wochen, der sich stimmig angefühlt hat. Was hast du wann getan? Wer war dabei?' },
+      { name: 'Vorwärts', title: 'Dein idealer Tag nächste Woche', duration: 8*60,
+        hostNote: 'Schreibe als wäre es ein Drehbuch — in Gegenwartsform.',
+        description: 'Kein Traumtag ohne Verpflichtungen. Ein realistischer Tag nächste Woche — innerhalb dessen, was du wirklich hast — aber so gestaltet, dass die drei Säulen vorkommen.',
+        question: 'Wie sieht dein idealer Dienstag (oder Tag deiner Wahl) nächste Woche aus — Stunde für Stunde?' },
+      { name: 'Änderung', title: 'Eine kleine Verschiebung', duration: 5*60,
+        hostNote: 'Schreibe auf einen Zettel.',
+        question: 'Was änderst du ganz konkret, damit dieser Tag so eintreten kann — oder ihm wenigstens nah kommt?' }
+    ])
+  },
+
+  zehnjahre: {
+    label: 'Allein', duration: '~30 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Was würdest du deinem 18-jährigen Ich sagen?', duration: 3*60,
+        hostNote: 'Atme dreimal tief.',
+        question: 'Wenn du deinem Ich von vor zehn Jahren in einem Satz etwas zuflüstern könntest — was wäre es?' },
+      { name: 'Einstieg', title: 'Zehn Jahre sind lang. Und kurz.', duration: 4*60,
+        hostNote: 'Still lesen.',
+        description: 'Zehn Jahre zurück: die Person, die du warst, ist dir fremd. Und gleichzeitig weißt du, wie schnell die Zeit vergangen ist. In zehn Jahren wirst du genauso auf heute zurückblicken — mit einer Mischung aus Zärtlichkeit und Ungläubigkeit. Die Frage ist nicht, was du erreicht haben willst. Sondern wer du geworden sein willst.' },
+      { name: 'Rückwärts', title: 'Wer warst du vor zehn Jahren?', duration: 6*60,
+        hostNote: 'Schreibe — ohne zu urteilen.',
+        question: 'Was war deiner Version von vor zehn Jahren wichtig, das heute nicht mehr zählt? Und was hast du damals vermisst, das du heute hast?' },
+      { name: 'Vorwärts', title: 'Wer wirst du in zehn Jahren sein?', duration: 8*60,
+        hostNote: 'Schreibe in Gegenwartsform — als wäre es schon so.',
+        description: 'Keine Checkliste. Beschreibe einen typischen Montagmorgen in zehn Jahren: Wo wachst du auf? Mit wem? Was steht an? Was fällt dir ein, wenn du an deine letzten Jahre zurückdenkst?',
+        question: 'Dein Leben in zehn Jahren — ein Tag daraus.' },
+      { name: 'Weiche', title: 'Eine Entscheidung, die jetzt Gewicht hat', duration: 6*60,
+        hostNote: 'Schreibe. Keine große Lebensentscheidung — eine, die jetzt fällig ist.',
+        question: 'Welche Entscheidung, die dir in den nächsten Monaten bevorsteht, hat die meiste Wirkung auf diesen Tag-in-zehn-Jahren? Und was spricht dafür, was dagegen?' },
+      { name: 'Schritt', title: 'Ein kleiner Anfang', duration: 3*60,
+        hostNote: 'Schreibe auf einen Zettel.',
+        question: 'Was tust du diese Woche, das in zehn Jahren noch eine Rolle spielen könnte? Klein ist okay.' }
+    ])
+  },
+
+  frageabend: {
+    label: 'Allein', duration: '~25 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Wie kommst du heute bei dir an?', duration: 3*60,
+        hostNote: 'Drei Atemzüge. Stift bereit.',
+        question: 'Was war das Letzte, das dich wirklich zum Nachdenken gebracht hat — und wann war das?' },
+      { name: 'Einstieg', title: 'Fragen, die sich nicht jeden Tag stellen', duration: 2*60,
+        hostNote: 'Still lesen.',
+        description: 'Gute Fragen öffnen etwas. Allein sind sie besonders stark: Niemand wartet auf eine Antwort, niemand beobachtet. Du darfst dauern. Du darfst zurückschrecken. Du darfst die Frage ein zweites Mal lesen. Heute drei Fragen — leicht, mittel, tief.' },
+      { name: 'Leicht', title: 'Zum Einsteigen', duration: 5*60,
+        hostNote: 'Schreibe locker. Zwei, drei Sätze reichen.',
+        question: 'Was fühlt sich in deinem Leben gerade am falschen Platz an — und was am richtigen?' },
+      { name: 'Mittel', title: 'Eine Schicht tiefer', duration: 6*60,
+        hostNote: 'Schreibe. Lass die erste Antwort aus — nimm die zweite.',
+        question: 'Welchen Satz hörst du dich immer wieder sagen — und stimmt er eigentlich noch?' },
+      { name: 'Tief', title: 'Die Frage, die du aufschiebst', duration: 7*60,
+        hostNote: 'Schreibe. „Pass" ist okay — lies die Frage dann nochmal in einer Woche.',
+        question: 'Was wüsstest du eigentlich über dich, wenn du ehrlich wärst, es aber lieber nicht wissen willst?' },
+      { name: 'Mitnahme', title: 'Eine Frage für die Woche', duration: 2*60,
+        hostNote: 'Schreibe auf einen Zettel.',
+        question: 'Welche dieser Fragen trägst du diese Woche mit — und wann stellst du sie dir noch einmal?' }
+    ])
+  },
+
+  frageabend_arbeit: {
+    label: 'Allein', duration: '~20 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Wie geht es dir mit deiner Arbeit?', duration: 3*60,
+        hostNote: 'Drei Atemzüge. Nicht die Kurzfassung — die echte.',
+        question: 'Wenn du heute deine Arbeit in einem einzigen Wort beschreiben müsstest — welches wäre es?' },
+      { name: 'Einstieg', title: 'Arbeit als Spiegel', duration: 2*60,
+        hostNote: 'Still lesen.',
+        description: 'Arbeit beantwortet die Frage „Was machst du eigentlich?" — aber auch leisere: Wo fließt deine Zeit? Wer bist du, wenn du sie tust? Was wäre gewesen, wenn du abgebogen wärst? Heute drei Fragen ohne Urteil.' },
+      { name: 'Flow', title: 'Wann fließt deine Zeit?', duration: 4*60,
+        hostNote: 'Schreibe.',
+        question: 'Wann warst du zuletzt so in deiner Arbeit, dass du die Uhr vergessen hast? Und was sagt dir das?' },
+      { name: 'Spiegel', title: 'Wer bist du, wenn du arbeitest?', duration: 4*60,
+        hostNote: 'Schreibe.',
+        question: 'Welche Version von dir zeigt sich im Job — und welche bleibt draußen?' },
+      { name: 'Abzweig', title: 'Der Weg, den du nicht genommen hast', duration: 4*60,
+        hostNote: 'Schreibe ohne Reue. Nur neugierig.',
+        question: 'Welche Entscheidung vor Jahren hätte dich heute woanders hingestellt? Und blickst du mit Reue, Erleichterung oder Ruhe zurück?' },
+      { name: 'Schritt', title: 'Eine Reibung, ein Versuch', duration: 3*60,
+        hostNote: 'Schreibe auf einen Zettel.',
+        question: 'Was probierst du in deiner Arbeit diese Woche anders — klein, konkret?' }
+    ])
+  },
+
+  frageabend_tief: {
+    label: 'Allein', duration: '~25 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Bist du wirklich da?', duration: 3*60,
+        hostNote: 'Drei tiefe Atemzüge. Kein Handy, keine Tabs.',
+        question: 'Wo ist dein Kopf gerade — und was musst du ablegen, um wirklich hier zu sein?' },
+      { name: 'Einstieg', title: 'Was wir uns nicht erzählen', duration: 3*60,
+        hostNote: 'Still lesen.',
+        description: 'Es gibt drei Bereiche in uns: was wir offen sagen, was wir manchmal sagen, und was wir niemandem sagen — nicht einmal uns selbst. Die dritte Ebene ist das Herz dieses Abends. Du bist allein — also darfst du heute hineinsehen.' },
+      { name: 'Leise', title: 'Was sagst du selten?', duration: 5*60,
+        hostNote: 'Schreibe — kein Publikum, kein Urteil.',
+        question: 'Welchen Satz über dich selbst drückst du meistens weg, wenn er aufsteigt?' },
+      { name: 'Nie', title: 'Was sagst du niemandem?', duration: 6*60,
+        hostNote: 'Schreibe. „Pass" ist okay — aber versuch es einmal.',
+        question: 'Welche Wahrheit über dich kennt niemand — und wie würde sich dein Leben ändern, wenn einer sie wüsste?' },
+      { name: 'Sich selbst', title: 'Was sagst du dir selbst nicht?', duration: 6*60,
+        hostNote: 'Die leiseste Stimme — und oft die richtigste.',
+        question: 'Welchen Satz über dich traust du dich selbst nicht zu denken — und was wäre, wenn du ihn einmal zuließest?' },
+      { name: 'Schritt', title: 'Eine Zärtlichkeit mit dir', duration: 2*60,
+        hostNote: 'Schreibe auf einen Zettel — nicht als Aufgabe, als Geschenk.',
+        question: 'Wie wärst du diese Woche freundlicher mit dem, was gerade in dir lebt — ohne etwas ändern zu müssen?' }
+    ])
+  },
+
+  frageabend_humor: {
+    label: 'Allein', duration: '~20 Min.', people: 'Nur du',
+    stations: withFeedback([
+      { name: 'Ankommen', title: 'Wann hast du zuletzt wirklich gelacht?', duration: 3*60,
+        hostNote: 'Drei Atemzüge.',
+        question: 'Wann war das letzte Mal, dass du allein laut gelacht hast — und worüber?' },
+      { name: 'Einstieg', title: 'Quatsch ist auch Erkenntnis', duration: 2*60,
+        hostNote: 'Still lesen.',
+        description: 'Manchmal erzählt eine absurde Antwort mehr als eine ehrliche. Der Blick von der Seite zeigt Seiten, die der ernste Blick übersieht. Heute drei Fragen, die Quatsch erlauben — und durch Quatsch manchmal zur Mitte gehen.' },
+      { name: 'Was wäre', title: 'Hypothetische Biografie', duration: 5*60,
+        hostNote: 'Schreibe, ohne zu zensieren. Die ersten zwei Ideen sind oft zu brav.',
+        question: 'Wenn dein Leben ein Musical wäre: welches Genre, welche Szene spielt gerade, und wer singt?' },
+      { name: 'An dir', title: 'Das Absurde an dir', duration: 5*60,
+        hostNote: 'Schreibe — freundlich, aber ehrlich.',
+        question: 'Was ist an dir selbst, ehrlich betrachtet, einfach komisch — und findest du das liebenswert oder nervig?' },
+      { name: 'Unwichtiges', title: 'Ein Ranking ohne Sinn', duration: 4*60,
+        hostNote: 'Schreibe. Drei Punkte.',
+        question: 'Drei Dinge, die du wirklich ernst nimmst, obwohl sie völlig unwichtig sind — und drei Dinge, die wichtig wären, aber dir nicht gelingen.' },
+      { name: 'Mitnahme', title: 'Ein Schmunzeln für die Woche', duration: 1*60,
+        hostNote: 'Schreibe auf einen Zettel.',
+        question: 'Was nimmst du mit — ein Wort, ein Bild, ein innerer Witz?' }
+    ])
+  }
+
+};
+
+Object.keys(SOLO_FORMATS).forEach(id => {
+  if (window.THEMES[id] && !window.THEMES[id].formats.solo) {
+    window.THEMES[id].formats.solo = SOLO_FORMATS[id];
+  }
+});
+
 // Post-process: set theme.id, derive totalMinutes per format
 Object.keys(window.THEMES).forEach(id => {
   const theme = window.THEMES[id];
