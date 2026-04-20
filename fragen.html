@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Funken — KlarKreis</title>
-<meta name="description" content="Eine Sammlung von Zitaten und Impulsen, die Gespräche eröffnen — sortiert nach Kategorie."/>
+<title>Fragen — KlarKreis</title>
+<meta name="description" content="Eine wachsende Sammlung von Gesprächsfragen — nach Themen sortiert. Zum Stöbern, Filtern, Zufallsziehen."/>
 <meta name="theme-color" content="#FBF9F4"/>
-<link rel="canonical" href="https://klarkreis.de/funken.html"/>
+<link rel="canonical" href="https://klarkreis.de/fragen.html"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
-<meta property="og:title" content="Funken — KlarKreis"/>
-<meta property="og:description" content="Zitate und Impulse, die Gespräche eröffnen."/>
+<meta property="og:title" content="Fragen — KlarKreis"/>
+<meta property="og:description" content="Gesprächsfragen, sortiert nach Themen — zum Stöbern oder zufällig ziehen."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://klarkreis.de/funken.html"/>
-<meta property="og:image" content="https://klarkreis.de/images/kerze.jpg"/>
+<meta property="og:url" content="https://klarkreis.de/fragen.html"/>
+<meta property="og:image" content="https://klarkreis.de/images/hero-og.jpg"/>
 <meta property="og:locale" content="de_DE"/>
 <meta property="og:site_name" content="KlarKreis"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -30,9 +30,9 @@
     background-size: 150px;
   }
   .font-serif { font-family: 'Noto Serif', serif; }
-  .film-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+  .film-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  .quote-card { break-inside: avoid; }
+  .question-card { break-inside: avoid; }
 </style>
 <script id="tailwind-config">
   tailwind.config = { darkMode: "class", theme: { extend: {
@@ -48,11 +48,11 @@
 <header class="bg-surface/80 backdrop-blur-md sticky top-0 z-40">
   <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
     <a href="index.html" class="flex items-center gap-2 font-serif italic text-2xl text-primary"><svg width="26" height="26" viewBox="0 0 64 64" class="shrink-0"><circle cx="32" cy="32" r="28" fill="none" stroke="#1B3022" stroke-width="3"/><circle cx="32" cy="32" r="18" fill="none" stroke="#1B3022" stroke-width="2" opacity="0.5"/><circle cx="32" cy="32" r="3.2" fill="#924C00"/></svg> KlarKreis</a>
-    <nav class="hidden md:flex space-x-12">
+    <nav class="hidden md:flex space-x-10">
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="index.html">Start</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="themen.html">Themen</a>
-      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="fragen.html">Fragen</a>
-      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-on-background font-bold border-b border-secondary" href="funken.html">Funken</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-on-background font-bold border-b border-secondary" href="fragen.html">Fragen</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="funken.html">Funken</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="gastgeber.html">Gastgeber</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
     </nav>
@@ -62,38 +62,39 @@
 
 <main class="p-8 md:p-16 max-w-7xl mx-auto">
   <header class="mb-12">
-    <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Impuls-Sammlung</p>
-    <h1 class="font-serif text-5xl md:text-7xl leading-tight tracking-tight text-on-background max-w-3xl">Funken</h1>
+    <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Fragensammlung</p>
+    <h1 class="font-serif text-5xl md:text-7xl leading-tight tracking-tight text-on-background max-w-3xl">Fragen.</h1>
     <p class="mt-8 text-on-surface-variant font-light italic max-w-2xl">
-      Zitate, die im Kopf hängen bleiben. Manche funktionieren als Eröffnung eines Gesprächs, andere als langsamer Nachklang. Filter dich durch nach Kategorie — oder lass dich überraschen.
+      Gute Fragen öffnen Türen. Eine wachsende Sammlung — gesammelt aus Abenden, Gesprächen und Zeitschriften. Filter nach Thema, oder lass dir eine ziehen.
     </p>
   </header>
 
-  <!-- Zieh einen Funken — großer Glückskeks-Draw -->
+  <!-- Zieh eine Frage -->
   <section class="mb-16 bg-primary-container rounded-xl p-10 md:p-14 relative overflow-hidden">
     <div class="absolute -top-12 -left-12 w-72 h-72 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="relative">
-      <p class="font-label text-[11px] uppercase tracking-[0.2em] text-secondary-fixed-dim mb-4">Zieh einen Funken</p>
-      <blockquote class="min-h-[120px]">
+      <p class="font-label text-[11px] uppercase tracking-[0.2em] text-secondary-fixed-dim mb-4">Zieh eine Frage</p>
+      <blockquote class="min-h-[140px]">
         <p class="font-headline italic text-2xl md:text-4xl text-on-primary leading-snug transition-opacity duration-300" id="drawText">Klick unten — und lass dich überraschen.</p>
-        <footer class="font-label text-[11px] uppercase tracking-widest text-secondary-fixed-dim mt-6 opacity-0 transition-opacity duration-300" id="drawAuthor"></footer>
+        <footer class="font-label text-[11px] uppercase tracking-widest text-secondary-fixed-dim mt-6 opacity-0 transition-opacity duration-300" id="drawCat"></footer>
       </blockquote>
       <div class="flex flex-wrap items-center gap-4 mt-8 pt-8 border-t border-on-primary/10">
         <button id="drawBtn" class="inline-flex items-center gap-2 bg-secondary hover:bg-on-tertiary-container text-on-primary px-6 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold transition-colors">
           <span class="material-symbols-outlined text-[18px]">casino</span>
-          Einen Funken ziehen
+          Eine Frage ziehen
         </button>
-        <span class="font-label text-[10px] uppercase tracking-widest text-secondary-fixed-dim/70 italic">· Wie ein Glückskeks.</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-secondary-fixed-dim/70 italic">· Aus der aktuellen Auswahl.</span>
       </div>
     </div>
   </section>
 
   <section class="mb-12 flex flex-wrap gap-2 items-center">
-    <span class="font-label uppercase tracking-widest text-[10px] text-on-surface-variant mr-2">Kategorie:</span>
+    <span class="font-label uppercase tracking-widest text-[10px] text-on-surface-variant mr-2">Thema:</span>
     <div id="catChips" class="flex flex-wrap gap-2"></div>
   </section>
 
-  <div id="quoteGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <div id="countInfo" class="mb-6 font-label text-[11px] uppercase tracking-widest text-on-surface-variant/60"></div>
+  <div id="questionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 </main>
 
 <footer class="bg-surface-container flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
@@ -110,39 +111,46 @@
   </div>
 </footer>
 
-<script src="quotes.js"></script>
+<script src="questions.js"></script>
 <script>
-// Zieh einen Funken (Glückskeks)
+let currentCat = 'alle';
+
+function getFiltered() {
+  return currentCat === 'alle' ? window.QUESTIONS : window.QUESTIONS.filter(q => q.category === currentCat);
+}
+
+// Zieh eine Frage
 (function () {
   const text = document.getElementById('drawText');
-  const author = document.getElementById('drawAuthor');
+  const cat = document.getElementById('drawCat');
   const btn = document.getElementById('drawBtn');
-  if (!btn || !window.QUOTES) return;
+  if (!btn || !window.QUESTIONS) return;
   let last = -1;
   btn.addEventListener('click', () => {
+    const pool = getFiltered();
+    if (!pool.length) return;
     let idx;
-    do { idx = Math.floor(Math.random() * window.QUOTES.length); } while (window.QUOTES.length > 1 && idx === last);
+    do { idx = Math.floor(Math.random() * pool.length); } while (pool.length > 1 && idx === last);
     last = idx;
-    const q = window.QUOTES[idx];
+    const q = pool[idx];
     text.style.opacity = '0';
-    author.style.opacity = '0';
+    cat.style.opacity = '0';
     setTimeout(() => {
-      text.textContent = '„' + q.text + '"';
-      author.textContent = q.author ? '— ' + q.author + ' · ' + q.category : '— ' + q.category;
+      text.textContent = q.text;
+      cat.textContent = '— ' + q.category;
       text.style.opacity = '1';
-      author.style.opacity = '1';
+      cat.style.opacity = '1';
     }, 200);
   });
 })();
 
-let currentCat = 'alle';
-
 function renderChips() {
   const chips = document.getElementById('catChips');
-  const cats = ['alle', ...window.QUOTE_CATEGORIES];
+  const cats = ['alle', ...window.QUESTION_CATEGORIES];
   chips.innerHTML = cats.map(c => {
     const active = c === currentCat;
-    const label = c === 'alle' ? 'Alle' : c;
+    const count = c === 'alle' ? window.QUESTIONS.length : window.QUESTIONS.filter(q => q.category === c).length;
+    const label = c === 'alle' ? `Alle · ${count}` : `${c} · ${count}`;
     return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${active
       ? 'bg-primary-container text-on-primary border-primary-container'
       : 'bg-surface-container-low text-on-background border-outline-variant/30 hover:border-secondary/50'}">${label}</button>`;
@@ -152,28 +160,29 @@ function renderChips() {
   });
 }
 
-function quoteCardHtml(q) {
-  const isLong = q.text.length > 260;
+function questionCardHtml(q) {
+  const isLong = q.text.length > 180;
   return `
-    <article class="quote-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
-      <span class="material-symbols-outlined text-secondary/50 text-3xl block mb-2">format_quote</span>
-      <p class="font-headline italic ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed mb-4">${q.text}</p>
-      <footer class="flex items-center justify-between gap-3">
-        <span class="font-label text-[11px] uppercase tracking-widest text-secondary">${q.author || '— unbekannt'}</span>
-        <span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant/40 whitespace-nowrap">${q.category}</span>
+    <article class="question-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
+      <span class="material-symbols-outlined text-secondary/50 text-3xl block mb-2">help</span>
+      <p class="font-headline ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed mb-4">${q.text}</p>
+      <footer class="flex items-center justify-end">
+        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/50 whitespace-nowrap">${q.category}</span>
       </footer>
     </article>`;
 }
 
 function render() {
   renderChips();
-  const grid = document.getElementById('quoteGrid');
-  const filtered = currentCat === 'alle' ? window.QUOTES : window.QUOTES.filter(q => q.category === currentCat);
+  const grid = document.getElementById('questionGrid');
+  const info = document.getElementById('countInfo');
+  const filtered = getFiltered();
+  info.textContent = `${filtered.length} Frage${filtered.length === 1 ? '' : 'n'}${currentCat === 'alle' ? '' : ' in „' + currentCat + '"'}`;
   if (!filtered.length) {
     grid.innerHTML = `<p class="col-span-full text-center text-on-surface-variant italic py-12">Hier fehlt noch was.</p>`;
     return;
   }
-  grid.innerHTML = filtered.map(quoteCardHtml).join('');
+  grid.innerHTML = filtered.map(questionCardHtml).join('');
 }
 
 render();
