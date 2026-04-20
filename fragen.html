@@ -115,6 +115,10 @@
           Weiter
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </button>
+        <button id="resetBtn" class="hidden inline-flex items-center gap-2 text-secondary-fixed-dim/70 hover:text-on-primary text-[10px] uppercase tracking-widest font-semibold transition-colors">
+          <span class="material-symbols-outlined text-[14px]">refresh</span>
+          <span id="resetLabel">Reset</span>
+        </button>
       </div>
     </div>
   </section>
@@ -145,9 +149,45 @@
 let currentCat = 'alle';
 let mode = 'single';
 let singleIdx = 0;
+let allSeenState = false;
+
+const SEEN_KEY = 'klarkreis.fragen.seen.v1';
+function loadSeen() {
+  try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]')); }
+  catch (e) { return new Set(); }
+}
+function saveSeen() {
+  try { localStorage.setItem(SEEN_KEY, JSON.stringify([...seen])); } catch (e) {}
+}
+let seen = loadSeen();
 
 function getFiltered() {
   return currentCat === 'alle' ? window.QUESTIONS : window.QUESTIONS.filter(q => q.category === currentCat);
+}
+
+function seenCountInPool(pool) {
+  return pool.filter(q => seen.has(q.text)).length;
+}
+
+function findNextUnseen(pool, fromIdx, direction) {
+  const n = pool.length;
+  for (let step = 1; step <= n; step++) {
+    const idx = ((fromIdx + step * direction) % n + n) % n;
+    if (!seen.has(pool[idx].text)) return idx;
+  }
+  return -1;
+}
+
+function seekFirstUnseenFrom(startIdx) {
+  const pool = getFiltered();
+  if (!pool.length) return;
+  if (!seen.has(pool[startIdx % pool.length].text)) {
+    singleIdx = startIdx % pool.length;
+    return;
+  }
+  const n = findNextUnseen(pool, startIdx, 1);
+  if (n !== -1) singleIdx = n;
+  else singleIdx = startIdx % pool.length;
 }
 
 function renderChips() {
@@ -169,7 +209,13 @@ function renderChips() {
     return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${cls}">${label}</button>`;
   }).join('');
   chips.querySelectorAll('.cat-chip').forEach(btn => {
-    btn.addEventListener('click', () => { currentCat = btn.dataset.cat; singleIdx = 0; render(); });
+    btn.addEventListener('click', () => {
+      currentCat = btn.dataset.cat;
+      allSeenState = false;
+      singleIdx = 0;
+      seekFirstUnseenFrom(0);
+      render();
+    });
   });
 }
 
@@ -193,19 +239,61 @@ function renderSingle() {
     text.textContent = 'In dieser Kategorie ist noch nichts.';
     cat.textContent = '—';
     counter.textContent = '0 / 0';
+    updateResetBtn();
     return;
   }
   singleIdx = ((singleIdx % pool.length) + pool.length) % pool.length;
+  if (allSeenState) {
+    const seenInPool = seenCountInPool(pool);
+    text.style.opacity = '0';
+    cat.style.opacity = '0';
+    setTimeout(() => {
+      text.textContent = 'Alle ' + pool.length + ' Fragen in dieser Auswahl hast du gesehen. Reset drücken, um neu zu starten.';
+      cat.textContent = currentCat === 'alle' ? 'Gesamt' : currentCat;
+      counter.textContent = seenInPool + ' / ' + pool.length + ' gesehen';
+      text.style.opacity = '1';
+      cat.style.opacity = '1';
+    }, 150);
+    updateResetBtn();
+    return;
+  }
   const q = pool[singleIdx];
+  // Mark as seen
+  if (!seen.has(q.text)) {
+    seen.add(q.text);
+    saveSeen();
+  }
   text.style.opacity = '0';
   cat.style.opacity = '0';
   setTimeout(() => {
     text.textContent = q.text;
     cat.textContent = q.category;
-    counter.textContent = `${singleIdx + 1} / ${pool.length}`;
+    const seenInPool = seenCountInPool(pool);
+    counter.textContent = (singleIdx + 1) + ' / ' + pool.length + (seenInPool > 0 ? ' · ' + seenInPool + ' gesehen' : '');
     text.style.opacity = '1';
     cat.style.opacity = '1';
   }, 150);
+  updateResetBtn();
+}
+
+function updateResetBtn() {
+  const btn = document.getElementById('resetBtn');
+  const label = document.getElementById('resetLabel');
+  const pool = getFiltered();
+  const seenInPool = seenCountInPool(pool);
+  if (seenInPool > 0) {
+    btn.classList.remove('hidden');
+    label.textContent = allSeenState || seenInPool === pool.length
+      ? 'Alle gesehen — Reset'
+      : 'Reset (' + seenInPool + ' gesehen)';
+    btn.classList.toggle('bg-secondary', allSeenState);
+    btn.classList.toggle('text-on-primary', allSeenState);
+    btn.classList.toggle('px-5', allSeenState);
+    btn.classList.toggle('py-3', allSeenState);
+    btn.classList.toggle('rounded-lg', allSeenState);
+  } else {
+    btn.classList.add('hidden');
+  }
 }
 
 function questionCardHtml(q) {
@@ -253,20 +341,41 @@ document.querySelectorAll('.mode-btn').forEach(b => {
 // Single navigation
 document.getElementById('singlePrev').addEventListener('click', () => {
   const pool = getFiltered(); if (!pool.length) return;
+  allSeenState = false;
   singleIdx = (singleIdx - 1 + pool.length) % pool.length;
   renderSingle();
 });
 document.getElementById('singleNext').addEventListener('click', () => {
   const pool = getFiltered(); if (!pool.length) return;
-  singleIdx = (singleIdx + 1) % pool.length;
+  const next = findNextUnseen(pool, singleIdx, 1);
+  if (next === -1) { allSeenState = true; renderSingle(); return; }
+  allSeenState = false;
+  singleIdx = next;
   renderSingle();
 });
 document.getElementById('singleRandom').addEventListener('click', () => {
   const pool = getFiltered(); if (!pool.length) return;
-  let next;
-  do { next = Math.floor(Math.random() * pool.length); } while (pool.length > 1 && next === singleIdx);
+  const unseenIndices = [];
+  for (let i = 0; i < pool.length; i++) if (!seen.has(pool[i].text)) unseenIndices.push(i);
+  if (!unseenIndices.length) { allSeenState = true; renderSingle(); return; }
+  allSeenState = false;
+  let next = unseenIndices[Math.floor(Math.random() * unseenIndices.length)];
+  if (unseenIndices.length > 1 && next === singleIdx) {
+    next = unseenIndices[(unseenIndices.indexOf(next) + 1) % unseenIndices.length];
+  }
   singleIdx = next;
   renderSingle();
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  const pool = getFiltered();
+  // Reset only affects seen-set; global reset (wipes across categories)
+  if (confirm('Alle ' + seen.size + ' gesehenen Fragen vergessen und neu starten?')) {
+    seen = new Set();
+    saveSeen();
+    allSeenState = false;
+    singleIdx = 0;
+    render();
+  }
 });
 
 // Keyboard shortcuts in single mode
@@ -277,6 +386,15 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('singleNext').click(); }
 });
 
+// On initial load: skip to first unseen in the current filter
+seekFirstUnseenFrom(0);
+// If all are already seen in the initial pool, show the all-seen state
+(function checkInitialAllSeen() {
+  const pool = getFiltered();
+  if (pool.length > 0 && seenCountInPool(pool) === pool.length) {
+    allSeenState = true;
+  }
+})();
 render();
 </script>
 <script src="mobile-nav.js"></script>
