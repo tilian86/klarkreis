@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Fragen — KlarKreis</title>
-<meta name="description" content="Eine wachsende Sammlung von Gesprächsfragen — nach Themen sortiert. Zum Stöbern, Filtern, Zufallsziehen."/>
+<title>Fragerunde — KlarKreis</title>
+<meta name="description" content="Eine wachsende Sammlung von Gesprächsfragen für tiefere Runden — nach Themen sortiert. Zum Stöbern, Filtern, Zufallsziehen."/>
 <meta name="theme-color" content="#FBF9F4"/>
 <link rel="canonical" href="https://klarkreis.de/fragen.html"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
-<meta property="og:title" content="Fragen — KlarKreis"/>
-<meta property="og:description" content="Gesprächsfragen, sortiert nach Themen — zum Stöbern oder zufällig ziehen."/>
+<meta property="og:title" content="Fragerunde — KlarKreis"/>
+<meta property="og:description" content="Gesprächsfragen für tiefere Runden, sortiert nach Themen — zum Stöbern oder zufällig ziehen."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://klarkreis.de/fragen.html"/>
 <meta property="og:image" content="https://klarkreis.de/images/hero-og.jpg"/>
@@ -51,7 +51,7 @@
     <nav class="hidden md:flex space-x-10">
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="index.html">Start</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="themen.html">Themen</a>
-      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-on-background font-bold border-b border-secondary" href="fragen.html">Fragen</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-on-background font-bold border-b border-secondary" href="fragen.html">Fragerunde</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="funken.html">Funken</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="gastgeber.html">Gastgeber</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
@@ -63,7 +63,7 @@
 <main class="p-8 md:p-16 max-w-7xl mx-auto">
   <header class="mb-12">
     <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Fragensammlung</p>
-    <h1 class="font-serif text-5xl md:text-7xl leading-tight tracking-tight text-on-background max-w-3xl">Fragen.</h1>
+    <h1 class="font-serif text-5xl md:text-7xl leading-tight tracking-tight text-on-background max-w-3xl">Fragerunde.</h1>
     <p class="mt-8 text-on-surface-variant font-light italic max-w-2xl">
       Gute Fragen öffnen Türen. Eine wachsende Sammlung — gesammelt aus Abenden, Gesprächen und Zeitschriften. Filter nach Thema, oder lass dir eine ziehen.
     </p>
@@ -94,6 +94,10 @@
   </section>
 
   <div id="countInfo" class="mb-6 font-label text-[11px] uppercase tracking-widest text-on-surface-variant/60"></div>
+  <div id="spicyNote" class="mb-8 p-5 bg-tertiary-container/40 border border-secondary/30 rounded-lg hidden">
+    <p class="font-label text-[11px] uppercase tracking-widest text-secondary mb-2">Ü18 · Intime Runde</p>
+    <p class="text-sm text-on-surface-variant italic">Diese Fragen brauchen Vertrauen und den passenden Kreis. Nur aufschlagen, wenn alle im Raum das wollen.</p>
+  </div>
   <div id="questionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 </main>
 
@@ -151,9 +155,16 @@ function renderChips() {
     const active = c === currentCat;
     const count = c === 'alle' ? window.QUESTIONS.length : window.QUESTIONS.filter(q => q.category === c).length;
     const label = c === 'alle' ? `Alle · ${count}` : `${c} · ${count}`;
-    return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${active
-      ? 'bg-primary-container text-on-primary border-primary-container'
-      : 'bg-surface-container-low text-on-background border-outline-variant/30 hover:border-secondary/50'}">${label}</button>`;
+    const isSpicy = c.startsWith('Ü18');
+    let cls;
+    if (active) {
+      cls = isSpicy ? 'bg-secondary text-on-primary border-secondary' : 'bg-primary-container text-on-primary border-primary-container';
+    } else {
+      cls = isSpicy
+        ? 'bg-tertiary-container/30 text-secondary border-secondary/40 hover:border-secondary'
+        : 'bg-surface-container-low text-on-background border-outline-variant/30 hover:border-secondary/50';
+    }
+    return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${cls}">${label}</button>`;
   }).join('');
   chips.querySelectorAll('.cat-chip').forEach(btn => {
     btn.addEventListener('click', () => { currentCat = btn.dataset.cat; render(); });
@@ -176,8 +187,10 @@ function render() {
   renderChips();
   const grid = document.getElementById('questionGrid');
   const info = document.getElementById('countInfo');
+  const note = document.getElementById('spicyNote');
   const filtered = getFiltered();
   info.textContent = `${filtered.length} Frage${filtered.length === 1 ? '' : 'n'}${currentCat === 'alle' ? '' : ' in „' + currentCat + '"'}`;
+  note.classList.toggle('hidden', !currentCat.startsWith('Ü18'));
   if (!filtered.length) {
     grid.innerHTML = `<p class="col-span-full text-center text-on-surface-variant italic py-12">Hier fehlt noch was.</p>`;
     return;
