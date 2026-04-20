@@ -69,6 +69,16 @@
     </p>
   </header>
 
+  <!-- Sync-Hinweis für nicht-eingeloggte User -->
+  <section id="syncHint" class="mb-8 p-4 bg-surface-container-low border border-outline-variant/30 rounded-lg hidden items-start gap-3">
+    <span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">devices</span>
+    <p class="text-sm text-on-surface-variant leading-relaxed flex-1">
+      <strong>Auf mehreren Geräten unterwegs?</strong> Mit einem kostenlosen Login (Magic-Link, kein Passwort) merken sich Fragerunde und Favoriten Dein Fortschritt über alle Geräte.
+      <button id="syncHintOpen" class="text-secondary hover:underline font-semibold ml-1">Kurz einloggen</button>
+      <button id="syncHintDismiss" class="ml-3 text-on-surface-variant/50 hover:text-on-surface-variant text-xs uppercase tracking-widest">Nicht jetzt</button>
+    </p>
+  </section>
+
   <!-- Modus-Toggle -->
   <section class="mb-8 flex items-center gap-2">
     <span class="font-label uppercase tracking-widest text-[10px] text-on-surface-variant mr-2">Ansicht:</span>
@@ -424,6 +434,36 @@ seekFirstUnseenFrom(0);
   }
 })();
 render();
+
+// --- Sync-Hinweis für nicht-eingeloggte User ---
+(function syncHint() {
+  const hint = document.getElementById('syncHint');
+  if (!hint) return;
+  const DISMISS_KEY = 'klarkreis.syncHint.dismissed';
+  const dismissed = localStorage.getItem(DISMISS_KEY) === '1';
+  const show = () => {
+    const auth = window.KLARKREIS_AUTH;
+    const loggedIn = auth && auth.enabled && auth.user();
+    if (!dismissed && !loggedIn && window.KLARKREIS_AUTH?.enabled) {
+      hint.classList.remove('hidden');
+      hint.classList.add('flex');
+    } else {
+      hint.classList.add('hidden');
+      hint.classList.remove('flex');
+    }
+  };
+  document.getElementById('syncHintDismiss')?.addEventListener('click', () => {
+    localStorage.setItem(DISMISS_KEY, '1');
+    hint.classList.add('hidden');
+    hint.classList.remove('flex');
+  });
+  document.getElementById('syncHintOpen')?.addEventListener('click', () => {
+    document.getElementById('klarkreisLoginBtn')?.click();
+  });
+  // Initial + react to auth state change
+  setTimeout(show, 500);
+  window.KLARKREIS_AUTH?.onChange?.(show);
+})();
 
 // --- Supabase sync (wenn eingeloggt) ---
 (async function () {
