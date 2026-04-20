@@ -79,9 +79,26 @@
           <span class="material-symbols-outlined">close</span>
         </button>
         <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-3">Einloggen</p>
-        <h3 class="font-serif text-2xl md:text-3xl text-primary-container mb-4">Du kriegst einen Magic-Link.</h3>
+        <h3 class="font-serif text-2xl md:text-3xl text-primary-container mb-3">Ein Faden, der sich durchzieht.</h3>
+        <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-5">
+          Ohne Login funktioniert alles. Mit Login kommt dazu:
+        </p>
+        <ul class="space-y-2 mb-6 text-sm md:text-base text-on-background/80">
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">devices</span>
+            <span><strong>Gerätewechsel</strong> — Fragerunde am Handy beginnen, am Laptop weitermachen.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">bookmark</span>
+            <span><strong>Favoriten</strong> — Fragen, die nachklingen, in einer eigenen Liste.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">history</span>
+            <span><strong>Abende-Historie</strong> — welches Thema ihr wann gemacht habt, und wer dabei war.</span>
+          </li>
+        </ul>
         <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
-          Gib deine Email ein. Wir schicken Dir einen Link — ein Klick, Du bist drin. Kein Passwort nötig.
+          Gib deine Email ein — Du kriegst einen Link. Ein Klick, Du bist drin. Kein Passwort.
         </p>
         <form id="klarkreisLoginForm" class="space-y-4">
           <input id="klarkreisEmailInput" type="email" required placeholder="dein@email.de"
@@ -92,7 +109,7 @@
         </form>
         <p id="klarkreisLoginMsg" class="mt-4 text-sm text-on-surface-variant hidden"></p>
         <p class="mt-6 text-[10px] uppercase tracking-widest text-on-surface-variant/50">
-          Geräte-Sync und Historie. Nur optional — KlarKreis läuft auch ohne.
+          Der Link kommt aktuell von noreply@mail.supabase.io — legitim, auch wenn der Absender nüchtern ist.
         </p>
       </div>
     `;
