@@ -61,6 +61,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://klarkreis.de/musik.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://klarkreis.de/gastgeber.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
