@@ -405,6 +405,9 @@ window.THEMES = {
         duration: '~1 Std. 10 Min.',
         people: '2 Personen',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Wie laut ist dein Kopf?', duration: 8*60,
             hostNote: 'Beide nacheinander. 3 Minuten pro Person.',
             question: 'Was will gerade am meisten deine Zeit — und fühlt sich das richtig an?' },
@@ -496,6 +499,9 @@ window.THEMES = {
         duration: '~1 Std. 10 Min.',
         people: '2 Personen',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Wo warst du diese Woche am wenigsten ehrlich mit dir?', duration: 8*60,
             hostNote: 'Beide nacheinander. Nicht dramatisieren, nur benennen.',
             question: 'Wo warst du diese Woche leise, obwohl etwas in dir reden wollte?' },
@@ -585,6 +591,9 @@ window.THEMES = {
         duration: '~1 Std. 10 Min.',
         people: '2 Personen',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Dein letzter richtig guter Tag', duration: 8*60,
             hostNote: 'Beide nacheinander. 3 Minuten pro Person.',
             question: 'Wann hattest du zuletzt einen Tag, der sich wie deiner angefühlt hat? Was war da?' },
@@ -677,6 +686,9 @@ window.THEMES = {
         duration: '~1 Std. 15 Min.',
         people: '2 Personen',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Dein 18-jähriges Ich', duration: 8*60,
             hostNote: 'Beide nacheinander.',
             question: 'Was würdest du deinem 18-jährigen Ich heute erzählen — in einem Satz?' },
@@ -803,6 +815,9 @@ window.THEMES = {
         duration: '~1 Std. 30 Min.',
         people: '2 Personen (Date, Paar, Freundschaft)',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Wie ist der Tag gelaufen?', duration: 8*60,
             hostNote: 'Beide nacheinander. 3 Minuten. Andere:r hört zu, ohne zu reagieren.',
             question: 'Wie geht es dir gerade — ehrlich, nicht höflich?' },
@@ -1202,6 +1217,9 @@ window.THEMES = {
         duration: '~1 Std. 20 Min.',
         people: '2 Personen (Paar oder enge Freundschaft)',
         stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys weg. Drei gemeinsame Atemzüge — ohne Kommentar.',
+            description: 'Gebt euch diesen Moment, bevor es richtig losgeht — er ist der eigentliche Startschuss.' },
           { name: 'Ankommen', title: 'Wie geht es dir, ehrlich?', duration: 8*60,
             hostNote: 'Beide nacheinander, je 2 Minuten. Andere:r hört zu, ohne zu reagieren.',
             question: 'Wie geht es dir gerade wirklich — was läuft, was zerrt?' },
@@ -1465,6 +1483,9 @@ const SOLO_FORMATS = {
   prioritaeten: {
     label: 'Allein', duration: '~30 Min.', people: 'Nur du',
     stations: withFeedback([
+      { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
+        hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder ein Glas Wein, wenn du magst.',
+        description: 'Gib dir diesen Moment — dann kommt alles andere leichter.' },
       { name: 'Ankommen', title: 'Was ist diese Woche laut?', duration: 3*60,
         hostNote: 'Drei tiefe Atemzüge. Handy weg.',
         question: 'Was ist diese Woche am lautesten in deinem Kopf — und wird dadurch leiser, was dir wichtig ist?' },
@@ -1492,6 +1513,9 @@ const SOLO_FORMATS = {
   stehe: {
     label: 'Allein', duration: '~30 Min.', people: 'Nur du',
     stations: withFeedback([
+      { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
+        hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder ein Glas Wein, wenn du magst.',
+        description: 'Gib dir diesen Moment — dann kommt alles andere leichter.' },
       { name: 'Ankommen', title: 'Wie ehrlich bist du diese Woche gewesen?', duration: 3*60,
         hostNote: 'Drei tiefe Atemzüge. Ganz da sein.',
         question: 'Wann hast du diese Woche etwas nicht gesagt, obwohl du es gewusst hast?' },
@@ -1516,6 +1540,9 @@ const SOLO_FORMATS = {
   tag: {
     label: 'Allein', duration: '~25 Min.', people: 'Nur du',
     stations: withFeedback([
+      { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
+        hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder ein Glas Wein, wenn du magst.',
+        description: 'Gib dir diesen Moment — dann kommt alles andere leichter.' },
       { name: 'Ankommen', title: 'Wann war ein Tag zuletzt wirklich deiner?', duration: 3*60,
         hostNote: 'Drei tiefe Atemzüge.',
         question: 'Wann hast du das letzte Mal einen Tag gehabt, nach dem du gesagt hast: „Der war richtig"?' },
@@ -1538,6 +1565,9 @@ const SOLO_FORMATS = {
   zehnjahre: {
     label: 'Allein', duration: '~30 Min.', people: 'Nur du',
     stations: withFeedback([
+      { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
+        hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder ein Glas Wein, wenn du magst.',
+        description: 'Gib dir diesen Moment — dann kommt alles andere leichter.' },
       { name: 'Ankommen', title: 'Was würdest du deinem 18-jährigen Ich sagen?', duration: 3*60,
         hostNote: 'Atme dreimal tief.',
         question: 'Wenn du deinem Ich von vor zehn Jahren in einem Satz etwas zuflüstern könntest — was wäre es?' },
