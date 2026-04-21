@@ -37,7 +37,7 @@ window.THEMES = {
     title: 'Welches Bindungsmuster prägt mich?',
     category: 'Beziehungen',
     lead: 'Ein Abend über das, was in uns mitläuft, wenn wir lieben: die unsichtbare Software unserer Bindung. Keine Couch, keine Diagnose — ein ehrliches Gespräch.',
-    image: 'images/wein.jpg',
+    image: 'images/bindung.jpg',
     philosophy1: 'Wir kommen mit einer Art Beziehungs-Software auf die Welt. Die ersten Bezugspersonen prägen, wie wir Nähe später erleben: ob sie sich sicher anfühlt oder bedrohlich, ob wir auf uns allein gestellt sind oder getragen.',
     philosophy2: 'Die klassische Bindungsforschung unterscheidet vier Muster. Die meisten erkennen sich in Mischungen wieder. Heute schaut ihr, wo eure Muster liegen — ohne Diagnose, ohne Therapie, einfach ehrlich.',
     featured: true,
@@ -181,7 +181,7 @@ window.THEMES = {
     title: 'Was sind meine Werte?',
     category: 'Werte',
     lead: 'Werte zeigen sich nicht in dem, was wir sagen, sondern in dem, wofür wir Zeit opfern, worüber wir uns ärgern und was uns spät in der Nacht beschäftigt.',
-    image: 'images/notizbuch.jpg',
+    image: 'images/werte.jpg',
     philosophy1: 'Jeder kennt das: Auf dem Poster stehen „Familie, Ehrlichkeit, Gesundheit“ — und im Alltag treffen wir Entscheidungen, die genau dem widersprechen. Werte sind nicht das, was wir sagen. Sie sind das, was sich in unseren kleinen täglichen Entscheidungen durchsetzt.',
     philosophy2: 'An diesem Abend sucht ihr nicht nach den „richtigen“ Werten — ihr sucht nach den euren. So, wie sie sich wirklich im Alltag zeigen, nicht wie sie klingen sollten.',
     formats: {
@@ -280,7 +280,7 @@ window.THEMES = {
     title: 'Was ist mir wirklich wichtig?',
     category: 'Werte',
     lead: 'Ein Fokus-Abend über das stille Ja zum Wesentlichen — und das Nein zum Möglichen. Mit dem Vier-Öfen-Modell: welche Öfen brennen heiß bei dir, welche sind aus?',
-    image: 'images/kerze.jpg',
+    image: 'images/prioritaeten.jpg',
     philosophy1: 'Vieles schreit nach Aufmerksamkeit. Wenig verdient sie wirklich. Prioritäten werden erst sichtbar, wenn wir aufhören, alles gleichzeitig zu wollen.',
     philosophy2: 'Das Vier-Öfen-Modell (nach David McCullough / Harvard Business Review) ist simpel und unbequem: vor dir stehen vier Öfen — Arbeit, Familie, Freunde, Gesundheit. Um wirklich erfolgreich zu sein, musst du mindestens einen komplett ausmachen. Um außergewöhnlich zu sein, zwei. Heute schaut ihr, welche eure gerade brennen.',
     formats: {
@@ -377,7 +377,7 @@ window.THEMES = {
     title: 'Wofür stehe ich?',
     category: 'Werte',
     lead: 'Eine Standortbestimmung. Nicht die laute Version — die stille. Wo ziehe ich Linien, wo ducke ich mich, wo wachse ich?',
-    image: 'images/kaffee.jpg',
+    image: 'images/stehe.jpg',
     philosophy1: 'Nicht jede Überzeugung muss laut sein. Aber sie muss deine sein. Heute geht es um die Grundsätze, an denen du dich wiedererkennst — und um die Momente, in denen du dich verleugnest.',
     philosophy2: 'Wir schauen auf drei Ebenen: Wofür stehst du bei dir selbst ein? Für andere? Für eine Sache, die größer ist als du? Manche Menschen stehen auf Ebene 1 stark und auf Ebene 3 schwach. Andere umgekehrt. Beides ist okay — sichtbar wird das Muster erst, wenn man ehrlich draufschaut.',
     formats: {
@@ -468,7 +468,7 @@ window.THEMES = {
     title: 'Mein idealer Tag',
     category: 'Zukunft',
     lead: 'Keine Traumreise, kein Fünf-Jahres-Plan. Ein ehrlicher Tag zwischen Aufstehen und Einschlafen — und was er über dich verrät.',
-    image: 'images/landschaft.jpg',
+    image: 'images/tag.jpg',
     philosophy1: 'Die Frage nach dem idealen Tag klingt harmlos. In Wirklichkeit legt sie offen, was wir wirklich brauchen: Ruhe, Begegnung, Bewegung, Tiefe, Leichtigkeit — in welcher Mischung?',
     philosophy2: 'Drei Säulen tragen die meisten guten Tage: Flow (etwas schaffen, in dem man aufgeht), Connection (jemanden wirklich sehen), Stille (Zeit mit sich selbst). Kein Tag ist perfekt, aber die Mischung entscheidet. Heute sucht ihr eure eigene.',
     formats: {
@@ -555,7 +555,7 @@ window.THEMES = {
     title: 'In 10 Jahren',
     category: 'Zukunft',
     lead: 'Eine Zeitreise nach vorn. Nicht: was willst du erreicht haben. Sondern: wer willst du geworden sein — und was fängt heute damit an?',
-    image: 'images/nachthimmel.jpg',
+    image: 'images/zehnjahre.jpg',
     philosophy1: 'Zehn Jahre sind weit genug, um fast alles zu verändern — und nah genug, dass das, was wir heute tun, entscheidet, was dann da sein wird.',
     philosophy2: 'Wir schauen auf vier Säulen einer Zukunft: Ort (wo), Menschen (mit wem), Arbeit (woran) und Selbst (wer bist du geworden). Die Übung lebt von Konkretheit — keine Poesie, sondern ein Mittwoch im April 2036.',
     formats: {
@@ -652,7 +652,7 @@ window.THEMES = {
     title: 'Ein Abend mit guten Fragen',
     category: 'Begegnung',
     lead: 'Kein Thema, keine Landkarte — nur Fragen, die sich nicht jeden Tag stellen lassen. Ideal für neue Gruppen, Dates oder Freund:innen, die sich nochmal neu kennenlernen wollen.',
-    image: 'images/stilleben.jpg',
+    image: 'images/frageabend.jpg',
     philosophy1: 'Gute Fragen tun etwas, was Aussagen nicht können: sie öffnen. Sie laden eine Person ein, von sich zu erzählen — ohne dass es sich wie Verhör anfühlt.',
     philosophy2: 'Dieser Abend hat keine Landkarte, kein Modell, keinen therapeutischen Bogen. Nur eine kuratierte Auswahl an Fragen, sortiert von leicht zu tief. Ihr entscheidet spontan, wer antwortet, wie lange, ob eine Frage übersprungen wird.',
     formats: {
