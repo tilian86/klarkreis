@@ -94,7 +94,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
       </section>
 
       <!-- Format meta card -->
-      <div class="bg-surface-container p-6 editorial-shadow rounded mb-10">
+      <div class="bg-surface-container p-6 editorial-shadow rounded mb-10 border-l-4 border-secondary">
+        <p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary mb-4">Für <span id="metaFormatLabel">—</span>:</p>
         <div class="flex flex-col space-y-4">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">timer</span>
@@ -112,7 +113,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
       </div>
 
       <div class="bg-primary-container p-10 text-on-primary rounded shadow-lg">
-        <h3 class="font-headline text-2xl mb-4 italic">Bereit für den ersten Funken?</h3>
+        <h3 class="font-headline text-2xl mb-4 italic">Bereit, anzufangen?</h3>
         <p class="font-body text-sm text-on-primary-container mb-8 leading-relaxed">
           Der Abend führt euch durch die Stationen. Alles, was ihr braucht: Ruhe, Getränke, Offenheit.
         </p>
@@ -208,6 +209,7 @@ function renderTabs() {
 
 function renderFormatContent() {
   const f = theme.formats[currentFormat];
+  document.getElementById('metaFormatLabel').textContent = f.label || formatLabels[currentFormat] || currentFormat;
   document.getElementById('metaDuration').textContent = f.duration;
   document.getElementById('metaPeople').textContent = f.people;
   // Station count excludes the feedback station for display
