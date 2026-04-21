@@ -190,10 +190,9 @@ function renderGrid() {
     return;
   }
   grid.innerHTML = filtered.map((t, idx) => {
-    const offset = idx % 3 === 1 ? 'md:mt-12' : (idx % 3 === 2 ? 'md:-mt-6' : '');
     const firstFormat = currentFilter !== 'all' ? t.formats[currentFilter] : (t.formats.group || t.formats.pair);
     return `
-      <article class="group space-y-4 ${offset}">
+      <article class="group space-y-4">
         <a href="${cardHref(t)}" class="block">
           <div class="relative overflow-hidden aspect-[4/5] bg-surface-container-highest rounded-lg">
             <img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="${t.title}" src="${t.image}"/>
