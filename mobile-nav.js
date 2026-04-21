@@ -66,10 +66,18 @@
 
     const menu = document.createElement('div');
     menu.className = 'kk-mobile-menu';
+    function labelFor(a) {
+      // Clone und Material-Symbols-Icons entfernen, dann Text extrahieren
+      const clone = a.cloneNode(true);
+      clone.querySelectorAll('.material-symbols-outlined').forEach(el => el.remove());
+      const text = clone.textContent.trim();
+      // Fallback auf title/aria-label wenn nur Icon vorhanden war
+      return text || a.getAttribute('title') || a.getAttribute('aria-label') || '';
+    }
     menu.innerHTML = links.map(a => {
       const href = a.getAttribute('href') || '#';
       const isActive = location.pathname.endsWith(href.split('?')[0]) || href === 'index.html' && (location.pathname === '/' || location.pathname.endsWith('/index.html'));
-      return `<a href="${href}" class="${isActive ? 'kk-active' : ''}">${a.textContent.trim()}</a>`;
+      return `<a href="${href}" class="${isActive ? 'kk-active' : ''}">${labelFor(a)}</a>`;
     }).join('');
     anchor.appendChild(menu);
 
