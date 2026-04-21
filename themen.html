@@ -91,10 +91,7 @@
     </button>
   </section>
 
-  <!-- Featured (dynamisch eingefügt) -->
-  <div id="featuredGrid" class="mb-12"></div>
-
-  <!-- Rest der Themen -->
+  <!-- Alle Themen, einheitliches Grid -->
   <div id="themesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"></div>
 </main>
 
@@ -144,47 +141,13 @@ function cardHref(theme) {
   return wantedFormat ? `thema.html?id=${theme.id}&format=${wantedFormat}` : `thema.html?id=${theme.id}`;
 }
 
-function renderFeatured() {
-  const featured = Object.values(window.THEMES).find(t => t.featured);
-  if (!featured) { document.getElementById('featuredGrid').innerHTML = ''; return; }
-  // Only show featured if the active filter matches its formats
-  if (currentFilter !== 'all' && !featured.formats[currentFilter]) {
-    document.getElementById('featuredGrid').innerHTML = '';
-    return;
-  }
-  const f = currentFilter !== 'all' ? featured.formats[currentFilter] : (featured.formats.group || featured.formats.pair);
-  document.getElementById('featuredGrid').innerHTML = `
-    <article class="group bg-primary-container p-6 rounded-lg">
-      <a href="${cardHref(featured)}" class="block">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="relative overflow-hidden aspect-[4/3] bg-surface-container-highest rounded-lg">
-            <img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="${featured.title}" src="${featured.image}"/>
-            <span class="absolute top-4 left-4 bg-secondary text-on-primary px-3 py-1 text-[9px] uppercase tracking-widest font-semibold">Ausgearbeitet</span>
-          </div>
-          <div class="flex flex-col justify-center space-y-4 text-on-primary">
-            <p class="font-label text-[10px] uppercase tracking-widest text-secondary-fixed-dim">${featured.category}</p>
-            <h3 class="font-serif text-3xl md:text-4xl leading-snug">${featured.title}</h3>
-            <div class="flex space-x-4 text-[10px] uppercase tracking-widest text-on-primary/60">
-              <span class="flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">schedule</span> ${f.duration}</span>
-              <span class="flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">groups</span> ${f.people}</span>
-            </div>
-            <div class="flex flex-wrap gap-2">${Object.keys(featured.formats).map(k => formatBadge(k, featured.formats[k], currentFilter === 'all' || currentFilter === k)).join('')}${featured.audio ? audioBadge() : ''}</div>
-            <p class="text-sm text-on-primary/70 leading-relaxed italic font-light">${featured.lead}</p>
-            <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-secondary-fixed-dim pt-2">
-              Thema öffnen <span class="material-symbols-outlined text-base">arrow_forward</span>
-            </span>
-          </div>
-        </div>
-      </a>
-    </article>`;
-}
-
 function renderGrid() {
   // Filter: Frageabend-Varianten (frageabend_arbeit/tief/humor) werden hier nicht einzeln gelistet —
   // sie sind via thema.html?id=frageabend_X erreichbar, aber die Übersicht zeigt nur Haupt-Themen
-  // (Parität mit der Landingpage).
+  // (Parität mit der Landingpage). Featured-Thema wird NICHT mehr herausgehoben, damit das Grid
+  // durchgängig synchron ist.
   const themes = Object.entries(window.THEMES)
-    .filter(([id, t]) => !t.featured && !id.includes('_'))
+    .filter(([id, t]) => !id.includes('_'))
     .map(([_, t]) => t);
   const filtered = currentFilter === 'all'
     ? themes
@@ -237,7 +200,6 @@ function updateFilterButtons() {
 
 function refresh() {
   updateFilterButtons();
-  renderFeatured();
   renderGrid();
 }
 
