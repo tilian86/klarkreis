@@ -1906,7 +1906,7 @@ window.THEMES = {
     title: 'ADHS — wie ich wirklich ticke',
     category: 'Identität',
     lead: 'Ein Abend für Menschen mit ADHS, Verdacht, oder Neugier. Nicht klinisch, nicht entschuldigend — neugierig auf das eigene Betriebssystem. Kein Selbsthilfegruppen-Ton, keine Therapie. Ein strukturierter Raum, um ehrlich hinzuschauen.',
-    image: 'images/notizbuch.jpg',
+    image: 'images/adhs.jpg',
     philosophy1: 'ADHS ist keine Störung im Sinne von „kaputt". Es ist eine andere Verdrahtung — Aufmerksamkeit funktioniert anders, nicht weniger. Russell Barkley beschreibt es präziser: nicht Aufmerksamkeitsdefizit, sondern Selbstregulations-Unterschied. Edward Hallowell nennt es „ein Ferrari-Motor mit Fahrradbremsen" — nicht defekt, sondern falsch gebremst.',
     philosophy2: 'Dieser Abend ist kein Ratgeber und keine Diagnose. Er ist eine ehrliche Selbstbegegnung: Wo bin ich chaotisch — und wo ist das Chaos eigentlich Kreativität? Was habe ich jahrelang an mir verflucht, was in Wirklichkeit mein bestes Werkzeug ist? Und wo brauche ich endlich eine andere Umgebung, statt mich weiter zu zerreißen?',
     formats: {
