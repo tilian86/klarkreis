@@ -51,6 +51,10 @@ body { background-color: #FBF9F4; }
         <span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
         <span class="audio-toggle-label font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Audio an</span>
       </button>
+      <a id="kartenLink" href="karten.html" target="_blank" rel="noopener" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Moderationskarten öffnen — alle Stationen im Überblick">
+        <span class="material-symbols-outlined text-on-surface-variant">description</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Karten</span>
+      </a>
       <a id="closeLink" href="thema.html" class="p-2 hover:bg-surface-container transition-colors rounded-lg">
         <span class="material-symbols-outlined text-on-surface-variant">close</span>
       </a>
@@ -189,10 +193,12 @@ const el = {
   toggleTimerBtn: document.getElementById('toggleTimerBtn'),
   toggleTimerIcon: document.getElementById('toggleTimerIcon'),
   toggleTimerLabel: document.getElementById('toggleTimerLabel'),
-  closeLink: document.getElementById('closeLink')
+  closeLink: document.getElementById('closeLink'),
+  kartenLink: document.getElementById('kartenLink')
 };
 
 el.closeLink.href = 'thema.html?id=' + encodeURIComponent(themaId);
+el.kartenLink.href = 'karten.html?thema=' + encodeURIComponent(themaId) + '&format=' + encodeURIComponent(formatKey);
 el.themeLabel.textContent = theme.title + ' · ' + format.label;
 document.title = theme.title + ' — KlarKreis';
 
