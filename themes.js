@@ -2154,11 +2154,8 @@ window.THEMES = {
         duration: '~1 Std. 30 Min.',
         people: '2 Personen aus einer Familie',
         stations: withFeedback([
-          { name: 'Öffnen', title: 'Zwei Menschen, ein Raum, Zeit', duration: 3*60,
-            hostNote: 'Kerze anzünden. Handys auf einen Tisch am Rand — es sei denn, ihr nehmt gleich auf (dann das aufnehmende Handy nah heranholen). Drei gemeinsame Atemzüge. Dann erst anfangen.',
-            description: 'Ihr kennt euch lange. Vielleicht euer ganzes Leben. Heute geht ihr miteinander an einen Ort, an dem ihr so wahrscheinlich noch nie wart — nicht weil es geheim ist, sondern weil der Alltag keinen Platz dafür lässt. Das Einzige, was dafür nötig ist: ein bisschen Stille am Anfang und die Bereitschaft beider, wirklich zuzuhören.' },
           { name: 'Konstellation', title: 'Wer ist heute mit dir hier?', duration: 4*60,
-            hostNote: 'Lest die vier Varianten zusammen durch. Einigt euch, welche zu eurer Konstellation passt — die meisten Fragen später haben für jede Variante einen eigenen Ton. Wenn mehrere passen (z.B. Mutter, die gleichzeitig Oma anderer Kinder ist), wählt die, die euch heute als Paar definiert.',
+            hostNote: 'Das ist die allererste Entscheidung — noch bevor ihr Kerze oder Tee aufstellt. Lest die vier Varianten zusammen durch. Einigt euch, welche zu eurer Konstellation passt — die meisten Fragen später haben für jede Variante einen eigenen Ton. Wenn mehrere passen (z.B. Mutter, die gleichzeitig Oma anderer Kinder ist), wählt die, die euch heute als Paar definiert.',
             description: 'Jede Familien-Konstellation hat ihre eigene Tonart. Der Abend ist für alle vier geschrieben — ihr wählt jetzt gemeinsam, welcher Ton heute euch gehört.',
             items: [
               { accent: 'A.', label: 'Mit einem Elternteil', text: 'Du als erwachsenes Kind mit Mutter oder Vater. Hier liegt oft am meisten Ungesagtes — weil die Rolle „Kind sein" im Gespräch automatisch mitläuft.' },
@@ -2166,6 +2163,9 @@ window.THEMES = {
               { accent: 'C.', label: 'Mit Geschwistern', text: 'Bruder oder Schwester. Ihr habt dieselbe Kindheit geteilt — und oft völlig unterschiedlich erlebt. Der Abend macht zwei Wahrheiten nebeneinander möglich.' },
               { accent: 'D.', label: 'Mit deinem erwachsenen Kind', text: 'Du als Mutter oder Vater mit deinem längst erwachsenen Kind. Eine Begegnung auf Augenhöhe — nicht mehr Erziehung, noch nicht Abschied. Eine seltene Lage.' }
             ] },
+          { name: 'Öffnen', title: 'Zwei Menschen, ein Raum, Zeit', duration: 3*60,
+            hostNote: 'Jetzt Kerze anzünden. Handys auf einen Tisch am Rand — es sei denn, ihr nehmt gleich auf (dann das aufnehmende Handy nah heranholen). Drei gemeinsame Atemzüge. Dann erst weiter.',
+            description: 'Ihr kennt euch lange. Vielleicht euer ganzes Leben. Heute geht ihr miteinander an einen Ort, an dem ihr so wahrscheinlich noch nie wart — nicht weil es geheim ist, sondern weil der Alltag keinen Platz dafür lässt. Das Einzige, was dafür nötig ist: ein bisschen Stille am Anfang und die Bereitschaft beider, wirklich zuzuhören.' },
           { name: 'Aufnahme', title: 'Wollen wir das festhalten?', duration: 5*60,
             hostNote: 'Lest gemeinsam durch. Entscheidet beide — wirklich beide. Wenn einer von euch zögert, gewinnt das Zögern. Kein Video/Audio ohne Zustimmung beider. Wenn ihr aufnehmt: Handy vor dem Ankommen starten, dann bewusst nicht mehr anschauen. Wer die Aufnahme später bekommt, wird beim „Artefakt" am Ende geklärt.',
             description: 'Was heute gesprochen wird, ist selten wiederholbar. Manche Dinge sagt man nur einmal so — weil der Moment zusammenfällt. Ihr habt vier Möglichkeiten, damit umzugehen:',
