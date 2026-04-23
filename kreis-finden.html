@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="light" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kreis finden — KlarKreis</title>
+<meta name="description" content="Wie du einen Gesprächskreis startest — oder einem beitrittst. Ideen, Apps, Etikette. Weil tiefe Gespräche Menschen brauchen, die sich immer wieder treffen."/>
+<meta name="theme-color" content="#FBF9F4"/>
+<link rel="canonical" href="https://klarkreis.de/kreis-finden.html"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<meta property="og:title" content="Kreis finden — KlarKreis"/>
+<meta property="og:description" content="Wie du deinen Gesprächskreis startest — oder einem beitrittst."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://klarkreis.de/kreis-finden.html"/>
+<meta property="og:image" content="https://klarkreis.de/images/hero-og.jpg"/>
+<meta property="og:locale" content="de_DE"/>
+<meta property="og:site_name" content="KlarKreis"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="robots" content="index, follow"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #1B1C19;
+    background-color: #FBF9F4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 150px;
+  }
+  .font-serif { font-family: 'Noto Serif', serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .film-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+</style>
+<script id="tailwind-config">
+  tailwind.config = { darkMode: "class", theme: { extend: {
+    colors: { "tertiary-fixed-dim": "#f0bd8b", "on-primary-fixed-variant": "#364c3c", "secondary-fixed": "#ffdcc4", "tertiary-fixed": "#ffdcbd", "tertiary": "#261200", "secondary": "#924c00", "on-tertiary-container": "#b7895b", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#623f18", "inverse-surface": "#30312e", "primary-fixed": "#d0e9d4", "secondary-fixed-dim": "#ffb781", "secondary-container": "#fda055", "primary": "#061b0e", "primary-container": "#1b3022", "surface-variant": "#e4e2dd", "on-secondary-fixed-variant": "#6f3800", "surface-dim": "#dbdad5", "on-primary": "#ffffff", "on-primary-fixed": "#0b2013", "inverse-on-surface": "#f2f1ec", "error": "#ba1a1a", "tertiary-container": "#422401", "inverse-primary": "#b4cdb8", "on-secondary-fixed": "#2f1400", "outline": "#737973", "surface-container-highest": "#e4e2dd", "error-container": "#ffdad6", "on-error-container": "#93000a", "on-background": "#1b1c19", "on-primary-container": "#819986", "surface-bright": "#fbf9f4", "surface-tint": "#4d6453", "on-surface-variant": "#434843", "on-tertiary": "#ffffff", "surface-container-low": "#f5f3ee", "primary-fixed-dim": "#b4cdb8", "on-secondary": "#ffffff", "surface": "#fbf9f4", "on-secondary-container": "#703800", "background": "#fbf9f4", "surface-container-high": "#eae8e3", "surface-container": "#f0eee9", "on-error": "#ffffff", "outline-variant": "#c3c8c1", "on-surface": "#1b1c19", "on-tertiary-fixed": "#2c1600" },
+    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
+  } } }
+</script>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+<div class="film-grain"></div>
+
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-2 font-serif italic text-2xl text-primary"><svg width="26" height="26" viewBox="0 0 64 64" class="shrink-0"><circle cx="32" cy="32" r="28" fill="none" stroke="#1B3022" stroke-width="3"/><circle cx="32" cy="32" r="18" fill="none" stroke="#1B3022" stroke-width="2" opacity="0.5"/><circle cx="32" cy="32" r="3.2" fill="#924C00"/></svg> KlarKreis</a>
+    <nav class="hidden md:flex space-x-10">
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="index.html">Start</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="themen.html">Themen</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="fragen.html">Fragerunde</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="impulse.html">Impulse</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="gastgeber.html">Gastgeber</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="rezepte.html">Rezepte</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="musik.html">Musik</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
+      <a class="inline-flex items-center gap-1 text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
+    </nav>
+  </div>
+  <div class="bg-surface-container-low h-[1px] w-full block"></div>
+</header>
+
+<main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+  <!-- Hero -->
+  <section class="mb-20">
+    <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Kreis finden</p>
+    <h1 class="font-serif text-5xl md:text-7xl leading-[1.05] tracking-tight mb-8">Ein Kreis ist keine Einladung — er ist eine Entscheidung.</h1>
+    <p class="text-xl md:text-2xl text-on-surface-variant font-light italic leading-relaxed max-w-3xl">
+      KlarKreis funktioniert am besten mit Menschen, die sich immer wieder treffen. Drei bis acht Leute, die Thema für Thema gemeinsam durchgehen — und dabei einander kennenlernen in einer Tiefe, die Smalltalk nicht erreicht. Hier ist, wie so ein Kreis entstehen kann.
+    </p>
+  </section>
+
+  <!-- Zitat -->
+  <section class="mb-20">
+    <blockquote class="border-l-2 border-secondary pl-6 py-4 bg-surface-container-low rounded-r-lg">
+      <p class="font-serif italic text-xl md:text-2xl text-primary-container leading-snug mb-4">
+        Man sieht die Menschen nicht am deutlichsten, wenn sie zum ersten Mal vor einem stehen — sondern beim zehnten, zwölften Mal. Wenn die Maske weich wird.
+      </p>
+      <footer class="font-label text-[11px] uppercase tracking-widest text-secondary">Warum regelmäßige Treffen den Unterschied machen</footer>
+    </blockquote>
+  </section>
+
+  <!-- Drei Wege zum Kreis -->
+  <section class="mb-20">
+    <h2 class="font-serif text-3xl md:text-4xl mb-10 leading-snug">Drei Wege zu einem Kreis.</h2>
+    <div class="space-y-10">
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div class="md:col-span-1">
+          <span class="font-serif italic text-5xl text-secondary">1</span>
+        </div>
+        <div class="md:col-span-4">
+          <h3 class="font-serif text-2xl md:text-3xl mb-4 leading-snug">Aus deinen Menschen heraus</h3>
+          <p class="text-lg text-on-background/80 leading-relaxed mb-4">
+            Der häufigste Weg: Du lädst 3-5 Menschen ein, die du schon kennst — Freundeskreis, ehemalige Studienkolleg:innen, Nachbarschaft, einen Buchclub, der sich nach was Tieferem sehnt. Nicht zufällig zusammengewürfelt, sondern sorgfältig gewählt.
+          </p>
+          <div class="bg-surface-container-low rounded-lg p-5 text-base text-on-background/75 leading-relaxed">
+            <p class="font-label uppercase tracking-widest text-[10px] text-secondary mb-2">Formulierungsvorschlag für die erste Nachricht</p>
+            <p class="italic">
+              „Ich probiere gerade ein Format aus, das mir vielversprechend vorkommt: strukturierte Gesprächsabende zu einem Thema, in einer festen kleinen Gruppe. Drei Stunden, 4-6 Leute, Handy weg. Kein Esoterik-Kram, eher durchdacht. Ich hätte Lust, das mit dir und drei weiteren auszuprobieren — einmal als Einstieg, und wenn's klickt, dann regelmäßig. Magst du?"
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 pt-6 border-t border-outline-variant/20">
+        <div class="md:col-span-1">
+          <span class="font-serif italic text-5xl text-secondary">2</span>
+        </div>
+        <div class="md:col-span-4">
+          <h3 class="font-serif text-2xl md:text-3xl mb-4 leading-snug">Über Plattformen &amp; Nachbarschaft</h3>
+          <p class="text-lg text-on-background/80 leading-relaxed mb-4">
+            Wenn dein direktes Umfeld nicht passt — oder du neue Menschen suchst — bieten sich diese Wege an:
+          </p>
+          <ul class="space-y-4 text-base text-on-background/80 leading-relaxed">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">group</span>
+              <div>
+                <strong>Meetup.com</strong> — du kannst eine eigene Gruppe „KlarKreis [Stadt]" gründen und zu einem ersten Abend einladen. 5-10 € Monatsgebühr als Organisator, dafür große Reichweite.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">home</span>
+              <div>
+                <strong>Nebenan.de</strong> — lokale Nachbarschaft, gut für „ich suche 4 Menschen in Stuttgart-West für einen Gesprächsabend"-Posts. Weniger Events-lastig, mehr menschlich.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">forum</span>
+              <div>
+                <strong>Reddit-Communities</strong> wie r/[deineStadt] oder r/germany — dort Post mit konkreter Einladung.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">celebration</span>
+              <div>
+                <strong>Facebook-Gruppen</strong> — thematisch passende Gruppen (Philosophie-Cafés, Gesprächsabende, Selbsterfahrungs-Gruppen), darin nach Gleichgesinnten fragen.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">groups_2</span>
+              <div>
+                <strong>Bumble BFF</strong> — ja, die Dating-App hat einen Freundschaftsmodus. Dort findest du Menschen, die aktiv nach Verbindung suchen.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 pt-6 border-t border-outline-variant/20">
+        <div class="md:col-span-1">
+          <span class="font-serif italic text-5xl text-secondary">3</span>
+        </div>
+        <div class="md:col-span-4">
+          <h3 class="font-serif text-2xl md:text-3xl mb-4 leading-snug">Durch eine existierende Gruppe</h3>
+          <p class="text-lg text-on-background/80 leading-relaxed">
+            Gibt's schon ein Format in deinem Leben, das Potenzial hat? Ein Buchclub, der die Bücher kaum mehr bespricht. Eine WG, die regelmäßig zusammen isst. Der Chor, der immer zum gleichen Bistro zieht. Eine Laufgruppe, die mehr redet als läuft. Frag dort: „Wollen wir einmal einen echten Abend zusammen machen?" — das ist oft der leiseste Einstieg.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Etikette -->
+  <section class="mb-20 bg-surface-container-low rounded-xl p-8 md:p-12">
+    <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Wenn der Kreis steht</p>
+    <h2 class="font-serif text-3xl md:text-4xl mb-8 leading-snug">Die Etikette, die alles trägt.</h2>
+    <div class="space-y-6 text-base md:text-lg text-on-background/80 leading-relaxed">
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">event_repeat</span>
+        <div>
+          <strong class="font-semibold">Turnus vereinbaren.</strong> Monatlich ist Minimum, alle zwei Wochen ist der Sweet Spot, wöchentlich nur für Kurz-Phasen. Fester Wochentag und feste Uhrzeit — sonst fällt's schleichend auseinander.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">autorenew</span>
+        <div>
+          <strong class="font-semibold">Gastgeber:in rotiert.</strong> Jede:r ist mal dran. Das verteilt Last, bringt verschiedene Räume, und hält das „ich richte mein Leben nach euch aus"-Gefälle raus.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">event_busy</span>
+        <div>
+          <strong class="font-semibold">Abwesenheit ist okay.</strong> Niemand muss immer da sein. Drei von sechs ist eine lebendige Runde. Wer absagt, macht das rechtzeitig und ohne Drama.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">lock</span>
+        <div>
+          <strong class="font-semibold">Was im Kreis gesagt wird, bleibt im Kreis.</strong> Das laut aussprechen beim ersten Treffen. Vertrauensbruch ist das einzige, was einen Kreis zerstört.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">phone_locked</span>
+        <div>
+          <strong class="font-semibold">Handys weg.</strong> Ritual zu Beginn: alle Geräte auf einen Tisch am Rand, stumm. Das ist nicht Spielverderber, das ist die Voraussetzung.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">balance</span>
+        <div>
+          <strong class="font-semibold">Redezeit verteilt sich.</strong> Wenn ein:e einzige:r viel redet, verliert der Kreis. Reihum-Formate helfen, Viel-Redner:innen sanft zu bremsen, Leise zu öffnen.
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-secondary mt-1">exit_to_app</span>
+        <div>
+          <strong class="font-semibold">Ausstieg ist ehrenhaft.</strong> Wenn jemand merkt, dass der Kreis nicht mehr passt — klar sagen, danken, gehen. Kein stilles Nicht-mehr-kommen, keine lauten Abschiedsreden.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wie lang zusammenbleiben -->
+  <section class="mb-20">
+    <h2 class="font-serif text-3xl md:text-4xl mb-8 leading-snug">Wie lange bleibt so ein Kreis zusammen?</h2>
+    <div class="space-y-6 text-lg text-on-background/80 leading-relaxed">
+      <p>
+        Es gibt zwei Modelle — beide sind legitim:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+        <div class="bg-surface-container-low rounded-lg p-6">
+          <p class="font-label uppercase tracking-widest text-[10px] text-secondary mb-3">Das Thema-Modell</p>
+          <p class="font-serif text-xl text-primary-container mb-3 leading-snug">„Wir machen gemeinsam <em>ein</em> Thema und dann Schluss."</p>
+          <p class="text-base text-on-background/75 leading-relaxed">
+            6-8 Abende zu einem Theme, dann reflektieren wir zusammen: War's das? Oder gehen wir weiter? Niemand wird gebunden. Oft verlängert sich's von selbst.
+          </p>
+        </div>
+        <div class="bg-primary-container text-on-primary rounded-lg p-6">
+          <p class="font-label uppercase tracking-widest text-[10px] text-secondary-fixed-dim mb-3">Das Kreis-Modell</p>
+          <p class="font-serif text-xl mb-3 leading-snug">„Wir bleiben zusammen und gehen Thema für Thema."</p>
+          <p class="text-base leading-relaxed opacity-85">
+            Ein Jahr, zwei Jahre, manchmal länger. Sechs Themen pro Jahr, mit Pausen dazwischen. Nach zwei Jahren kennt ihr euch auf eine Weise, wie Arbeitskolleg:innen nach zehn.
+          </p>
+        </div>
+      </div>
+      <p class="pt-4">
+        Einigt euch am Anfang auf das, was jetzt stimmt. In drei Monaten ist die Situation klarer. Dann kann man verlängern oder sauber beenden.
+      </p>
+    </div>
+  </section>
+
+  <!-- Typische Hürden -->
+  <section class="mb-20 border-t border-outline-variant/20 pt-12">
+    <h2 class="font-serif text-3xl md:text-4xl mb-8 leading-snug">Was erfahrungsgemäß schiefgeht.</h2>
+    <div class="space-y-6 text-lg text-on-background/80 leading-relaxed">
+      <div>
+        <p class="font-serif italic text-xl text-primary-container mb-2">„Niemand fühlt sich zuständig."</p>
+        <p class="text-base">Lösung: Eine Person hat die Terminverantwortung. Kein Kommitee. Die „Kreis-Hebamme" schickt 3 Tage vorher die Erinnerung raus.</p>
+      </div>
+      <div>
+        <p class="font-serif italic text-xl text-primary-container mb-2">„Wir treffen uns seit 3 Monaten nicht mehr."</p>
+        <p class="text-base">Lösung: Lieber einen Abend im Monat fix, als vier „wenn alle können". Perfekte Termine kommen nicht.</p>
+      </div>
+      <div>
+        <p class="font-serif italic text-xl text-primary-container mb-2">„Jemand macht's zu seinem Therapie-Abend."</p>
+        <p class="text-base">Lösung: Einmal sanft ansprechen („Ich glaube, das hier reicht nicht für dich — wir sind keine Therapeut:innen, nur Menschen"). Gastgeber:in hat die Verantwortung, den Raum zu halten, nicht zu heilen.</p>
+      </div>
+      <div>
+        <p class="font-serif italic text-xl text-primary-container mb-2">„Nach dem vierten Abend plätschert's."</p>
+        <p class="text-base">Lösung: Jedes Theme hat einen Bogen. Wenn's plätschert, das Thema mal wechseln. Oder ein „Meta-Abend": Was läuft gut, was nicht?</p>
+      </div>
+      <div>
+        <p class="font-serif italic text-xl text-primary-container mb-2">„Eine Person redet 60% der Zeit."</p>
+        <p class="text-base">Lösung: Struktur-Elemente einführen — Reihum, Timer für Wortbeiträge, Runde-für-Runde-Format. KlarKreis-Abende haben das oft schon drin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary-container p-10 md:p-16 rounded-xl text-center">
+    <p class="font-label uppercase tracking-widest text-[11px] text-secondary-fixed-dim mb-4">Ab hier wird's konkret</p>
+    <h2 class="font-headline italic text-3xl md:text-5xl text-on-primary mb-6 leading-snug">Schreib drei Namen auf.</h2>
+    <p class="text-lg md:text-xl text-on-primary/85 max-w-2xl mx-auto mb-8 leading-relaxed">
+      Nimm einen Zettel. Drei Menschen, von denen du glaubst: <em>Die würden wollen.</em> Schreib ihnen heute noch. Mehr braucht der erste Schritt nicht.
+    </p>
+    <a href="themen.html" class="inline-flex items-center gap-2 bg-secondary hover:bg-on-tertiary-container text-on-primary px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-semibold transition-colors">
+      Themen für den ersten Abend anschauen
+      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+  </section>
+
+</main>
+
+<footer class="bg-surface-container flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
+  <div class="mb-8 md:mb-0">
+    <span class="font-serif italic text-sm text-primary">KlarKreis</span>
+    <p class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 mt-2">© 2026 KlarKreis</p>
+  </div>
+  <div class="flex flex-wrap justify-center gap-8">
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="ueber.html">Über</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="gastgeber.html">Gastgeber</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="kreis-finden.html">Kreis finden</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="rezepte.html">Rezepte</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="mailto:kontakt@klarkreis.de">Kontakt</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="musik.html">Musik</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="unterstuetzen.html">Unterstützen</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="impressum.html">Impressum</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="login-ui.js"></script>
+<script src="mobile-nav.js"></script>
+</body>
+</html>
