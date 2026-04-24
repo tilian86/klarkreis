@@ -2516,7 +2516,7 @@ window.THEMES = {
   date: {
     title: 'Erstes Date',
     subtitle: 'Für zwei, die sich gerade erst richtig treffen',
-    lead: 'Ein geführtes Gespräch für zwei Menschen beim ersten Date — egal ob ihr euch auf einer App gematcht habt, im Freundeskreis kennengelernt habt oder beim Bäcker zufällig ins Gespräch gekommen seid. 75 Minuten, die die Höflichkeits-Fassade durchbrechen — leicht, flirty, ehrlich, mit echter Stille und einer klaren Entscheidung am Ende.',
+    lead: 'Ein geführtes Gespräch für zwei Menschen beim ersten Date — egal ob ihr euch auf einer App gematcht habt, im Freundeskreis vermittelt bekommen habt oder beim Bäcker zufällig ins Gespräch gekommen seid. Funktioniert überall: im Park auf einer Decke, in einer Bar mit zwei Gläsern Wein, auf dem Sofa bei einem von euch, am Küchentisch im Winter. 75 Minuten, die die Höflichkeits-Fassade durchbrechen — leicht, flirty, ehrlich, mit echter Stille und einer klaren Entscheidung am Ende.',
     category: 'Date',
     image: 'images/date.jpg',
     philosophy1: 'Das erste Date ist ein seltsamer Moment: zwei Menschen, die sich auf irgendeine Weise vorher schon gesehen haben — in Nachrichten, über Freunde, in kurzen Zufalls-Begegnungen — und jetzt ohne Fluchtweg gegenüber sitzen. Die ersten fünfzehn Minuten entscheiden, ob das ein Bewerbungsgespräch wird oder etwas anderes. Dieses Format gibt euch das Alibi für Verspieltheit — und die Struktur, um von kuratierter Selbstdarstellung zur echten Begegnung zu kommen.',
@@ -2528,8 +2528,8 @@ window.THEMES = {
         people: '2 Personen nach dem ersten Match',
         stations: withFeedback([
           // ---------- PHASE 1: DEKOMPRESSION & ORIENTIERUNG (0-15 Min) ----------
-          { name: 'Ankommen', title: 'Decke, Wein, ein Atemzug', duration: 3*60,
-            hostNote: 'Einer von euch hat die Decke ausgebreitet, den Wein eingeschenkt, die Snacks ausgepackt. Handys stumm und weg — außer ihr habt heute den Abend aufgenommen (optional, nur mit beidseitiger Zustimmung). Ein gemeinsamer tiefer Atemzug, bevor ihr anfangt. Keine Sprüche, keine Witze — einfach da sein.',
+          { name: 'Ankommen', title: 'Ein Atemzug, bevor ihr anfangt', duration: 3*60,
+            hostNote: 'Egal wo ihr seid — Park-Decke, Bar-Hocker, Sofa bei einem von euch, Küchentisch. Ein Getränk steht, Snacks oder Knabberkram in Reichweite, Handys stumm und weg (außer ihr habt abgesprochen heute aufzunehmen, nur mit beidseitiger Zustimmung). Ein gemeinsamer tiefer Atemzug, bevor ihr anfangt. Keine Sprüche, keine Witze — einfach da sein.',
             description: 'Das erste Date ist ein fragiler Moment. Ihr kommt aus Text-Chats, kuratierten Bildern, Voice-Memos — und jetzt sitzt eine echte Person da. Das Nervensystem reagiert mit einer leisen „Fight or Flight"-Mikroreaktion, auch wenn ihr euch freut. Drei Atemzüge geben dem Körper das Signal: das hier ist sicher.',
             teaser: 'Drei Atemzüge, bevor wir anfangen.' },
 
@@ -2541,9 +2541,9 @@ window.THEMES = {
 
           { name: 'Wer von weitem', title: 'Der erste Eindruck, ehrlich', duration: 6*60,
             hostNote: 'Jede:r wählt 2-3 Fragen und stellt sie der/dem anderen. Antworten im Wechsel. Keine Höflichkeits-Pflicht — je ehrlicher, desto schneller wird es interessant.',
-            description: 'Ihr seid euch gerade zum ersten Mal live begegnet. Diese Fragen zwingen euch, die physische Realität des anderen bewusst wahrzunehmen — nicht das kuratierte Profil, sondern die Person auf der Decke.',
+            description: 'Ihr seid euch gerade zum ersten Mal live begegnet. Diese Fragen zwingen euch, die physische Realität des anderen bewusst wahrzunehmen — nicht das kuratierte Profil, sondern die Person, die euch heute gegenübersitzt.',
             items: [
-              { accent: '1.', label: 'Erster Blick', text: 'Was war dein allererster Gedanke, als du mich heute von Weitem auf die Decke zukommen gesehen hast?' },
+              { accent: '1.', label: 'Erster Blick', text: 'Was war dein allererster Gedanke, als du mich heute gesehen hast?' },
               { accent: '2.', label: 'Warnschild', text: 'Wenn mein Dating-Profil ein ehrliches Warnschild hätte haben müssen — was hätte in fetten Buchstaben draufgestanden?' },
               { accent: '3.', label: 'Outfit-Check', text: 'Wie viele Minuten, schätzt du, habe ich heute vor dem Spiegel gestanden, um genau diese Kombination zu wählen?' },
               { accent: '4.', label: 'Chat vs. Live', text: 'Wirke ich live extrovertierter, leiser oder komplett anders als in unseren Nachrichten?' },
@@ -2615,7 +2615,7 @@ window.THEMES = {
           // ---------- PHASE 5: METAKOMMUNIKATION & ABSCHLUSS (65-75 Min) ----------
           { name: 'Rückblick', title: 'Was ist passiert?', duration: 8*60,
             hostNote: 'Je 3-4 Min. Erst jeder eine Frage für sich selbst ehrlich beantworten, dann die andere Runde. Keine Kommentare, nur zuhören.',
-            description: 'Die letzten 70 Minuten waren intensiver, als ihr bei einem ersten Date erwartet hättet. Bevor ihr geht, fasst ihr bewusst zusammen, was passiert ist — damit der Abend in der Erinnerung nicht zu einem diffusen Nebel wird, sondern Konturen behält.',
+            description: 'Die letzten 70 Minuten waren intensiver, als ihr bei einem ersten Date erwartet hättet. Bevor ihr auseinandergeht, fasst ihr bewusst zusammen, was passiert ist — damit der Abend in der Erinnerung nicht zu einem diffusen Nebel wird, sondern Konturen behält.',
             items: [
               { accent: '1.', label: 'Erwartung vs. Realität', text: 'Ich bin heute mit der heimlichen Erwartung hergekommen, dass ___ — aber eigentlich ___.' },
               { accent: '2.', label: 'Überraschung', text: 'Was an unserem Gespräch hat dich am meisten überrascht oder überrumpelt?' },
@@ -2634,7 +2634,7 @@ window.THEMES = {
             teaser: 'Die einzige Frage, die heute Abend wirklich zählt.' },
 
           { name: 'Eins', title: 'Ein Ding, das bleibt', duration: 3*60,
-            hostNote: 'Beide je einen Satz. Keine lange Begründung. Dann Decke zusammenpacken.',
+            hostNote: 'Beide je einen Satz. Keine lange Begründung. Dann aufbrechen oder bleiben — je nachdem, wie sich der Abend anfühlt.',
             description: 'Bevor ihr geht: ein Ding aus den letzten 75 Minuten, das dir in Erinnerung bleiben wird — eine Geste, ein Satz, ein Lachen, ein Schweigen.',
             question: 'Was ist das Erste, woran du dich in drei Tagen erinnern wirst, wenn du an heute Abend denkst?' }
         ])

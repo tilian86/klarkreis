@@ -13,13 +13,17 @@
 (function () {
   // Globales Speed-Setting, geteilt über alle Player der Seite UND über Seiten hinweg.
   const SPEEDS = [1, 1.25, 1.5, 1.75, 2, 0.75];
+  // Registry aller Audio-Elemente, die via buildPlayer erstellt wurden.
+  // Nötig, weil `new Audio()` das Element NICHT ins DOM hängt — ein
+  // querySelectorAll('audio') findet solche Elemente nicht.
+  const audioRegistry = new Set();
   function getRate() {
     const stored = parseFloat(localStorage.getItem('klarkreis:playbackRate') || '1');
     return SPEEDS.includes(stored) ? stored : 1;
   }
   function setRate(r) {
     localStorage.setItem('klarkreis:playbackRate', String(r));
-    document.querySelectorAll('audio[data-klarkreis-audio]').forEach(a => { a.playbackRate = r; });
+    audioRegistry.forEach(a => { a.playbackRate = r; });
     document.querySelectorAll('.kk-speed-btn').forEach(b => { b.textContent = r + '×'; });
   }
 
@@ -85,6 +89,10 @@
     audio.setAttribute('data-klarkreis-audio', '1');
     audio.playbackRate = getRate();
     if (url) audio.src = url;
+    audioRegistry.add(audio);
+    // Mobile Safari braucht playbackRate nach loadedmetadata nochmal gesetzt
+    audio.addEventListener('loadedmetadata', () => { audio.playbackRate = getRate(); });
+    audio.addEventListener('play', () => { audio.playbackRate = getRate(); });
 
     function showControls() { bar.classList.remove('hidden'); time.classList.remove('hidden'); label.classList.add('hidden'); }
     function hideControls() { bar.classList.add('hidden'); time.classList.add('hidden'); label.classList.remove('hidden'); }
