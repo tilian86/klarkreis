@@ -187,10 +187,19 @@ if (!theme.formats[currentFormat]) currentFormat = Object.keys(theme.formats)[0]
 
 document.title = theme.title + ' — KlarKreis';
 
-// Audio-Intro prominent zwischen Hero und Format-Tabs (falls Audio existiert).
-KlarKreisPlayer.mountIfExists('#heroAudioMount', KlarKreisPlayer.introPath(id), {
-  title: 'Die Idee in einer Minute — anhören'
-});
+// Audio-Intro zwischen Hero und Format-Tabs (falls Audio existiert) — neuer
+// MiniPlayer mit Scrub + Geschwindigkeit.
+(function() {
+  const mount = document.getElementById('heroAudioMount');
+  const url = `audio/${id}/00-intro.mp3`;
+  fetch(url, { method: 'HEAD' }).then(r => {
+    if (!r.ok || !window.KlarKreisMiniPlayer) return;
+    mount.innerHTML = '<p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-3">Die Idee in einer Minute — anhören</p>';
+    const holder = document.createElement('div');
+    mount.appendChild(holder);
+    window.KlarKreisMiniPlayer.insert(holder, url, { label: 'Intro anhören' });
+  }).catch(() => {});
+})();
 
 // Static fields
 document.querySelectorAll('[data-field]').forEach(el => {
@@ -325,5 +334,6 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
 }).join('');
 </script>
 <script src="mobile-nav.js"></script>
+<script src="page-audio.js"></script>
 </body>
 </html>
