@@ -264,7 +264,11 @@ function renderFormatContent() {
     const ts = i === mid ? 'text-on-tertiary-container' : 'text-secondary/60';
     const isLast = i === uiStations.length - 1;
     const mins = Math.round(s.duration / 60);
-    const desc = s.description || s.hostNote || s.question || '';
+    // Skelett-Teaser: bevorzugt explizit markierter Teaser, sonst die offene Frage
+    // (Fragen spoilern nicht — sie öffnen den Raum). Quotes/Items/Descriptions bleiben
+    // der Gastgeber:innen-Ansicht vorbehalten.
+    const teaser = s.teaser || s.question || '';
+    const detail = s.description || s.hostNote || s.question || '';
     return `
       <div class="relative pl-16 ${isLast ? '' : 'pb-10'}">
         <div class="absolute left-0 top-0 w-10 h-10 ${hl} flex items-center justify-center rounded-full z-10">
@@ -274,7 +278,8 @@ function renderFormatContent() {
           <h4 class="font-headline text-xl">${s.title}</h4>
           <span class="font-label text-[10px] ${ts}">${mins} MINUTEN</span>
         </div>
-        <p class="station-detail font-body text-sm text-on-surface-variant max-w-lg leading-relaxed hidden">${desc}</p>
+        ${teaser ? `<p class="station-teaser font-body text-sm text-on-surface-variant/70 max-w-lg leading-relaxed italic">${teaser}</p>` : ''}
+        <p class="station-detail font-body text-sm text-on-surface-variant max-w-lg leading-relaxed hidden mt-2">${detail}</p>
       </div>`;
   }).join('');
   window.dispatchEvent(new Event('ablaufRendered'));

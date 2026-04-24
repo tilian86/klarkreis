@@ -2144,6 +2144,7 @@ window.THEMES = {
   familienzeit: {
     title: 'Familienzeit',
     subtitle: 'Ein Abend mit einem Menschen aus deiner Familie',
+    lead: 'Ein Abend mit Mutter, Vater, Oma, Opa, Bruder, Schwester oder einem erwachsenen Kind. Am Anfang wählt ihr, welche Konstellation zu euch passt — der Abend stellt Fragen, die im Alltag nie gestellt werden, und macht sichtbar, was sonst ungesagt bleibt. Mit Aufnahme-Optionen für das, was bleiben soll.',
     category: 'Familienzeit',
     image: 'images/familienzeit.jpg',
     philosophy1: 'Zwischen Menschen, die sich seit Jahrzehnten kennen, bleibt oft am meisten ungesagt. Nicht aus Unwillen — aus Gewohnheit. Man sieht sich, redet über Wetter, Kinder, Termine, Gesundheit. Und geht wieder auseinander, ohne die eine Frage gestellt zu haben, die seit Jahren unter allem liegt.',
@@ -2278,6 +2279,7 @@ window.THEMES = {
   // =====================================================================
   werte_reise_1: {
     title: 'Was zählt wirklich?',
+    lead: 'Auftakt der sechsteiligen Werte-Reise. Frei zugänglich. Mit dem Kalender-, dem Kontoauszug- und dem Ärger-Test schauen wir, welche Werte sich in eurem Leben tatsächlich durchsetzen — jenseits dessen, was ihr euch wünscht. Am Ende wisst ihr, ob ihr die Reise weitergehen wollt.',
     subtitle: 'Auftakt der Werte-Reise · Abend 1 von 6',
     category: 'Werte-Reise',
     lead: 'Werte sind nicht, was wir sagen. Werte zeigen sich in Kalender, Kontoauszug und Ärger. Der erste Abend einer 6-teiligen Reise — und ein vollständiger Abend in sich.',
