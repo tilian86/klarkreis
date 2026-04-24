@@ -255,6 +255,10 @@ Kein Gastgeber-Stress. KlarKreis gibt die Struktur vor, stellt die richtigen Fra
           <footer class="font-label text-[11px] uppercase tracking-widest text-secondary-fixed-dim mt-8" id="funkeAuthor">—</footer>
         </blockquote>
         <div class="flex flex-wrap items-center gap-4 mt-10 pt-8 border-t border-on-primary/10">
+          <button id="funkeHear" class="hidden inline-flex items-center gap-2 bg-on-primary/10 hover:bg-on-primary/20 backdrop-blur-sm text-on-primary px-5 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold transition-all duration-300 border border-on-primary/10 hover:border-on-primary/20 hover:-translate-y-0.5 hover:shadow-lg" aria-label="Impuls anhören">
+            <span class="material-symbols-outlined text-[16px]" id="funkeHearIcon">play_arrow</span>
+            <span id="funkeHearLabel">Anhören</span>
+          </button>
           <button id="funkeZiehen" class="inline-flex items-center gap-2 bg-on-primary/10 hover:bg-on-primary/20 backdrop-blur-sm text-on-primary px-5 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold transition-all duration-300 border border-on-primary/10 hover:border-on-primary/20 hover:-translate-y-0.5 hover:shadow-lg">
             <span class="material-symbols-outlined text-[16px]">casino</span>
             Neuen Impuls ziehen
@@ -264,6 +268,7 @@ Kein Gastgeber-Stress. KlarKreis gibt die Struktur vor, stellt die richtigen Fra
             <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">arrow_forward</span>
           </a>
         </div>
+        <audio id="funkeAudio" preload="none" class="hidden"></audio>
       </div>
     </div>
   </div>
@@ -481,7 +486,16 @@ Themenkatalog ansehen
 <script>
 // Impuls des Tages + Zufallszug
 (function () {
-  const el = { text: document.getElementById('funkeText'), author: document.getElementById('funkeAuthor'), label: document.getElementById('funkeLabel'), btn: document.getElementById('funkeZiehen') };
+  const el = {
+    text: document.getElementById('funkeText'),
+    author: document.getElementById('funkeAuthor'),
+    label: document.getElementById('funkeLabel'),
+    btn: document.getElementById('funkeZiehen'),
+    hear: document.getElementById('funkeHear'),
+    hearIcon: document.getElementById('funkeHearIcon'),
+    hearLabel: document.getElementById('funkeHearLabel'),
+    audio: document.getElementById('funkeAudio'),
+  };
   if (!el.text || !window.QUOTES || !window.QUOTES.length) return;
   const QUOTES = window.QUOTES;
 
@@ -493,7 +507,24 @@ Themenkatalog ansehen
   }
 
   let currentIdx = dayIndex();
-  let mode = 'tag'; // 'tag' oder 'random'
+  let mode = 'tag';
+
+  // Prüft, ob eine Audio-Datei für diesen Impuls existiert (HEAD-Anfrage).
+  // Der Hear-Button erscheint nur dann.
+  function audioPathFor(idx) {
+    return 'audio/impulse/' + String(idx).padStart(3, '0') + '.mp3';
+  }
+
+  function setHearButton(idx) {
+    el.audio.pause();
+    el.hear.classList.add('hidden');
+    el.hearIcon.textContent = 'play_arrow';
+    el.hearLabel.textContent = 'Anhören';
+    const url = audioPathFor(idx);
+    fetch(url, { method: 'HEAD' })
+      .then(r => { if (r.ok) { el.audio.src = url; el.hear.classList.remove('hidden'); } })
+      .catch(() => {});
+  }
 
   function showQuote(idx) {
     const q = QUOTES[idx];
@@ -503,6 +534,7 @@ Themenkatalog ansehen
       el.author.textContent = q.author ? '— ' + q.author + ' · ' + q.category : '— ' + q.category;
       el.text.style.opacity = '1';
     }, 180);
+    setHearButton(idx);
   }
 
   function zieheZufall() {
@@ -515,7 +547,23 @@ Themenkatalog ansehen
     showQuote(currentIdx);
   }
 
-  // Initial: Impuls des Tages
+  el.hear.addEventListener('click', () => {
+    if (el.audio.paused) {
+      el.audio.play().then(() => {
+        el.hearIcon.textContent = 'pause';
+        el.hearLabel.textContent = 'Pause';
+      }).catch(() => {});
+    } else {
+      el.audio.pause();
+      el.hearIcon.textContent = 'play_arrow';
+      el.hearLabel.textContent = 'Anhören';
+    }
+  });
+  el.audio.addEventListener('ended', () => {
+    el.hearIcon.textContent = 'play_arrow';
+    el.hearLabel.textContent = 'Anhören';
+  });
+
   showQuote(currentIdx);
   el.btn.addEventListener('click', zieheZufall);
 })();
