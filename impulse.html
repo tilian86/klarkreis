@@ -186,28 +186,48 @@ function renderChips() {
   });
 }
 
-function quoteCardHtml(q) {
+function quoteCardHtml(q, originalIdx) {
   const isLong = q.text.length > 260;
+  const padded = String(originalIdx).padStart(3, '0');
   return `
     <article class="quote-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
       <span class="material-symbols-outlined text-secondary/50 text-3xl block mb-2">format_quote</span>
       <p class="font-headline italic ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed mb-4">${q.text}</p>
-      <footer class="flex items-center justify-between gap-3">
+      <footer class="flex items-center justify-between gap-3 flex-wrap">
         <span class="font-label text-[11px] uppercase tracking-widest text-secondary">${q.author || '— unbekannt'}</span>
         <span class="font-label text-[9px] uppercase tracking-widest text-on-surface-variant/40 whitespace-nowrap">${q.category}</span>
       </footer>
+      <div class="mt-4 pt-4 border-t border-outline-variant/20 quote-player" data-impulse-idx="${padded}"></div>
     </article>`;
+}
+
+function mountPlayers() {
+  if (!window.KlarKreisMiniPlayer) return;
+  document.querySelectorAll('.quote-player[data-impulse-idx]').forEach(slot => {
+    if (slot.dataset.mounted === '1') return;
+    const idx = slot.getAttribute('data-impulse-idx');
+    window.KlarKreisMiniPlayer.insert(slot, `audio/impulse/${idx}.mp3`, { label: 'Anhören' });
+    slot.dataset.mounted = '1';
+  });
 }
 
 function render() {
   renderChips();
   const grid = document.getElementById('quoteGrid');
-  const filtered = currentCat === 'alle' ? window.QUOTES : window.QUOTES.filter(q => q.category === currentCat);
+  const filtered = [];
+  window.QUOTES.forEach((q, i) => {
+    if (currentCat === 'alle' || q.category === currentCat) {
+      filtered.push({ q, originalIdx: i });
+    }
+  });
   if (!filtered.length) {
     grid.innerHTML = `<p class="col-span-full text-center text-on-surface-variant italic py-12">Hier fehlt noch was.</p>`;
     return;
   }
-  grid.innerHTML = filtered.map(quoteCardHtml).join('');
+  grid.innerHTML = filtered.map(({ q, originalIdx }) => quoteCardHtml(q, originalIdx)).join('');
+  // Player erst mounten, wenn page-audio.js geladen ist (läuft am Seitenende)
+  if (window.KlarKreisMiniPlayer) mountPlayers();
+  else window.addEventListener('load', mountPlayers);
 }
 
 render();
