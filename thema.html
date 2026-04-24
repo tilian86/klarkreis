@@ -173,6 +173,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="gastgeber.html">Gastgeber</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="mailto:kontakt@klarkreis.de">Kontakt</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="impressum.html">Impressum</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="agb.html">AGB</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="widerruf.html">Widerruf</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
@@ -185,39 +187,86 @@ const theme = window.THEMES[id] || window.THEMES.bindung;
 let currentFormat = params.get('format') || 'group';
 if (!theme.formats[currentFormat]) currentFormat = Object.keys(theme.formats)[0];
 
-// --- Privat-Gate: MVP-Paywall für kostenpflichtige Abende ---
-// Client-seitiger Passwort-Check (gate-spezifisch). Kein echter Schutz,
-// aber hält Casual-Besucher draußen, bis Stripe + Supabase-Unlock live ist.
-// Jedes kostenpflichtige Produkt hat seine eigene Unlock-Flag in localStorage,
-// damit man z.B. Date kaufen kann ohne Werte-Reise.
+// --- Paywall-Gate für kostenpflichtige Abende ---
+// Produkt-spezifische Unlocks (Date separat von Werte-Reise). Auto-unlock
+// nach Stripe-Checkout via ?unlock=<produkt> in der Success-URL.
 const PAID_GATES = {
   date: {
     password: 'privat',
     unlockKey: 'klarkreis:unlocked_date',
-    price: '9€',
-    title: 'Erstes Date ist ein kostenpflichtiges Format',
-    body: 'Der Date-Abend ist ein durchdachtes, 75-minütiges Format für zwei Menschen, die sich erst treffen — mit Struktur, echter Stille und einer ehrlichen Entscheidung am Ende. Für 9€ bekommt ihr Zugang zum vollständigen Ablauf in allen drei Formaten.'
+    price: '9 €',
+    priceNote: 'einmalig · Zugang bleibt dauerhaft',
+    title: 'Erstes Date',
+    subtitle: 'Ein geführtes 75-Min-Gespräch — leicht, flirty, ehrlich',
+    body: 'Der Date-Abend ist ein durchdachtes, 75-minütiges Format für zwei Menschen, die sich erst treffen — mit Struktur, echter Stille und einer ehrlichen Entscheidung am Ende. Fundiert auf der Forschung von Arthur Aron, Esther Perel und Helen Fisher. Einmal gekauft, bleibt der Zugang — auf Handy und Laptop.',
+    stripeLink: 'https://buy.stripe.com/REPLACE_MIT_DATE_LINK'
   },
-  werte_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
-  werte_reise_3: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
-  werte_reise_4: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
-  werte_reise_5: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
-  werte_reise_6: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' }
+  werte_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Werte-Reise · Abend 2 – 6', subtitle: 'Fünf geführte Abende als Paket', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich — die fünf weiteren Abende führen durch Vokabular (Schwartz, Rokeach), Wurzeln (Simone Weil), Schatten (C.G. Jung, Brené Brown), harte Entscheidungen (Ruth Chang) und Integration (Aristoteles). Für Kleingruppen, Paare und Solo-Reflexion. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WERTE_REISE_LINK' },
+  werte_reise_3: null, werte_reise_4: null, werte_reise_5: null, werte_reise_6: null // Fallback unten
 };
+// Alle Werte-Reise-Abende 2-6 teilen dieselbe Gate-Config
+['werte_reise_3','werte_reise_4','werte_reise_5','werte_reise_6'].forEach(k => { PAID_GATES[k] = PAID_GATES.werte_reise_2; });
+
+// Auto-Unlock nach Stripe-Checkout — Stripe Success-URL enthält ?unlock=<produkt>
+(function() {
+  const up = new URLSearchParams(location.search);
+  const unlockCode = up.get('unlock');
+  if (unlockCode === 'date') localStorage.setItem('klarkreis:unlocked_date', '1');
+  if (unlockCode === 'werte_reise') localStorage.setItem('klarkreis:unlocked_werte_reise', '1');
+  if (unlockCode) {
+    // URL aufräumen, damit kein share-fähiger Unlock-Link entsteht
+    up.delete('unlock');
+    history.replaceState({}, '', location.pathname + (up.toString() ? '?' + up.toString() : ''));
+  }
+})();
+
 if (PAID_GATES[id]) {
   const gate = PAID_GATES[id];
-  // Globaler Master-Unlock (legacy) oder produkt-spezifischer Unlock
   const unlocked = localStorage.getItem('klarkreis:unlocked') === '1'
                 || localStorage.getItem(gate.unlockKey) === '1';
   if (!unlocked) {
-    const pw = window.prompt(`Dieser Abend kostet ${gate.price}. Zugangs-Passwort eingeben, falls du schon gezahlt hast:`);
-    if (pw === gate.password) {
-      localStorage.setItem(gate.unlockKey, '1');
-    } else {
-      const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1' : 'themen.html';
-      document.body.innerHTML = `<div style="max-width:640px;margin:12vh auto;padding:2rem;font-family:Noto Serif,serif;text-align:center;color:#1B1C19;"><p style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#924c00;margin-bottom:1rem;">Kostenpflichtiger Abend · ${gate.price}</p><h1 style="font-size:2rem;margin-bottom:1.5rem;line-height:1.2;">${gate.title}</h1><p style="margin-bottom:2rem;color:#434843;line-height:1.6;font-family:Inter,sans-serif;">${gate.body}</p><p style="margin-bottom:2rem;font-family:Inter,sans-serif;"><a href="mailto:kontakt@klarkreis.de?subject=Zugang%20zu%20${encodeURIComponent(gate.title)}" style="display:inline-block;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;">Zugang anfragen →</a></p><p style="font-size:0.85rem;color:#737973;font-family:Inter,sans-serif;"><a href="${relatedFree}" style="color:#924c00;">← Zurück zu den kostenlosen Abenden</a></p></div>`;
-      throw new Error('gated');
+    // Volles Paid-Modal als Overlay — markengerecht, mobil-freundlich
+    const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1' : 'themen.html';
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <div id="kk-paid-modal" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
+        <div style="background:#FBF9F4;max-width:560px;width:100%;border-radius:1rem;padding:2.5rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,0.4);font-family:'Inter',sans-serif;color:#1B1C19;">
+          <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#924c00;margin-bottom:1rem;font-weight:600;">Kostenpflichtiger Abend</p>
+          <h1 style="font-family:'Noto Serif',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;">${gate.title}</h1>
+          <p style="font-family:'Noto Serif',serif;font-style:italic;color:#434843;margin-bottom:1.5rem;font-size:1rem;">${gate.subtitle}</p>
+          <div style="background:#f0eee9;border-left:4px solid #924c00;padding:1rem 1.25rem;margin-bottom:1.5rem;border-radius:0 0.5rem 0.5rem 0;">
+            <p style="font-size:1.5rem;font-weight:700;color:#1B3022;margin-bottom:0.2rem;">${gate.price}</p>
+            <p style="font-size:0.8rem;color:#737973;">${gate.priceNote}</p>
+          </div>
+          <p style="color:#434843;line-height:1.6;margin-bottom:2rem;font-size:0.95rem;">${gate.body}</p>
+          <a href="${gate.stripeLink}" style="display:block;text-align:center;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;margin-bottom:0.75rem;transition:background 0.2s;">Mit Stripe sicher kaufen →</a>
+          <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem;">
+            <input id="kk-pw" type="password" placeholder="Zugangs-Code" style="flex:1;padding:0.75rem;border:1px solid #c3c8c1;border-radius:0.5rem;font-size:0.9rem;font-family:inherit;" autocomplete="off"/>
+            <button id="kk-pw-btn" style="padding:0.75rem 1.25rem;background:#fff;border:1px solid #1B3022;color:#1B3022;border-radius:0.5rem;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Einlösen</button>
+          </div>
+          <p id="kk-pw-err" style="color:#ba1a1a;font-size:0.8rem;margin-bottom:1rem;display:none;">Code nicht korrekt. Bei Problemen: <a href="mailto:kontakt@klarkreis.de" style="color:#924c00;">kontakt@klarkreis.de</a></p>
+          <p style="text-align:center;font-size:0.85rem;margin-bottom:0.5rem;"><a href="${relatedFree}" style="color:#924c00;text-decoration:none;">← Zurück zu den kostenlosen Abenden</a></p>
+          <p style="text-align:center;font-size:0.75rem;color:#737973;margin-top:1rem;">14 Tage Widerrufsrecht · <a href="datenschutz.html" style="color:#737973;">Datenschutz</a> · <a href="agb.html" style="color:#737973;">AGB</a></p>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    // Body-Scroll sperren, damit nur das Modal interagiert
+    document.body.style.overflow = 'hidden';
+    const pwInput = document.getElementById('kk-pw');
+    const pwBtn = document.getElementById('kk-pw-btn');
+    const pwErr = document.getElementById('kk-pw-err');
+    function tryUnlock() {
+      if (pwInput.value.trim().toLowerCase() === gate.password) {
+        localStorage.setItem(gate.unlockKey, '1');
+        location.reload();
+      } else {
+        pwErr.style.display = 'block';
+        pwInput.focus();
+      }
     }
+    pwBtn.addEventListener('click', tryUnlock);
+    pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+    throw new Error('gated');
   }
 }
 

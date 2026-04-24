@@ -113,6 +113,8 @@
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="musik.html">Musik</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="unterstuetzen.html">Unterstützen</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="impressum.html">Impressum</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="agb.html">AGB</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="widerruf.html">Widerruf</a>
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
@@ -168,6 +170,11 @@ function renderGrid() {
     const reiseBadge = t.reise
       ? `<span class="absolute top-4 left-4 bg-primary-container text-on-primary px-3 py-1 text-[9px] uppercase tracking-widest font-semibold rounded">Teil einer ${t.reise.total}-Abende-Reise</span>`
       : '';
+    // Preis-Badge für bezahlte Einzel-Themen (Date). Werte-Reise-Badges laufen über reiseBadge.
+    const PRICES = { date: '9 €' };
+    const priceBadge = PRICES[Object.entries(window.THEMES).find(([_,v]) => v === t)?.[0]]
+      ? `<span class="absolute top-4 left-4 bg-primary-container text-on-primary px-3 py-1 text-[9px] uppercase tracking-widest font-semibold rounded">${PRICES[Object.entries(window.THEMES).find(([_,v]) => v === t)[0]]}</span>`
+      : '';
     return `
       <article class="group flex flex-col h-full">
         <a href="${cardHref(t)}" class="block">
@@ -175,7 +182,7 @@ function renderGrid() {
             <img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="${t.title}" src="${t.image}"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             <span class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur px-3 py-1 text-[9px] uppercase tracking-widest font-semibold text-primary">${t.category}</span>
-            ${reiseBadge}
+            ${reiseBadge}${priceBadge}
           </div>
         </a>
         <div class="px-1 mt-4 flex flex-col flex-1">
