@@ -177,7 +177,7 @@ function renderGrid() {
             <span class="flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">groups</span> ${firstFormat.people}</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3 min-h-[3.25rem] content-start">${Object.keys(t.formats).map(k => formatBadge(k, t.formats[k], currentFilter === 'all' || currentFilter === k)).join('')}${t.audio ? audioBadge() : ''}</div>
-          <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-2 italic font-light mt-3">${t.lead}</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed line-clamp-2 italic font-light mt-3">${t.lead || t.subtitle || ''}</p>
           <div class="pt-4 mt-auto">
             <a href="${cardHref(t)}" class="block text-center w-full py-3 bg-primary-container text-on-primary text-[10px] uppercase tracking-[0.2em] font-semibold hover:bg-secondary transition-colors duration-300">
               Diesen Abend starten
