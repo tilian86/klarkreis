@@ -185,20 +185,37 @@ const theme = window.THEMES[id] || window.THEMES.bindung;
 let currentFormat = params.get('format') || 'group';
 if (!theme.formats[currentFormat]) currentFormat = Object.keys(theme.formats)[0];
 
-// --- Privat-Gate: MVP-Paywall für Werte-Reise-Abende 2-6 ---
-// Client-seitiger Passwort-Check. Kein echter Schutz, aber hält Casual-
-// Besucher draußen, bis Stripe + Supabase-Unlock live ist.
-const PRIVATE_THEMES = ['werte_reise_2','werte_reise_3','werte_reise_4','werte_reise_5','werte_reise_6'];
-const PRIVATE_PASSWORD = 'privat';
-if (PRIVATE_THEMES.includes(id)) {
-  const unlocked = sessionStorage.getItem('klarkreis:unlocked') === '1'
-                || localStorage.getItem('klarkreis:unlocked') === '1';
+// --- Privat-Gate: MVP-Paywall für kostenpflichtige Abende ---
+// Client-seitiger Passwort-Check (gate-spezifisch). Kein echter Schutz,
+// aber hält Casual-Besucher draußen, bis Stripe + Supabase-Unlock live ist.
+// Jedes kostenpflichtige Produkt hat seine eigene Unlock-Flag in localStorage,
+// damit man z.B. Date kaufen kann ohne Werte-Reise.
+const PAID_GATES = {
+  date: {
+    password: 'privat',
+    unlockKey: 'klarkreis:unlocked_date',
+    price: '9€',
+    title: 'Erstes Date ist ein kostenpflichtiges Format',
+    body: 'Der Date-Abend ist ein durchdachtes, 75-minütiges Format für zwei Menschen, die sich erst treffen — mit Struktur, echter Stille und einer ehrlichen Entscheidung am Ende. Für 9€ bekommt ihr Zugang zum vollständigen Ablauf in allen drei Formaten.'
+  },
+  werte_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
+  werte_reise_3: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
+  werte_reise_4: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
+  werte_reise_5: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' },
+  werte_reise_6: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29€ Launch (regulär 39€)', title: 'Werte-Reise Abend 2-6', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich. Die fünf weiteren Abende führen durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.' }
+};
+if (PAID_GATES[id]) {
+  const gate = PAID_GATES[id];
+  // Globaler Master-Unlock (legacy) oder produkt-spezifischer Unlock
+  const unlocked = localStorage.getItem('klarkreis:unlocked') === '1'
+                || localStorage.getItem(gate.unlockKey) === '1';
   if (!unlocked) {
-    const pw = window.prompt('Dieser Abend ist Teil der bezahlten Werte-Reise. Zugangs-Passwort eingeben:');
-    if (pw === PRIVATE_PASSWORD) {
-      localStorage.setItem('klarkreis:unlocked', '1');
+    const pw = window.prompt(`Dieser Abend kostet ${gate.price}. Zugangs-Passwort eingeben, falls du schon gezahlt hast:`);
+    if (pw === gate.password) {
+      localStorage.setItem(gate.unlockKey, '1');
     } else {
-      document.body.innerHTML = '<div style="max-width:560px;margin:15vh auto;padding:2rem;font-family:Noto Serif,serif;text-align:center;"><h1 style="font-size:2rem;margin-bottom:1rem;">Dieser Abend ist Teil der Werte-Reise</h1><p style="margin-bottom:2rem;color:#434843;line-height:1.6;">Abend 1 („Was zählt wirklich?") ist frei zugänglich und gibt dir einen Vorgeschmack. Die fünf weiteren Abende führen gemeinsam durch Vokabular, Wurzeln, Schatten, Konflikte und Integration — und erscheinen als Paket.</p><p style="color:#434843;margin-bottom:2rem;"><a href="thema.html?id=werte_reise_1" style="color:#924c00;text-decoration:underline;">→ Abend 1 jetzt ausprobieren</a></p><p style="font-size:0.9rem;color:#737973;">Noch in privater Beta. Kontakt: <a href="mailto:kontakt@klarkreis.de" style="color:#924c00;">kontakt@klarkreis.de</a></p></div>';
+      const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1' : 'themen.html';
+      document.body.innerHTML = `<div style="max-width:640px;margin:12vh auto;padding:2rem;font-family:Noto Serif,serif;text-align:center;color:#1B1C19;"><p style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:#924c00;margin-bottom:1rem;">Kostenpflichtiger Abend · ${gate.price}</p><h1 style="font-size:2rem;margin-bottom:1.5rem;line-height:1.2;">${gate.title}</h1><p style="margin-bottom:2rem;color:#434843;line-height:1.6;font-family:Inter,sans-serif;">${gate.body}</p><p style="margin-bottom:2rem;font-family:Inter,sans-serif;"><a href="mailto:kontakt@klarkreis.de?subject=Zugang%20zu%20${encodeURIComponent(gate.title)}" style="display:inline-block;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;">Zugang anfragen →</a></p><p style="font-size:0.85rem;color:#737973;font-family:Inter,sans-serif;"><a href="${relatedFree}" style="color:#924c00;">← Zurück zu den kostenlosen Abenden</a></p></div>`;
       throw new Error('gated');
     }
   }
