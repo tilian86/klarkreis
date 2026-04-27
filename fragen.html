@@ -122,6 +122,7 @@
         </blockquote>
       </div>
       <div class="flex flex-wrap items-center gap-3 mt-10 pt-8 border-t border-on-primary/10">
+        <div id="singlePlayerMount"></div>
         <button id="singlePrev" class="inline-flex items-center gap-2 bg-on-primary/10 hover:bg-on-primary/20 text-on-primary px-5 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold transition-colors">
           <span class="material-symbols-outlined text-[16px]">arrow_back</span>
           Zurück
@@ -294,6 +295,17 @@ function renderSingle() {
     cat.textContent = q.category;
     const seenInPool = seenCountInPool(pool);
     counter.textContent = (singleIdx + 1) + ' / ' + pool.length + (seenInPool > 0 ? ' · ' + seenInPool + ' gesehen' : '');
+    // Single-Mode-Player aktualisieren — Audio-URL wechselt mit jeder Frage
+    const mount = document.getElementById('singlePlayerMount');
+    if (mount && window.KlarKreisMiniPlayer) {
+      const origIdx = window.QUESTIONS.indexOf(q);
+      const url = `audio/fragen/${String(origIdx).padStart(3, '0')}.mp3`;
+      if (!window._singleFragePlayer) {
+        window._singleFragePlayer = window.KlarKreisMiniPlayer.insert(mount, url, { theme: 'dark', label: 'Anhören' });
+      } else {
+        window._singleFragePlayer.setUrl(url);
+      }
+    }
     text.style.opacity = '1';
     cat.style.opacity = '1';
   }, 150);
@@ -323,14 +335,16 @@ function updateResetBtn() {
 function questionCardHtml(q) {
   const isLong = q.text.length > 180;
   const wasSeen = seen.has(q.text);
+  const originalIdx = window.QUESTIONS.indexOf(q);
+  const padded = String(originalIdx).padStart(3, '0');
   const seenBadge = wasSeen
     ? '<span class="inline-flex items-center gap-1 font-label text-[10px] uppercase tracking-widest text-secondary"><span class="material-symbols-outlined text-[14px]">check_circle</span>Gesehen</span>'
     : '';
   const cardOpacity = wasSeen ? 'opacity-70 hover:opacity-100' : '';
   return `
     <article class="question-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-all ${cardOpacity}">
-      <div class="flex items-center justify-between mb-2">
-        <span class="material-symbols-outlined text-secondary/50 text-3xl">help</span>
+      <div class="flex items-center justify-between mb-3">
+        <div class="question-player" data-fragen-idx="${padded}"></div>
         ${seenBadge}
       </div>
       <p class="font-headline ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed">${q.text}</p>
@@ -371,6 +385,16 @@ function renderList() {
   }).join('');
 }
 
+function mountFragenPlayers() {
+  if (!window.KlarKreisMiniPlayer) return;
+  document.querySelectorAll('.question-player[data-fragen-idx]').forEach(slot => {
+    if (slot.dataset.mounted === '1') return;
+    const idx = slot.getAttribute('data-fragen-idx');
+    window.KlarKreisMiniPlayer.insert(slot, `audio/fragen/${idx}.mp3`, { label: 'Anhören' });
+    slot.dataset.mounted = '1';
+  });
+}
+
 function render() {
   renderChips();
   renderModeButtons();
@@ -382,6 +406,8 @@ function render() {
   list.classList.toggle('hidden', mode !== 'list');
   if (mode === 'single') renderSingle();
   else renderList();
+  if (window.KlarKreisMiniPlayer) mountFragenPlayers();
+  else window.addEventListener('load', mountFragenPlayers);
 }
 
 // Mode toggle
@@ -540,5 +566,6 @@ render();
 <script src="auth.js"></script>
 <script src="login-ui.js"></script>
 <script src="mobile-nav.js"></script>
+<script src="page-audio.js"></script>
 </body>
 </html>
