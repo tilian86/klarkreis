@@ -275,6 +275,40 @@ window.QUESTIONS = [
   { text: "Wovon träumst du nachts, worüber du tagsüber nicht sprichst?", category: "Ü18 · Spicy" },
   { text: "Was wäre in deinem Intimleben heute möglich, wenn du weniger Scham hättest?", category: "Ü18 · Spicy" },
 
+  // ---------- Schräg & Ehrlich (15) ----------
+  { text: "Was war die letzte Lüge, die du jemandem erzählt hast — auch eine kleine?", category: "Schräg & Ehrlich" },
+  { text: "Wann hast du zuletzt heimlich die Story von jemandem angeschaut, der dich gerade beschäftigt?", category: "Schräg & Ehrlich" },
+  { text: "Was würde in deinem Browser-Verlauf der letzten Woche stehen, das du niemandem zeigen würdest?", category: "Schräg & Ehrlich" },
+  { text: "Welche Person aus deinem Umfeld hast du in den letzten Tagen heimlich für ihr Leben beneidet — und welchen Aspekt genau?", category: "Schräg & Ehrlich" },
+  { text: "Wann hast du zuletzt eine Nachricht zehnmal umformuliert, bevor du sie abgeschickt hast?", category: "Schräg & Ehrlich" },
+  { text: "Wie oft denkst du an deinen Ex — ehrlich, nicht die Antwort, die du sonst gibst?", category: "Schräg & Ehrlich" },
+  { text: "Was sagst du, wenn jemand fragt wie's geht — und was wäre die ehrliche Antwort heute?", category: "Schräg & Ehrlich" },
+  { text: "Welche Eigenschaft bei deinen engsten Freund:innen nervt dich richtig, sagst aber nichts?", category: "Schräg & Ehrlich" },
+  { text: "Welcher Mensch fehlt dir, mit dem du seit Monaten nicht geschrieben hast — und warum schreibst du eigentlich nicht?", category: "Schräg & Ehrlich" },
+  { text: "Welches Lied hörst du heimlich auf Repeat, das absolut nicht zu deinem Image passt?", category: "Schräg & Ehrlich" },
+  { text: "Wann hast du zuletzt so getan, als kennst du etwas, das du gar nicht kennst — ein Buch, einen Film, ein Wort?", category: "Schräg & Ehrlich" },
+  { text: "Was ist das Banalste, worüber du dich in den letzten Tagen ernsthaft aufgeregt hast?", category: "Schräg & Ehrlich" },
+  { text: "Welche Beleidigung oder kritische Bemerkung gegen dich beschäftigt dich noch Monate später, obwohl sie längst vergessen sein müsste?", category: "Schräg & Ehrlich" },
+  { text: "Welche Person würdest du am liebsten heimlich für einen Tag werden — und warum genau die?", category: "Schräg & Ehrlich" },
+  { text: "Welcher Mensch in deinem Leben kennt eine Version von dir, die alle anderen nicht kennen — und was ist anders an dieser Version?", category: "Schräg & Ehrlich" },
+
+  // ---------- Banal & Tief (15) ----------
+  { text: "Welche Geste deiner Eltern machst du nach, ohne dass du es merkst?", category: "Banal & Tief" },
+  { text: "Welcher Geruch reißt dich sofort in eine konkrete Erinnerung — und welche?", category: "Banal & Tief" },
+  { text: "Welche kleine Routine zwischen dir und einem geliebten Menschen ist so unscheinbar, dass sie kaum benennbar ist — und trägt trotzdem alles?", category: "Banal & Tief" },
+  { text: "Welcher Satz, den jemand dir mal gesagt hat, läuft seitdem wie eine Hintergrundmelodie in dir?", category: "Banal & Tief" },
+  { text: "Was hast du als Kind gefühlt, das du heute nicht mehr fühlst — und vermisst?", category: "Banal & Tief" },
+  { text: "Welcher Ort, an dem du nur kurz warst, taucht in deinem Kopf immer wieder auf?", category: "Banal & Tief" },
+  { text: "Welcher Lieblingssatz deiner Mutter oder deines Vaters taucht in dir auf, wenn dir etwas wehtut?", category: "Banal & Tief" },
+  { text: "Wann hast du zuletzt etwas Schönes gesehen und niemandem davon erzählt — und warum nicht?", category: "Banal & Tief" },
+  { text: "Welcher Gegenstand in deiner Wohnung hat dich am längsten begleitet — und warum hast du ihn nie weggeworfen?", category: "Banal & Tief" },
+  { text: "Welcher Witz deines Vaters oder deiner Mutter geistert noch in dir, obwohl er gar nicht so witzig war?", category: "Banal & Tief" },
+  { text: "Wann hast du zuletzt geweint, ohne genau zu wissen warum?", category: "Banal & Tief" },
+  { text: "Welche kleine Erinnerung an jemanden, der nicht mehr in deinem Leben ist, kannst du immer wieder abrufen?", category: "Banal & Tief" },
+  { text: "An welchem Tag im Jahr ist deine Stimmung jedes Jahr seltsam ähnlich — und welcher Tag ist das?", category: "Banal & Tief" },
+  { text: "Welche gewöhnliche Situation aus deinem Leben würdest du als Foto rahmen, wenn du ehrlich antwortest?", category: "Banal & Tief" },
+  { text: "Welchen Moment hast du heute oder gestern bewusst zu schnell beendet — und was hätte passieren können, wenn du geblieben wärst?", category: "Banal & Tief" },
+
 ];
 
 window.QUESTION_CATEGORIES = [...new Set(window.QUESTIONS.map(q => q.category))];
