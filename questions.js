@@ -113,6 +113,16 @@ window.QUESTIONS = [
   { text: "Welches Verhalten anderer trifft dich am härtesten?", category: "Herzensmenschen" },
   { text: "Wen beneidest du heimlich — und wofür?", category: "Herzensmenschen" },
   { text: "Mit wem würdest du gern noch einmal sprechen?", category: "Herzensmenschen" },
+  { text: "Warst du schon mal emotional abhängig von einem Menschen?", category: "Herzensmenschen" },
+  { text: "Hast du schon mal jemanden gebraucht — und gespürt, dass das ungesund war?", category: "Herzensmenschen" },
+  { text: "Gibt es einen Menschen, ohne den du dir dein Leben damals nicht vorstellen konntest, und der heute nicht mehr da ist?", category: "Herzensmenschen" },
+  { text: "Wann hast du zuletzt jemanden festgehalten, obwohl ein Teil von dir wusste, dass es nicht mehr trug?", category: "Herzensmenschen" },
+  { text: "Hast du schon mal aus Angst vor dem Allein-Sein bei jemandem gewartet, der nicht zurückkam?", category: "Herzensmenschen" },
+  { text: "Gibt es einen Menschen, dessen Stimmung deinen ganzen Tag färbt — und wann ist dir das zum ersten Mal aufgefallen?", category: "Herzensmenschen" },
+  { text: "Was war die längste Zeit, in der du jemanden täglich vermisst hast — und wie hast du das ausgehalten?", category: "Herzensmenschen" },
+  { text: "Wann hast du dich von einer emotionalen Abhängigkeit gelöst — und woran hast du gemerkt, dass es Zeit war?", category: "Herzensmenschen" },
+  { text: "Wer hat dich zum ersten Mal so geliebt, dass du gemerkt hast, wie wenig du es vorher kanntest?", category: "Herzensmenschen" },
+  { text: "Was war der erste Mensch, dessen Tod oder Verlust dir wirklich klar gemacht hat, dass Liebe und Zeit endlich sind?", category: "Herzensmenschen" },
 
   // ---------- Arbeit & Berufung (20) ----------
   { text: "Wann warst du zuletzt in deiner Arbeit so vertieft, dass du die Zeit vergessen hast — was hast du da gemacht?", category: "Arbeit & Berufung" },
