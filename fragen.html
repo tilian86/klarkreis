@@ -292,7 +292,15 @@ function renderSingle() {
   cat.style.opacity = '0';
   setTimeout(() => {
     text.textContent = q.text;
-    cat.textContent = q.category;
+    // Bei Kennenlern-Reihe: Phasen-Hinweis ergänzen, sonst nur Kategorie
+    if (q.category === '100 Kennenlern-Fragen') {
+      const phase = kennenlernPhase(singleIdx);
+      cat.textContent = phase
+        ? `${q.category} · Phase ${phase.nr}/${phase.total} · ${phase.label}`
+        : q.category;
+    } else {
+      cat.textContent = q.category;
+    }
     const seenInPool = seenCountInPool(pool);
     counter.textContent = (singleIdx + 1) + ' / ' + pool.length + (seenInPool > 0 ? ' · ' + seenInPool + ' gesehen' : '');
     // Single-Mode-Player aktualisieren — Audio-URL wechselt mit jeder Frage
@@ -332,7 +340,29 @@ function updateResetBtn() {
   }
 }
 
-function questionCardHtml(q) {
+// Phasen-Definition für die Kennenlern-Reihe — Indices sind 0-basiert
+// innerhalb der gefilterten Kennenlern-Fragen-Liste (in originaler Datei-
+// Reihenfolge). Wer durchgeht, sieht damit „Phase 3 von 7 · Werte & Haltung".
+const KENNENLERN_PHASES = [
+  { range: [0, 16],  label: 'Erstes Tasten' },           // 17 Fragen
+  { range: [17, 33], label: 'Alltag & Geschmack' },      // 17 Fragen
+  { range: [34, 50], label: 'Werte & Haltung' },         // 17 Fragen
+  { range: [51, 66], label: 'Beziehungen & Liebe' },     // 16 Fragen
+  { range: [67, 79], label: 'Wurzeln & Familie' },       // 13 Fragen
+  { range: [80, 92], label: 'Schatten & Verletzlichkeit' }, // 13 Fragen
+  { range: [93, 999], label: 'Zukunft & Tiefe' }         // 15 Fragen (offen, falls später erweitert)
+];
+function kennenlernPhase(indexInList) {
+  for (let i = 0; i < KENNENLERN_PHASES.length; i++) {
+    if (indexInList >= KENNENLERN_PHASES[i].range[0] && indexInList <= KENNENLERN_PHASES[i].range[1]) {
+      return { nr: i + 1, total: KENNENLERN_PHASES.length, label: KENNENLERN_PHASES[i].label };
+    }
+  }
+  return null;
+}
+
+function questionCardHtml(q, ctx) {
+  // ctx (optional): { listIndex, listTotal, isKennenlern } — für Reihenfolge-Hinweis
   const isLong = q.text.length > 180;
   const wasSeen = seen.has(q.text);
   const originalIdx = window.QUESTIONS.indexOf(q);
@@ -341,8 +371,23 @@ function questionCardHtml(q) {
     ? '<span class="inline-flex items-center gap-1 font-label text-[10px] uppercase tracking-widest text-secondary"><span class="material-symbols-outlined text-[14px]">check_circle</span>Gesehen</span>'
     : '';
   const cardOpacity = wasSeen ? 'opacity-70 hover:opacity-100' : '';
+
+  // Phasen-Marker für die 100-Kennenlern-Reihe — zeigt „Phase 3 von 7 · Werte & Haltung · Frage 38 von 108"
+  let phaseMarker = '';
+  if (ctx && ctx.isKennenlern) {
+    const phase = kennenlernPhase(ctx.listIndex);
+    if (phase) {
+      phaseMarker = `
+        <div class="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[10px] uppercase tracking-widest font-label">
+          <span class="text-secondary font-semibold">Phase ${phase.nr}/${phase.total} · ${phase.label}</span>
+          <span class="text-on-surface-variant/60">Frage ${ctx.listIndex + 1} von ${ctx.listTotal}</span>
+        </div>`;
+    }
+  }
+
   return `
     <article class="question-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-all ${cardOpacity}">
+      ${phaseMarker}
       <div class="flex items-center justify-between mb-3">
         <div class="question-player" data-fragen-idx="${padded}"></div>
         ${seenBadge}
@@ -379,7 +424,11 @@ function renderList() {
           <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">${byCat[cat].length} Frage${byCat[cat].length === 1 ? '' : 'n'}${catSeen > 0 ? ' · ' + catSeen + ' gesehen' : ''}</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          ${byCat[cat].map(questionCardHtml).join('')}
+          ${byCat[cat].map((q, i) => questionCardHtml(q, {
+            listIndex: i,
+            listTotal: byCat[cat].length,
+            isKennenlern: cat === '100 Kennenlern-Fragen'
+          })).join('')}
         </div>
       </section>`;
   }).join('');

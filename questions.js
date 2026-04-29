@@ -330,8 +330,10 @@ window.QUESTIONS = [
   { text: "Was hast du heimlich auf dem Handy gespeichert, das du keinem zeigen würdest?", category: "100 Kennenlern-Fragen" },
   { text: "Wenn du eine fiktive Figur wärst — welche, und warum genau die?", category: "100 Kennenlern-Fragen" },
   { text: "Was war der peinlichste Moment der letzten Woche?", category: "100 Kennenlern-Fragen" },
+  { text: "Welche Marotte von dir würde dich in einer Netflix-Doku berühmt machen?", category: "100 Kennenlern-Fragen" },
+  { text: "Welcher Spitzname aus deiner Schulzeit passt heute eigentlich noch — auch wenn du ihn nie zugeben würdest?", category: "100 Kennenlern-Fragen" },
 
-  // — Phase 2 · Alltag & Geschmack (16-30) — Big-Five-light: Wie tickst du?
+  // — Phase 2 · Alltag & Geschmack — Big-Five-light: Wie tickst du?
   { text: "Wie sieht ein perfekter Sonntag bei dir aus — Stunde für Stunde?", category: "100 Kennenlern-Fragen" },
   { text: "Wenn du zwei Tage komplett für dich hättest, ohne Verpflichtung — was würdest du tun?", category: "100 Kennenlern-Fragen" },
   { text: "Bist du eher Plan-Mensch oder Spontan-Mensch?", category: "100 Kennenlern-Fragen" },
@@ -347,8 +349,10 @@ window.QUESTIONS = [
   { text: "Wann fühlst du dich seltsam fern von dir selbst?", category: "100 Kennenlern-Fragen" },
   { text: "Welches Essen würdest du jeden Tag essen können?", category: "100 Kennenlern-Fragen" },
   { text: "Was wäre dein perfektes Frühstück mit jemandem, den du gut kennst?", category: "100 Kennenlern-Fragen" },
+  { text: "Wenn du eine Werbung drehen müsstest, in der nur DU vorkommst — was bewirbst du am ehrlichsten?", category: "100 Kennenlern-Fragen" },
+  { text: "Welche Sache machst du heimlich richtig gut, gibst aber nicht damit an?", category: "100 Kennenlern-Fragen" },
 
-  // — Phase 3 · Werte & Haltung (31-45) — was wirklich zählt
+  // — Phase 3 · Werte & Haltung — was wirklich zählt
   { text: "Was ist dir im Leben gerade am wichtigsten?", category: "100 Kennenlern-Fragen" },
   { text: "Welche Werte hast du von zuhause mitbekommen, die du dankbar trägst?", category: "100 Kennenlern-Fragen" },
   { text: "Welche Werte deiner Eltern hast du bewusst abgelehnt?", category: "100 Kennenlern-Fragen" },
@@ -364,8 +368,10 @@ window.QUESTIONS = [
   { text: "Welche Eigenschaft ist für dich Dealbreaker bei Menschen, mit denen du Zeit verbringst?", category: "100 Kennenlern-Fragen" },
   { text: "Wann hast du das letzte Mal etwas geglaubt, das sich später als falsch herausstellte?", category: "100 Kennenlern-Fragen" },
   { text: "Was hältst du für die größte Lüge unserer Zeit?", category: "100 Kennenlern-Fragen" },
+  { text: "Wofür würdest du im Internet einen Streit anfangen — und was war zuletzt der Anlass?", category: "100 Kennenlern-Fragen" },
+  { text: "Wenn du eine Sekte gründen müsstest — was wäre die Pflichtkleidung?", category: "100 Kennenlern-Fragen" },
 
-  // — Phase 4 · Beziehungen & Liebe (46-60) — Bindungsstil, Liebessprachen, Beziehungs-DNA
+  // — Phase 4 · Beziehungen & Liebe — Bindungsstil, Liebessprachen, Beziehungs-DNA
   { text: "Wie zeigst du jemandem, dass du sie oder ihn magst — ohne es zu sagen?", category: "100 Kennenlern-Fragen" },
   { text: "Wie willst du selbst geliebt werden — Worte, Berührung, Zeit, Geschenke, Taten?", category: "100 Kennenlern-Fragen" },
   { text: "Was hast du in deiner letzten Beziehung über dich gelernt?", category: "100 Kennenlern-Fragen" },
@@ -381,8 +387,9 @@ window.QUESTIONS = [
   { text: "Was war die ehrlichste Sache, die jemand jemals zu dir gesagt hat?", category: "100 Kennenlern-Fragen" },
   { text: "Wie sieht für dich ein perfekter gemeinsamer Abend in fünf Jahren aus?", category: "100 Kennenlern-Fragen" },
   { text: "Was an dir wird in einer guten Beziehung sichtbar, das sonst keiner sieht?", category: "100 Kennenlern-Fragen" },
+  { text: "Welche „rote Flagge" bei anderen ist eigentlich heimlich dein Typ?", category: "100 Kennenlern-Fragen" },
 
-  // — Phase 5 · Wurzeln & Familie (61-72) — woher du kommst, was du mitschleppst
+  // — Phase 5 · Wurzeln & Familie — woher du kommst, was du mitschleppst
   { text: "Wer in deiner Familie hat dich am stärksten geprägt — und wie?", category: "100 Kennenlern-Fragen" },
   { text: "Was war die wichtigste Lektion, die du als Kind gelernt hast — gut oder schlecht?", category: "100 Kennenlern-Fragen" },
   { text: "Welche Geste deiner Eltern machst du, ohne es zu merken?", category: "100 Kennenlern-Fragen" },
@@ -395,8 +402,9 @@ window.QUESTIONS = [
   { text: "Wie wurde in deiner Familie über Geld gesprochen — und wie heute zwischen dir und Geld?", category: "100 Kennenlern-Fragen" },
   { text: "Wie wurde in deiner Familie über Liebe gesprochen — wenn überhaupt?", category: "100 Kennenlern-Fragen" },
   { text: "Was würdest du anders machen, wenn du selbst eines Tages Kinder hast?", category: "100 Kennenlern-Fragen" },
+  { text: "Welcher Familien-Spruch deiner Eltern ist absurd — und trotzdem irgendwie wahr?", category: "100 Kennenlern-Fragen" },
 
-  // — Phase 6 · Schatten & Verletzlichkeit (73-85) — was selten ausgesprochen wird
+  // — Phase 6 · Schatten & Verletzlichkeit — was selten ausgesprochen wird
   { text: "Wovor hast du gerade am meisten Angst, wenn du ehrlich bist?", category: "100 Kennenlern-Fragen" },
   { text: "Was an dir hast du am längsten zu verstecken versucht?", category: "100 Kennenlern-Fragen" },
   { text: "Welche Eigenschaft an dir wünschst du dir, du hättest sie nicht?", category: "100 Kennenlern-Fragen" },
