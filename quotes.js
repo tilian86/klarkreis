@@ -139,7 +139,7 @@ window.QUOTES = [
   { text: "Wer nicht weiß, wohin er segeln will, für den ist kein Wind der richtige.", author: "Seneca", category: "Richtung" },
   { text: "Das Ziel ist nicht, ins Paradies zu kommen. Das Ziel ist, das Paradies ins Hier zu bringen.", author: null, category: "Richtung" },
   { text: "Where your focus goes, energy flows.", author: null, category: "Richtung" },
-  { text: "Alles wird sich fügen, wenn ich abwarte. Ohne Entscheidung bleibt alles offen — und genau das macht müde.", author: null, category: "Richtung" },
+  { text: "Wer wartet, dass sich alles fügt, übersieht: Ohne Entscheidung bleibt alles offen — und genau das macht müde.", author: null, category: "Richtung" },
 
   // ---------- Resilienz (15) ----------
   { text: "You can't stop the waves, but you can learn to surf.", author: "Jon Kabat-Zinn", category: "Resilienz" },
