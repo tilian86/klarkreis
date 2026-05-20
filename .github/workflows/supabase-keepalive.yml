@@ -27,21 +27,35 @@ jobs:
           # daher unbedenklich hier im Klartext (siehe config.js)
           SUPABASE_ANON_KEY: sb_publishable_5lEVXLCtoG6yvY1w-Q5Xcw_Y9V46rjy
         run: |
-          set -e
-          # Leichtgewichtiger Read auf 'profiles' (Tabelle muss existieren)
-          # Tabelle profiles existiert laut supabase/README.md im Repo.
-          status=$(curl -s -o /tmp/resp.txt -w "%{http_code}" \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
-            "$SUPABASE_URL/rest/v1/profiles?select=id&limit=1")
-          echo "HTTP $status"
-          head -c 500 /tmp/resp.txt; echo
-          # Akzeptiert: 200 (OK) und 206 (Partial Content bei PostgREST).
-          # Auch 401/403 würden zählen, weil sie zeigen dass die Instanz
-          # läuft – aber das wäre ein Konfig-Fehler den wir merken wollen.
-          if [ "$status" = "200" ] || [ "$status" = "206" ]; then
-            echo "✓ Supabase ist erreichbar und antwortet."
-          else
-            echo "✗ Unerwarteter Status. Bitte prüfen."
-            exit 1
-          fi
+          set -u
+          # Leichtgewichtiger Read auf 'profiles' (Tabelle existiert laut
+          # supabase/README.md im Repo).
+          # Wir akzeptieren 200/206 (OK) und auch 401/403 – die zeigen
+          # immerhin, dass die Instanz läuft (Anti-False-Positive).
+          # Bei transienten Errors (521/522/502 von Cloudflare, 5xx, etc.)
+          # versuchen wir es bis zu 3× mit Wartezeit, damit kurze Hänger
+          # nicht zu Fehl-Mails führen.
+          attempt=0
+          max_attempts=3
+          while : ; do
+            attempt=$((attempt+1))
+            status=$(curl -s -o /tmp/resp.txt -w "%{http_code}" \
+              --max-time 30 \
+              -H "apikey: $SUPABASE_ANON_KEY" \
+              -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+              "$SUPABASE_URL/rest/v1/profiles?select=id&limit=1" || echo "000")
+            echo "Attempt $attempt → HTTP $status"
+            case "$status" in
+              200|206|401|403)
+                echo "✓ Supabase ist erreichbar."
+                exit 0
+                ;;
+            esac
+            if [ "$attempt" -ge "$max_attempts" ]; then
+              echo "✗ Nach $attempt Versuchen kein erfolgreicher Response."
+              head -c 500 /tmp/resp.txt; echo
+              exit 1
+            fi
+            echo "  → 60s warten und erneut versuchen…"
+            sleep 60
+          done
