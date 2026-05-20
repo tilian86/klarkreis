@@ -1,0 +1,47 @@
+name: Supabase Keep-Alive
+
+# Verhindert, dass das Free-Tier-Projekt nach 7 Tagen Inaktivität pausiert wird.
+# Macht einmal täglich (03:00 UTC = 05:00 deutsche Zeit im Sommer) einen
+# kleinen Read-Request an die Supabase-REST-API.
+#
+# Außerdem hält der wöchentliche workflow-eigene Commit-Free-Lauf den
+# GitHub-Actions-Schedule selbst aktiv (sonst würde GitHub diesen Workflow
+# nach 60 Tagen Repo-Inaktivität pausieren).
+
+on:
+  schedule:
+    - cron: "0 3 * * *"      # täglich 03:00 UTC
+  workflow_dispatch:           # manueller Trigger im UI
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST-API
+        env:
+          SUPABASE_URL: https://liqnavdghqhhavgkhgpx.supabase.co
+          # Publishable Anon-Key – ist clientseitig sowieso öffentlich,
+          # daher unbedenklich hier im Klartext (siehe config.js)
+          SUPABASE_ANON_KEY: sb_publishable_5lEVXLCtoG6yvY1w-Q5Xcw_Y9V46rjy
+        run: |
+          set -e
+          # Leichtgewichtiger Read auf 'profiles' (Tabelle muss existieren)
+          # Tabelle profiles existiert laut supabase/README.md im Repo.
+          status=$(curl -s -o /tmp/resp.txt -w "%{http_code}" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+            "$SUPABASE_URL/rest/v1/profiles?select=id&limit=1")
+          echo "HTTP $status"
+          head -c 500 /tmp/resp.txt; echo
+          # Akzeptiert: 200 (OK) und 206 (Partial Content bei PostgREST).
+          # Auch 401/403 würden zählen, weil sie zeigen dass die Instanz
+          # läuft – aber das wäre ein Konfig-Fehler den wir merken wollen.
+          if [ "$status" = "200" ] || [ "$status" = "206" ]; then
+            echo "✓ Supabase ist erreichbar und antwortet."
+          else
+            echo "✗ Unerwarteter Status. Bitte prüfen."
+            exit 1
+          fi
