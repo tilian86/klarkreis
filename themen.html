@@ -151,10 +151,10 @@ function cardHref(theme) {
 function renderGrid() {
   // Filter: Frageabend-Varianten (frageabend_arbeit/tief/humor) werden hier nicht einzeln gelistet
   // — sie sind via thema.html?id=frageabend_X erreichbar, aber die Übersicht zeigt nur Haupt-Themen.
-  // Werte-Reise Abend 1 wird gelistet (kostenloser Einstieg in die Reise); Abende 2-6 sind
-  // paywalled und werden hier nicht einzeln gezeigt — sie erscheinen nur über reise.html.
+  // Werte-Reise Abend 1 + Wir-Reise Abend 1 werden gelistet (kostenlose Einstiege in die Reisen);
+  // Abende 2-7 sind paywalled und werden hier nicht einzeln gezeigt — sie erscheinen nur über reise.html / reise-wir.html.
   const themes = Object.entries(window.THEMES)
-    .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1')
+    .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1' || id === 'wir_reise_1')
     .map(([_, t]) => t);
   const filtered = currentFilter === 'all'
     ? themes
