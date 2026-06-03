@@ -53,6 +53,36 @@ Alternative: *Worn wooden floorboards meeting an old cast-iron radiator, low eve
 
 ---
 
+## Wir-Reise (7 Abende nach Gottman) — Bilder noch zu generieren
+
+Aktuell laufen `werte-reise-*.jpg` als Platzhalter. Sobald die echten Bilder existieren, einfach gleich-benannt in `images/` ablegen.
+
+### `images/wir-reise.jpg` (Cover der Reise-Übersicht + Landing)
+> Two coffee mugs slightly apart on a dark wooden table at evening, a single candle in soft focus between them, intimate but with subtle distance, warm amber light, vintage notebook with handwritten notes, Kodak Portra 400 tones, no people, no hands, portrait 4:5.
+
+### `images/wir-reise-1.jpg` (Abend 1 — Auftakt: Die Vier Reiter)
+> Intimate still-life on a dark wooden table at evening: an open vintage notebook with handwritten relationship-research notes, two coffee mugs slightly apart (one fuller, one nearly empty), a single lit candle casting warm shadow, a small architectural drawing of a house with seven floors on a folded paper, a glass of red wine, in the background slightly out of focus two empty chairs facing each other. Atmosphere of careful observation, quiet diagnosis, hopeful seriousness. Kodak Portra 400, warm amber tones, film grain. No people, no hands. Portrait 4:5.
+
+### `images/wir-reise-2.jpg` (Abend 2 — Liebeslandkarten)
+> Antique world map and a smaller hand-drawn map sketch overlapping on a warm wooden surface, brass compass, vintage fountain pen, soft candle light, two open notebooks side by side with pencil annotations, atmosphere of careful mapping and discovery, sepia-amber tones, no people, no hands, portrait 4:5.
+
+### `images/wir-reise-3.jpg` (Abend 3 — Zuneigung und Bewunderung)
+> An old wooden photo album opened to a faded photograph (intentionally blurred so no faces visible), pressed dried flowers on the page, a single hand-written letter with elegant cursive next to it, warm tea cup, soft evening light through a window, atmosphere of cherished memory and warm gratitude, golden honey light, no people visible, portrait 4:5.
+
+### `images/wir-reise-4.jpg` (Abend 4 — Sich einander zuwenden)
+> Two empty wooden chairs angled slightly toward each other in a softly lit room, a single shared book on a side table between them, gentle morning light, warm wood tones, atmosphere of quiet readiness for conversation, intimate but spacious, no people, portrait 4:5.
+
+### `images/wir-reise-5.jpg` (Abend 5 — Einfluss zulassen)
+> Two hands of different sizes resting palm-up on a wooden surface, close together but not touching, soft directional light from one side, brass scales (Waage) slightly out of focus in background, atmosphere of careful balance and openness, warm amber tones, only the wrists visible (no faces), portrait 4:5.
+
+### `images/wir-reise-6.jpg` (Abend 6 — Konflikte: lösbar und ewig)
+> Two contrasting elements on a dark wooden table: on one side a small spring blossom in a glass, on the other side a smooth weathered stone, between them a candle burning steadily, soft window light, atmosphere of holding tension between change and permanence, muted earth tones, no people, no hands, portrait 4:5.
+
+### `images/wir-reise-7.jpg` (Abend 7 — Gemeinsamer Sinn / Abschluss)
+> A small table with meaningful objects gathered: a ring, a folded letter, a small photo (blurred face), a pressed leaf, a candle burning low (almost done), warm golden hour light from a window, atmosphere of completion, blessing, and ritual, sepia-warm tones, no people, portrait 4:5.
+
+---
+
 ## Hinweise
 
 - **Format:** 4:5 vertikal (800×1000 px ist ein guter Richtwert; 1600×2000 für Retina noch besser)

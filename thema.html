@@ -202,10 +202,14 @@ const PAID_GATES = {
     stripeLink: 'https://buy.stripe.com/REPLACE_MIT_DATE_LINK'
   },
   werte_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Werte-Reise · Abend 2 – 6', subtitle: 'Fünf geführte Abende als Paket', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich — die fünf weiteren Abende führen durch Vokabular (Schwartz, Rokeach), Wurzeln (Simone Weil), Schatten (C.G. Jung, Brené Brown), harte Entscheidungen (Ruth Chang) und Integration (Aristoteles). Für Kleingruppen, Paare und Solo-Reflexion. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WERTE_REISE_LINK' },
-  werte_reise_3: null, werte_reise_4: null, werte_reise_5: null, werte_reise_6: null // Fallback unten
+  werte_reise_3: null, werte_reise_4: null, werte_reise_5: null, werte_reise_6: null, // Fallback unten
+  wir_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_wir_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Wir-Reise · Abend 2 – 7', subtitle: 'Sechs geführte Abende nach John Gottman', body: 'Abend 1 („Wir — sehen, was uns trägt") ist frei zugänglich. Die sechs weiteren Abende führen euch durch John Gottmans „Sieben Geheimnisse der glücklichen Ehe" — Liebeslandkarten, Zuneigung und Bewunderung, Sich-Zuwenden, Einfluss zulassen, Konflikte (lösbar und ewig), Gemeinsamer Sinn. Für Paare. Solo- und Paar-Format jeweils enthalten. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WIR_REISE_LINK' },
+  wir_reise_3: null, wir_reise_4: null, wir_reise_5: null, wir_reise_6: null, wir_reise_7: null
 };
 // Alle Werte-Reise-Abende 2-6 teilen dieselbe Gate-Config
 ['werte_reise_3','werte_reise_4','werte_reise_5','werte_reise_6'].forEach(k => { PAID_GATES[k] = PAID_GATES.werte_reise_2; });
+// Alle Wir-Reise-Abende 2-7 teilen dieselbe Gate-Config
+['wir_reise_3','wir_reise_4','wir_reise_5','wir_reise_6','wir_reise_7'].forEach(k => { PAID_GATES[k] = PAID_GATES.wir_reise_2; });
 
 // Auto-Unlock nach Stripe-Checkout — Stripe Success-URL enthält ?unlock=<produkt>
 (function() {
@@ -213,6 +217,7 @@ const PAID_GATES = {
   const unlockCode = up.get('unlock');
   if (unlockCode === 'date') localStorage.setItem('klarkreis:unlocked_date', '1');
   if (unlockCode === 'werte_reise') localStorage.setItem('klarkreis:unlocked_werte_reise', '1');
+  if (unlockCode === 'wir_reise') localStorage.setItem('klarkreis:unlocked_wir_reise', '1');
   if (unlockCode) {
     // URL aufräumen, damit kein share-fähiger Unlock-Link entsteht
     up.delete('unlock');
@@ -226,7 +231,9 @@ if (PAID_GATES[id]) {
                 || localStorage.getItem(gate.unlockKey) === '1';
   if (!unlocked) {
     // Volles Paid-Modal als Overlay — markengerecht, mobil-freundlich
-    const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1' : 'themen.html';
+    const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1'
+                       : id.startsWith('wir_reise') ? 'thema.html?id=wir_reise_1'
+                       : 'themen.html';
     const modal = document.createElement('div');
     modal.innerHTML = `
       <div id="kk-paid-modal" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
