@@ -3491,6 +3491,177 @@ window.THEMES = {
         ])
       }
     }
+  },
+
+  // =====================================================================
+  // WIR-REISE · ABEND 1 — Auftakt: Die Vier Reiter
+  // Nach John Gottman, „Die 7 Geheimnisse der glücklichen Ehe".
+  // Free Lead-Magnet für die 7-Abende-Reise. Diagnostik durch die Vier
+  // Apokalyptischen Reiter + Sound Relationship House als Übersicht +
+  // Liebeslandkarten-Einstieg in Abend 2.
+  // =====================================================================
+  wir_reise_1: {
+    title: 'Wir — sehen, was uns trägt',
+    subtitle: 'Wir-Reise · Abend 1 von 7 (frei)',
+    lead: 'Die meisten Paare reden über das, was nicht klappt. Wenige verstehen, woran sich das wirklich zeigt. John Gottman hat 16 Jahre lang Paare im Labor beobachtet und kann nach 5 Minuten mit 91-prozentiger Treffsicherheit vorhersagen, ob eine Beziehung halten wird. Dieser Abend bringt euch sein Frühwarnsystem nahe — die Vier Reiter — und legt die Grundlage für die sieben Geheimnisse, die folgen.',
+    category: 'Wir-Reise',
+    image: 'images/wir-reise-1.jpg',
+    reise: { id: 'wir', nr: 1, total: 7, titel: 'Wir-Reise — Sieben Abende nach Gottman' },
+    philosophy1: 'John Gottman hat das umfangreichste Datenset der Beziehungsforschung gesammelt. Sein Befund ist überraschend nüchtern: was glückliche Paare auszeichnet, ist nicht Glück, Schönheit oder Tiefenanalyse. Es ist ein Set von Mikro-Gewohnheiten, das verhindert, dass Negatives das Positive überwächst. Er nennt das emotionale Intelligenz in der Ehe.',
+    philosophy2: 'Heute identifiziert ihr die Vier Apokalyptischen Reiter — Kritik, Verachtung, Rechtfertigung, Mauern. Sie sind die präzisesten Frühwarnzeichen, die die Beziehungsforschung kennt. Und ihr lernt die Reparatur-Versuche kennen, die sie entschärfen. Das ist die Diagnose-Werkstatt vor der eigentlichen Reise.',
+    formats: {
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 50 Min.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr beginnt', duration: 3*60,
+            hostNote: 'Kerze anzünden. Handys stumm und weg. Drei gemeinsame Atemzüge. Dieser Abend ist kein Streit-Anlass — er ist eine ruhige Diagnose. Kommt erst kurz an.',
+            description: 'Was heute kommt, gelingt nur, wenn ihr beide kurz nicht mehr Alltag seid. Drei Atemzüge sind nicht symbolisch — sie regulieren das Nervensystem, damit ihr nicht in Verteidigung kippt, sobald Beobachtungen über eure Beziehung kommen.',
+            teaser: 'Zwei Atemzüge bevor wir genau hinsehen.' },
+          { name: 'Ankommen', title: 'Wie kommst du heute hier an?', duration: 8*60,
+            hostNote: 'Beide nacheinander, je 3-4 Min. Der/die andere hört nur zu — nicht antworten, nicht korrigieren, nicht beruhigen.',
+            question: 'Wie kommst du heute hier an — und was hast du vor der Tür liegen lassen, damit du jetzt hier bist?' },
+          { name: 'Einstieg', title: 'Was glückliche Paare wirklich anders machen', duration: 8*60,
+            hostNote: 'Eine:r liest langsam vor. Nach dem Zitat 30 Sekunden Stille.',
+            quote: { text: 'Glücklich verheiratete Paare sind nicht klüger, reicher oder psychologisch raffinierter als andere. Aber sie haben eine Dynamik entwickelt, die verhindert, dass die negativen Gefühle die positiven überdecken.', author: 'John Gottman' },
+            description: 'Gottman hat in 16 Jahren Eheforschung etwas gefunden, das die Selbsthilfe-Industrie überflüssig machen könnte: stabile Paare sind nicht klüger oder bewusster — sie haben Mikro-Gewohnheiten, die das Negative klein halten und das Positive sichtbar. Heute schaut ihr genau hin, welche dieser Gewohnheiten ihr habt und welche fehlen.',
+            teaser: 'Der überraschende Befund der größten Beziehungsstudie aller Zeiten.' },
+          { name: 'Modell', title: 'Das Haus der tragenden Beziehung', duration: 7*60,
+            hostNote: 'Eine:r liest vor. Beide visualisieren das Haus im Kopf — die sieben Ebenen sind die Architektur der Reise.',
+            description: 'Gottman fasst seine sieben Geheimnisse in einem Bild zusammen: das Sound Relationship House. Sieben Stockwerke, zwei tragende Säulen.',
+            items: [
+              { accent: '7.', label: 'Gemeinsamer Sinn', text: 'Eure Kultur, Rituale, das Wir-Gefühl jenseits des Alltags.' },
+              { accent: '6.', label: 'Pattsituationen überwinden', text: 'Die Träume hinter ewigen Konflikten entdecken.' },
+              { accent: '5.', label: 'Lösbare Probleme lösen', text: 'Konflikte präzise managen, statt sie zu vermeiden.' },
+              { accent: '4.', label: 'Einfluss zulassen', text: 'Die Meinung des anderen wirklich an sich heranlassen.' },
+              { accent: '3.', label: 'Sich einander zuwenden', text: 'Die Mikro-Momente der Verbundenheit im Alltag.' },
+              { accent: '2.', label: 'Zuneigung & Bewunderung', text: 'Die positive Innen-Brille füreinander pflegen.' },
+              { accent: '1.', label: 'Liebeslandkarten', text: 'Wissen, wie der andere innerlich tickt — aktualisiert.' },
+              { accent: 'I', label: 'Tragsäule: Vertrauen', text: 'Du weißt, ich bin auf deiner Seite, wenn es schwer wird.' },
+              { accent: 'II', label: 'Tragsäule: Verpflichtung', text: 'Wir gehen das hier zusammen, auch wenn andere lockten.' }
+            ],
+            teaser: 'Das Modell der ganzen Reise — sieben Stockwerke auf zwei Säulen.' },
+          { name: 'Reiter', title: 'Die Vier Apokalyptischen Reiter', duration: 12*60,
+            hostNote: 'Eine:r liest langsam, der/die andere hört. Nach dem letzten Reiter eine Minute Stille.',
+            description: 'Gottman hat vier Verhaltensmuster identifiziert, deren Auftreten in der Streit-Eröffnung mit 96-prozentiger Trefferquote vorhersagt, ob das Gespräch (und die Beziehung) gut endet. Er nennt sie die Vier Apokalyptischen Reiter, weil sie nicht einzeln stehen — sie kommen oft in Reihenfolge, und einer öffnet dem nächsten die Tür.',
+            items: [
+              { accent: '1.', label: 'Kritik', text: 'Statt eine konkrete Beschwerde („Du hast heute den Müll vergessen") ein Angriff auf den Charakter („Du bist so unaufmerksam, immer"). Du machst aus einer Tat ein Wesensmerkmal.' },
+              { accent: '2.', label: 'Verachtung', text: 'Augenrollen, Spott, Sarkasmus, Beleidigungen, „Wirklich? Das war dein Plan?". Verachtung ist der stärkste Vorhersager einer Scheidung. Sie kommuniziert: ich stehe über dir.' },
+              { accent: '3.', label: 'Rechtfertigung', text: 'Verteidigung statt Verantwortung. „Ich habe es nicht vergessen, du hast mir nichts gesagt." Das macht den Partner zum Problem statt zur Lösung.' },
+              { accent: '4.', label: 'Mauern', text: 'Schweigen, Wegschauen, sich emotional rauszieien. Wirkt cool, ist aber das Gegenteil — innerlich ist man überflutet (Flooding) und macht zu, weil man nicht mehr kann.' }
+            ],
+            teaser: 'Vier Muster, die in den ersten drei Minuten eines Streits den Ausgang verraten.' },
+          { name: 'Selbsttest', title: 'Welcher Reiter ist eurer?', duration: 12*60,
+            hostNote: 'Jede:r markiert für sich (im Kopf oder auf Papier): welche der vier Reiter erkenne ich in MIR? Bei welchem fühle ich mich sofort ertappt? Dann reihum 2 Min. Sehr wichtige Regel: ihr benennt nur euch selbst, nicht den anderen. Wer mit dem Finger auf den anderen zeigt, ist beim Reiter Nr. 1 (Kritik) schon angekommen.',
+            description: 'Jeder Mensch hat seine Reiter-Signatur — die zwei oder drei Muster, in die er unter Stress kippt. Wer seine kennt, kann sie früher abfangen. Wer sie nicht kennt, ist ihnen ausgeliefert.',
+            question: 'Welche zwei der vier Reiter sind bei dir am leichtesten geweckt — und was triggert sie typischerweise?' },
+          { name: 'Szene', title: 'Eine echte Szene, langsam durchgehen', duration: 14*60,
+            hostNote: 'Wählt gemeinsam eine konkrete Streitszene aus den letzten Wochen — eine, die ihr beide noch erinnert. Nicht die schlimmste, eine mittelschwere. Jede:r erzählt 5 Min die eigene Erinnerung der ersten 3 Minuten dieses Streits. Der/die andere hört nur zu. Dann: welche Reiter sind aufgetreten? Auch hier: jede:r nennt nur seine eigenen.',
+            description: 'Theorie ist leicht. Eigene Reiter im echten Beispiel zu sehen ist schwer — und der einzige Weg, sie wirklich zu kennen. Diese Station ist die Kern-Diagnostik des Abends.',
+            teaser: 'Theorie wird konkret an einer eigenen Szene.' },
+          { name: 'Stille', title: 'Drei Minuten Atem', duration: 3*60,
+            hostNote: 'Kerze anschauen oder Augen zu. Nichts sagen, nichts erklären. Drei Minuten.',
+            description: 'Nach der Szene-Arbeit braucht der Kopf Luft. Lasst sie. Wer weinen will, weint. Wer sich entschuldigen will, entschuldigt sich nicht jetzt, sondern später — der Drang vergeht meistens, und das ist gut.' },
+          { name: 'Reparatur', title: 'Die Gegen-Werkzeuge: Reparatur-Versuche', duration: 10*60,
+            hostNote: 'Eine:r liest vor. Reihum: welcher dieser fünf Reparatur-Versuche fehlt euch am meisten? Welcher klappt schon?',
+            description: 'Gottman hat festgestellt: das, was glückliche Paare wirklich unterscheidet, ist nicht die Abwesenheit der Reiter — auch sie haben sie. Es ist die Fähigkeit, mitten im Streit kleine Reparatur-Versuche zu machen. Fünf Klassen:',
+            items: [
+              { accent: '1.', label: 'Sanfter Auftakt', text: 'Eine Beschwerde mit „Ich"-Botschaft beginnen statt mit „Du immer". „Ich war heute traurig, weil…" statt „Du nimmst dich nie zurück."' },
+              { accent: '2.', label: 'Humor', text: 'Ein Insider-Witz, ein Augenzwinkern, eine gemeinsame Albernheit — wirkt fast magisch, weil sie Verachtung-Energie sofort ableitet.' },
+              { accent: '3.', label: 'Anerkennen', text: 'Ein einzelner Satz: „Du hast recht mit dem, was du gerade sagst." Schaltet Rechtfertigung sofort aus.' },
+              { accent: '4.', label: 'Time-out', text: 'Pause vereinbaren, wenn einer geflutet ist (Herzfrequenz über 100). Mindestens 20 Min, danach wieder anfangen. „Ich brauche zehn Minuten" ist kein Rückzug, sondern Regulation.' },
+              { accent: '5.', label: 'Zuneigung', text: 'Mitten im Streit eine kurze Berührung, ein „Ich liebe dich auch, wenn ich gerade sauer bin." — schwer, möglich, kraftvoll.' }
+            ],
+            question: 'Welcher Reparatur-Versuch fällt euch leicht — und welcher fehlt euch am meisten?' },
+          { name: 'Verhältnis', title: 'Das magische 5-zu-1-Verhältnis', duration: 8*60,
+            hostNote: 'Eine:r liest. Reihum: in welchem Bereich eures Alltags ist das Verhältnis aus dem Lot?',
+            description: 'Gottman hat in seinen Daten ein präzises Muster gefunden: stabile Paare haben im Streit mindestens fünfmal mehr positive Interaktionen als negative. Außerhalb von Streit eher zwanzig zu eins. Das ist kein Wunschwert — es ist die Schwelle, ab der eine Beziehung trägt.\n\nPositive Mikro-Momente sind nicht Liebeserklärungen — sie sind ein interessiertes „Wie war dein Tag?", ein Nicken, ein Berühren beim Vorbeigehen, ein Lachen über etwas Albernes. Wenn die negativen Momente in eurem Alltag häufiger werden als ein Fünftel der positiven, kippt das Klima — und ihr werdet überrascht sein, wie schnell sich Verbitterung einrichtet.',
+            question: 'In welchen Stunden oder Situationen eures Alltags ist das 5:1-Verhältnis bei euch eher 1:1 — und woran würdet ihr das messen?' },
+          { name: 'Mini-Liebeskarte', title: 'Wie gut kenne ich dich noch?', duration: 12*60,
+            hostNote: 'Vorgeschmack auf Abend 2. Reihum: einer fragt, der andere antwortet, dann Wechsel. Wählt 6-8 Fragen aus, deren Antwort ihr nicht hundertprozentig sicher kennt.',
+            description: 'Gottman startet seine sieben Geheimnisse mit Liebeslandkarten — wie aktuell ist dein inneres Bild deines Partners? Das hier ist nur eine erste Probe — Abend 2 geht in die Tiefe. Heute schaut ihr nur, wo Lücken sind.',
+            items: [
+              { accent: '1.', label: 'Stress-Top-Three', text: 'Was sind die drei Dinge, die meinen Partner gerade am meisten stressen?' },
+              { accent: '2.', label: 'Was nervt heimlich', text: 'Was nervt meinen Partner gerade an mir, das er noch nicht gesagt hat?' },
+              { accent: '3.', label: 'Heim­licher Traum', text: 'Was ist ein Traum meines Partners, von dem er selten spricht?' },
+              { accent: '4.', label: 'Größte Angst gerade', text: 'Was ist die Angst, die meinen Partner gerade nachts wach hält?' },
+              { accent: '5.', label: 'Wichtiger Mensch', text: 'Wer ist der Mensch außerhalb unserer Beziehung, mit dem mein Partner gerade am meisten zu tun hat?' },
+              { accent: '6.', label: 'Lieblings­essen', text: 'Was wäre das Essen, das mein Partner gerade ohne Zögern wählen würde — wenn es egal wäre, was das andere wollen?' },
+              { accent: '7.', label: 'Hass-Aufgabe', text: 'Welche eine alltägliche Aufgabe hasst mein Partner am meisten?' },
+              { accent: '8.', label: 'Letzte Tränen', text: 'Wann hat mein Partner zuletzt geweint — und worüber?' }
+            ],
+            teaser: 'Eine Probe für die echte Tiefe in Abend 2.' },
+          { name: 'Einladung', title: 'Wohin die Wir-Reise führt', duration: 5*60,
+            hostNote: 'Eine:r liest vor. Nicht verkaufen — einladen.',
+            description: 'Heute habt ihr die Diagnostik gemacht. Eure Reiter benannt, das Haus gesehen, eine Mini-Probe in Liebeslandkarten gemacht. Die sechs folgenden Abende bauen das Haus konkret aus:\n\n→ Abend 2 — Liebeslandkarten. Die Tiefen-Version dessen, was ihr heute angerissen habt. 60+ Fragen, ein präzises inneres Bild voneinander auf den neuesten Stand.\n→ Abend 3 — Zuneigung und Bewunderung. Die positive innere Brille pflegen, jenseits von Komplimenten.\n→ Abend 4 — Sich zuwenden. Die Mikro-Gesten, in denen eine Beziehung wirklich lebt (oder stirbt).\n→ Abend 5 — Einfluss zulassen. Macht teilen, ohne sich aufzugeben.\n→ Abend 6 — Konflikte. Die zwei Arten Streit und wie ihr beide handhabt — inklusive die Träume hinter Pattsituationen.\n→ Abend 7 — Gemeinsamer Sinn. Eure Kultur, Rituale, das Wir jenseits des Alltags.\n\nKeine Therapie. Eine Werkstatt.' },
+          { name: 'Schritt', title: 'Eine kleine Sache diese Woche', duration: 7*60,
+            hostNote: 'Beide je 2-3 Min: was ist ein einziger konkreter, kleiner Schritt diese Woche? Klein bedeutet: ihr werdet ihn wirklich tun. Schreibt es auf einen Zettel.',
+            description: 'Nicht „ich werde besser sein". Sondern: „Wenn ich merke, dass ich Kritik anfange, hole ich tief Luft und beginne mit Ich-Botschaft." Oder: „Ich frage täglich einmal: wie war dein Tag — und höre wirklich zu." Klein, beobachtbar, diese Woche.',
+            question: 'Welcher eine konkrete, kleine Schritt diese Woche?' },
+          { name: 'Wort', title: 'Ein Wort, mit dem ihr geht', duration: 4*60,
+            hostNote: 'Beide je ein Wort. Keine Begründung.',
+            question: 'Ein Wort für die Woche zwischen heute und Abend 2.' }
+        ])
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~50 Min.',
+        people: 'Nur du',
+        stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment für dich', duration: 2*60,
+            hostNote: 'Kerze, Notizbuch, Handy weg. Niemand sonst soll diesen Abend mitlesen — das ist nur für dich.',
+            description: 'Du machst diese Reise allein, weil du etwas verstehen willst, bevor du es teilst — oder weil dein Partner gerade nicht dabei ist. Beides ist legitim. Was du hier findest, gehört dir.' },
+          { name: 'Ankommen', title: 'Wie kommst du an?', duration: 4*60,
+            hostNote: 'Schreibe zwei Sätze — nicht die schöne Antwort, die echte.',
+            question: 'Wie geht es dir gerade in deiner Beziehung — wenn du ehrlich auf eine Skala von 1 bis 10 schaust, welche Zahl?' },
+          { name: 'Einstieg', title: 'Was Glück in Beziehungen ausmacht', duration: 4*60,
+            hostNote: 'Lies langsam, zweimal.',
+            quote: { text: 'Was eine Ehe funktionieren lässt, ist erstaunlich einfach. Glücklich verheiratete Paare sind nicht klüger, reicher oder psychologisch raffinierter — sie haben eine Dynamik entwickelt, die verhindert, dass das Negative das Positive überdeckt.', author: 'John Gottman' },
+            description: 'Gottman hat 16 Jahre lang Paare im Labor beobachtet und kann nach 5 Minuten mit 91-prozentiger Treffsicherheit vorhersagen, ob eine Beziehung halten wird. Sein Befund ist nüchtern: es geht nicht um große Liebe, sondern um Mikro-Gewohnheiten.' },
+          { name: 'Reiter', title: 'Die vier Apokalyptischen Reiter', duration: 6*60,
+            hostNote: 'Lies langsam. Markiere für dich: welche kennst du aus dir selbst?',
+            description: 'Vier Verhaltensmuster, die das Ende vorhersagen — wenn sie unerkannt bleiben:',
+            items: [
+              { accent: '1.', label: 'Kritik', text: 'Aus einer Tat ein Wesensmerkmal machen („du bist immer so").' },
+              { accent: '2.', label: 'Verachtung', text: 'Augenrollen, Spott, Überlegenheit. Stärkster Scheidungs-Vorhersager.' },
+              { accent: '3.', label: 'Rechtfertigung', text: 'Verteidigung statt Verantwortung.' },
+              { accent: '4.', label: 'Mauern', text: 'Sich emotional rauszieien, wenn man überflutet ist.' }
+            ] },
+          { name: 'Deine Reiter', title: 'Welche sind deine?', duration: 8*60,
+            hostNote: 'Schreibe 6 Min am Stück. Ehrlich — niemand liest mit.',
+            question: 'Welche zwei der vier Reiter sind bei dir am leichtesten geweckt — was triggert sie typischerweise, und an welcher konkreten Szene der letzten Monate erkennst du das?' },
+          { name: 'Reparatur', title: 'Die Gegen-Werkzeuge', duration: 6*60,
+            hostNote: 'Lies. Markiere: welcher fällt dir am leichtesten, welcher am schwersten?',
+            description: 'Was glückliche Paare unterscheidet: sie machen mitten im Streit kleine Reparatur-Versuche.',
+            items: [
+              { accent: '1.', label: 'Sanfter Auftakt', text: '„Ich war traurig…" statt „Du immer…"' },
+              { accent: '2.', label: 'Humor', text: 'Ein Insider-Witz, ein Augenzwinkern.' },
+              { accent: '3.', label: 'Anerkennen', text: '„Du hast recht mit dem, was du gerade sagst."' },
+              { accent: '4.', label: 'Time-out', text: 'Pause vereinbaren bei innerer Überflutung.' },
+              { accent: '5.', label: 'Zuneigung', text: 'Eine Berührung mitten im Streit.' }
+            ],
+            question: 'Welcher Reparatur-Versuch fehlt in deiner Beziehung am meisten — und welcher fällt dir leicht?' },
+          { name: 'Eine Szene', title: 'Eine eigene Szene durchgehen', duration: 8*60,
+            hostNote: 'Schreibe 7 Min. Eine konkrete Streitszene der letzten Wochen — mittelschwer, nicht die schlimmste. Erste drei Minuten in Zeitlupe.',
+            question: 'Welche Reiter sind in den ersten drei Minuten aufgetreten — und welcher Reparatur-Versuch wäre möglich gewesen?' },
+          { name: 'Mini-Karte', title: 'Wie gut kennst du sie/ihn noch?', duration: 6*60,
+            hostNote: 'Schreibe die Antworten für dich. Markiere mit Fragezeichen, wo du dir unsicher bist — das sind die Punkte, die in Abend 2 wichtig werden.',
+            description: 'Eine erste Probe für die Liebeslandkarten-Arbeit von Abend 2.',
+            question: 'Beantworte für dich: Was sind die drei größten Stressquellen deines Partners gerade, was sein heimlicher Traum, was nervt ihn an dir das er noch nicht ausgesprochen hat — und wann hat er zuletzt geweint?' },
+          { name: 'Ausblick', title: 'Was Abend 2 bringt', duration: 3*60,
+            hostNote: 'Lies. Nimm den Impuls mit.',
+            description: '→ Abend 2 — Liebeslandkarten. Die Tiefen-Version dessen, was du heute angerissen hast. Du arbeitest mit über 60 Fragen aus Gottmans Liebeslandkarten-Spiel und bekommst ein präzises inneres Bild davon, wie aktuell dein Wissen ist. Die Schwächen wirst du sehen — die Lücken sind die spannendste Information.' },
+          { name: 'Schritt', title: 'Ein konkreter Schritt', duration: 3*60,
+            hostNote: 'Schreibe einen einzigen Satz auf einen Zettel. Klein, diese Woche.',
+            description: 'Nicht „ich werde besser". Sondern: ein einziges konkretes Mikro-Verhalten diese Woche.',
+            question: 'Welcher eine konkrete Schritt diese Woche?' },
+          { name: 'Wort', title: 'Ein Wort als Anker', duration: 2*60,
+            hostNote: 'Ein Wort, auf einen Zettel, in die Tasche.',
+            question: 'Ein Wort für die Woche.' }
+        ])
+      }
+    }
   }
 
 };
