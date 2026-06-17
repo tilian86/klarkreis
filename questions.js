@@ -11,6 +11,7 @@ window.QUESTIONS = [
   { text: "Was möchtest du gewesen sein?", category: "Über dich" },
   { text: "Wovor hast du am meisten Angst?", category: "Über dich" },
   { text: "Für welche Eigenschaften an dir hast du am öftesten Komplimente bekommen?", category: "Über dich" },
+  { text: "Welche gute Eigenschaft an dir wird dir manchmal zum Verhängnis?", category: "Über dich" },
   { text: "Was denken andere über dich, das überhaupt nicht stimmt?", category: "Über dich" },
   { text: "Gibt es ein Gefühl, das du selten zulässt — und wovor hättest du Angst, wenn du es doch zuließest?", category: "Über dich" },
   { text: "Welche Rolle spielst du in Gruppen, ohne dass du sie bewusst gewählt hättest?", category: "Über dich" },
