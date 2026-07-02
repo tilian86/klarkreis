@@ -496,6 +496,16 @@ window.QUESTIONS = [
   { text: "Was war das letzte Buch, der letzte Film oder die letzte Folge, die dich richtig getroffen hat?", category: "Match-Eisbrecher" },
   { text: "Wenn ich rate, was du gleich antworten wirst, und es trifft zu — was hätte ich gewonnen?", category: "Match-Eisbrecher" },
   { text: "Welche gute Eigenschaft an dir wird dir manchmal zum Verhängnis?", category: "Über dich" },
+  { text: "Hey, du wirkst wie jemand, der hier eigentlich zu wenig Geduld für Smalltalk hat. Also überspringen wir den: Was war dein bestes Erlebnis diesen Monat?", category: "Match-Eisbrecher" },
+  { text: "Hey, ich tippe, du bist eine von den Leuten, die nach außen entspannt wirken und innerlich eine sehr klare Meinung zu allem haben. Wie oft liege ich damit richtig?", category: "Match-Eisbrecher" },
+  { text: "Hey, ehrliche Ansage: Ich schreibe nur Menschen an, bei denen ich mir das Gespräch danach auch vorstellen kann. Was müsste in deinem Profil noch stehen, damit man dich wirklich kennt?", category: "Match-Eisbrecher" },
+  { text: "Hey, du siehst aus, als hättest du ein Talent, das niemand von dir erwartet. Ich rate nicht, ich frage direkt: Welches?", category: "Match-Eisbrecher" },
+  { text: "Hey, ich glaube, du bist jemand, der lieber spontan Ja sagt als drei Wochen zu planen. Wann hat sich das zuletzt gelohnt?", category: "Match-Eisbrecher" },
+  { text: "Hey, die meisten hier fragen, wie dein Tag war. Ich frage lieber: Was war heute die beste Entscheidung, die du getroffen hast?", category: "Match-Eisbrecher" },
+  { text: "Hey, du wirkst wie jemand mit gutem Geschmack und wenig Toleranz für Langeweile. Womit kriegt man dich garantiert aus der Reserve?", category: "Match-Eisbrecher" },
+  { text: "Hey, Vermutung: Du bekommst hier viele Nachrichten und antwortest auf wenige. Was unterscheidet die, auf die du antwortest?", category: "Match-Eisbrecher" },
+  { text: "Hey, ich habe eine Theorie, dass man Menschen an ihrer Antwort auf eine Frage erkennt: Worüber kannst du reden, ohne auf die Uhr zu schauen?", category: "Match-Eisbrecher" },
+  { text: "Hey, du wirkst, als wärst du im echten Leben deutlich witziger als in Textform — geht mir genauso. Woran würde ich das bei dir merken?", category: "Match-Eisbrecher" },
 
 ];
 
