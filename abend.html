@@ -103,6 +103,15 @@ body { background-color: #FBF9F4; }
     </div>
 
     <!-- Feedback form (rendered for feedback-type stations) -->
+    <a id="handoutLink" href="#" download class="hidden w-full max-w-2xl flex items-center gap-4 bg-primary-container text-on-primary rounded-xl p-5 md:p-6 mb-6 hover:bg-secondary transition-colors fadein">
+      <span class="material-symbols-outlined text-3xl">picture_as_pdf</span>
+      <div class="flex-1">
+        <p class="font-serif text-lg leading-snug">Das Handout zum Abend</p>
+        <p class="text-sm opacity-80">Die Kern-Gedanken und Platz für eure Notizen — schön gestaltet zum Mitnehmen und Ausdrucken.</p>
+      </div>
+      <span class="material-symbols-outlined">download</span>
+    </a>
+
     <form id="feedbackForm" class="hidden w-full max-w-2xl space-y-6 bg-surface-container-low rounded-xl p-6 md:p-8 fadein" onsubmit="submitFeedback(event)">
       <div>
         <label class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-3">Wie war der Abend?</label>
@@ -331,6 +340,14 @@ function render() {
     el.description.textContent = s.description || '';
     el.descriptionBox.classList.toggle('hidden', !s.description);
     el.feedbackForm.classList.remove('hidden');
+    // Handout-Download anbieten (falls PDF für diesen Abend existiert)
+    const handout = document.getElementById('handoutLink');
+    if (handout) {
+      const pdfUrl = 'pdf/' + themaId + '.pdf';
+      fetch(pdfUrl, { method: 'HEAD' }).then(r => {
+        if (r.ok) { handout.href = pdfUrl; handout.classList.remove('hidden'); }
+      }).catch(() => {});
+    }
   } else {
     if (s.hostNote) { el.hostNote.textContent = s.hostNote; el.hostNoteBox.classList.remove('hidden'); }
     if (s.quote) {
