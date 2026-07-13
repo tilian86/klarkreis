@@ -24,11 +24,20 @@ def get_theme(tid):
 def esc(s): return html.escape(str(s))
 
 t=get_theme(tid)
-# Kuratieren: Kern-Zitat, Modell-Stationen (mit items), Reflexions-Prompts
+# Kuratieren: Kern-Zitat, Modell-Stationen (mit items), Fragen, Mitnehmen-Prompts
 quote=next((s['quote'] for s in t['stations'] if s.get('quote')),None)
-models=[s for s in t['stations'] if s.get('items') and len(s['items'])>=3][:3]
-# Reflexion: Stationen die nach Schritt/Wort/Frage aussehen mit question
-prompts=[s for s in t['stations'] if s.get('question') and any(k in s['name'].lower() for k in ('schritt','wort','wandel','pakt','vertrag','geste','segen','dank'))][:3]
+models=[s for s in t['stations'] if s.get('items') and len(s['items'])>=3][:4]
+
+def has(name,keys): return any(k in name.lower() for k in keys)
+RITUAL=('oeffnen','öffnen','ankommen','stille','kreis-puls','kreispuls','einladung',
+        'ausblick','nachklang','rueckblende','rückblende','einstieg','modell')
+CLOSING=('schritt','wort','geste','pakt','vertrag','zugesagt','segen','dank','mitnahme','mitnehmen')
+
+# „Die Fragen des Abends" — echte Gesprächsfragen (kein Ritual, kein Abschluss)
+questions=[s for s in t['stations'] if s.get('question')
+           and not has(s['name'],RITUAL) and not has(s['name'],CLOSING)][:7]
+# „Was ihr mitnehmt" — Abschluss-Prompts mit Schreiblinien
+prompts=[s for s in t['stations'] if s.get('question') and has(s['name'],CLOSING)][:3]
 if not prompts:
     prompts=[s for s in t['stations'] if s.get('question')][-2:]
 
@@ -58,8 +67,8 @@ body=f'''
   <p class="sub">{esc(t['subtitle'])}</p>
   <p class="lead">{esc(t['lead'])}</p>
   {f'<blockquote>{esc(quote["text"])}<cite>— {esc(quote.get("author",""))}</cite></blockquote>' if quote else ''}
-  <h2>Das Wesentliche</h2>
-  {"".join(model_html(m) for m in models)}
+  {('<h2>Das Wesentliche</h2>' + "".join(model_html(m) for m in models)) if models else ''}
+  {('<h2>Die Fragen des Abends</h2><p class="rnote">Zum Weitersprechen — allein, zu zweit, im Kreis.</p><ol class="qlist">' + "".join(f'<li>{esc(s["question"])}</li>' for s in questions) + '</ol>') if questions else ''}
   <h2>Was ihr mitnehmt</h2>
   <p class="rnote">Zum Ausfüllen — für euch, in den Tagen nach dem Abend.</p>
   {"".join(prompt_html(p) for p in prompts)}
@@ -93,6 +102,9 @@ h2 { font-family:Georgia,serif; font-size:19px; color:#1B3022; margin:24px 0 12p
 .item b { color:#1B3022; }
 .rnote { font-size:10.5px; color:#737973; font-style:italic; margin-bottom:12px; }
 .prompt { margin-bottom:16px; break-inside:avoid; }
+.qlist { margin:4px 0 8px 0; padding-left:20px; }
+.qlist li { font-family:Georgia,serif; font-size:12.5px; line-height:1.5; color:#1B3022; margin-bottom:9px; padding-left:4px; }
+.qlist li::marker { color:#924C00; font-weight:700; }
 .prompt .q { font-family:Georgia,serif; font-size:13px; color:#1B3022; margin-bottom:10px; }
 .line { border-bottom:1px dotted #b9b6ae; height:20px; }
 footer { margin-top:26px; padding-top:10px; border-top:1px solid #e4e2dd; font-size:9.5px; text-transform:uppercase; letter-spacing:.15em; color:#a8a49b; text-align:center; }
