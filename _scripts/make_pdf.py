@@ -26,7 +26,10 @@ def esc(s): return html.escape(str(s))
 t=get_theme(tid)
 # Kuratieren: Kern-Zitat, Modell-Stationen (mit items), Fragen, Mitnehmen-Prompts
 quote=next((s['quote'] for s in t['stations'] if s.get('quote')),None)
-models=[s for s in t['stations'] if s.get('items') and len(s['items'])>=3][:4]
+# Modelle = konzeptuelle Kurz-Listen (3-9 Items). Große Übungslisten
+# (20-Aussagen-Test, 60-Fragen-Spiel) gehören NICHT ins Handout — die macht
+# man im Abend, nicht als Take-Home.
+models=[s for s in t['stations'] if s.get('items') and 3<=len(s['items'])<=9][:3]
 
 def has(name,keys): return any(k in name.lower() for k in keys)
 RITUAL=('oeffnen','öffnen','ankommen','stille','kreis-puls','kreispuls','einladung',
@@ -79,8 +82,9 @@ body=f'''
 css='''
 @page { size: A4; margin: 0; }
 * { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: 'Helvetica Neue', Arial, sans-serif; color:#1B1C19; background:#FBF9F4; }
-.page { padding: 22mm 20mm 16mm; min-height:297mm; background:#FBF9F4;
+html, body { font-family: 'Helvetica Neue', Arial, sans-serif; color:#1B1C19; background:#FBF9F4;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.page { padding: 22mm 20mm 18mm; background:#FBF9F4;
   background-image: radial-gradient(circle at 92% 6%, rgba(146,76,0,0.05), transparent 40%); }
 header { display:flex; justify-content:space-between; align-items:center; padding-bottom:10px; border-bottom:1px solid #e4e2dd; margin-bottom:26px; }
 .brand { display:flex; align-items:center; gap:8px; }
@@ -110,9 +114,41 @@ h2 { font-family:Georgia,serif; font-size:19px; color:#1B3022; margin:24px 0 12p
 footer { margin-top:26px; padding-top:10px; border-top:1px solid #e4e2dd; font-size:9.5px; text-transform:uppercase; letter-spacing:.15em; color:#a8a49b; text-align:center; }
 '''
 
-htmldoc=f'<!doctype html><html><head><meta charset="utf-8"><style>{css}</style></head><body>{body}</body></html>'
-htmlpath=Path(f"/tmp/klarkreis/{tid}_handout.html"); htmlpath.write_text(htmldoc,encoding='utf-8')
+def build_html(zoom=1.0):
+    z = f'html{{zoom:{zoom:.4f};}}' if zoom!=1.0 else ''
+    return f'<!doctype html><html><head><meta charset="utf-8"><style>{css}{z}</style></head><body>{body}</body></html>'
+
+htmlpath=Path(f"/tmp/klarkreis/{tid}_handout.html")
 pdfpath=OUTDIR/f"{tid}.pdf"
+A4=1123  # px @96dpi
+
+# Pass 1: Inhaltshöhe messen
+htmlpath.write_text(build_html(1.0),encoding='utf-8')
+mpng=f"/tmp/klarkreis/_measure_{tid}.png"
+subprocess.run([CHROME,"--headless","--disable-gpu","--hide-scrollbars",
+  "--window-size=794,4000",f"--screenshot={mpng}",f"file://{htmlpath}"],capture_output=True,timeout=60)
+zoom=1.0
+try:
+    from PIL import Image
+    im=Image.open(mpng).convert("L"); w,h=im.size; px=im.load()
+    last=0
+    for y in range(h-1,-1,-1):
+        if any(px[x,y]<235 for x in range(0,w,7)): last=y; break
+    H=last+1
+    import math
+    natural=H/A4
+    floor=math.floor(natural); frac=natural-floor
+    # Nur „Schnipsel"-Überläufe (letzte Seite <22% gefüllt) zusammenschrumpfen
+    if floor>=1 and 0<frac<0.22:
+        target=floor
+        zoom=(target*A4-45)/H   # 45px Atem am Seitenende
+        zoom=max(0.85,min(1.0,zoom))
+except Exception as e:
+    print("  (Messung übersprungen:",e,")")
+
+# Pass 2: finales PDF (ggf. leicht skaliert)
+htmlpath.write_text(build_html(zoom),encoding='utf-8')
 subprocess.run([CHROME,"--headless","--disable-gpu","--no-pdf-header-footer",
   f"--print-to-pdf={pdfpath}", f"file://{htmlpath}"],capture_output=True,timeout=60)
-print(f"✓ {pdfpath}  ({pdfpath.stat().st_size//1024} KB)" if pdfpath.exists() else "✗ PDF nicht erzeugt")
+tag=f" (skaliert {zoom:.3f})" if zoom<0.999 else ""
+print(f"✓ {pdfpath.name}  ({pdfpath.stat().st_size//1024} KB){tag}" if pdfpath.exists() else "✗ PDF nicht erzeugt")
