@@ -83,6 +83,17 @@ Aktuell laufen `werte-reise-*.jpg` als Platzhalter. Sobald die echten Bilder exi
 
 ---
 
+## Inneres Kind (neu 2026-07-16) — Platzhalter ersetzen!
+
+### `images/inneres-kind.jpg` (aktuell Kopie von notizbuch.jpg)
+**Thema:** *Das Kind in mir — was früh gelernt wurde und bis heute mitredet*
+
+> Editorial photography, soft natural light, muted earth tones (deep green #1B3022, warm ochre #924C00, cream #FBF9F4). A small vintage child's chair next to a grown-up armchair, side by side near a window; on the small chair a worn teddy bear or a faded children's drawing; warm late-afternoon light, gentle shadows. Quiet, contemplative, tender mood — not sad. Slight film grain, shallow depth of field, no people. Vertical 4:5.
+
+Alternativ: eine alte Blechdose mit Kindheits-Schätzen (Murmeln, ein Foto mit weißem Rand, ein Bonbonpapier) auf Holztisch bei Kerzenlicht, von oben.
+
+---
+
 ## Hinweise
 
 - **Format:** 4:5 vertikal (800×1000 px ist ein guter Richtwert; 1600×2000 für Retina noch besser)
