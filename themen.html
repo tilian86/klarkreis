@@ -154,7 +154,7 @@ function renderGrid() {
   // Werte-Reise Abend 1 + Wir-Reise Abend 1 werden gelistet (kostenlose Einstiege in die Reisen);
   // Abende 2-7 sind paywalled und werden hier nicht einzeln gezeigt — sie erscheinen nur über reise.html / reise-wir.html.
   const themes = Object.entries(window.THEMES)
-    .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1' || id === 'wir_reise_1')
+    .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1' || id === 'wir_reise_1' || id === 'inneres_kind')
     .map(([_, t]) => t);
   const filtered = currentFilter === 'all'
     ? themes
