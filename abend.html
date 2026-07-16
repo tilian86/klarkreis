@@ -167,6 +167,19 @@ body { background-color: #FBF9F4; }
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
+
+// Paywall-Redirect: kostenpflichtige Abende laufen über thema.html (Kauf-Modal).
+// Muss mit PAID_GATES in thema.html synchron bleiben.
+(function() {
+  let key = null;
+  if (themaId === 'date') key = 'klarkreis:unlocked_date';
+  else if (/^werte_reise_[2-6]$/.test(themaId)) key = 'klarkreis:unlocked_werte_reise';
+  else if (/^wir_reise_[2-7]$/.test(themaId)) key = 'klarkreis:unlocked_wir_reise';
+  if (key && localStorage.getItem(key) !== '1' && localStorage.getItem('klarkreis:unlocked') !== '1') {
+    location.replace('thema.html?id=' + encodeURIComponent(themaId));
+    throw new Error('gated');
+  }
+})();
 const theme = window.THEMES[themaId] || window.THEMES.bindung;
 const format = theme.formats[formatKey] || theme.formats.group;
 const stations = format.stations;

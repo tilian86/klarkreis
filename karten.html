@@ -188,6 +188,19 @@ const params = new URLSearchParams(location.search);
 const id = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
 
+// Paywall-Redirect: kostenpflichtige Abende laufen über thema.html (Kauf-Modal).
+// Muss mit PAID_GATES in thema.html synchron bleiben.
+(function() {
+  let key = null;
+  if (id === 'date') key = 'klarkreis:unlocked_date';
+  else if (/^werte_reise_[2-6]$/.test(id)) key = 'klarkreis:unlocked_werte_reise';
+  else if (/^wir_reise_[2-7]$/.test(id)) key = 'klarkreis:unlocked_wir_reise';
+  if (key && localStorage.getItem(key) !== '1' && localStorage.getItem('klarkreis:unlocked') !== '1') {
+    location.replace('thema.html?id=' + encodeURIComponent(id));
+    throw new Error('gated');
+  }
+})();
+
 const FORMAT_LABEL = { group: 'Kleine Gruppe', pair: 'Zu zweit', solo: 'Allein' };
 
 const themaSelect = document.getElementById('themaSelect');

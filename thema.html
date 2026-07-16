@@ -234,6 +234,16 @@ if (PAID_GATES[id]) {
     const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1'
                        : id.startsWith('wir_reise') ? 'thema.html?id=wir_reise_1'
                        : 'themen.html';
+    // Solange kein echter Stripe-Link eingetragen ist (Platzhalter), führt der
+    // Kauf-Button auf eine vorbefüllte E-Mail — manueller Verkauf mit Zugangs-Code.
+    const linkReady = gate.stripeLink && !gate.stripeLink.includes('REPLACE_MIT');
+    const btnStyle = 'display:block;text-align:center;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;margin-bottom:0.75rem;transition:background 0.2s;';
+    const mailHref = 'mailto:kontakt@klarkreis.de?subject=' + encodeURIComponent('Kauf: ' + gate.title + ' (' + gate.price + ')')
+      + '&body=' + encodeURIComponent('Hallo,\n\nich möchte „' + gate.title + '" für ' + gate.price + ' kaufen. Bitte schickt mir die Zahlungsinfos und meinen Zugangs-Code.\n\nViele Grüße');
+    const buyBlock = linkReady
+      ? `<a href="${gate.stripeLink}" style="${btnStyle}">Mit Stripe sicher kaufen →</a>`
+      : `<a href="${mailHref}" style="${btnStyle}">Per E-Mail kaufen →</a>
+         <p style="font-size:0.8rem;color:#737973;text-align:center;margin-bottom:0.75rem;line-height:1.5;">Kurze E-Mail genügt — du bekommst Zahlungsinfos (PayPal oder Überweisung) und deinen persönlichen Zugangs-Code, in der Regel innerhalb weniger Stunden.</p>`;
     const modal = document.createElement('div');
     modal.innerHTML = `
       <div id="kk-paid-modal" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
@@ -246,7 +256,7 @@ if (PAID_GATES[id]) {
             <p style="font-size:0.8rem;color:#737973;">${gate.priceNote}</p>
           </div>
           <p style="color:#434843;line-height:1.6;margin-bottom:2rem;font-size:0.95rem;">${gate.body}</p>
-          <a href="${gate.stripeLink}" style="display:block;text-align:center;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;margin-bottom:0.75rem;transition:background 0.2s;">Mit Stripe sicher kaufen →</a>
+          ${buyBlock}
           <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem;">
             <input id="kk-pw" type="password" placeholder="Zugangs-Code" style="flex:1;padding:0.75rem;border:1px solid #c3c8c1;border-radius:0.5rem;font-size:0.9rem;font-family:inherit;" autocomplete="off"/>
             <button id="kk-pw-btn" style="padding:0.75rem 1.25rem;background:#fff;border:1px solid #1B3022;color:#1B3022;border-radius:0.5rem;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Einlösen</button>
