@@ -134,7 +134,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 35 Min.',
+        duration: '~1 Std. 50 Min.',
         people: '2 Personen (Paar oder Freundschaft)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -173,6 +173,10 @@ window.THEMES = {
           { name: 'Stille', title: 'Drei Minuten ohne Worte', duration: 3*60,
             hostNote: 'Haltet Augenkontakt oder schaut auf die Kerze. Nichts sagen. Einfach das spüren, was gerade zwischen euch ist. Atmen.',
             description: 'Nach dem, was ihr gerade erzählt habt, ist Sprechen manchmal das falsche Werkzeug. Drei Minuten Pause. Das wirkt länger, als du denkst — bleibt trotzdem.' },
+          { name: 'Kein Schicksal', title: 'Muster sind kein Schicksal', duration: 8*60,
+            hostNote: 'Eine:r liest vor. Danach beide, je 2-3 Min. Hier dreht sich der Abend — vom Erkennen zum Hoffen.',
+            description: 'Die Forschung nennt es „earned secure" — verdiente Sicherheit: Menschen mit ängstlichem oder vermeidendem Muster entwickeln in guten Beziehungen nachweislich sichere Bindung. Nicht durch Willenskraft, sondern durch wiederholte Gegen-Erfahrung: Da bleibt jemand, obwohl ich klammere. Da kommt jemand zurück, obwohl ich mich verschanzt habe.\n\nIhr seid füreinander genau diese Gegen-Erfahrung — nicht in großen Gesten, sondern in hundert kleinen Momenten. Das ist keine Selbsthilfe-Floskel, sondern der am besten belegte Weg, auf dem Bindungsmuster sich wirklich verändern.',
+            question: 'Wo hat unsere Beziehung dein Muster schon ein Stück umgeschrieben — und in welchem kleinen Moment hast du das zuletzt gemerkt?' },
           { name: 'Geschenk', title: 'Was ich an dir sehe, wenn ich ehrlich bin', duration: 10*60,
             hostNote: 'Jede:r sagt dem anderen in einem Satz, was ihr an ihm/ihr liebt, das ihr sonst selten laut sagt. Der andere antwortet nur mit „Danke." Nichts weiter.',
             question: 'Wenn du heute die Wahrheit sagen müsstest — was liebst du an der anderen Person, das du sonst nicht aussprichst?' },
@@ -376,12 +380,13 @@ window.THEMES = {
             hostNote: 'Eine:r liest vor. Danach kurz schweigen.',
             quote: { text: 'Erzähl mir nicht, was dir wichtig ist. Zeig mir deinen Kalender und deinen Kontoauszug — und ich sage es dir.', author: 'James W. Frick (sinngemäß)' },
             description: 'Werte sind nicht die schönen Worte, die wir über uns sagen. Sie sind das, was sich in den kleinen Entscheidungen durchsetzt, wenn keiner hinschaut. Heute schauen wir gemeinsam — ohne Bewertung — was sich bei euch beiden gerade durchsetzt.' },
-          { name: 'Landkarte', title: 'Die drei Werte-Paare', duration: 8*60,
-            hostNote: 'Gemeinsam durchlesen. Bei jedem Paar kurz sagen: wo stehst du heute — und wo stehst du, wenn du müde bist?',
+          { name: 'Landkarte', title: 'Die Werte-Landkarte: zwei Achsen', duration: 8*60,
+            hostNote: 'Gemeinsam durchlesen. Bei jeder Achse kurz sagen: Wo stehst du heute — und wohin rutschst du, wenn du müde bist?',
+            description: 'Shalom Schwartz hat in über 80 Ländern dieselbe Werte-Landkarte gefunden. Sie hat zwei Achsen — und auf keiner kann man gleichzeitig an beiden Enden stehen:',
             items: [
-              { label: 'Sicherheit ↔ Freiheit', text: 'Das Bekannte bewahren oder das Neue wagen.' },
-              { label: 'Leistung ↔ Verbundenheit', text: 'Etwas erreichen oder füreinander da sein.' },
-              { label: 'Sinn ↔ Genuss', text: 'Für etwas Größeres leben oder im Jetzt präsent sein.' }
+              { label: 'Bewahren ↔ Öffnen', text: 'Sicherheit, Tradition, Verlässlichkeit — oder Neugier, Wandel, eigener Weg. Diese Achse zeigt, wie du mit Veränderung umgehst.' },
+              { label: 'Ich stärken ↔ Über mich hinaus', text: 'Leistung, Erfolg, Einfluss — oder Fürsorge, Verbundenheit, etwas Größeres als du. Diese Achse zeigt, für wen du eigentlich antrittst.' },
+              { label: 'Der Preis', text: 'Jeder starke Wert kostet seinen Gegenüber-Wert: Wer viel bewahrt, öffnet weniger. Wer stark leistet, verbindet sich schwerer. Das ist keine Schwäche — das ist die Geometrie der Landkarte.' }
             ] },
           { name: 'Deine 3', title: 'Deine drei echten Werte', duration: 14*60,
             hostNote: 'Jede:r schreibt erst allein auf — 3 Minuten, keine Diskussion. Dann erzählt einer 5 Min, der andere hört nur zu. Wechsel. Keine Kommentare zwischendurch.',
@@ -565,7 +570,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 35 Min.',
+        duration: '~1 Std. 50 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -593,6 +598,10 @@ window.THEMES = {
             hostNote: 'Scrollt zusammen durch eure letzten 7 Tage. Was seht ihr? Wo lügt eure Gefühls-Version über eure tatsächliche Zeit?',
             description: 'Der Kalender ist der ehrlichste Spiegel. Was er zeigt, das lebt ihr — unabhängig von dem, was ihr sagt.\n\nOptional, wenn Zeit: sucht den einen Eintrag, der euch wütend macht beim Anschauen. Warum?',
             question: 'Was zeigt unser Kalender über unsere Prioritäten — und wo gibt es Lücken?' },
+          { name: 'Viertausend', title: 'Ungefähr 4000 Wochen', duration: 8*60,
+            hostNote: 'Eine:r liest vor. Danach je 2 Min — ohne Trost und ohne Hektik.',
+            description: 'Oliver Burkeman hat nachgerechnet: Ein durchschnittliches Leben hat etwa 4000 Wochen. Wer 40 ist, hat gut 2000 davon hinter sich.\n\nDas ist keine Drohung, sondern eine Entlastung: Wenn die Zeit sowieso nie für alles reicht, ist „alles schaffen" keine Option, die man verpassen könnte. Übrig bleibt die ehrlichere Frage: Was davon soll es wirklich sein?\n\nRechnet kurz eure eigene Zahl aus. Sie fühlt sich anders an als der Satz „das Leben ist kurz".',
+            question: 'Wie viele Wochen hast du ungefähr noch — und wenn du die Zahl ansiehst: Welcher deiner vier Öfen bekommt gerade zu viele davon?' },
           { name: 'Wurzeln', title: 'Was habt ihr mitgebracht?', duration: 12*60,
             hostNote: 'Je 5 Minuten erzählen, der andere nur zuhören. Keine Rückfrage in der Erzählzeit.',
             description: 'Unsere Prioritäten sind selten unsere eigenen. Irgendwo hat dir jemand gezeigt: „Dies ist wichtig. Dies nicht." Oft durch das, wofür Zeit da war und wofür nie.',
@@ -844,7 +853,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 10 Min.',
+        duration: '~1 Std. 30 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -868,7 +877,8 @@ window.THEMES = {
             description: 'Nicht, was du glaubst, was gut wäre. Was sich wirklich nach Zuhause anfühlt.',
             question: 'Wie sieht dein idealer Samstag aus — realistisch, nicht Urlaub?' },
           { name: 'Gemeinsamer Mix', title: 'Gemeinsam oder getrennt?', duration: 12*60,
-            hostNote: 'Der überraschende Teil: Viele Paare leben gemeinsam und doch unterschiedliche ideale Tage.',
+            hostNote: 'Beide Bilder nebeneinander legen. Kein Verhandeln — erst mal nur sehen.',
+            description: 'Der überraschende Teil: Viele Paare leben zusammen und tragen doch verschiedene ideale Tage in sich — einer braucht mehr Stille, die andere mehr Menschen; einer blüht morgens, die andere nachts. Das ist kein Problem, solange es ausgesprochen ist. Zum Problem wird es nur, wenn beide stillschweigend annehmen, der ideale Tag des anderen sähe aus wie der eigene.\n\nDie ehrliche Frage ist nicht „Wie kriegen wir denselben Tag hin?", sondern: Welche Teile wollen wir teilen — und welche dürfen jedem allein gehören?',
             question: 'Welche Teile unseres idealen Tages sind gemeinsam — welche dürfen getrennt sein?' },
           { name: 'Was fehlt', title: 'Der Vergleich mit heute', duration: 12*60,
             hostNote: 'Beide nacheinander, je 4 Minuten. Was merkt ihr jetzt, wo ihr eure idealen Tage neben die aktuellen Wochen legt?',
@@ -979,7 +989,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 15 Min.',
+        duration: '~1 Std. 45 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -1011,6 +1021,11 @@ window.THEMES = {
             hostNote: 'Je eine Antwort pro Person.',
             description: 'Ein 10-Jahres-Bild ist schön. Aber wahr wird es in 12-Monats-Schritten.',
             question: 'Welche Weiche muss in den nächsten 12 Monaten umgelegt sein, damit dein Bild realistisch wird?' },
+          { name: 'Fear-Setting', title: 'Was, wenn es schiefgeht?', duration: 10*60,
+            hostNote: 'Je 4 Min pro Person. Der andere hört zu — und fragt am Ende nur: „Und was würdest du dann tun?"',
+            quote: { text: 'Wir leiden öfter in der Vorstellung als in der Wirklichkeit.', author: 'Seneca' },
+            description: 'Zwischen euch und euren Bildern steht selten ein echtes Hindernis — meistens eine unausgesprochene Angst. Tim Ferriss hat daraus eine Übung gemacht: die Angst nicht wegatmen, sondern durchbuchstabieren. Was genau wäre der schlimmste Fall? Wie wahrscheinlich ist er? Und was würdest du tun, wenn er wirklich einträte?\n\nAusgesprochene Ängste schrumpfen fast immer. Unausgesprochene wachsen.',
+            question: 'Welche Angst hält dich am stärksten von deinem Bild ab — und was wäre, ehrlich, dein Plan B, wenn sie eintritt?' },
           { name: 'Stille', title: 'Zwei Minuten, die Zukunft spüren', duration: 2*60,
             hostNote: 'Augen zu. Stellt euch einen konkreten Moment aus eurem Mittwoch in 10 Jahren vor. Den Geruch, das Licht, die Temperatur.',
             description: 'Der Unterschied zwischen Plan und Wirklichkeit: Wirklichkeit hat Geruch.' },
@@ -1020,7 +1035,10 @@ window.THEMES = {
             question: 'Beschreibe ein Foto aus deinem Mittwoch in 10 Jahren — in 5 Sätzen. Wer? Wo? Was passiert gerade?' },
           { name: 'Schritt', title: 'Der erste Move diese Woche', duration: 8*60,
             hostNote: 'Konkret, sichtbar. Aufschreiben auf Zettel, austauschen.',
-            question: 'Was ist dein erster kleiner Schritt diese Woche — und wie kann ich dich dabei unterstützen?' }
+            question: 'Was ist dein erster kleiner Schritt diese Woche — und wie kann ich dich dabei unterstützen?' },
+          { name: 'Wort', title: 'Ein Wort zum Abschied', duration: 3*60,
+            hostNote: 'Beide je ein Wort. Keine Begründung. Danach die Kerze zusammen auspusten.',
+            question: 'Ein Wort, mit dem du aus diesem Abend gehst.' }
         ])
       }
     }
@@ -2023,6 +2041,7 @@ window.THEMES = {
             description: 'ADHS ist keine Störung im Sinne von „kaputt". Es ist eine andere Regulation — Aufmerksamkeit, Zeit, Emotionen, Impulse arbeiten anders. Nicht weniger.\n\nDer Abend heute ist eine Chance, gemeinsam zu schauen: Wo geht euer Motor gut? Wo läuft ihr gegen Wände? Und: Wie sieht das System vom anderen aus — nicht von innen, sondern von außen?' },
           { name: 'Meine Landkarte', title: 'Meine Executive-Landkarte', duration: 12*60,
             hostNote: 'Jede:r je 4 Min: „In welchen der sechs exekutiven Funktionen merke ich mein ADHS am meisten?" Der/die andere hört.',
+            description: 'Barkley und Brown unterscheiden sechs Funktionen, die bei ADHS anders arbeiten — keine ist kaputt, alle laufen nur nicht nach Lehrbuch. Nutzt die Liste als Landkarte, nicht als Diagnose: Wo erkennst du dich sofort — und wo bist du überrascht, dass es dazugehört?',
             items: [
               { label: '1.', text: 'Aktivierung — Anfangen' },
               { label: '2.', text: 'Fokus — Halten und wechseln' },
@@ -2473,7 +2492,7 @@ window.THEMES = {
           { name: 'Einstieg', title: 'Das, was selten gesagt wird', duration: 5*60,
             hostNote: 'Eine:r liest langsam vor. Nach dem Zitat eine halbe Minute Stille.',
             quote: { text: 'Wir sind verwandt — das ist Schicksal. Ob wir Freunde werden, ist unsere Wahl.', author: 'Max Frisch (sinngemäß)' },
-            description: 'Wo man sich seit Jahrzehnten kennt, sammelt sich oft mehr Ungesagtes als Gesagtes. Geschichten, die man nie erzählt hat, weil sich der richtige Moment nie ergab. Dank, der zu selbstverständlich schien. Verletzungen, über die man längst hinweg ist — und die doch nie ausgesprochen wurden. Heute Abend öffnet sich für eineinhalb Stunden ein Raum, in dem das möglich wird. Nicht alles muss gesagt werden. Aber es darf.' },
+            description: 'Wo man sich seit Jahrzehnten kennt, sammelt sich oft mehr Ungesagtes als Gesagtes. Geschichten, die man nie erzählt hat, weil sich der richtige Moment nie ergab. Dank, der zu selbstverständlich schien. Verletzungen, über die man längst hinweg ist — und die doch nie ausgesprochen wurden.\n\nDie Gedächtnisforschung hat dafür einen schönen Befund: Erinnerungen, die gemeinsam erzählt werden, werden reicher — jede:r hält andere Details, und erst im Gespräch setzt sich das ganze Bild zusammen. Genau das passiert heute Abend: Ihr legt eure Versionen nebeneinander. Nicht alles muss gesagt werden. Aber es darf.' },
           { name: 'Name', title: 'Wer hat dir deinen Namen gegeben?', duration: 8*60,
             hostNote: 'Beide je 3-4 Min. Der/die Ältere darf anfangen, wenn unklar.\n→ Mit Eltern/Großeltern: Sie erzählen zuerst, woher dein Name kommt — du hörst zu. Dann du, was du mit deinem Namen verbindest.\n→ Mit Geschwistern: Jede:r erzählt, wer euch erzählt hat, wo euer Name herkommt — die Versionen können voneinander abweichen. Interessant.\n→ Mit erwachsenem Kind: Du (Elternteil) erzählst zuerst, wie der Name entstand. Dann dein Kind, was es heute damit verbindet.',
             description: 'Namen sind nicht neutral. Sie tragen Erwartungen, Erinnerungen an Verstorbene, Moden einer Zeit, Kompromisse zwischen zwei Familien. Der eigene Name ist oft das erste und letzte, was man von seiner Familie bekommt.',
