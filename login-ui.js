@@ -108,8 +108,9 @@
           </button>
         </form>
         <p id="klarkreisLoginMsg" class="mt-4 text-sm text-on-surface-variant hidden"></p>
+        <button type="button" id="klarkreisCodeToggle" class="mt-3 text-[11px] uppercase tracking-widest font-semibold text-secondary hover:text-on-tertiary-container transition-colors">Du hast schon einen Code aus der E-Mail? → Hier eingeben</button>
         <form id="klarkreisCodeForm" class="hidden mt-4 space-y-3">
-          <p class="text-sm text-on-surface-variant leading-relaxed">In der E-Mail steht auch ein <strong>6-stelliger Code</strong> — praktisch, wenn du KlarKreis als App auf dem Home-Bildschirm nutzt:</p>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Gib die E-Mail-Adresse von oben und den <strong>6-stelligen Code</strong> aus der E-Mail ein — praktisch für die Home-Bildschirm-App:</p>
           <div class="flex gap-2">
             <input id="klarkreisCodeInput" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456"
               class="flex-1 px-4 py-3 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-background tracking-[0.3em] text-center font-semibold focus:outline-none focus:border-secondary transition-colors"/>
@@ -124,6 +125,42 @@
     document.body.appendChild(modal);
 
     const closeModal = () => modal.remove();
+
+    // Code-Login: jederzeit erreichbar (nicht nur nach 'Link schicken') —
+    // wichtig für die Home-Bildschirm-App, wo die Mail woanders ankam.
+    document.getElementById('klarkreisCodeToggle').addEventListener('click', () => {
+      document.getElementById('klarkreisCodeForm').classList.remove('hidden');
+      document.getElementById('klarkreisCodeToggle').classList.add('hidden');
+      document.getElementById('klarkreisCodeInput').focus();
+    });
+    document.getElementById('klarkreisCodeForm').addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const msg = document.getElementById('klarkreisLoginMsg');
+      const codeBtn = document.getElementById('klarkreisCodeBtn');
+      const email = document.getElementById('klarkreisEmailInput').value.trim();
+      const code = document.getElementById('klarkreisCodeInput').value.trim();
+      if (!email) {
+        msg.classList.remove('hidden');
+        msg.className = 'mt-4 text-sm text-error';
+        msg.textContent = 'Gib oben zuerst deine E-Mail-Adresse ein.';
+        document.getElementById('klarkreisEmailInput').focus();
+        return;
+      }
+      if (code.length < 6) return;
+      codeBtn.disabled = true;
+      codeBtn.textContent = 'Prüfe…';
+      try {
+        await auth.verifyCode(email, code);
+        closeModal();
+      } catch (err) {
+        msg.classList.remove('hidden');
+        msg.className = 'mt-4 text-sm text-error';
+        msg.textContent = 'Code nicht korrekt oder abgelaufen — probier es nochmal.';
+        codeBtn.disabled = false;
+        codeBtn.textContent = 'Einloggen';
+      }
+    });
+
     document.getElementById('klarkreisModalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', function esc(e) {
@@ -145,27 +182,8 @@
         msg.className = 'mt-4 text-sm text-primary-container';
         msg.innerHTML = '✓ Check deine Mails: Link klicken — oder unten den Code eingeben.';
         btn.textContent = 'Gesendet';
-        const codeForm = document.getElementById('klarkreisCodeForm');
-        codeForm.classList.remove('hidden');
-        if (codeForm.dataset.wired === '1') return;
-        codeForm.dataset.wired = '1';
-        codeForm.addEventListener('submit', async (ev) => {
-          ev.preventDefault();
-          const codeBtn = document.getElementById('klarkreisCodeBtn');
-          const code = document.getElementById('klarkreisCodeInput').value.trim();
-          if (code.length < 6) return;
-          codeBtn.disabled = true;
-          codeBtn.textContent = 'Prüfe…';
-          try {
-            await auth.verifyCode(email, code);
-            closeModal();
-          } catch (err) {
-            msg.className = 'mt-4 text-sm text-error';
-            msg.textContent = 'Code nicht korrekt oder abgelaufen — probier es nochmal.';
-            codeBtn.disabled = false;
-            codeBtn.textContent = 'Einloggen';
-          }
-        }, { once: false });
+        document.getElementById('klarkreisCodeForm').classList.remove('hidden');
+        document.getElementById('klarkreisCodeToggle').classList.add('hidden');
       } catch (err) {
         msg.classList.remove('hidden');
         msg.className = 'mt-4 text-sm text-error';
