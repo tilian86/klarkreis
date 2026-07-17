@@ -75,6 +75,25 @@
 }
 .dark ::placeholder { color: rgb(168 173 158 / 0.6); }
 
+/* Audio-Player (player.js, .kk-player hat eigenes helles CSS) */
+.dark .kk-player { background: #22241c; border-color: rgb(207 203 192 / 0.12); color: #e8e4d9; box-shadow: 0 1px 3px rgb(0 0 0 / 0.3); }
+.dark .kk-player.kk-sticky { background: rgb(28 30 23 / 0.94); box-shadow: 0 6px 24px rgb(0 0 0 / 0.4); }
+.dark .kk-player .kk-title { color: #d98f45; }
+.dark .kk-player .kk-btn { color: #c9d8cc; }
+.dark .kk-player .kk-btn:hover { background: rgb(201 216 204 / 0.08); color: #d98f45; }
+.dark .kk-player .kk-btn.kk-primary { background: #35523f; color: #fff; }
+.dark .kk-player .kk-btn.kk-primary:hover { background: #41624c; }
+.dark .kk-player .kk-time { color: #a8ad9e; }
+.dark .kk-player .kk-progress { background: rgb(207 203 192 / 0.15); }
+.dark .kk-player .kk-progress-fill { background: #d98f45; }
+.dark .kk-player .kk-progress-buffered { background: rgb(207 203 192 / 0.2); }
+.dark .kk-player .kk-speed { background: #1c1e17; border-color: rgb(207 203 192 / 0.2); color: #c9d8cc; }
+.dark .kk-player .kk-speed:hover { border-color: #d98f45; }
+
+/* MiniPlayer (page-audio.js) — Opacity-Varianten, die oben fehlen */
+.dark .bg-surface-container-low\/80 { background-color: rgb(28 30 23 / 0.85); }
+.dark .bg-outline-variant\/40 { background-color: rgb(80 84 74 / 0.6); }
+
 /* Körnung dezent anheben, damit die Fläche lebendig bleibt */
 .dark .film-grain { opacity: 0.04; }
 
