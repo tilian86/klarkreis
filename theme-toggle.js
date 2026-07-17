@@ -36,8 +36,9 @@
   document.addEventListener('DOMContentLoaded', function () {
     updateMeta();
 
-    // Desktop: Button ans Ende der Header-Navigation
-    const nav = document.querySelector('header .md\\:flex');
+    // Desktop: Button ans Ende der Header-Navigation.
+    // Die Landing nutzt <nav> statt <header>, daher beide Varianten.
+    const nav = document.querySelector('header .md\\:flex, nav .md\\:flex');
     if (nav) {
       const btn = document.createElement('button');
       btn.className = 'kk-theme-toggle inline-flex items-center text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300';
