@@ -423,7 +423,9 @@ function renderList() {
       <section>
         <div class="flex items-end justify-between flex-wrap gap-2 mb-6 pb-4 border-b border-outline-variant/20">
           <h2 class="font-serif text-3xl md:text-4xl ${isSpicy ? 'text-secondary' : 'text-primary-container'} tracking-tight">${cat}</h2>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">${byCat[cat].length} Frage${byCat[cat].length === 1 ? '' : 'n'}${catSeen > 0 ? ' · ' + catSeen + ' gesehen' : ''}</span>
+          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">${byCat[cat].length} Frage${byCat[cat].length === 1 ? '' : 'n'}${catSeen > 0 ? ' · ' + catSeen + ' gesehen' : ''}
+            <button data-copylist="${cat.replace(/"/g, '&quot;')}" class="copylist-btn align-middle ml-2 text-on-surface-variant/40 hover:text-secondary transition-colors" title="Kompakte Liste zum Kopieren"><span class="material-symbols-outlined text-[16px]">format_list_bulleted</span></button>
+          </span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           ${byCat[cat].map((q, i) => questionCardHtml(q, {
@@ -434,6 +436,70 @@ function renderList() {
         </div>
       </section>`;
   }).join('');
+  groups.querySelectorAll('.copylist-btn').forEach(btn => {
+    btn.addEventListener('click', () => openCopyList(btn.dataset.copylist));
+  });
+}
+
+// ===== Kompakt-Liste zum Kopieren (dezent, über das Listen-Icon je Kategorie) =====
+function openCopyList(cat) {
+  const qs = window.QUESTIONS.filter(q => q.category === cat);
+  if (!qs.length) return;
+  const overlay = document.createElement('div');
+  overlay.id = 'copyListOverlay';
+  overlay.className = 'fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4';
+  overlay.innerHTML = `
+    <div class="bg-surface rounded-xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-outline-variant/30">
+      <div class="flex items-center justify-between gap-3 p-5 border-b border-outline-variant/20">
+        <h3 class="font-serif text-xl text-primary-container">${cat} <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 ml-2">${qs.length} Fragen</span></h3>
+        <div class="flex items-center gap-2">
+          <button id="copyAllBtn" class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-semibold text-secondary hover:text-on-tertiary-container transition-colors px-3 py-2 border border-secondary/40 rounded-lg"><span class="material-symbols-outlined text-[14px]">content_copy</span> Alle kopieren</button>
+          <button id="copyListClose" class="text-on-surface-variant/60 hover:text-on-background p-1"><span class="material-symbols-outlined">close</span></button>
+        </div>
+      </div>
+      <div class="overflow-y-auto divide-y divide-outline-variant/15">
+        ${qs.map((q, i) => `
+          <div class="flex items-start gap-3 px-5 py-3 group">
+            <span class="font-label text-[10px] text-on-surface-variant/40 pt-1 w-6 shrink-0 text-right">${i + 1}.</span>
+            <p class="flex-1 text-sm text-on-background leading-relaxed">${q.text}</p>
+            <button data-copy-idx="${i}" class="copy-one shrink-0 text-on-surface-variant/40 hover:text-secondary transition-colors p-1" title="Frage kopieren"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+  function close() { overlay.remove(); document.body.style.overflow = ''; }
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  overlay.querySelector('#copyListClose').addEventListener('click', close);
+  document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } });
+  function flash(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const orig = icon.textContent;
+    icon.textContent = 'check';
+    btn.classList.add('text-secondary');
+    setTimeout(() => { icon.textContent = orig; btn.classList.remove('text-secondary'); }, 1200);
+  }
+  function copyText(text, btn) {
+    const ok = () => flash(btn);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok).catch(() => { legacyCopy(text); ok(); });
+    } else { legacyCopy(text); ok(); }
+  }
+  function legacyCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+  }
+  overlay.querySelector('#copyAllBtn').addEventListener('click', function () {
+    copyText(qs.map(q => q.text).join('\n'), this);
+  });
+  overlay.querySelectorAll('.copy-one').forEach(btn => {
+    btn.addEventListener('click', function () {
+      copyText(qs[Number(this.dataset.copyIdx)].text, this);
+    });
+  });
 }
 
 function mountFragenPlayers() {
