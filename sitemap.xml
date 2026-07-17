@@ -86,6 +86,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://klarkreis.de/thema.html?id=fragen36</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://klarkreis.de/thema.html?id=date</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

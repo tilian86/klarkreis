@@ -94,6 +94,15 @@ Alternativ: eine alte Blechdose mit Kindheits-Schätzen (Murmeln, ein Foto mit w
 
 ---
 
+## Die 36 Fragen (neu) — Platzhalter ersetzen!
+
+### `images/fragen36.jpg` (aktuell Kopie von wein.jpg)
+**Thema:** *Die 36 Fragen — das Nähe-Experiment nach Aron*
+
+> Editorial photography, soft natural light, muted earth tones (deep green #1B3022, warm ochre #924C00, cream #FBF9F4). Two chairs facing each other very closely in a warm living room corner, knees almost touching distance, a small side table with two glasses of water and a folded sheet of paper with a handwritten numbered list; late evening lamp light, intimate but calm. No people. Slight film grain, shallow depth of field, vertical 4:5.
+
+---
+
 ## Hinweise
 
 - **Format:** 4:5 vertikal (800×1000 px ist ein guter Richtwert; 1600×2000 für Retina noch besser)

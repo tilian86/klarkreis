@@ -128,7 +128,8 @@ const PROFILE = {
   adhs:          { focus: ['identitaet'],             depth: 3, starter: false },
   inneres_kind:  { focus: ['herkunft','identitaet'],  depth: 3, starter: false },
   werte_reise_1: { focus: ['identitaet'],             depth: 3, starter: true, reise: true },
-  wir_reise_1:   { focus: ['beziehung'],              depth: 2, starter: true, reise: true, pairOnly: true }
+  wir_reise_1:   { focus: ['beziehung'],              depth: 2, starter: true, reise: true, pairOnly: true },
+  fragen36:      { focus: ['beziehung','bunt'],       depth: 2, starter: true }
 };
 
 const QUESTIONS = [
@@ -228,7 +229,7 @@ function minutesOf(fmt) {
 function recommend() {
   const T = window.THEMES;
   // Direkt-Routen
-  if (answers.wer === 'date') return { main: 'date', alts: ['frageabend', 'bindung'] };
+  if (answers.wer === 'date') return { main: 'date', alts: ['fragen36', 'frageabend'] };
   if (answers.wer === 'familie') return { main: 'familienzeit', alts: ['heimat', 'frageabend'] };
 
   const scored = Object.entries(PROFILE).map(([id, p]) => {
