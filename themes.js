@@ -4247,6 +4247,120 @@ window.THEMES = {
   },
 
   // =====================================================================
+  // DIE 36 FRAGEN — nach Arthur Aron et al. (1997)
+  // Die berühmte Nähe-Studie als geführter Abend. Eigene deutsche
+  // Übersetzung der Fragen. Ehrliche Einordnung: Die Studie erzeugte
+  // Nähe zwischen Fremden; „zum Verlieben" wurde sie erst durch Mandy
+  // Len Catrons NYT-Essay (2015) — inkl. der 4 Minuten Augenkontakt,
+  // die NICHT aus der Studie stammen. Frei zugänglich (SEO-Anker),
+  // führt organisch zum Date-Abend.
+  // =====================================================================
+  fragen36: {
+    title: 'Die 36 Fragen',
+    subtitle: 'Das berühmte Nähe-Experiment — zum Nachmachen',
+    category: 'Beziehungen',
+    lead: 'Sechsunddreißig Fragen, drei Runden, aufsteigende Tiefe — das ist das Design, mit dem der Psychologe Arthur Aron 1997 im Labor Nähe zwischen Fremden erzeugt hat. Berühmt wurde es als „36 Fragen zum Verlieben". Es funktioniert bei ersten Dates, bei langjährigen Paaren und zwischen Freund:innen — überall da, wo zwei Menschen einander wirklich sehen wollen.',
+    image: 'images/fragen36.jpg',
+    philosophy1: 'Die Studie dahinter ist echt: Arthur Aron und Kolleg:innen ließen 1997 fremde Menschen 45 Minuten lang eskalierend persönliche Fragen austauschen — und maßen danach eine Nähe, für die Freundschaften sonst Wochen brauchen. Der Mechanismus ist keine Magie, sondern Gegenseitigkeit: Ich zeige etwas Echtes, du zeigst etwas Echtes, und beide erleben, dass nichts Schlimmes passiert. Selbstöffnung in kleinen, wechselseitigen Schritten — das ist das ganze Geheimnis.',
+    philosophy2: 'Und die Liebesgeschichte? Die stammt aus einem Essay der Autorin Mandy Len Catron, die die Fragen 2015 mit einem Bekannten durchging, danach vier Minuten Augenkontakt hielt — und ihn später heiratete. Ihr Fazit war ehrlicher als die Schlagzeilen: Die Fragen machen Verlieben nicht unausweichlich, sie machen es möglich. Genau so solltet ihr den Abend nehmen — nicht als Zauberspruch, sondern als Raum, in dem Nähe entstehen darf. Auch die vier Minuten Augenkontakt am Ende sind Catrons Zutat, nicht Arons — und trotzdem vielleicht der intensivste Teil.',
+    formats: {
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 25 Min.',
+        people: '2 Personen — erstes Date, langjähriges Paar oder enge Freund:innen',
+        stations: withFeedback([
+          { name: 'Öffnen', title: 'Ein Moment, bevor ihr beginnt', duration: 3*60,
+            teaser: 'Handys weg, bequem sitzen — mehr Vorbereitung braucht es nicht.',
+            hostNote: 'Handys stumm und außer Reichweite. Setzt euch einander zugewandt — Sofa-Ecke oder über Eck am Tisch ist besser als frontal gegenüber. Wer mag: Kerze an.',
+            description: 'Ihr braucht nichts außer Zeit und der Bereitschaft, ehrlich zu antworten. Der Abend funktioniert, wenn ihr euch fremd seid — und er funktioniert, wenn ihr seit zwanzig Jahren zusammen seid. Fremde entdecken einen Menschen. Vertraute entdecken, was sie zu kennen glaubten.' },
+          { name: 'Einstieg', title: 'Was hier gleich passiert', duration: 5*60,
+            teaser: 'Die echte Studie hinter dem Mythos — in zwei Minuten.',
+            hostNote: 'Eine:r liest laut vor.',
+            description: 'Kurz die ehrliche Version: 1997 ließ der Psychologe Arthur Aron einander fremde Menschen 45 Minuten lang Fragen austauschen, die immer persönlicher wurden. Danach fühlten sich viele Paare einander näher als mancher Freundschaft nach Monaten. Der Trick ist die Gegenseitigkeit — beide öffnen sich, im gleichen Tempo, Schritt für Schritt.\n\n„Zum Verlieben" wurden die Fragen erst 2015, als die Autorin Mandy Len Catron ihren Selbstversuch beschrieb — und den Mann später heiratete. Ihr eigenes Fazit: Die Fragen erzwingen nichts. Sie machen etwas möglich.\n\nMehr müsst ihr nicht wissen. Los.' },
+          { name: 'Regeln', title: 'Drei Regeln, mehr nicht', duration: 4*60,
+            teaser: 'Abwechselnd, beide antworten, nicht hetzen.',
+            items: [
+              { label: '1. Abwechselnd', text: 'Lest die Fragen abwechselnd laut vor. Wer vorliest, antwortet zuerst — dann die andere Person. Beide beantworten jede Frage.' },
+              { label: '2. Der Reihe nach', text: 'Keine Fragen überspringen, keine vorziehen. Die Reihenfolge ist das Design: Sie baut die Tiefe langsam auf, damit nichts zu früh kommt.' },
+              { label: '3. Nicht hetzen', text: 'Es ist kein Quiz. Wenn eine Frage ein Gespräch öffnet — geht hinein. Die Zeiten pro Runde sind Richtwerte, keine Stoppuhr.' }
+            ] },
+          { name: 'Runde I', title: 'Die Fragen 1 bis 12', duration: 18*60,
+            teaser: 'Der Anfang: leicht, neugierig, öffnend.',
+            hostNote: 'Abwechselnd vorlesen, beide antworten. Richtwert: 15-20 Minuten.',
+            items: [
+              { label: '1.', text: 'Wenn du jeden Menschen der Welt einladen könntest: Wen hättest du gern als Gast zum Abendessen?' },
+              { label: '2.', text: 'Wärst du gern berühmt? Wofür?' },
+              { label: '3.', text: 'Übst du manchmal vorher, was du in einem Telefonat sagen wirst? Warum?' },
+              { label: '4.', text: 'Wie sähe für dich ein „perfekter" Tag aus?' },
+              { label: '5.', text: 'Wann hast du zuletzt für dich allein gesungen? Und für jemand anderen?' },
+              { label: '6.', text: 'Wenn du 90 werden und dabei ab jetzt entweder den Körper oder den Geist eines 30-Jährigen behalten könntest — was würdest du wählen?' },
+              { label: '7.', text: 'Hast du eine heimliche Ahnung, wie du einmal sterben wirst?' },
+              { label: '8.', text: 'Nennt drei Dinge, die ihr beide gemeinsam zu haben scheint.' },
+              { label: '9.', text: 'Wofür in deinem Leben bist du am dankbarsten?' },
+              { label: '10.', text: 'Wenn du eine Sache daran ändern könntest, wie du aufgewachsen bist — welche wäre es?' },
+              { label: '11.', text: 'Erzähl deinem Gegenüber in vier Minuten deine Lebensgeschichte — so ausführlich, wie es geht.' },
+              { label: '12.', text: 'Wenn du morgen mit einer neuen Fähigkeit oder Eigenschaft aufwachen könntest — welche wäre es?' }
+            ] },
+          { name: 'Zwischenhalt', title: 'Kurz auftauchen', duration: 3*60,
+            teaser: 'Wasser holen, durchatmen — und ein kurzer Blick: Wie ist es bis hierher?',
+            hostNote: 'Aufstehen erlaubt. Etwas zu trinken holen. Nicht ins Handy schauen.',
+            description: 'Ein kurzer Boxenstopp. Sagt einander in einem Satz, wie es sich bis hierher anfühlt — und dann geht es eine Ebene tiefer.' },
+          { name: 'Runde II', title: 'Die Fragen 13 bis 24', duration: 18*60,
+            teaser: 'Jetzt wird es persönlicher: Erinnerungen, Freundschaft, Familie.',
+            hostNote: 'Gleiches Prinzip: abwechselnd vorlesen, beide antworten. 15-20 Minuten.',
+            items: [
+              { label: '13.', text: 'Wenn eine Kristallkugel dir die Wahrheit über dich, dein Leben oder die Zukunft sagen könnte — was würdest du wissen wollen?' },
+              { label: '14.', text: 'Gibt es etwas, das du schon lange tun willst? Warum hast du es noch nicht getan?' },
+              { label: '15.', text: 'Was ist die größte Leistung deines bisherigen Lebens?' },
+              { label: '16.', text: 'Was schätzt du an einer Freundschaft am meisten?' },
+              { label: '17.', text: 'Was ist deine kostbarste Erinnerung?' },
+              { label: '18.', text: 'Was ist deine schlimmste Erinnerung?' },
+              { label: '19.', text: 'Wenn du wüsstest, dass du in einem Jahr plötzlich sterben wirst — würdest du etwas an deinem Leben ändern? Warum?' },
+              { label: '20.', text: 'Was bedeutet Freundschaft für dich?' },
+              { label: '21.', text: 'Welche Rolle spielen Liebe und Zuneigung in deinem Leben?' },
+              { label: '22.', text: 'Abwechselnd: Nennt einander je fünf Dinge, die ihr am anderen positiv findet.' },
+              { label: '23.', text: 'Wie eng ist deine Familie? Glaubst du, deine Kindheit war glücklicher als die der meisten anderen?' },
+              { label: '24.', text: 'Wie ist deine Beziehung zu deiner Mutter?' }
+            ] },
+          { name: 'Zwischenhalt II', title: 'Noch einmal Luft holen', duration: 2*60,
+            teaser: 'Die letzte Runde ist die tiefste.',
+            description: 'Kurz strecken, nachschenken. Die dritte Runde ist die intensivste — sie fragt nach dem, was man sonst höchstens nachts um zwei erzählt.' },
+          { name: 'Runde III', title: 'Die Fragen 25 bis 36', duration: 20*60,
+            teaser: 'Die tiefste Runde — hier entsteht die Nähe, für die die Studie berühmt ist.',
+            hostNote: 'Langsam lesen. Bei diesen Fragen lohnt es sich, nicht höflich zu antworten, sondern ehrlich.',
+            items: [
+              { label: '25.', text: 'Macht abwechselnd je drei wahre „Wir"-Aussagen. Zum Beispiel: „Wir sitzen beide in diesem Raum und fühlen gerade …"' },
+              { label: '26.', text: 'Vervollständige den Satz: „Ich wünschte, ich hätte jemanden, mit dem ich … teilen könnte."' },
+              { label: '27.', text: 'Wenn ihr enge Freund:innen werden solltet: Was müsste dein Gegenüber unbedingt über dich wissen?' },
+              { label: '28.', text: 'Sag deinem Gegenüber, was du an ihm oder ihr magst — ehrlicher, als du es normalerweise bei jemandem sagen würdest, den du gerade erst kennenlernst.' },
+              { label: '29.', text: 'Erzähl deinem Gegenüber einen peinlichen Moment aus deinem Leben.' },
+              { label: '30.', text: 'Wann hast du zuletzt vor einem anderen Menschen geweint? Und wann für dich allein?' },
+              { label: '31.', text: 'Sag deinem Gegenüber etwas, das du jetzt schon an ihm oder ihr magst.' },
+              { label: '32.', text: 'Worüber sollte man deiner Meinung nach keine Witze machen?' },
+              { label: '33.', text: 'Wenn du heute Abend sterben würdest, ohne noch mit jemandem sprechen zu können: Was würdest du am meisten bereuen, nie gesagt zu haben — und warum hast du es bisher nicht gesagt?' },
+              { label: '34.', text: 'Dein Zuhause brennt. Alle Menschen und Tiere sind in Sicherheit, und du kannst noch einmal hinein, um eine einzige Sache zu retten. Welche — und warum?' },
+              { label: '35.', text: 'Wessen Tod in deiner Familie würde dich am meisten erschüttern? Warum?' },
+              { label: '36.', text: 'Erzähl von einem persönlichen Problem und frag dein Gegenüber, wie er oder sie damit umgehen würde. Frag danach, wie du in Bezug auf dieses Problem auf ihn oder sie wirkst.' }
+            ] },
+          { name: 'Augenkontakt', title: 'Vier Minuten — wenn ihr euch traut', duration: 5*60,
+            teaser: 'Die berühmte Zutat aus dem Essay. Optional — und gerade deshalb stark.',
+            hostNote: 'Timer auf 4 Minuten stellen, dann das Handy wegdrehen. Blinzeln und Lachen sind erlaubt — wegschauen nicht. Und: Diese Station ist wirklich optional.',
+            description: 'Das hier stammt nicht aus Arons Studie, sondern aus Mandy Len Catrons Essay — und ist trotzdem der Teil, über den alle sprechen: vier Minuten stiller, direkter Augenkontakt.\n\nEs klingt nach nichts und ist nach etwa dreißig Sekunden erstaunlich intensiv. Wenn es kribbelig wird: bleiben. Wenn ihr lachen müsst: lachen — und bleiben.' },
+          { name: 'Danach', title: 'Was nehmt ihr mit?', duration: 5*60,
+            teaser: 'Ein kurzer, ehrlicher Rückblick zu zweit.',
+            hostNote: 'Beide nacheinander, ohne den anderen zu korrigieren.',
+            description: 'Wenn euch dieses Format gefallen hat: Die 36 Fragen sind bei KlarKreis der Anfang, nicht das Ende. Der geführte Date-Abend führt euch mit derselben Sorgfalt durch ein ganzes erstes Treffen — und die Themenabende gehen dahin, wo einzelne Fragen nicht hinkommen.',
+            question: 'Welche Antwort deines Gegenübers hat dich am meisten überrascht — und welche Frage nimmst du für dich mit nach Hause?' },
+          { name: 'Wort', title: 'Ein Wort zum Abschied', duration: 2*60,
+            teaser: 'Der Abend in einem Wort.',
+            hostNote: 'Beide je ein Wort. Keine Begründung.',
+            question: 'Ein Wort, mit dem du aus diesem Abend gehst.' }
+        ])
+      }
+    }
+  },
+
+  // =====================================================================
   // ERSTES DATE — 75 Minuten, auf einer Decke im Park, nach dem Match.
   // Evidenzbasiert nach Aron (36 Fragen), Esther Perel, Helen Fisher,
   // Alain de Botton, Schwartz (Paradox of Choice), Provine (Lachen).
