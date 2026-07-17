@@ -221,6 +221,8 @@ const PAID_GATES = {
   if (unlockCode === 'date') localStorage.setItem('klarkreis:unlocked_date', '1');
   if (unlockCode === 'werte_reise') localStorage.setItem('klarkreis:unlocked_werte_reise', '1');
   if (unlockCode === 'wir_reise') localStorage.setItem('klarkreis:unlocked_wir_reise', '1');
+  // Master-Unlock für Tests (Florian): schaltet alle Produkte auf diesem Gerät frei
+  if (unlockCode === 'alles') localStorage.setItem('klarkreis:unlocked', '1');
   if (unlockCode) {
     // URL aufräumen, damit kein share-fähiger Unlock-Link entsteht
     up.delete('unlock');

@@ -32,7 +32,47 @@ body { background-color: #FBF9F4; }
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .star-btn { transition: transform .15s; }
 .star-btn:hover { transform: scale(1.2); }
+
+/* ===== Abendmodus (Dark Mode für den Abend-Flow) =====
+   Überschreibt die semantischen Tailwind-Klassen mit einer warmen,
+   kerzenlicht-tauglichen Palette. Toggle im Header, persistiert. */
+.dark body { background-color: #15160f; }
+.dark .text-on-background { color: #e8e4d9; }
+.dark .text-on-background\/80 { color: rgb(232 228 217 / 0.8); }
+.dark .text-primary-container { color: #ece8dd; }
+.dark .text-on-surface-variant { color: #a8ad9e; }
+.dark .text-on-surface-variant\/40 { color: rgb(168 173 158 / 0.4); }
+.dark .text-on-surface-variant\/60 { color: rgb(168 173 158 / 0.6); }
+.dark .text-secondary { color: #d98f45; }
+.dark .text-secondary\/70 { color: rgb(217 143 69 / 0.7); }
+.dark .text-on-tertiary-container { color: #c9a06c; }
+.dark .bg-surface-container { background-color: #22241c; }
+.dark .bg-surface-container-low { background-color: #1c1e17; }
+.dark .bg-surface-container-highest { background-color: #32342b; }
+.dark .bg-surface-container-lowest { background-color: #191b14; }
+.dark .bg-primary-container { background-color: #35523f; }
+.dark .bg-secondary { background-color: #a86023; }
+.dark .bg-on-tertiary-container\/20 { background-color: rgb(201 160 108 / 0.2); }
+.dark .border-outline-variant\/20 { border-color: rgb(80 84 74 / 0.5); }
+.dark .border-outline-variant\/30 { border-color: rgb(80 84 74 / 0.7); }
+.dark .border-primary-container { border-color: #5a7a65; }
+.dark .border-secondary { border-color: #d98f45; }
+.dark .border-secondary\/40 { border-color: rgb(217 143 69 / 0.4); }
+.dark .border-secondary\/50 { border-color: rgb(217 143 69 / 0.5); }
+.dark header svg circle[stroke] { stroke: #cfcbc0; }
+.dark .film-grain { opacity: 0.04; }
+.dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
+<script>
+// Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
+(function() {
+  const saved = localStorage.getItem('klarkreis:abendmodus');
+  const wantDark = saved === null
+    ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    : saved === '1';
+  if (wantDark) document.documentElement.classList.add('dark');
+})();
+</script>
 </head>
 <body class="font-body text-on-background selection:bg-on-tertiary-container/20">
 <div class="film-grain"></div>
@@ -47,6 +87,10 @@ body { background-color: #FBF9F4; }
         <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 block">Timer</span>
         <span id="timer" class="font-headline text-3xl font-light tracking-tight text-primary-container tabular-nums">00:00</span>
       </div>
+      <button id="darkToggleBtn" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Abendmodus umschalten">
+        <span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+        <span class="dark-toggle-label font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Abendmodus</span>
+      </button>
       <button id="audioToggleBtn" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Audio für diesen Abend ausschalten">
         <span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
         <span class="audio-toggle-label font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Audio an</span>
@@ -100,6 +144,18 @@ body { background-color: #FBF9F4; }
 
     <div id="itemsBox" class="mb-10 w-full max-w-5xl hidden">
       <div id="itemsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    </div>
+
+    <!-- Zugabe: optionale Extra-Frage, wenn der Abend zu schnell vorbei war -->
+    <div id="zugabeBox" class="hidden w-full max-w-2xl mb-6 fadein">
+      <button id="zugabeBtn" class="w-full flex items-center gap-4 bg-surface-container-low border border-outline-variant/30 hover:border-secondary/50 rounded-xl p-5 md:p-6 text-left transition-colors group">
+        <span class="material-symbols-outlined text-3xl text-secondary group-hover:rotate-12 transition-transform">casino</span>
+        <div class="flex-1">
+          <p class="font-headline text-lg text-primary-container leading-snug">Zu schnell durch? Zieht eine Zugabe.</p>
+          <p class="text-sm text-on-surface-variant">Eine passende Frage aus der KlarKreis-Sammlung — so oft ihr wollt.</p>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
+      </button>
     </div>
 
     <!-- Feedback form (rendered for feedback-type stations) -->
@@ -163,6 +219,7 @@ body { background-color: #FBF9F4; }
 </main>
 <script src="themes.js"></script>
 <script src="player.js"></script>
+<script src="questions.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -314,7 +371,38 @@ function hideAllContentBoxes() {
   el.questionBox.classList.add('hidden');
   el.itemsBox.classList.add('hidden');
   el.feedbackForm.classList.add('hidden');
+  const zb = document.getElementById('zugabeBox');
+  if (zb) zb.classList.add('hidden');
   KlarKreisPlayer.destroyAll();
+}
+
+// ===== Zugabe: optionale Extra-Frage aus der Fragensammlung =====
+// Kategorien passend zur Themen-Kategorie; gezogene Fragen wiederholen sich nicht.
+const ZUGABE_CATS = {
+  'Beziehungen':  ['Herzensmenschen', 'Tiefgang'],
+  'Werte':        ['Werte & Richtung', 'Tiefgang'],
+  'Zukunft':      ['Träume & Zukunft', 'Tiefgang'],
+  'Identität':    ['Über dich', 'Tiefgang'],
+  'Familienzeit': ['Kindheit & Wurzeln', 'Herzensmenschen']
+};
+const zugabeUsed = new Set();
+function drawZugabe() {
+  if (!window.QUESTIONS) return;
+  const cats = ZUGABE_CATS[theme.category] || ['Tiefgang', 'Bunt gemischt'];
+  let pool = window.QUESTIONS.filter(q => cats.includes(q.category) && !zugabeUsed.has(q.text));
+  if (!pool.length) pool = window.QUESTIONS.filter(q => q.category === 'Bunt gemischt' && !zugabeUsed.has(q.text));
+  if (!pool.length) return;
+  const q = pool[Math.floor(Math.random() * pool.length)];
+  zugabeUsed.add(q.text);
+  const station = {
+    name: 'Zugabe',
+    title: 'Eine Frage als Zugabe',
+    duration: 8 * 60,
+    hostNote: 'Reihum oder frei — ganz ohne Druck. Danach könnt ihr noch eine ziehen oder zum Feedback gehen.',
+    question: q.text
+  };
+  stations.splice(currentIdx, 0, station);
+  render();
 }
 
 function mountStationAudio(station, idx) {
@@ -352,6 +440,8 @@ function render() {
     // Feedback-Station: nur Formular zeigen, kein Timer runterzählen
     el.description.textContent = s.description || '';
     el.descriptionBox.classList.toggle('hidden', !s.description);
+    const zb = document.getElementById('zugabeBox');
+    if (zb && window.QUESTIONS) zb.classList.remove('hidden');
     el.feedbackForm.classList.remove('hidden');
     // Handout-Download anbieten (falls PDF für diesen Abend existiert)
     const handout = document.getElementById('handoutLink');
@@ -408,6 +498,24 @@ function startTimer() {
     setTimerText(formatTime(timeLeft));
   }, 1000);
 }
+
+document.getElementById('zugabeBtn').addEventListener('click', drawZugabe);
+
+// Abendmodus-Toggle (früh angewandt im <head>, hier nur Umschalten + Label)
+function renderDarkToggle() {
+  const btn = document.getElementById('darkToggleBtn');
+  const dark = document.documentElement.classList.contains('dark');
+  btn.querySelector('.material-symbols-outlined').textContent = dark ? 'light_mode' : 'dark_mode';
+  btn.querySelector('.dark-toggle-label').textContent = dark ? 'Tagmodus' : 'Abendmodus';
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', dark ? '#15160f' : '#FBF9F4');
+}
+document.getElementById('darkToggleBtn').addEventListener('click', () => {
+  const dark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('klarkreis:abendmodus', dark ? '1' : '0');
+  renderDarkToggle();
+});
+renderDarkToggle();
 
 el.prevBtn.addEventListener('click', () => {
   if (currentIdx > 0) { currentIdx--; render(); }
