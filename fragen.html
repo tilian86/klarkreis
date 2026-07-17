@@ -41,8 +41,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260717c"/>
-<script src="theme-toggle.js?v=20260717c"></script>
+<link rel="stylesheet" href="dark.css?v=20260717d"/>
+<script src="theme-toggle.js?v=20260717d"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -171,7 +171,7 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20260717c"></script>
+<script src="questions.js?v=20260717d"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -507,8 +507,12 @@ function mountFragenPlayers() {
   document.querySelectorAll('.question-player[data-fragen-idx]').forEach(slot => {
     if (slot.dataset.mounted === '1') return;
     const idx = slot.getAttribute('data-fragen-idx');
-    window.KlarKreisMiniPlayer.insert(slot, `audio/fragen/${idx}.mp3`, { label: 'Anhören' });
+    const url = `audio/fragen/${idx}.mp3`;
     slot.dataset.mounted = '1';
+    // Nur mounten, wenn die Datei existiert — sonst Player still weglassen
+    fetch(url, { method: 'HEAD' }).then(r => {
+      if (r.ok) window.KlarKreisMiniPlayer.insert(slot, url, { label: 'Anhören' });
+    }).catch(() => {});
   });
 }
 
@@ -679,10 +683,10 @@ render();
   }
 })();
 </script>
-<script src="config.js?v=20260717c"></script>
-<script src="auth.js?v=20260717c"></script>
-<script src="login-ui.js?v=20260717c"></script>
-<script src="mobile-nav.js?v=20260717c"></script>
-<script src="page-audio.js?v=20260717c"></script>
+<script src="config.js?v=20260717d"></script>
+<script src="auth.js?v=20260717d"></script>
+<script src="login-ui.js?v=20260717d"></script>
+<script src="mobile-nav.js?v=20260717d"></script>
+<script src="page-audio.js?v=20260717d"></script>
 </body>
 </html>

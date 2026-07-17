@@ -33,6 +33,7 @@
   if (!hasConfig) {
     // No-op stubs when Supabase isn't configured yet
     auth.signIn = async () => { throw new Error('Login noch nicht aktiviert'); };
+    auth.verifyCode = async () => { throw new Error('Login noch nicht aktiviert'); };
     auth.signOut = async () => {};
     auth.syncSeen = async () => ({ merged: [], added: 0 });
     auth.loadSeen = async () => [];
@@ -72,6 +73,16 @@
       email,
       options: { emailRedirectTo: redirect },
     });
+    if (error) throw error;
+    return { ok: true };
+  };
+
+  // Login per 6-stelligem Code aus derselben E-Mail — für PWA/Home-Bildschirm,
+  // wo der Magic-Link in Safari statt in der App landen würde.
+  // Voraussetzung: {{ .Token }} steht im Supabase-Magic-Link-Template.
+  auth.verifyCode = async (email, code) => {
+    await auth.ready;
+    const { error } = await auth._client.auth.verifyOtp({ email, token: String(code).trim(), type: 'email' });
     if (error) throw error;
     return { ok: true };
   };
