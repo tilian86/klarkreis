@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="light" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abend-Kompass — Welcher Abend passt zu euch? · KlarKreis</title>
+<meta name="description" content="Fünf Fragen, 60 Sekunden: Der Abend-Kompass findet den Themenabend, der zu eurer Runde, eurer Stimmung und eurer Zeit passt."/>
+<meta name="theme-color" content="#FBF9F4"/>
+<link rel="canonical" href="https://klarkreis.de/kompass.html"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<meta property="og:title" content="Abend-Kompass — Welcher Abend passt zu euch?"/>
+<meta property="og:description" content="Fünf Fragen, 60 Sekunden — und ihr wisst, mit welchem Abend ihr anfangt."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://klarkreis.de/kompass.html"/>
+<meta property="og:image" content="https://klarkreis.de/images/hero-og.jpg"/>
+<meta property="og:locale" content="de_DE"/>
+<meta property="og:site_name" content="KlarKreis"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="robots" content="index, follow"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Inter', sans-serif; color: #1B1C19; background-color: #FBF9F4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat; background-size: 150px; }
+  .font-serif { font-family: 'Noto Serif', serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .q-fade { animation: qfade .45s ease both; }
+  @keyframes qfade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+<script id="tailwind-config">
+  tailwind.config = { darkMode: "class", theme: { extend: {
+    colors: { "tertiary-fixed-dim": "#f0bd8b", "on-primary-fixed-variant": "#364c3c", "secondary-fixed": "#ffdcc4", "tertiary-fixed": "#ffdcbd", "tertiary": "#261200", "secondary": "#924c00", "on-tertiary-container": "#b7895b", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#623f18", "inverse-surface": "#30312e", "primary-fixed": "#d0e9d4", "secondary-fixed-dim": "#ffb781", "secondary-container": "#fda055", "primary": "#061b0e", "primary-container": "#1b3022", "surface-variant": "#e4e2dd", "on-secondary-fixed-variant": "#6f3800", "surface-dim": "#dbdad5", "on-primary": "#ffffff", "on-primary-fixed": "#0b2013", "inverse-on-surface": "#f2f1ec", "error": "#ba1a1a", "tertiary-container": "#422401", "inverse-primary": "#b4cdb8", "on-secondary-fixed": "#2f1400", "outline": "#737973", "surface-container-highest": "#e4e2dd", "error-container": "#ffdad6", "on-error-container": "#93000a", "on-background": "#1b1c19", "on-primary-container": "#819986", "surface-bright": "#fbf9f4", "surface-tint": "#4d6453", "on-surface-variant": "#434843", "on-tertiary": "#ffffff", "surface-container-low": "#f5f3ee", "primary-fixed-dim": "#b4cdb8", "on-secondary": "#ffffff", "surface": "#fbf9f4", "on-secondary-container": "#703800", "background": "#fbf9f4", "surface-container-high": "#eae8e3", "surface-container": "#f0eee9", "on-error": "#ffffff", "outline-variant": "#c3c8c1", "on-surface": "#1b1c19", "on-tertiary-fixed": "#2c1600" },
+    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+    fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
+  } } }
+</script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+  <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+    <a href="index.html" class="flex items-center gap-2 font-serif italic text-2xl text-primary"><svg width="26" height="26" viewBox="0 0 64 64" class="shrink-0"><circle cx="32" cy="32" r="28" fill="none" stroke="#1B3022" stroke-width="3"/><circle cx="32" cy="32" r="18" fill="none" stroke="#1B3022" stroke-width="2" opacity="0.5"/><circle cx="32" cy="32" r="3.2" fill="#924C00"/></svg> KlarKreis</a>
+    <nav class="hidden md:flex space-x-10">
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="themen.html">Themen</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="fragen.html">Fragerunde</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="impulse.html">Impulse</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="gastgeber.html">Gastgeber</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="kreis-finden.html">Kreis finden</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="rezepte.html">Rezepte</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="musik.html">Musik</a>
+      <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
+      <a class="inline-flex items-center gap-1 text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
+    </nav>
+  </div>
+  <div class="bg-surface-container-low h-[1px] w-full block"></div>
+</header>
+
+<main class="flex-1 w-full max-w-3xl mx-auto px-6 md:px-8 py-14 md:py-20">
+
+  <!-- Intro -->
+  <section id="kompassIntro" class="text-center q-fade">
+    <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Der Abend-Kompass</p>
+    <h1 class="font-serif text-4xl md:text-6xl leading-tight tracking-tight text-on-background mb-6">Welcher Abend<br/>passt zu euch?</h1>
+    <p class="text-lg text-on-surface-variant font-light max-w-xl mx-auto leading-relaxed mb-4">Fünfzehn Themenabende sind eine schöne Auswahl — und eine Entscheidung. Der Kompass nimmt sie euch ab: fünf Fragen, ehrlich beantwortet, und ihr wisst, womit ihr anfangt.</p>
+    <p class="text-sm text-on-surface-variant/60 mb-10">Dauert keine Minute. Nichts wird gespeichert oder gesendet.</p>
+    <button onclick="startQuiz()" class="inline-flex items-center gap-3 bg-primary-container text-on-primary px-10 py-5 rounded-lg hover:bg-secondary transition-colors text-sm uppercase tracking-widest font-semibold">
+      <span class="material-symbols-outlined text-[20px]">explore</span> Kompass starten
+    </button>
+  </section>
+
+  <!-- Quiz -->
+  <section id="kompassQuiz" class="hidden">
+    <div class="flex items-center justify-between mb-10">
+      <button onclick="stepBack()" id="backBtn" class="inline-flex items-center gap-1 text-on-surface-variant/60 hover:text-secondary transition-colors text-xs uppercase tracking-widest"><span class="material-symbols-outlined text-[16px]">arrow_back</span> Zurück</button>
+      <div id="progressDots" class="flex gap-2"></div>
+      <span id="stepLabel" class="text-xs uppercase tracking-widest text-on-surface-variant/60"></span>
+    </div>
+    <div id="questionMount"></div>
+  </section>
+
+  <!-- Ergebnis -->
+  <section id="kompassResult" class="hidden"></section>
+
+</main>
+
+<footer class="bg-surface-container flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
+  <div class="mb-8 md:mb-0">
+    <span class="font-serif italic text-sm text-primary">KlarKreis</span>
+    <p class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 mt-2">© 2026 KlarKreis</p>
+  </div>
+  <div class="flex flex-wrap justify-center gap-8">
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="ueber.html">Über</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="gastgeber.html">Gastgeber</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="rezepte.html">Rezepte</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="mailto:kontakt@klarkreis.de">Kontakt</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="musik.html">Musik</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="unterstuetzen.html">Unterstützen</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="impressum.html">Impressum</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="agb.html">AGB</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="widerruf.html">Widerruf</a>
+    <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="themes.js"></script>
+<script>
+// ============================================================
+// Abend-Kompass — 5 Fragen, client-seitig, nichts wird gesendet.
+// Attribut-Profile pro Thema; Empfehlung = bester Score.
+// Direkt-Routen: Erstes Date → date · Familie → familienzeit.
+// ============================================================
+
+const PROFILE = {
+  //           focus: herkunft/identitaet/zukunft/beziehung/bunt · depth 1-3 · minuten (kürzestes passendes Format) · einsteiger-freundlich
+  bindung:       { focus: ['beziehung','herkunft'],   depth: 3, starter: false },
+  werte:         { focus: ['identitaet'],             depth: 2, starter: true  },
+  prioritaeten:  { focus: ['identitaet','zukunft'],   depth: 2, starter: true  },
+  stehe:         { focus: ['identitaet'],             depth: 2, starter: false },
+  tag:           { focus: ['zukunft'],                depth: 1, starter: true  },
+  frageabend:    { focus: ['bunt'],                   depth: 1, starter: true  },
+  zehnjahre:     { focus: ['zukunft'],                depth: 2, starter: true  },
+  achtzig:       { focus: ['zukunft','identitaet'],   depth: 3, starter: false },
+  heimat:        { focus: ['herkunft'],               depth: 2, starter: true  },
+  adhs:          { focus: ['identitaet'],             depth: 3, starter: false },
+  inneres_kind:  { focus: ['herkunft','identitaet'],  depth: 3, starter: false },
+  werte_reise_1: { focus: ['identitaet'],             depth: 3, starter: true, reise: true },
+  wir_reise_1:   { focus: ['beziehung'],              depth: 2, starter: true, reise: true, pairOnly: true }
+};
+
+const QUESTIONS = [
+  { key: 'wer', label: 'Frage 1 von 5', title: 'Wer seid ihr heute Abend?',
+    options: [
+      { v: 'solo',    icon: 'self_improvement', t: 'Ich allein',              s: 'Ein Abend nur mit mir' },
+      { v: 'paar',    icon: 'favorite',         t: 'Wir zwei — als Paar',     s: 'Beziehung, Ehe, frisch oder lang' },
+      { v: 'freunde', icon: 'handshake',        t: 'Wir zwei — befreundet',   s: 'Enge Freundschaft, WG, Geschwister im Geiste' },
+      { v: 'gruppe',  icon: 'groups',           t: 'Kleine Runde',            s: '3-8 Menschen, die einander wohlwollen' },
+      { v: 'familie', icon: 'family_restroom',  t: 'Ich + Familienmensch',    s: 'Mutter, Vater, Oma, Bruder, erwachsenes Kind…' },
+      { v: 'date',    icon: 'local_florist',    t: 'Erstes Date',             s: 'Das Match wird real' }
+    ] },
+  { key: 'tiefe', label: 'Frage 2 von 5', title: 'Wie tief soll es gehen?',
+    options: [
+      { v: 1, icon: 'sentiment_satisfied', t: 'Leicht & lebendig',      s: 'Lachen, erzählen, überraschen lassen' },
+      { v: 2, icon: 'water_lily',          t: 'Tief, aber gemütlich',   s: 'Echte Gespräche ohne Schwere' },
+      { v: 3, icon: 'psychology',          t: 'Richtig tief',           s: 'Auch dahin, wo es leise wird' }
+    ] },
+  { key: 'blick', label: 'Frage 3 von 5', title: 'Wohin soll der Blick?',
+    options: [
+      { v: 'herkunft',   icon: 'history',        t: 'Zurück',      s: 'Herkunft, Prägung, Wurzeln' },
+      { v: 'identitaet', icon: 'fingerprint',    t: 'Nach innen',  s: 'Wer ich bin, was mich ausmacht' },
+      { v: 'zukunft',    icon: 'flag',           t: 'Nach vorn',   s: 'Richtung, Träume, das nächste Kapitel' },
+      { v: 'beziehung',  icon: 'diversity_1',    t: 'Auf uns',     s: 'Wie wir verbunden sind' },
+      { v: 'bunt',       icon: 'casino',         t: 'Überrascht mich', s: 'Querbeet, Hauptsache gut' }
+    ] },
+  { key: 'zeit', label: 'Frage 4 von 5', title: 'Wie viel Zeit habt ihr?',
+    options: [
+      { v: 60,  icon: 'schedule',   t: 'Eine knappe Stunde', s: 'Kompakt, aber echt' },
+      { v: 100, icon: 'schedule',   t: 'So 1,5 Stunden',     s: 'Der Klassiker' },
+      { v: 999, icon: 'wb_twilight',t: 'Der Abend gehört uns', s: '2 Stunden plus — keine Eile' }
+    ] },
+  { key: 'erfahrung', label: 'Frage 5 von 5', title: 'Schon mal einen geführten Abend gemacht?',
+    options: [
+      { v: 'neu',    icon: 'spa',            t: 'Nein, erster Versuch', s: 'Der Einstieg darf einladend sein' },
+      { v: 'geuebt', icon: 'workspace_premium', t: 'Ja, wir kennen das', s: 'Gebt uns ruhig was zu kauen' }
+    ] }
+];
+
+let answers = {};
+let step = 0;
+
+function startQuiz() {
+  answers = {}; step = 0;
+  document.getElementById('kompassIntro').classList.add('hidden');
+  document.getElementById('kompassResult').classList.add('hidden');
+  document.getElementById('kompassQuiz').classList.remove('hidden');
+  renderStep();
+}
+
+function renderStep() {
+  const q = QUESTIONS[step];
+  document.getElementById('stepLabel').textContent = q.label;
+  document.getElementById('progressDots').innerHTML = QUESTIONS.map((_, i) =>
+    `<span class="w-2 h-2 rounded-full ${i < step ? 'bg-secondary' : i === step ? 'bg-primary-container' : 'bg-outline-variant'}"></span>`).join('');
+  document.getElementById('backBtn').style.visibility = step === 0 ? 'hidden' : 'visible';
+  const mount = document.getElementById('questionMount');
+  mount.innerHTML = `
+    <div class="q-fade">
+      <h2 class="font-serif text-3xl md:text-4xl text-on-background mb-10 text-center">${q.title}</h2>
+      <div class="grid grid-cols-1 ${q.options.length > 3 ? 'md:grid-cols-2' : ''} gap-3">
+        ${q.options.map(o => `
+          <button onclick='answer(${JSON.stringify(o.v)})' class="group flex items-center gap-4 text-left bg-surface-container-lowest border border-outline-variant/60 hover:border-secondary hover:bg-surface-container-low rounded-xl px-5 py-4 transition-all">
+            <span class="material-symbols-outlined text-[24px] text-on-tertiary-container group-hover:text-secondary transition-colors shrink-0">${o.icon}</span>
+            <span>
+              <span class="block font-semibold text-on-background">${o.t}</span>
+              <span class="block text-sm text-on-surface-variant/80">${o.s}</span>
+            </span>
+          </button>`).join('')}
+      </div>
+    </div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function answer(v) {
+  answers[QUESTIONS[step].key] = v;
+  if (step < QUESTIONS.length - 1) { step++; renderStep(); }
+  else showResult();
+}
+
+function stepBack() {
+  if (step > 0) { step--; renderStep(); }
+}
+
+// Kürzestes passendes Format fürs Zeit-Matching, bevorzugtes Format für Links/Anzeige
+function formatFor(theme, wer) {
+  const f = theme.formats;
+  if (wer === 'solo') return f.solo ? 'solo' : null;
+  if (wer === 'paar' || wer === 'freunde' || wer === 'date' || wer === 'familie') return f.pair ? 'pair' : (f.group ? 'group' : null);
+  return f.group ? 'group' : null;
+}
+function minutesOf(fmt) {
+  if (!fmt) return 999;
+  return Math.round(fmt.stations.reduce((a, s) => a + s.duration, 0) / 60);
+}
+
+function recommend() {
+  const T = window.THEMES;
+  // Direkt-Routen
+  if (answers.wer === 'date') return { main: 'date', alts: ['frageabend', 'bindung'] };
+  if (answers.wer === 'familie') return { main: 'familienzeit', alts: ['heimat', 'frageabend'] };
+
+  const scored = Object.entries(PROFILE).map(([id, p]) => {
+    const theme = T[id]; if (!theme) return null;
+    const fmtKey = formatFor(theme, answers.wer);
+    if (!fmtKey) return null;                                  // Format passt nicht → raus
+    if (p.pairOnly && answers.wer !== 'paar') return null;     // Wir-Reise nur für Paare
+    let score = 0;
+    // Blick-Richtung (stärkstes Signal)
+    if (answers.blick === 'bunt') score += (p.focus.includes('bunt') ? 3 : 1);
+    else score += p.focus.includes(answers.blick) ? 4 : 0;
+    // Tiefe: Nähe zählt
+    score += 2 - Math.min(2, Math.abs(p.depth - answers.tiefe));
+    // Zeit: Format muss reinpassen (mit 15 Min Kulanz)
+    const mins = minutesOf(theme.formats[fmtKey]);
+    if (mins <= answers.zeit + 15) score += 2; else score -= 2;
+    // Einsteiger
+    if (answers.erfahrung === 'neu' && p.starter) score += 1;
+    if (answers.erfahrung === 'geuebt' && p.depth === 3) score += 1;
+    // Paare mit Beziehungs-Blick: Reise-Einstieg leicht bevorzugen
+    if (p.reise && answers.wer === 'paar' && answers.blick === 'beziehung') score += 1;
+    return { id, score, fmtKey, mins };
+  }).filter(Boolean).sort((a, b) => b.score - a.score);
+
+  return { main: scored[0].id, alts: scored.slice(1, 3).map(s => s.id), fmtKey: scored[0].fmtKey };
+}
+
+function showResult() {
+  const T = window.THEMES;
+  const rec = recommend();
+  const t = T[rec.main];
+  const fmtKey = rec.fmtKey || formatFor(t, answers.wer) || 'group';
+  const fmt = t.formats[fmtKey];
+  const href = `thema.html?id=${rec.main}${fmtKey ? '&format=' + fmtKey : ''}`;
+  const altCards = rec.alts.map(id => {
+    const a = T[id]; if (!a) return '';
+    return `<a href="thema.html?id=${id}" class="flex items-center gap-4 bg-surface-container-lowest border border-outline-variant/60 hover:border-secondary rounded-xl p-4 transition-all group">
+      <img src="${a.image}" alt="" class="w-14 h-16 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all"/>
+      <span>
+        <span class="block font-semibold text-on-background text-sm">${a.title}</span>
+        <span class="block text-xs text-on-surface-variant/70">${(a.formats.group || a.formats.pair).duration}</span>
+      </span>
+    </a>`;
+  }).join('');
+
+  document.getElementById('kompassQuiz').classList.add('hidden');
+  const res = document.getElementById('kompassResult');
+  res.classList.remove('hidden');
+  res.innerHTML = `
+    <div class="q-fade">
+      <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4 text-center">Euer Abend</p>
+      <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(27,48,34,0.12)] md:flex">
+        <img src="${t.image}" alt="${t.title}" class="w-full md:w-2/5 aspect-[4/5] object-cover"/>
+        <div class="p-8 md:p-10 flex flex-col">
+          <h2 class="font-serif text-3xl md:text-4xl text-on-background leading-tight mb-3">${t.title}</h2>
+          <p class="text-sm uppercase tracking-widest text-on-surface-variant/60 mb-5">${fmt.duration} · ${fmt.label}</p>
+          <p class="text-on-surface-variant leading-relaxed mb-8 line-clamp-5">${t.lead}</p>
+          <div class="mt-auto flex flex-col sm:flex-row gap-3">
+            <a href="${href}" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary px-7 py-4 rounded-lg hover:bg-secondary transition-colors text-xs uppercase tracking-widest font-semibold">Abend ansehen <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+            <button onclick="startQuiz()" class="inline-flex items-center justify-center gap-2 border border-outline-variant text-on-surface-variant px-7 py-4 rounded-lg hover:border-secondary hover:text-secondary transition-colors text-xs uppercase tracking-widest font-semibold"><span class="material-symbols-outlined text-[18px]">refresh</span> Nochmal</button>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs uppercase tracking-widest text-on-surface-variant/50 mt-10 mb-4 text-center">Auch einen Blick wert</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-xl mx-auto">${altCards}</div>
+    </div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
