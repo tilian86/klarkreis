@@ -15,11 +15,11 @@
 
     const wrap = document.createElement('div');
     wrap.id = 'klarkreisLoginWrap';
-    wrap.className = 'hidden md:flex items-center ml-6 relative';
+    wrap.className = 'hidden lg:flex items-center ml-4 relative';
     wrap.innerHTML = `
       <button id="klarkreisLoginBtn" class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest font-semibold text-on-background/60 hover:text-secondary transition-colors">
         <span class="material-symbols-outlined text-[16px]">person</span>
-        <span id="klarkreisLoginLabel">Einloggen</span>
+        <span id="klarkreisLoginLabel" class="hidden xl:inline">Einloggen</span>
       </button>
       <div id="klarkreisUserMenu" class="hidden absolute top-full right-0 mt-2 bg-surface-bright border border-outline-variant/30 rounded-lg shadow-lg py-2 min-w-[180px] z-50">
         <p class="px-4 py-2 text-[10px] uppercase tracking-widest text-on-surface-variant/60" id="klarkreisUserEmail"></p>
