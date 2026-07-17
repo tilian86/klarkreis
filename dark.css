@@ -1,0 +1,81 @@
+/* ============================================================
+   KlarKreis Dunkelmodus — warme Kerzenlicht-Palette.
+   Überschreibt die semantischen Tailwind-Klassen unter .dark.
+   Nur am Bildschirm — Druck (Moderationskarten) bleibt hell.
+   Gleiche Logik wie der Abendmodus in abend.html.
+   ============================================================ */
+@media screen {
+
+.dark body { background-color: #15160f; background-image: none; color: #e8e4d9; }
+
+/* Text */
+.dark .text-on-background { color: #e8e4d9; }
+.dark .text-on-background\/60 { color: rgb(232 228 217 / 0.6); }
+.dark .text-on-background\/75 { color: rgb(232 228 217 / 0.75); }
+.dark .text-on-background\/80 { color: rgb(232 228 217 / 0.8); }
+.dark .text-on-surface { color: #e8e4d9; }
+.dark .text-primary { color: #c9d8cc; }
+.dark .text-primary-container { color: #ece8dd; }
+.dark .text-on-surface-variant { color: #a8ad9e; }
+.dark .text-on-surface-variant\/40 { color: rgb(168 173 158 / 0.4); }
+.dark .text-on-surface-variant\/50 { color: rgb(168 173 158 / 0.55); }
+.dark .text-on-surface-variant\/60 { color: rgb(168 173 158 / 0.65); }
+.dark .text-on-surface-variant\/70 { color: rgb(168 173 158 / 0.75); }
+.dark .text-secondary { color: #d98f45; }
+.dark .text-secondary\/40 { color: rgb(217 143 69 / 0.4); }
+.dark .text-secondary\/70 { color: rgb(217 143 69 / 0.7); }
+.dark .text-on-tertiary-container { color: #c9a06c; }
+.dark .text-\[\#B7895B\] { color: #c9a06c; }
+.dark .text-\[\#1B1C19\]\/40 { color: rgb(232 228 217 / 0.4); }
+.dark .text-\[\#1B1C19\]\/60 { color: rgb(232 228 217 / 0.6); }
+.dark .text-\[\#1B1C19\] { color: #e8e4d9; }
+.dark .text-\[\#1B3022\] { color: #ece8dd; }
+
+/* Flächen */
+.dark .bg-surface { background-color: #15160f; }
+.dark .bg-surface\/80 { background-color: rgb(21 22 15 / 0.85); }
+.dark .bg-surface-bright { background-color: #15160f; }
+.dark .bg-surface-container-lowest { background-color: #191b14; }
+.dark .bg-surface-container-low { background-color: #1c1e17; }
+.dark .bg-surface-container { background-color: #22241c; }
+.dark .bg-surface-container-high { background-color: #292b23; }
+.dark .bg-surface-container-highest { background-color: #32342b; }
+.dark .bg-primary-container { background-color: #24402f; }
+.dark .bg-primary-container\/10 { background-color: rgb(214 232 219 / 0.06); }
+.dark .bg-secondary { background-color: #a86023; }
+.dark .bg-secondary\/10 { background-color: rgb(217 143 69 / 0.12); }
+.dark .bg-on-tertiary-container { background-color: #a87848; }
+.dark .bg-on-tertiary-container\/20 { background-color: rgb(201 160 108 / 0.2); }
+
+/* Linien */
+.dark .border-outline-variant\/20 { border-color: rgb(80 84 74 / 0.5); }
+.dark .border-outline-variant\/30 { border-color: rgb(80 84 74 / 0.6); }
+.dark .border-outline-variant\/40 { border-color: rgb(80 84 74 / 0.7); }
+.dark .border-outline-variant\/50 { border-color: rgb(80 84 74 / 0.8); }
+.dark .border-primary-container { border-color: #5a7a65; }
+.dark .border-secondary { border-color: #d98f45; }
+.dark .border-secondary\/30 { border-color: rgb(217 143 69 / 0.3); }
+.dark .border-secondary\/40 { border-color: rgb(217 143 69 / 0.4); }
+.dark .border-secondary\/50 { border-color: rgb(217 143 69 / 0.5); }
+
+/* Arbitrary-Hex-Klassen (ältere Header/Seiten) */
+.dark .bg-\[\#FBF9F4\] { background-color: rgb(21 22 15 / 0.92); }
+.dark .bg-\[\#F5F3EE\] { background-color: #22241c; }
+.dark .text-\[\#924C00\] { color: #d98f45; }
+.dark .border-\[\#924C00\] { border-color: #d98f45; }
+
+/* Logo-Kreise (Header + Footer) */
+.dark svg circle[stroke="#1B3022"] { stroke: #cfcbc0; }
+
+/* Formulare */
+.dark input, .dark textarea, .dark select {
+  background-color: #1c1e17;
+  border-color: rgb(80 84 74 / 0.7);
+  color: #e8e4d9;
+}
+.dark ::placeholder { color: rgb(168 173 158 / 0.6); }
+
+/* Körnung dezent anheben, damit die Fläche lebendig bleibt */
+.dark .film-grain { opacity: 0.04; }
+
+} /* @media screen */
