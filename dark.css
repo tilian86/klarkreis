@@ -94,6 +94,14 @@
 .dark .bg-surface-container-low\/80 { background-color: rgb(28 30 23 / 0.85); }
 .dark .bg-outline-variant\/40 { background-color: rgb(80 84 74 / 0.6); }
 
+/* Burger-Menü (mobile-nav.js) */
+.dark .kk-burger { color: #c9d8cc; }
+.dark .kk-burger:hover { background: rgb(201 216 204 / 0.08); }
+.dark .kk-mobile-menu { background: rgb(21 22 15 / 0.98); border-top-color: rgb(207 203 192 / 0.1); }
+.dark .kk-mobile-menu a { color: #e8e4d9; border-bottom-color: rgb(207 203 192 / 0.06); }
+.dark .kk-mobile-menu a:hover { background: rgb(217 143 69 / 0.08); color: #d98f45; }
+.dark .kk-mobile-menu a.kk-active { color: #d98f45; }
+
 /* Körnung dezent anheben, damit die Fläche lebendig bleibt */
 .dark .film-grain { opacity: 0.04; }
 

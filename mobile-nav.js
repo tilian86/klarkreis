@@ -16,16 +16,16 @@
 .kk-mobile-menu a:last-child{border-bottom:0}
 .kk-mobile-menu a:hover{background:rgba(146,76,0,.04);color:#924c00}
 .kk-mobile-menu a.kk-active{color:#924c00;font-weight:600}
-@media (max-width:767px){
+@media (max-width:1023px){
   .kk-burger{display:inline-flex;align-items:center;justify-content:center}
 }`;
 
   function inject() {
     // Ziel: das erste Element mit Klasse "hidden md:flex" innerhalb eines <nav>-/<header>-Bereichs.
-    const desktopNav = document.querySelector('nav.hidden.md\\:flex, nav .hidden.md\\:flex');
+    const desktopNav = document.querySelector('nav.hidden.lg\\:flex, nav .hidden.lg\\:flex');
     if (!desktopNav) {
       // Fallback: <nav> mit class="hidden md:flex …"
-      const nav = Array.from(document.querySelectorAll('nav')).find(n => n.classList.contains('hidden') && n.classList.contains('md:flex'));
+      const nav = Array.from(document.querySelectorAll('nav')).find(n => n.classList.contains('hidden') && n.classList.contains('lg:flex'));
       if (!nav) return;
       buildFor(nav);
       return;

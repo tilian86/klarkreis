@@ -38,7 +38,7 @@
 
     // Desktop: Button ans Ende der Header-Navigation.
     // Die Landing nutzt <nav> statt <header>, daher beide Varianten.
-    const nav = document.querySelector('header .md\\:flex, nav .md\\:flex');
+    const nav = document.querySelector('header .lg\\:flex, nav .lg\\:flex');
     if (nav) {
       const btn = document.createElement('button');
       btn.className = 'kk-theme-toggle inline-flex items-center text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300';
@@ -50,7 +50,7 @@
 
     // Mobil: dezenter schwebender Button unten rechts
     const fab = document.createElement('button');
-    fab.className = 'kk-theme-toggle md:hidden fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-surface-container shadow-lg border border-outline-variant/30 flex items-center justify-center text-on-surface-variant';
+    fab.className = 'kk-theme-toggle lg:hidden fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-surface-container shadow-lg border border-outline-variant/30 flex items-center justify-center text-on-surface-variant';
     fab.title = 'Dunkelmodus umschalten';
     fab.innerHTML = '<span class="material-symbols-outlined text-[20px]">' + iconName() + '</span>';
     fab.addEventListener('click', toggle);
