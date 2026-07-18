@@ -43,8 +43,15 @@
     return;
   }
 
-  // Load Supabase SDK dynamically
-  auth.ready = (async () => {
+  // Datenschutz: Das Supabase-SDK (esm.sh) wird NICHT bei jedem Seitenaufruf
+  // geladen, sondern nur wenn (a) bereits eine Sitzung gespeichert ist,
+  // (b) ein Magic-Link-Rücksprung in der URL steckt oder (c) aktiv ein-
+  // geloggt wird. Für normale Besucher: keinerlei externe Requests.
+  const SESSION_KEY = 'sb-' + cfg.SUPABASE_URL.replace('https://', '').split('.')[0] + '-auth-token';
+  let _initPromise = null;
+  function initClient() {
+    if (_initPromise) return _initPromise;
+    _initPromise = (async () => {
     const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
     auth._client = createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY, {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
@@ -64,10 +71,21 @@
     if (window.location.hash.includes('access_token') || window.location.search.includes('code=')) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
-  })();
+    })();
+    auth.ready = _initPromise;
+    return _initPromise;
+  }
+  auth._ensure = initClient;
+
+  // Nur bei bestehender Sitzung oder Magic-Link-Rücksprung sofort initialisieren
+  let hasSession = false;
+  try { hasSession = !!localStorage.getItem(SESSION_KEY); } catch (e) {}
+  if (hasSession || window.location.hash.includes('access_token') || window.location.search.includes('code=')) {
+    initClient();
+  }
 
   auth.signIn = async (email) => {
-    await auth.ready;
+    await auth._ensure();
     const redirect = window.location.origin + window.location.pathname;
     const { error } = await auth._client.auth.signInWithOtp({
       email,
@@ -81,14 +99,14 @@
   // wo der Magic-Link in Safari statt in der App landen würde.
   // Voraussetzung: {{ .Token }} steht im Supabase-Magic-Link-Template.
   auth.verifyCode = async (email, code) => {
-    await auth.ready;
+    await auth._ensure();
     const { error } = await auth._client.auth.verifyOtp({ email, token: String(code).trim(), type: 'email' });
     if (error) throw error;
     return { ok: true };
   };
 
   auth.signOut = async () => {
-    await auth.ready;
+    await auth._ensure();
     await auth._client.auth.signOut();
     auth._user = null;
     auth._notify();

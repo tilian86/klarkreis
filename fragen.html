@@ -18,7 +18,9 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="fonts.css?v=20260718a"/>
+<link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260718b"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -40,8 +42,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260718a"/>
-<script src="theme-toggle.js?v=20260718a"></script>
+<link rel="stylesheet" href="dark.css?v=20260718b"/>
+<script src="theme-toggle.js?v=20260718b"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -58,7 +60,7 @@
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="rezepte.html">Rezepte</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="musik.html">Musik</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
-      <a class="inline-flex items-center gap-1 text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
+      <a aria-label="Projekt unterstützen" class="inline-flex items-center gap-1 text-[#1B1C19]/60 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
     </nav>
   </div>
   <div class="bg-surface-container-low h-[1px] w-full block"></div>
@@ -170,7 +172,7 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20260718a"></script>
+<script src="questions.js?v=20260718b"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -423,7 +425,7 @@ function renderList() {
         <div class="flex items-end justify-between flex-wrap gap-2 mb-6 pb-4 border-b border-outline-variant/20">
           <h2 class="font-serif text-3xl md:text-4xl ${isSpicy ? 'text-secondary' : 'text-primary-container'} tracking-tight">${cat}</h2>
           <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">${byCat[cat].length} Frage${byCat[cat].length === 1 ? '' : 'n'}${catSeen > 0 ? ' · ' + catSeen + ' gesehen' : ''}
-            <button data-copylist="${cat.replace(/"/g, '&quot;')}" class="copylist-btn align-middle ml-2 text-on-surface-variant/40 hover:text-secondary transition-colors" title="Kompakte Liste zum Kopieren"><span class="material-symbols-outlined text-[16px]">format_list_bulleted</span></button>
+            <button data-copylist="${cat.replace(/"/g, '&quot;')}" aria-label="Kompakte Liste zum Kopieren öffnen" class="copylist-btn align-middle ml-2 text-on-surface-variant/60 hover:text-secondary transition-colors" title="Kompakte Liste zum Kopieren"><span class="material-symbols-outlined text-[16px]">format_list_bulleted</span></button>
           </span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -446,6 +448,7 @@ function openCopyList(cat) {
   if (!qs.length) return;
   const overlay = document.createElement('div');
   overlay.id = 'copyListOverlay';
+  overlay.setAttribute('role','dialog'); overlay.setAttribute('aria-modal','true');
   overlay.className = 'fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4';
   overlay.innerHTML = `
     <div class="bg-surface rounded-xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-outline-variant/30">
@@ -453,7 +456,7 @@ function openCopyList(cat) {
         <h3 class="font-serif text-xl text-primary-container">${cat} <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60 ml-2">${qs.length} Fragen</span></h3>
         <div class="flex items-center gap-2">
           <button id="copyAllBtn" class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-semibold text-secondary hover:text-on-tertiary-container transition-colors px-3 py-2 border border-secondary/40 rounded-lg"><span class="material-symbols-outlined text-[14px]">content_copy</span> Alle kopieren</button>
-          <button id="copyListClose" class="text-on-surface-variant/60 hover:text-on-background p-1"><span class="material-symbols-outlined">close</span></button>
+          <button id="copyListClose" aria-label="Schließen" class="text-on-surface-variant/60 hover:text-on-background p-1"><span class="material-symbols-outlined">close</span></button>
         </div>
       </div>
       <div class="overflow-y-auto divide-y divide-outline-variant/15">
@@ -461,7 +464,7 @@ function openCopyList(cat) {
           <div class="flex items-start gap-3 px-5 py-3 group">
             <span class="font-label text-[10px] text-on-surface-variant/40 pt-1 w-6 shrink-0 text-right">${i + 1}.</span>
             <p class="flex-1 text-sm text-on-background leading-relaxed">${q.text}</p>
-            <button data-copy-idx="${i}" class="copy-one shrink-0 text-on-surface-variant/40 hover:text-secondary transition-colors p-1" title="Frage kopieren"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+            <button data-copy-idx="${i}" aria-label="Frage kopieren" class="copy-one shrink-0 text-on-surface-variant/60 hover:text-secondary transition-colors p-1" title="Frage kopieren"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
           </div>`).join('')}
       </div>
     </div>`;
@@ -682,10 +685,10 @@ render();
   }
 })();
 </script>
-<script src="config.js?v=20260718a"></script>
-<script src="auth.js?v=20260718a"></script>
-<script src="login-ui.js?v=20260718a"></script>
-<script src="mobile-nav.js?v=20260718a"></script>
-<script src="page-audio.js?v=20260718a"></script>
+<script src="config.js?v=20260718b"></script>
+<script src="auth.js?v=20260718b"></script>
+<script src="login-ui.js?v=20260718b"></script>
+<script src="mobile-nav.js?v=20260718b"></script>
+<script src="page-audio.js?v=20260718b"></script>
 </body>
 </html>

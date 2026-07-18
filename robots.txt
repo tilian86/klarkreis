@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /login.html
 
 Sitemap: https://klarkreis.de/sitemap.xml

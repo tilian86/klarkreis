@@ -17,8 +17,8 @@
 .dark .text-primary { color: #c9d8cc; }
 .dark .text-primary-container { color: #ece8dd; }
 .dark .text-on-surface-variant { color: #a8ad9e; }
-.dark .text-on-surface-variant\/40 { color: rgb(168 173 158 / 0.4); }
-.dark .text-on-surface-variant\/50 { color: rgb(168 173 158 / 0.55); }
+.dark .text-on-surface-variant\/40 { color: rgb(168 173 158 / 0.6); }
+.dark .text-on-surface-variant\/50 { color: rgb(168 173 158 / 0.7); }
 .dark .text-on-surface-variant\/60 { color: rgb(168 173 158 / 0.65); }
 .dark .text-on-surface-variant\/70 { color: rgb(168 173 158 / 0.75); }
 .dark .text-secondary { color: #d98f45; }

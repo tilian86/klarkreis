@@ -6,19 +6,21 @@
 <title>Themenabend — KlarKreis</title>
 <meta name="description" content="Detailansicht eines KlarKreis-Themenabends mit Stationen, Material und Vorbereitung."/>
 <meta name="theme-color" content="#FBF9F4"/>
-<link rel="canonical" href="https://klarkreis.de/themen.html"/>
+<link rel="canonical" href="https://klarkreis.de/thema.html"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <meta property="og:title" content="Themenabend — KlarKreis"/>
 <meta property="og:description" content="Ein KlarKreis-Themenabend mit Stationen, Material und Vorbereitung."/>
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="https://klarkreis.de/themen.html"/>
+<meta property="og:url" content="https://klarkreis.de/thema.html"/>
 <meta property="og:image" content="https://klarkreis.de/images/wein.jpg"/>
 <meta property="og:locale" content="de_DE"/>
 <meta property="og:site_name" content="KlarKreis"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="fonts.css?v=20260718a"/>
+<link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260718b"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -38,8 +40,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260718a"/>
-<script src="theme-toggle.js?v=20260718a"></script>
+<link rel="stylesheet" href="dark.css?v=20260718b"/>
+<script src="theme-toggle.js?v=20260718b"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
 <header class="w-full top-0 border-none bg-[#FBF9F4] sticky z-50">
@@ -54,7 +56,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 <a class="text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="rezepte.html">Rezepte</a>
 <a class="text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="musik.html">Musik</a>
 <a class="text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
-<a class="inline-flex items-center gap-1 text-[#1B1C19]/40 hover:text-[#924C00] transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
+<a aria-label="Projekt unterstützen" class="inline-flex items-center gap-1 text-[#1B1C19]/60 hover:text-[#924C00] transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
 </div>
 </nav>
 <div class="bg-[#F5F3EE] h-[1px] w-full block"></div>
@@ -76,7 +78,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     </div>
     <div class="md:col-span-5 relative">
       <div class="aspect-[4/5] overflow-hidden rounded shadow-2xl">
-        <img data-field="image" alt="Thema" class="w-full h-full object-cover"/>
+        <img data-field="image" alt="Thema" loading="lazy" class="w-full h-full object-cover"/>
       </div>
     </div>
   </div>
@@ -186,11 +188,12 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-<script src="themes.js?v=20260718a"></script>
-<script src="player.js?v=20260718a"></script>
+<script src="themes.js?v=20260718b"></script>
+<script src="player.js?v=20260718b"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
+if (id && !window.THEMES[id]) { location.replace('themen.html'); }
 const theme = window.THEMES[id] || window.THEMES.bindung;
 let currentFormat = params.get('format') || 'group';
 if (!theme.formats[currentFormat]) currentFormat = Object.keys(theme.formats)[0];
@@ -256,10 +259,10 @@ if (PAID_GATES[id]) {
          <p style="font-size:0.8rem;color:#737973;text-align:center;margin-bottom:0.75rem;line-height:1.5;">Kurze E-Mail genügt — du bekommst Zahlungsinfos (PayPal oder Überweisung) und deinen persönlichen Zugangs-Code, in der Regel innerhalb weniger Stunden.</p>`;
     const modal = document.createElement('div');
     modal.innerHTML = `
-      <div id="kk-paid-modal" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
+      <div id="kk-paid-modal" role="dialog" aria-modal="true" aria-label="Kostenpflichtiger Abend" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
         <div style="background:#FBF9F4;max-width:560px;width:100%;border-radius:1rem;padding:2.5rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,0.4);font-family:'Inter',sans-serif;color:#1B1C19;">
           <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#924c00;margin-bottom:1rem;font-weight:600;">Kostenpflichtiger Abend</p>
-          <h1 style="font-family:'Noto Serif',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;">${gate.title}</h1>
+          <h2 style="font-family:'Noto Serif',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;">${gate.title}</h2>
           <p style="font-family:'Noto Serif',serif;font-style:italic;color:#434843;margin-bottom:1.5rem;font-size:1rem;">${gate.subtitle}</p>
           <div style="background:#f0eee9;border-left:4px solid #924c00;padding:1rem 1.25rem;margin-bottom:1.5rem;border-radius:0 0.5rem 0.5rem 0;">
             <p style="font-size:1.5rem;font-weight:700;color:#1B3022;margin-bottom:0.2rem;">${gate.price}</p>
@@ -268,7 +271,7 @@ if (PAID_GATES[id]) {
           <p style="color:#434843;line-height:1.6;margin-bottom:2rem;font-size:0.95rem;">${gate.body}</p>
           ${buyBlock}
           <div style="display:flex;gap:0.5rem;margin-bottom:1.5rem;">
-            <input id="kk-pw" type="password" placeholder="Zugangs-Code" style="flex:1;padding:0.75rem;border:1px solid #c3c8c1;border-radius:0.5rem;font-size:0.9rem;font-family:inherit;" autocomplete="off"/>
+            <input id="kk-pw" type="password" placeholder="Zugangs-Code" aria-label="Zugangs-Code" style="flex:1;padding:0.75rem;border:1px solid #c3c8c1;border-radius:0.5rem;font-size:0.9rem;font-family:inherit;" autocomplete="off"/>
             <button id="kk-pw-btn" style="padding:0.75rem 1.25rem;background:#fff;border:1px solid #1B3022;color:#1B3022;border-radius:0.5rem;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Einlösen</button>
           </div>
           <p id="kk-pw-err" style="color:#ba1a1a;font-size:0.8rem;margin-bottom:1rem;display:none;">Code nicht korrekt. Bei Problemen: <a href="mailto:kontakt@klarkreis.de" style="color:#924c00;">kontakt@klarkreis.de</a></p>
@@ -298,6 +301,14 @@ if (PAID_GATES[id]) {
 }
 
 document.title = theme.title + ' — KlarKreis';
+
+// Canonical/OG pro Thema — sonst konsolidiert Google alle Detailseiten auf eine URL
+(function () {
+  const url = 'https://klarkreis.de/thema.html?id=' + encodeURIComponent(id);
+  const c = document.querySelector('link[rel="canonical"]'); if (c) c.href = url;
+  const o = document.querySelector('meta[property="og:url"]'); if (o) o.setAttribute('content', url);
+  const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.setAttribute('content', theme.title + ' — KlarKreis');
+})();
 
 // Handout-PDF anbieten, falls eines für dieses Thema existiert
 (function () {
@@ -455,7 +466,7 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
     </a>`;
 }).join('');
 </script>
-<script src="mobile-nav.js?v=20260718a"></script>
-<script src="page-audio.js?v=20260718a"></script>
+<script src="mobile-nav.js?v=20260718b"></script>
+<script src="page-audio.js?v=20260718b"></script>
 </body>
 </html>

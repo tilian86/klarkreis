@@ -72,10 +72,11 @@
     if (document.getElementById('klarkreisLoginModal')) return;
     const modal = document.createElement('div');
     modal.id = 'klarkreisLoginModal';
+    modal.setAttribute('role','dialog'); modal.setAttribute('aria-modal','true');
     modal.className = 'fixed inset-0 z-[100] flex items-center justify-center p-6 bg-primary-container/40 backdrop-blur-sm';
     modal.innerHTML = `
       <div class="bg-surface-bright rounded-xl p-8 md:p-10 max-w-md w-full relative shadow-2xl">
-        <button id="klarkreisModalClose" class="absolute top-4 right-4 text-on-surface-variant/50 hover:text-on-background">
+        <button id="klarkreisModalClose" aria-label="Schließen" class="absolute top-4 right-4 text-on-surface-variant/50 hover:text-on-background">
           <span class="material-symbols-outlined">close</span>
         </button>
         <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-3">Einloggen</p>
@@ -101,8 +102,8 @@
           Gib deine Email ein — Du kriegst einen Link. Ein Klick, Du bist drin. Kein Passwort.
         </p>
         <form id="klarkreisLoginForm" class="space-y-4">
-          <input id="klarkreisEmailInput" type="email" required placeholder="dein@email.de"
-            class="w-full px-4 py-3 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-background focus:outline-none focus:border-secondary transition-colors"/>
+          <input id="klarkreisEmailInput" type="email" required placeholder="dein@email.de" aria-label="E-Mail-Adresse"
+            class="w-full px-4 py-3 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-background focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors"/>
           <button type="submit" id="klarkreisSubmitBtn" class="w-full bg-primary-container text-on-primary px-6 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold hover:opacity-90 transition-opacity">
             Link schicken
           </button>
@@ -112,8 +113,8 @@
         <form id="klarkreisCodeForm" class="hidden mt-4 space-y-3">
           <p class="text-sm text-on-surface-variant leading-relaxed">Gib die E-Mail-Adresse von oben und den <strong>6-stelligen Code</strong> aus der E-Mail ein — praktisch für die Home-Bildschirm-App:</p>
           <div class="flex gap-2">
-            <input id="klarkreisCodeInput" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456"
-              class="flex-1 px-4 py-3 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-background tracking-[0.3em] text-center font-semibold focus:outline-none focus:border-secondary transition-colors"/>
+            <input id="klarkreisCodeInput" type="text" aria-label="6-stelliger Code aus der E-Mail" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="123456"
+              class="flex-1 px-4 py-3 rounded-lg border border-outline-variant/40 bg-surface-container-low text-on-background tracking-[0.3em] text-center font-semibold focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors"/>
             <button type="submit" id="klarkreisCodeBtn" class="bg-primary-container text-on-primary px-5 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold hover:opacity-90 transition-opacity">Einloggen</button>
           </div>
         </form>
@@ -161,6 +162,7 @@
       }
     });
 
+    document.getElementById('klarkreisEmailInput').focus();
     document.getElementById('klarkreisModalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', function esc(e) {
