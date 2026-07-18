@@ -63,7 +63,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260717e"/>
+<link rel="stylesheet" href="dark.css?v=20260717f"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -95,6 +95,10 @@ body { background-color: #FBF9F4; }
       <button id="audioToggleBtn" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Audio für diesen Abend ausschalten">
         <span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
         <span class="audio-toggle-label font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Audio an</span>
+      </button>
+      <button id="sosBtn" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Wenn es gerade schwierig ist — kurze Hilfen für heikle Momente">
+        <span class="material-symbols-outlined text-on-surface-variant">emergency</span>
+        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">SOS</span>
       </button>
       <a id="kartenLink" href="karten.html" target="_blank" rel="noopener" class="flex items-center gap-2 p-2 hover:bg-surface-container transition-colors rounded-lg" title="Moderationskarten öffnen — alle Stationen im Überblick">
         <span class="material-symbols-outlined text-on-surface-variant">description</span>
@@ -218,9 +222,67 @@ body { background-color: #FBF9F4; }
     <div class="w-64 h-64 border-l border-b border-primary-container rounded-bl-xl"></div>
   </div>
 </main>
-<script src="themes.js?v=20260717e"></script>
-<script src="player.js?v=20260717e"></script>
-<script src="questions.js?v=20260717e"></script>
+<!-- Gastgeber-SOS: kurze Hilfen für heikle Momente, ohne den Abend zu verlassen -->
+<div id="sosOverlay" class="hidden fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4">
+  <div class="bg-surface rounded-xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-outline-variant/30">
+    <div class="flex items-center justify-between gap-3 p-5 border-b border-outline-variant/20">
+      <div>
+        <h3 class="font-headline text-xl text-primary-container">Wenn es gerade schwierig ist</h3>
+        <p class="text-xs text-on-surface-variant mt-1">Sechs Momente, die in jedem guten Abend vorkommen dürfen — und was hilft.</p>
+      </div>
+      <button id="sosClose" class="text-on-surface-variant/60 hover:text-on-background p-1"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="overflow-y-auto p-5 space-y-3" id="sosList">
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">volume_off</span>Betretenes Schweigen<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> Schweigen ist kein Fehler, sondern oft der Moment vor dem ehrlichsten Satz des Abends. Innerlich bis zehn zählen, freundlich schauen — nicht retten.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Wir lassen das kurz stehen." · „Kein Druck — wer mag, sagt etwas. Sonst gehen wir einfach weiter."</p>
+        </div>
+      </details>
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">record_voice_over</span>Jemand redet sehr lange<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> Nicht abwürgen — andocken. Wer viel redet, will meistens gehört werden. Ein Satz würdigen, dann weiterreichen.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Danke — da steckt viel drin. Ich hole kurz die anderen dazu: Wie ist das bei euch?" · „Lass uns einen Punkt davon festhalten — welcher ist dir der wichtigste?"</p>
+        </div>
+      </details>
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">water_drop</span>Jemand weint<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> Tränen sind kein Notfall und nichts, das repariert werden muss. Nicht sofort trösten, nicht ablenken — dableiben. Wasser oder ein Taschentuch reichen ist mehr wert als jeder Satz.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Du musst nichts erklären. Wir bleiben einfach kurz hier." · „Sag du, wann wir weitermachen — Pause ist jederzeit okay."</p>
+        </div>
+      </details>
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">gavel</span>Diskussion statt Zuhören<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> Der Abend sammelt Perspektiven — er muss sich auf nichts einigen. Debatten entstehen, wenn Antworten bewertet werden. Zurück zur Ich-Form.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Wir müssen uns heute auf nichts einigen — beides darf stehen bleiben." · „Lass uns die Frage nochmal persönlich stellen: Wie ist es bei dir — nicht: wer hat recht?"</p>
+        </div>
+      </details>
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">shield</span>Jemandem wird es zu viel<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> „Pass" ist ein vollständiger Satz — niemand muss sich erklären. Wer aussteigt, bleibt trotzdem Teil der Runde.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Völlig okay — wir ziehen weiter, du bist einfach dabei." · „Steig ein, wann immer du magst — die nächste Station gehört wieder allen."</p>
+        </div>
+      </details>
+      <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
+        <summary class="cursor-pointer list-none flex items-center gap-3 p-4 font-headline text-on-background"><span class="material-symbols-outlined text-[20px] text-secondary">sentiment_very_satisfied</span>Witze überdecken alles<span class="material-symbols-outlined ml-auto text-on-surface-variant/40 group-open:rotate-180 transition-transform">expand_more</span></summary>
+        <div class="px-4 pb-4 text-sm text-on-surface-variant leading-relaxed space-y-2">
+          <p><strong class="text-on-background">Haltung:</strong> Humor ist meistens Schutz, kein Gegner. Nicht den Witz bekämpfen — die echte Antwort danach einladen. Am stärksten wirkt es, wenn du selbst zuerst ernst antwortest.</p>
+          <p><strong class="text-on-background">Sagen kannst du:</strong> „Der war gut — und jetzt die echte Antwort hinterher?" · „Ich fang mal ernst an, dann ist das Eis gebrochen."</p>
+        </div>
+      </details>
+      <p class="text-xs text-on-surface-variant/60 pt-2">Und wenn wirklich etwas Großes aufgeht: Der Abend darf jederzeit enden oder pausieren. Ein gutes Gespräch zu zweit am nächsten Tag ist mehr wert als ein durchgezogener Ablauf.</p>
+    </div>
+  </div>
+</div>
+
+<script src="themes.js?v=20260717f"></script>
+<script src="player.js?v=20260717f"></script>
+<script src="questions.js?v=20260717f"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -501,6 +563,15 @@ function startTimer() {
 }
 
 document.getElementById('zugabeBtn').addEventListener('click', drawZugabe);
+
+// Gastgeber-SOS: Overlay öffnen/schließen
+(function () {
+  const overlay = document.getElementById('sosOverlay');
+  document.getElementById('sosBtn').addEventListener('click', () => overlay.classList.remove('hidden'));
+  document.getElementById('sosClose').addEventListener('click', () => overlay.classList.add('hidden'));
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.add('hidden'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.add('hidden'); });
+})();
 
 // Abendmodus-Toggle (früh angewandt im <head>, hier nur Umschalten + Label)
 function renderDarkToggle() {
