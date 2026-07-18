@@ -10,7 +10,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260718b"/>
+<link rel="stylesheet" href="fonts.css?v=20260718c"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -64,7 +64,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260718b"/>
+<link rel="stylesheet" href="dark.css?v=20260718c"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -162,6 +162,22 @@ body { background-color: #FBF9F4; }
         </div>
         <span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
       </button>
+    </div>
+
+    <!-- KI-Sparringspartner: nur im Solo-Format — vorbereiteter Prompt für die eigene KI -->
+    <div id="kiBox" class="hidden w-full max-w-2xl mb-6 fadein">
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 md:p-6">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-3xl text-secondary">forum</span>
+          <div class="flex-1">
+            <p class="font-headline text-lg text-primary-container leading-snug mb-1">Nachklingen lassen — mit deiner KI</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Kopiere den vorbereiteten Gesprächs-Auftakt und füge ihn bei ChatGPT, Claude &amp; Co. ein. Deine KI wird damit zum Sparringspartner für diesen Abend: eine Frage nach der anderen, echtes Zuhören, keine schnellen Ratschläge. Kostenlos mit deinem eigenen Zugang — und KlarKreis erfährt nichts davon.</p>
+            <button id="kiCopyBtn" type="button" class="inline-flex items-center gap-2 bg-primary-container text-on-primary px-5 py-3 rounded-lg font-label text-xs uppercase tracking-widest font-semibold hover:bg-secondary transition-colors active:scale-[0.98]">
+              <span id="kiCopyIcon" class="material-symbols-outlined text-[18px]">content_copy</span><span id="kiCopyLabel">Gesprächs-Auftakt kopieren</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Feedback form (rendered for feedback-type stations) -->
@@ -281,9 +297,9 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260718b"></script>
-<script src="player.js?v=20260718b"></script>
-<script src="questions.js?v=20260718b"></script>
+<script src="themes.js?v=20260718c"></script>
+<script src="player.js?v=20260718c"></script>
+<script src="questions.js?v=20260718c"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -437,6 +453,8 @@ function hideAllContentBoxes() {
   el.feedbackForm.classList.add('hidden');
   const zb = document.getElementById('zugabeBox');
   if (zb) zb.classList.add('hidden');
+  const kb = document.getElementById('kiBox');
+  if (kb) kb.classList.add('hidden');
   KlarKreisPlayer.destroyAll();
 }
 
@@ -468,6 +486,42 @@ function drawZugabe() {
   stations.splice(currentIdx, 0, station);
   render();
 }
+
+// ===== KI-Sparringspartner (Solo): vorbereiteter Prompt für die eigene KI =====
+function buildKiPrompt() {
+  const names = stations.filter(s => s.type !== 'feedback' && s.name !== 'Zugabe').map(s => '„' + (s.title || s.name) + '"').join(', ');
+  return 'Ich habe gerade allein einen geführten Reflexions-Abend zum Thema „' + theme.title + '" gemacht (von klarkreis.de). Die Stationen waren: ' + names + '.\n\n'
+    + 'Ich möchte den Abend jetzt mit dir nachklingen lassen — du bist mein Sparringspartner, nicht mein Ratgeber. Bitte halte dich an diese Regeln:\n'
+    + '1. Stelle mir immer nur EINE Frage und warte auf meine Antwort.\n'
+    + '2. Spiegle kurz, was du in meiner Antwort hörst, bevor du weiterfragst.\n'
+    + '3. Frag dort nach, wo es spannend wird — ruhig auch unbequem, aber immer warmherzig.\n'
+    + '4. Keine Ratschläge und keine Analysen, außer ich bitte ausdrücklich darum.\n'
+    + '5. Du bist kein Therapeut und stellst keine Diagnosen. Wenn dir etwas zu groß für dieses Format erscheint, sag mir das ehrlich und empfiehl professionelle Begleitung.\n'
+    + '6. Nach ungefähr sechs Fragen: Fasse in meinen eigenen Worten zusammen, was mir heute klarer geworden ist, und gib mir genau EINEN kleinen Schritt für die nächsten Tage mit.\n\n'
+    + 'Beginne mit dieser Frage: „Welche Station arbeitet noch in dir — und warum ausgerechnet die?"';
+}
+const kiCopyBtn = document.getElementById('kiCopyBtn');
+function kiLegacyCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  ta.remove();
+}
+if (kiCopyBtn) kiCopyBtn.addEventListener('click', () => {
+  const text = buildKiPrompt();
+  const done = () => {
+    document.getElementById('kiCopyIcon').textContent = 'check';
+    document.getElementById('kiCopyLabel').textContent = 'Kopiert — jetzt bei deiner KI einfügen';
+    setTimeout(() => {
+      document.getElementById('kiCopyIcon').textContent = 'content_copy';
+      document.getElementById('kiCopyLabel').textContent = 'Gesprächs-Auftakt kopieren';
+    }, 3500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => { kiLegacyCopy(text); done(); });
+  } else { kiLegacyCopy(text); done(); }
+});
 
 function mountStationAudio(station, idx) {
   if (station.type === 'feedback') return;
@@ -506,6 +560,8 @@ function render() {
     el.descriptionBox.classList.toggle('hidden', !s.description);
     const zb = document.getElementById('zugabeBox');
     if (zb && window.QUESTIONS) zb.classList.remove('hidden');
+    const kb = document.getElementById('kiBox');
+    if (kb && formatKey === 'solo') kb.classList.remove('hidden');
     el.feedbackForm.classList.remove('hidden');
     // Handout-Download anbieten (falls PDF für diesen Abend existiert)
     const handout = document.getElementById('handoutLink');

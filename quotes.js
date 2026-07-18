@@ -223,6 +223,20 @@ window.QUOTES = [
   { text: "Man muss das Mögliche tun, damit das Unmögliche sichtbar wird.", author: null, category: "Einfachheit" },
   { text: "Man kann nur das behalten, was man geteilt hat.", author: null, category: "Einfachheit" },
   { text: "Alles, was ich über das Leben weiß, passt in einen einzigen Satz: Es geht weiter.", author: "Robert Frost", category: "Einfachheit" },
+  { text: "Alles wirkliche Leben ist Begegnung.", author: "Martin Buber", category: "Begegnung" },
+  { text: "Kinder werden nicht erst zu Menschen — sie sind bereits welche.", author: "Janusz Korczak", category: "Begegnung" },
+  { text: "Habe Geduld gegen alles Ungelöste in deinem Herzen und versuche, die Fragen selbst liebzuhaben.", author: "Rainer Maria Rilke", category: "Wachstum" },
+  { text: "Das merkwürdige Paradox ist: Wenn ich mich akzeptiere, wie ich bin, dann kann ich mich ändern.", author: "Carl Rogers", category: "Wachstum" },
+  { text: "Nicht müde werden, sondern dem Wunder leise wie einem Vogel die Hand hinhalten.", author: "Hilde Domin", category: "Resilienz" },
+  { text: "Noch bist du da. Wirf deine Angst in die Luft.", author: "Rose Ausländer", category: "Resilienz" },
+  { text: "Der längste Weg ist der Weg nach innen.", author: "Dag Hammarskjöld", category: "Tiefe" },
+  { text: "Die Wahrheit ist dem Menschen zumutbar.", author: "Ingeborg Bachmann", category: "Tiefe" },
+  { text: "Es muss anders werden, wenn es gut werden soll.", author: "Georg Christoph Lichtenberg", category: "Neuanfang" },
+  { text: "Liebe besteht nicht darin, dass man einander anschaut, sondern dass man gemeinsam in dieselbe Richtung blickt.", author: "Antoine de Saint-Exupéry", category: "Liebe" },
+  { text: "Lasst Zwischenräume in eurem Beieinandersein, und lasst die Winde des Himmels zwischen euch tanzen.", author: "Khalil Gibran", category: "Liebe" },
+  { text: "Liebe ist eine Tätigkeit und kein passiver Affekt.", author: "Erich Fromm", category: "Liebe" },
+  { text: "Und dann muss man ja auch noch Zeit haben, einfach dazusitzen und vor sich hin zu schauen.", author: "Astrid Lindgren", category: "Stille" },
+  { text: "Zeit ist Leben. Und das Leben wohnt im Herzen.", author: "Michael Ende", category: "Zeit" },
 ];
 
 window.QUOTE_CATEGORIES = [...new Set(window.QUOTES.map(q => q.category))];

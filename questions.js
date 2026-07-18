@@ -5,6 +5,8 @@
 window.QUESTIONS = [
 
   // ---------- Über dich (25) ----------
+  { text: "An welchem Punkt deines Lebens bist du innerlich ein Stück stehen geblieben — und woran merkst du das heute?", category: "Über dich" },
+  { text: "Welche Ausrede benutzt du am häufigsten — und wovor bewahrt sie dich wirklich?", category: "Über dich" },
   { text: "Welches Detail an dir würde ein guter Beobachter erst nach einer Woche bemerken — beim ersten Eindruck aber nie?", category: "Über dich" },
   { text: "Für welche drei Dinge würdest du mitten in der Nacht aufstehen?", category: "Über dich" },
   { text: "Welchen Ruf hast du in deiner Familie — und stimmt er?", category: "Über dich" },
@@ -34,6 +36,7 @@ window.QUESTIONS = [
   { text: "Worüber lachst du heimlich, obwohl du weißt, dass du es nicht solltest?", category: "Über dich" },
 
   // ---------- Werte & Richtung (25) ----------
+  { text: "Wofür würdest du einstehen, auch wenn es dich Ansehen kostet — und wofür nur, solange keiner hinschaut?", category: "Werte & Richtung" },
   { text: "Bei welchem Thema hast du deine Meinung um 180 Grad gedreht — und was gab den Ausschlag?", category: "Werte & Richtung" },
   { text: "Was verteidigst du nach außen, obwohl du innerlich längst zweifelst?", category: "Werte & Richtung" },
   { text: "Welche Ausgabe fühlt sich für dich nie wie Geldverschwendung an — egal wie teuer?", category: "Werte & Richtung" },
@@ -63,6 +66,7 @@ window.QUESTIONS = [
   { text: "Hat deine Definition von Erfolg sich verändert — wie?", category: "Werte & Richtung" },
 
   // ---------- Träume & Zukunft (15) ----------
+  { text: "Was würdest du sofort anfangen, wenn du sicher wüsstest, dass niemand es bewertet?", category: "Träume & Zukunft" },
   { text: "Welche Version deiner Zukunft macht dir mehr Angst: dass alles so bleibt — oder dass sich alles ändert?", category: "Träume & Zukunft" },
   { text: "Was würdest du heute anfangen, wenn du wüsstest, dass es erst in zehn Jahren Früchte trägt?", category: "Träume & Zukunft" },
   { text: "Welchen Traum hast du so lange aufgeschoben, dass er sich inzwischen anfühlt wie ein Möbelstück?", category: "Träume & Zukunft" },
@@ -82,6 +86,7 @@ window.QUESTIONS = [
   { text: "An welchem Ort würdest du gern alt werden — und an welchem auf keinen Fall?", category: "Träume & Zukunft" },
 
   // ---------- Kindheit & Wurzeln (15) ----------
+  { text: "Welcher Satz wurde in deinem Elternhaus nie gesagt — und wie hat diese Stille dich geprägt?", category: "Kindheit & Wurzeln" },
   { text: "Welches Geräusch aus deinem Elternhaus würdest du sofort wiedererkennen?", category: "Kindheit & Wurzeln" },
   { text: "Was galt in deiner Familie als völlig normal — und erst später hast du gemerkt: War es gar nicht?", category: "Kindheit & Wurzeln" },
   { text: "Welche Regel deiner Eltern hast du gehasst — und heute erwischst du dich dabei, sie zu übernehmen?", category: "Kindheit & Wurzeln" },
@@ -102,6 +107,8 @@ window.QUESTIONS = [
   { text: "Worauf warst du als Kind besonders stolz?", category: "Kindheit & Wurzeln" },
 
   // ---------- Herzensmenschen (20) ----------
+  { text: "Mit wem führst du im Kopf Gespräche, die ihr in Wirklichkeit nie führt — und worüber?", category: "Herzensmenschen" },
+  { text: "Wessen Urteil über dich hat mehr Macht, als dir lieb ist?", category: "Herzensmenschen" },
   { text: "Wessen Lachen würdest du unter tausend anderen erkennen?", category: "Herzensmenschen" },
   { text: "Bei wem bist du die beste Version von dir — und was genau macht diese Person anders?", category: "Herzensmenschen" },
   { text: "Welche Freundschaft hat sich still verabschiedet, ganz ohne Streit — und fehlt sie dir?", category: "Herzensmenschen" },
@@ -137,6 +144,7 @@ window.QUESTIONS = [
   { text: "Was war der erste Mensch, dessen Tod oder Verlust dir wirklich klar gemacht hat, dass Liebe und Zeit endlich sind?", category: "Herzensmenschen" },
 
   // ---------- Arbeit & Berufung (20) ----------
+  { text: "Welchen Teil von dir gibst du morgens am Eingang ab — und holst du ihn abends wirklich wieder ab?", category: "Arbeit & Berufung" },
   { text: "Welches berufliche Kompliment würdest du gern einmal hören, das dir noch nie jemand gemacht hat?", category: "Arbeit & Berufung" },
   { text: "Was an deiner Arbeit würdest du vermissen, wenn du morgen im Lotto gewinnst — ehrlich?", category: "Arbeit & Berufung" },
   { text: "Wen aus deinem Arbeitsleben wirst du nie vergessen — im Guten oder im Schlechten?", category: "Arbeit & Berufung" },
@@ -158,6 +166,8 @@ window.QUESTIONS = [
   { text: "Welches berufliche Kompliment war dir wirklich wichtig?", category: "Arbeit & Berufung" },
 
   // ---------- Tiefgang (25) ----------
+  { text: "Was weißt du über dich, seit du ein Kind warst — und hast es nie laut ausgesprochen?", category: "Tiefgang" },
+  { text: "Auf welchen Satz von welchem Menschen wartest du eigentlich schon dein halbes Leben?", category: "Tiefgang" },
   { text: "Auf welche Entschuldigung wartest du seit Jahren — und würdest du sie heute überhaupt noch annehmen?", category: "Tiefgang" },
   { text: "Was trägst du mit dir herum, das eigentlich jemand anderem gehört — eine Schuld, eine Erwartung, ein Urteil?", category: "Tiefgang" },
   { text: "In welchem Moment deines Lebens warst du mutiger, als du dich je wieder getraut hast?", category: "Tiefgang" },
@@ -185,6 +195,7 @@ window.QUESTIONS = [
   { text: "Was bedeutet Versöhnung für dich — mit dir selbst?", category: "Tiefgang" },
 
   // ---------- Leicht & Humor (22) ----------
+  { text: "Welche Superkraft hättest du gern — und was verrät deine Wahl über das, was dir gerade fehlt?", category: "Leicht & Humor" },
   { text: "Für welche völlig normale Alltagstätigkeit verdienst du deiner Meinung nach eine Medaille?", category: "Leicht & Humor" },
   { text: "Welcher Haushaltsgegenstand beschreibt dich als Person am treffendsten?", category: "Leicht & Humor" },
   { text: "Was würdest du tun, wenn du einen Tag unsichtbar wärst — die ehrliche Antwort, nicht die charmante?", category: "Leicht & Humor" },
@@ -208,6 +219,7 @@ window.QUESTIONS = [
   { text: "Welches Kleidungsstück aus deiner Jugend bereust du heute am meisten?", category: "Leicht & Humor" },
 
   // ---------- Absurd & Erlebt (12) ----------
+  { text: "Was ist das Netteste, das je ein völlig Fremder für dich getan hat?", category: "Absurd & Erlebt" },
   { text: "Welche Geschichte glaubt dir niemand, obwohl sie exakt so passiert ist?", category: "Absurd & Erlebt" },
   { text: "Was ist das Seltsamste, das du je in einer fremden Wohnung entdeckt hast?", category: "Absurd & Erlebt" },
   { text: "Welcher Zufall in deinem Leben war so präzise, dass er sich wie Regie angefühlt hat?", category: "Absurd & Erlebt" },
@@ -225,6 +237,7 @@ window.QUESTIONS = [
   { text: "Was war das Peinlichste, das dir in einer öffentlichen Situation passiert ist?", category: "Absurd & Erlebt" },
 
   // ---------- Bunt gemischt (38) ----------
+  { text: "Welcher Moment deines Lebens wäre vor Gericht der Beweis, dass du mutiger bist, als du denkst?", category: "Bunt gemischt" },
   { text: "Welche Fähigkeit der Großeltern-Generation stirbt gerade aus — und welche davon hättest du gern gerettet?", category: "Bunt gemischt" },
   { text: "Was hast du dir als Teenager geschworen, niemals zu tun — und tust es heute ständig?", category: "Bunt gemischt" },
   { text: "Welcher fremde Mensch ist dir im Gedächtnis geblieben, obwohl ihr nie ein Wort gewechselt habt?", category: "Bunt gemischt" },
@@ -309,6 +322,7 @@ window.QUESTIONS = [
   { text: "Wo wirst du gerade ungern angefasst — und wo unbedingt?", category: "Ü18 · Spicy" },
 
   // ---------- Schräg & Ehrlich (15) ----------
+  { text: "Welches Kompliment hast du damals abgewehrt — und denkst bis heute daran?", category: "Schräg & Ehrlich" },
   { text: "Welche Nachricht markierst du seit Tagen als ungelesen, weil die Antwort Energie kosten würde?", category: "Schräg & Ehrlich" },
   { text: "Was googelst du regelmäßig, obwohl du die Antwort längst kennst?", category: "Schräg & Ehrlich" },
   { text: "Wann hast du zuletzt begeistert genickt, obwohl du kein Wort verstanden hast?", category: "Schräg & Ehrlich" },
@@ -329,6 +343,7 @@ window.QUESTIONS = [
   { text: "Welcher Mensch in deinem Leben kennt eine Version von dir, die alle anderen nicht kennen — und was ist anders an dieser Version?", category: "Schräg & Ehrlich" },
 
   // ---------- Banal & Tief (15) ----------
+  { text: "Welches Essen kochst du dir, wenn du Trost brauchst — und wer hat es dir zum ersten Mal gemacht?", category: "Banal & Tief" },
   { text: "Welches Lebensmittel kaufst du immer in genau der Marke, die deine Eltern gekauft haben?", category: "Banal & Tief" },
   { text: "Welche Uhrzeit hat für dich eine ganz eigene Stimmung — und woher kommt das?", category: "Banal & Tief" },
   { text: "Welchen kaputten Gegenstand reparierst du absichtlich nicht — und was hält dich wirklich davon ab?", category: "Banal & Tief" },
@@ -349,6 +364,8 @@ window.QUESTIONS = [
   { text: "Welchen Moment hast du heute oder gestern bewusst zu schnell beendet — und was hätte passieren können, wenn du geblieben wärst?", category: "Banal & Tief" },
 
   // ---------- Blitzrunde (18) — kurze Alltagsfragen mit Dreh, sofort beantwortbar ----------
+  { text: "Was ist die beste Uhrzeit für ein schwieriges Gespräch?", category: "Blitzrunde" },
+  { text: "Welches Wort müsste es im Deutschen geben, gibt es aber nicht?", category: "Blitzrunde" },
   { text: "Welches Wort benutzt du eindeutig zu oft?", category: "Blitzrunde" },
   { text: "Welche Meinung vertrittst du, die an diesem Tisch vermutlich niemand teilt?", category: "Blitzrunde" },
   { text: "Welcher Wochentag ist der ehrlichste?", category: "Blitzrunde" },
