@@ -6,13 +6,13 @@
 //   options.sticky: true → fixed an Bildschirmunterkante
 //   options.compact: true → kleinere Variante (für inline-Stationen)
 //
-// State persistiert: playbackRate in localStorage('klarkreis_audio_speed').
+// State persistiert: playbackRate in localStorage('klarkreis:playbackRate').
 
 (function () {
   if (window.KlarKreisPlayer) return;
 
   const SPEEDS = [0.75, 1, 1.15, 1.3, 1.5, 1.75];
-  const STORAGE_KEY = 'klarkreis_audio_speed';
+  const STORAGE_KEY = 'klarkreis:playbackRate';
 
   const CSS = `
 .kk-player{font-family:'Inter',sans-serif;background:#f0eee9;border:1px solid rgba(67,72,67,.12);border-radius:.5rem;padding:.75rem 1rem;display:flex;flex-direction:column;gap:.5rem;color:#1b1c19;box-shadow:0 1px 3px rgba(0,0,0,.04)}

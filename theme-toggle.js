@@ -41,8 +41,8 @@
     const nav = document.querySelector('header .lg\\:flex, nav .lg\\:flex');
     if (nav) {
       const btn = document.createElement('button');
-      btn.className = 'kk-theme-toggle inline-flex items-center text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300';
-      btn.title = 'Dunkelmodus umschalten';
+      btn.className = 'kk-theme-toggle inline-flex items-center text-[#1B1C19]/60 hover:text-secondary transition-colors duration-300';
+      btn.title = 'Dunkelmodus umschalten'; btn.setAttribute('aria-label','Dunkelmodus umschalten');
       btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">' + iconName() + '</span>';
       btn.addEventListener('click', toggle);
       nav.appendChild(btn);

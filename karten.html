@@ -8,7 +8,9 @@
 <meta name="robots" content="noindex"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="fonts.css?v=20260718a"/>
+<link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260718b"/>
 <style>
   body { font-family: 'Inter', sans-serif; color: #1B1C19; background: #F0EEE9; }
   .font-serif { font-family: 'Noto Serif', serif; }
@@ -149,8 +151,8 @@
     @page { size: A5 landscape; margin: 0; }
   }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260718a"/>
-<script src="theme-toggle.js?v=20260718a"></script>
+<link rel="stylesheet" href="dark.css?v=20260718b"/>
+<script src="theme-toggle.js?v=20260718b"></script>
 </head>
 <body class="min-h-screen">
 
@@ -183,7 +185,7 @@
   <div id="karten"></div>
 </main>
 
-<script src="themes.js?v=20260718a"></script>
+<script src="themes.js?v=20260718b"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('thema') || 'bindung';
@@ -298,6 +300,6 @@ function render() {
 
 render();
 </script>
-<script src="mobile-nav.js?v=20260718a"></script>
+<script src="mobile-nav.js?v=20260718b"></script>
 </body>
 </html>

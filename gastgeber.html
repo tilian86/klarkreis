@@ -18,7 +18,9 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="fonts.css?v=20260718a"/>
+<link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260718b"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -42,8 +44,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260718a"/>
-<script src="theme-toggle.js?v=20260718a"></script>
+<link rel="stylesheet" href="dark.css?v=20260718b"/>
+<script src="theme-toggle.js?v=20260718b"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -60,7 +62,7 @@
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="rezepte.html">Rezepte</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="musik.html">Musik</a>
       <a class="font-['Noto_Serif'] tracking-tight leading-relaxed text-[#1B1C19]/60 hover:text-[#B7895B] transition-colors duration-300" href="ueber.html">Über</a>
-      <a class="inline-flex items-center gap-1 text-[#1B1C19]/40 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
+      <a aria-label="Projekt unterstützen" class="inline-flex items-center gap-1 text-[#1B1C19]/60 hover:text-secondary transition-colors duration-300 text-[11px] uppercase tracking-widest font-semibold" href="unterstuetzen.html" title="Projekt unterstützen"><span class="material-symbols-outlined text-[16px]">favorite</span></a>
     </nav>
   </div>
   <div class="bg-surface-container-low h-[1px] w-full block"></div>
@@ -295,6 +297,29 @@
   </section>
 
   <!-- CTA -->
+  <!-- Produkt: Der Gastgeber-Kompass (Premium-PDF) -->
+  <section class="mb-20 bg-surface-container-low rounded-xl p-8 md:p-12 border border-outline-variant/30">
+    <div class="md:flex items-start gap-10">
+      <div class="flex-1">
+        <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-3">Für alle, die öfter gastgeben wollen</p>
+        <h2 class="font-headline text-3xl md:text-4xl text-primary-container mb-4">Der Gastgeber-Kompass</h2>
+        <p class="text-on-surface-variant leading-relaxed mb-5">Das Handbuch zu allem, was diese Seite anreißt — als liebevoll gestaltetes PDF: die drei Rollen des Gastgebens, Einladungs-Vorlagen zum Kopieren, das Eröffnungs-Skript, die Kunst des Timings, das komplette SOS-Kapitel mit Sag-Sätzen, vier Zuhör-Werkzeuge, die zehn Not-Fragen für stockende Gespräche, Follow-up-Vorlagen — und eine Kompass-Karte zum Ausdrucken für neben den Stuhl.</p>
+        <p class="text-sm text-on-surface-variant/70 mb-6">10 Seiten · PDF für alle Geräte &amp; zum Drucken · einmal kaufen, für immer nutzen</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="mailto:kontakt@klarkreis.de?subject=Kauf%3A%20Gastgeber-Kompass%20(7%20%E2%82%AC)&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20den%20Gastgeber-Kompass%20f%C3%BCr%207%20%E2%82%AC%20kaufen.%20Bitte%20schickt%20mir%20die%20Zahlungsinfos%20und%20den%20Download-Link.%0A%0AViele%20Gr%C3%BC%C3%9Fe" class="inline-flex items-center gap-2 bg-primary-container hover:bg-secondary text-on-primary px-8 py-4 rounded-lg text-xs uppercase tracking-widest font-semibold transition-colors">Per E-Mail kaufen — 7 € <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+          <span class="text-[11px] text-on-surface-variant/60">Kurze Mail genügt — Zahlungsinfos &amp; Link kommen meist innerhalb weniger Stunden.<br/>14 Tage Widerrufsrecht · <a href="agb.html" class="underline hover:text-secondary">AGB</a> · <a href="widerruf.html" class="underline hover:text-secondary">Widerruf</a></span>
+        </div>
+      </div>
+      <div class="hidden md:block w-44 shrink-0 mt-2">
+        <div class="aspect-[210/297] rounded-lg bg-primary-container shadow-xl flex flex-col items-center justify-center text-center p-4">
+          <svg width="26" height="26" viewBox="0 0 64 64" class="mb-2"><circle cx="32" cy="32" r="28" fill="none" stroke="#F0BD8B" stroke-width="3"/><circle cx="32" cy="32" r="18" fill="none" stroke="#F0BD8B" stroke-width="2" opacity="0.5"/><circle cx="32" cy="32" r="3.2" fill="#FDA055"/></svg>
+          <span class="font-headline text-on-primary text-sm leading-snug">Der Gastgeber-Kompass</span>
+          <span class="font-label uppercase tracking-widest text-[8px] text-secondary-fixed-dim mt-2">10 Seiten · PDF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-primary-container p-10 md:p-16 rounded-xl text-center">
     <h2 class="font-headline italic text-3xl md:text-5xl text-on-primary mb-6">Du bist so weit.</h2>
     <p class="text-on-primary/70 text-lg mb-10 max-w-xl mx-auto">
@@ -341,10 +366,10 @@
   </div>
 </footer>
 
-<script src="config.js?v=20260718a"></script>
-<script src="auth.js?v=20260718a"></script>
-<script src="login-ui.js?v=20260718a"></script>
-<script src="mobile-nav.js?v=20260718a"></script>
-<script src="page-audio.js?v=20260718a"></script>
+<script src="config.js?v=20260718b"></script>
+<script src="auth.js?v=20260718b"></script>
+<script src="login-ui.js?v=20260718b"></script>
+<script src="mobile-nav.js?v=20260718b"></script>
+<script src="page-audio.js?v=20260718b"></script>
 </body>
 </html>

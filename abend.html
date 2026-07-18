@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#FBF9F4"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="fonts.css?v=20260718a"/>
+<link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260718b"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -62,7 +64,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260718a"/>
+<link rel="stylesheet" href="dark.css?v=20260718b"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -181,15 +183,15 @@ body { background-color: #FBF9F4; }
       </div>
       <div>
         <label for="fbMoved" class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-2">Was hat dich bewegt?</label>
-        <textarea id="fbMoved" rows="3" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:border-secondary transition-colors" placeholder="Ein Moment, eine Frage, ein Satz …"></textarea>
+        <textarea id="fbMoved" rows="3" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors" placeholder="Ein Moment, eine Frage, ein Satz …"></textarea>
       </div>
       <div>
         <label for="fbImprove" class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-2">Was könnte besser sein?</label>
-        <textarea id="fbImprove" rows="3" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:border-secondary transition-colors" placeholder="Direkt, ehrlich, gern konkret."></textarea>
+        <textarea id="fbImprove" rows="3" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors" placeholder="Direkt, ehrlich, gern konkret."></textarea>
       </div>
       <div>
         <label for="fbEmail" class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-2">Deine E-Mail (optional)</label>
-        <input id="fbEmail" type="email" placeholder="name@beispiel.de" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:border-secondary transition-colors"/>
+        <input id="fbEmail" type="email" placeholder="name@beispiel.de" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition-colors"/>
         <p class="text-xs text-on-surface-variant/60 mt-1 italic">Nur, falls du zu neuen Themen informiert werden willst.</p>
       </div>
       <button type="submit" class="w-full md:w-auto bg-primary-container text-on-primary px-8 py-4 rounded-lg font-label text-sm uppercase tracking-[0.15em] hover:bg-primary transition-colors active:scale-[0.98]">
@@ -279,9 +281,9 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260718a"></script>
-<script src="player.js?v=20260718a"></script>
-<script src="questions.js?v=20260718a"></script>
+<script src="themes.js?v=20260718b"></script>
+<script src="player.js?v=20260718b"></script>
+<script src="questions.js?v=20260718b"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
