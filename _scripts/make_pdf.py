@@ -44,7 +44,7 @@ prompts=[s for s in t['stations'] if s.get('question') and has(s['name'],CLOSING
 if not prompts:
     prompts=[s for s in t['stations'] if s.get('question')][-2:]
 
-reise_label = (t['reise']['titel'] if t.get('reise') else 'KlarKreis')
+reise_label = (t['reise']['titel'] if t.get('reise') else 'Themenabend')
 nr = t['reise']['nr'] if t.get('reise') else ''
 total = t['reise']['total'] if t.get('reise') else ''
 
@@ -58,7 +58,7 @@ def model_html(s):
 
 def prompt_html(s):
     return f'''<div class="prompt"><p class="q">{esc(s['question'])}</p>
-      <div class="line"></div><div class="line"></div></div>'''
+      <div class="line"></div><div class="line"></div><div class="line"></div></div>'''
 
 body=f'''
 <div class="page">
@@ -71,45 +71,58 @@ body=f'''
   <p class="lead">{esc(t['lead'])}</p>
   {f'<blockquote>{esc(quote["text"])}<cite>— {esc(quote.get("author",""))}</cite></blockquote>' if quote else ''}
   {('<h2>Das Wesentliche</h2>' + "".join(model_html(m) for m in models)) if models else ''}
-  {('<h2>Die Fragen des Abends</h2><p class="rnote">Zum Weitersprechen — allein, zu zweit, im Kreis.</p><ol class="qlist">' + "".join(f'<li>{esc(s["question"])}</li>' for s in questions) + '</ol>') if questions else ''}
+  {('<h2>Die Fragen des Abends</h2><p class="rnote">Zum Weitersprechen — allein, zu zweit, im Kreis.</p><ol class="qlist' + (' cols' if len(questions)>=6 else '') + '">' + "".join(f'<li>{esc(s["question"])}</li>' for s in questions) + '</ol>') if questions else ''}
   <h2>Was ihr mitnehmt</h2>
   <p class="rnote">Zum Ausfüllen — für euch, in den Tagen nach dem Abend.</p>
   {"".join(prompt_html(p) for p in prompts)}
-  <footer>klarkreis.de · Ein Abend der {esc(reise_label)}</footer>
+  <footer>klarkreis.de · {esc('Ein Abend der ' + reise_label) if nr else 'Abende, die hängen bleiben'}</footer>
 </div>
 '''
 
-css='''
+FONTS=REPO/"fonts"
+def ff(fname, family, weight, style):
+    return f"@font-face{{font-family:'{family}';font-style:{style};font-weight:{weight};src:url('file://{FONTS}/{fname}') format('woff2');}}"
+
+fontfaces="".join([
+  ff("notoserif_v33_ga6daw1J5X9T9RW6j9bNVls-hfgvz8JcMofYTYf6D33WsNFH.woff2","Noto Serif","400 700","normal"),
+  ff("notoserif_v33_ga6saw1J5X9T9RW6j9bNfFIMZhhWnFTyNZIQD1-_FXP0RgnaOg9MYBNLg_cIrqvgyjUjHaA.woff2","Noto Serif","400 700","italic"),
+  ff("inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2","Inter","300 700","normal"),
+])
+
+css=fontfaces+'''
 @page { size: A4; margin: 0; }
 * { box-sizing: border-box; margin:0; padding:0; }
-html, body { font-family: 'Helvetica Neue', Arial, sans-serif; color:#1B1C19; background:#FBF9F4;
+html, body { font-family:'Inter','Helvetica Neue',Arial,sans-serif; color:#1B1C19; background:#FBF9F4;
   -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 .page { padding: 22mm 20mm 18mm; background:#FBF9F4;
   background-image: radial-gradient(circle at 92% 6%, rgba(146,76,0,0.05), transparent 40%); }
 header { display:flex; justify-content:space-between; align-items:center; padding-bottom:10px; border-bottom:1px solid #e4e2dd; margin-bottom:26px; }
 .brand { display:flex; align-items:center; gap:8px; }
-.brand span { font-family:Georgia,serif; font-style:italic; font-size:20px; color:#1B3022; }
+.brand span { font-family:'Noto Serif',Georgia,serif; font-style:italic; font-size:20px; color:#1B3022; }
 .reise { font-size:10px; text-transform:uppercase; letter-spacing:.18em; color:#924C00; font-weight:600; }
-h1 { font-family:Georgia,serif; font-size:34px; line-height:1.1; color:#1B3022; margin-bottom:6px; }
-.sub { font-family:Georgia,serif; font-style:italic; color:#737973; font-size:15px; margin-bottom:18px; }
+h1 { font-family:'Noto Serif',Georgia,serif; font-weight:700; font-size:34px; line-height:1.12; letter-spacing:-0.01em; color:#1B3022; margin-bottom:6px; }
+.sub { font-family:'Noto Serif',Georgia,serif; font-style:italic; color:#737973; font-size:15px; margin-bottom:18px; }
 .lead { font-size:12.5px; line-height:1.6; color:#434843; margin-bottom:22px; }
-blockquote { border-left:3px solid #924C00; padding:12px 18px; margin:0 0 26px; background:#f5f3ee; border-radius:0 6px 6px 0;
-  font-family:Georgia,serif; font-style:italic; font-size:15px; color:#1B3022; line-height:1.5; }
+blockquote { position:relative; border-left:3px solid #924C00; padding:14px 20px 14px 44px; margin:0 0 26px; background:#f5f3ee; border-radius:0 6px 6px 0;
+  font-family:'Noto Serif',Georgia,serif; font-style:italic; font-size:15px; color:#1B3022; line-height:1.55; }
+blockquote::before { content:'„'; position:absolute; left:14px; top:2px; font-size:42px; color:#924C00; opacity:.35; font-style:normal; font-family:'Noto Serif',serif; }
 blockquote cite { display:block; margin-top:8px; font-style:normal; font-size:10px; text-transform:uppercase; letter-spacing:.15em; color:#924C00; }
-h2 { font-family:Georgia,serif; font-size:19px; color:#1B3022; margin:24px 0 12px; padding-bottom:5px; border-bottom:1px solid #e4e2dd; }
+h2 { font-family:'Noto Serif',Georgia,serif; font-size:19px; color:#1B3022; margin:24px 0 12px; padding-bottom:5px; border-bottom:1px solid #e4e2dd; }
 .model { margin-bottom:16px; break-inside:avoid; }
-.model h3 { font-family:Georgia,serif; font-size:15px; color:#924C00; margin-bottom:6px; }
+.model h3 { font-family:'Noto Serif',Georgia,serif; font-size:15px; color:#924C00; margin-bottom:6px; }
 .mdesc { font-size:11px; line-height:1.5; color:#434843; margin-bottom:8px; }
 .items { display:flex; flex-direction:column; gap:6px; }
-.item { display:flex; gap:9px; font-size:11.5px; line-height:1.45; color:#1B1C19; padding:7px 10px; background:#fff; border:1px solid #ece9e3; border-radius:5px; }
+.item { display:flex; gap:9px; font-size:11.5px; line-height:1.5; color:#1B1C19; padding:8px 11px; background:#fff; border:1px solid #ece9e3; border-left:3px solid rgba(146,76,0,.35); border-radius:5px; }
 .item .acc { color:#924C00; font-weight:700; min-width:16px; }
 .item b { color:#1B3022; }
 .rnote { font-size:10.5px; color:#737973; font-style:italic; margin-bottom:12px; }
 .prompt { margin-bottom:16px; break-inside:avoid; }
 .qlist { margin:4px 0 8px 0; padding-left:20px; }
-.qlist li { font-family:Georgia,serif; font-size:12.5px; line-height:1.5; color:#1B3022; margin-bottom:9px; padding-left:4px; }
+.qlist.cols { columns:2; column-gap:26px; padding-left:0; list-style-position:inside; }
+.qlist.cols li { break-inside:avoid; }
+.qlist li { font-family:'Noto Serif',Georgia,serif; font-size:12.5px; line-height:1.5; color:#1B3022; margin-bottom:9px; padding-left:4px; }
 .qlist li::marker { color:#924C00; font-weight:700; }
-.prompt .q { font-family:Georgia,serif; font-size:13px; color:#1B3022; margin-bottom:10px; }
+.prompt .q { font-family:'Noto Serif',Georgia,serif; font-size:13px; color:#1B3022; margin-bottom:10px; }
 .line { border-bottom:1px dotted #b9b6ae; height:20px; }
 footer { margin-top:26px; padding-top:10px; border-top:1px solid #e4e2dd; font-size:9.5px; text-transform:uppercase; letter-spacing:.15em; color:#a8a49b; text-align:center; }
 '''
