@@ -20,7 +20,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/material-symbols-subset.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260718c"/>
+<link rel="stylesheet" href="fonts.css?v=20260718d"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -40,8 +40,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260718c"/>
-<script src="theme-toggle.js?v=20260718c"></script>
+<link rel="stylesheet" href="dark.css?v=20260718d"/>
+<script src="theme-toggle.js?v=20260718d"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
 <header class="w-full top-0 border-none bg-[#FBF9F4] sticky z-50">
@@ -188,8 +188,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-<script src="themes.js?v=20260718c"></script>
-<script src="player.js?v=20260718c"></script>
+<script src="themes.js?v=20260718d"></script>
+<script src="player.js?v=20260718d"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
@@ -387,7 +387,7 @@ function renderFormatContent() {
   const hinweisText = document.getElementById('hinweisText');
   if (currentFormat === 'solo') {
     hinweisLabel.textContent = 'Eine Bitte, bevor du anfängst';
-    hinweisText.innerHTML = 'Dieser Abend funktioniert nur, wenn du dir Zeit lässt. Wenn du nur schnell im Kopf antwortest und weiterklickst, bist du in zwanzig Minuten fertig — und hast nichts mitgenommen. <strong>Schreib auf, sprich laut, atme dazwischen.</strong> Die angezeigten Minuten sind Richtwerte, keine Stoppuhr. Eine Station wirklich gemacht ist mehr wert als zehn überflogen.';
+    hinweisText.innerHTML = 'Dieser Abend funktioniert nur, wenn du dir Zeit lässt. Wenn du nur schnell im Kopf antwortest und weiterklickst, bist du in zwanzig Minuten fertig — und hast nichts mitgenommen. <strong>Schreib auf, sprich laut, atme dazwischen.</strong> Die angezeigten Minuten sind Richtwerte, keine Stoppuhr. Eine Station wirklich gemacht ist mehr wert als zehn überflogen. Und am Ende wartet ein kleines Extra: ein vorbereiteter Gesprächs-Auftakt, mit dem du den Abend mit deiner eigenen KI (ChatGPT, Claude &amp; Co.) nachklingen lassen kannst — als Sparringspartner, kostenlos.';
   } else if (currentFormat === 'pair') {
     hinweisLabel.textContent = 'Ein Hinweis';
     hinweisText.innerHTML = 'Wenn ein gutes Gespräch zwischen euch entsteht — <em>bleibt dabei</em>. Ignoriert die nächste Station, lasst die Zeit laufen. Struktur ist dafür da, einen Abend in Gang zu bringen, nicht um ihn zu regieren. Und: nicht nur im Kopf antworten. Wirklich aussprechen, was ihr sonst schluckt — das ist der eigentliche Unterschied.';
@@ -466,7 +466,7 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
     </a>`;
 }).join('');
 </script>
-<script src="mobile-nav.js?v=20260718c"></script>
-<script src="page-audio.js?v=20260718c"></script>
+<script src="mobile-nav.js?v=20260718d"></script>
+<script src="page-audio.js?v=20260718d"></script>
 </body>
 </html>
