@@ -633,7 +633,7 @@ window.THEMES = {
     lead: 'Eine Standortbestimmung. Nicht die laute Version — die stille. Wo ziehe ich Linien, wo ducke ich mich, wo wachse ich?',
     image: 'images/stehe.jpg',
     philosophy1: 'Nicht jede Überzeugung muss laut sein. Aber sie muss deine sein. Heute geht es um die Grundsätze, an denen du dich wiedererkennst — und um die Momente, in denen du dich verleugnest.',
-    philosophy2: 'Wir schauen auf drei Ebenen: Wofür stehst du bei dir selbst ein? Für andere? Für eine Sache, die größer ist als du? Manche Menschen stehen auf Ebene 1 stark und auf Ebene 3 schwach. Andere umgekehrt. Beides ist okay — sichtbar wird das Muster erst, wenn man ehrlich draufschaut.',
+    philosophy2: 'Wir schauen auf drei Ebenen: bei dir selbst, für andere, für eine Sache. Joan Didion hat Selbstachtung als die Bereitschaft beschrieben, Verantwortung für das eigene Leben zu übernehmen — dort beginnt Ebene 1. Und Václav Havel hat gezeigt, was auf dem Spiel steht: Wer sich dauerhaft verbiegt, lebt „in der Lüge" und merkt es irgendwann selbst nicht mehr. Der Abend macht sichtbar, auf welcher Ebene du stark bist — und auf welcher du leise geworden bist.',
     formats: {
       group: {
         label: 'Kleine Gruppe',
@@ -836,7 +836,7 @@ window.THEMES = {
             description: 'Ein Mini-Abbild dessen, was dein idealer Tag öfter braucht.' },
           { name: 'Ikigai', title: 'Die vier überlappenden Kreise', duration: 7*60,
             hostNote: 'Der Host liest vor. Keine Pflicht zur Antwort — spür nach.',
-            description: 'Die Japaner haben dafür ein Wort: Ikigai — „das, wofür es sich lohnt, morgens aufzustehen". Es liegt dort, wo vier Kreise sich überlappen:\n\n→ Was du liebst\n→ Worin du gut bist\n→ Was die Welt braucht\n→ Wofür du bezahlt wirst (oder werden könntest)\n\nDie meisten Menschen leben in einem der Kreise, manche in zwei. Ein Tag, an dem du dich für Minuten in der Mitte bewegst, ist besser als jeder Urlaub.',
+            description: 'Vier Fragen, an denen ein Tag Gewicht bekommt: Was liebst du? Worin bist du gut? Was braucht die Welt von dir? Wofür wirst du bezahlt — oder könntest es werden?\n\nBekannt ist das als „Ikigai"-Diagramm mit vier Kreisen. Ehrlicherweise: Diese Kreise sind eine westliche Erfindung. Das japanische Ikigai, erforscht von der Psychiaterin Mieko Kamiya, ist bescheidener und schöner — das, was deinem Alltag Gewicht und Richtung gibt. Es muss kein Beruf sein: Ein Garten kann es sein, ein Enkelkind, ein Chor.\n\nFür heute reicht die kleinere Frage: Wo in deinem idealen Tag berühren sich wenigstens zwei der vier?',
             question: 'Welcher der vier Kreise kommt in deinem aktuellen Alltag am kürzesten — und wo im idealen Dienstag wäre Raum für alle vier?' },
           { name: 'Drei Worte', title: 'Wie soll sich dein Abend anfühlen?', duration: 6*60,
             hostNote: 'Reihum, wirklich nur drei Worte. Nicht ausführen.',
@@ -908,7 +908,7 @@ window.THEMES = {
     category: 'Zukunft',
     lead: 'Eine Zeitreise nach vorn. Nicht: was willst du erreicht haben. Sondern: wer willst du geworden sein — und was fängt heute damit an?',
     image: 'images/zehnjahre.jpg',
-    philosophy1: 'Zehn Jahre sind weit genug, um fast alles zu verändern — und nah genug, dass das, was wir heute tun, entscheidet, was dann da sein wird.',
+    philosophy1: 'Der Psychologe Hal Hershfield hat gezeigt: Unser Gehirn behandelt das eigene zukünftige Ich wie einen Fremden — deshalb entscheiden wir so oft gegen es. Das Gegenmittel ist Konkretheit: Je lebendiger das Bild von dir in zehn Jahren, desto besser entscheidest du heute.',
     philosophy2: 'Wir schauen auf vier Säulen einer Zukunft: Ort (wo), Menschen (mit wem), Arbeit (woran) und Selbst (wer bist du geworden). Die Übung lebt von Konkretheit — keine Poesie, sondern ein Mittwoch im April 2036.',
     formats: {
       group: {
@@ -1129,7 +1129,7 @@ window.THEMES = {
           { name: 'Zum Ausklingen', title: 'Leichte Abschluss-Runde', duration: 10*60,
             hostNote: 'Auflockerung vor dem Schluss.',
             items: [
-              { accent: 'Frage 27', text: 'Wenn dein Leben als Netflix-Serie erscheinen würde — welches Genre wäre es, und wie hieße die aktuelle Staffel?' },
+              { accent: 'Frage 27', text: 'Welchen Moment deines Lebens würdest du gern noch einmal in Zeitlupe erleben?' },
               { accent: 'Frage 28', text: 'Welcher Satz, den jemand mal zu dir gesagt hat, ist geblieben?' },
               { accent: 'Frage 29', text: 'Welche kleine Geste von jemand anderem kann dich sofort für diese Person einnehmen?' }
             ] },
@@ -1393,7 +1393,7 @@ window.THEMES = {
     category: 'Frageabend',
     lead: 'Wenn der ernste Abend einfach nicht passt. Fragen, die Quatsch erlauben — und durch Quatsch oft mehr verraten als ehrliche Antworten.',
     image: 'images/wein.jpg',
-    philosophy1: 'Manchmal ist der gerade Weg in einen Menschen die völlig schräge Frage. „Welcher Instagram-Filter beschreibt deine Persönlichkeit?“ verrät oft mehr als „Was machst du beruflich?“.',
+    philosophy1: 'Manchmal ist der gerade Weg in einen Menschen die völlig schräge Frage. „Welches Tier wird komplett überschätzt?“ verrät oft mehr als „Was machst du beruflich?“.',
     philosophy2: 'Heute kein psychologisches Tiefbohren — sondern hypothetische Szenarien, paradoxe Wahlen und Alltagsphilosophie. Lacht viel. Aber hört auch auf das, was hinter dem Lachen liegt.',
     formats: {
       group: {
@@ -1429,7 +1429,7 @@ window.THEMES = {
             items: [
               { accent: 'Frage 9', text: 'Welcher Film müsste neu verfilmt werden — aber als TikTok-Tanzchallenge?' },
               { accent: 'Frage 10', text: 'Welche Sportart sollte mit völlig falschen Regeln olympisch werden?' },
-              { accent: 'Frage 11', text: 'Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten — nicht dein Aussehen?' },
+              { accent: 'Frage 11', text: 'Womit kann man dich sofort glücklich machen, das keine fünf Euro kostet?' },
               { accent: 'Frage 12', text: 'Welche App sollte dringend eine „Das war Sarkasmus!“-Autokorrektur einführen?' }
             ] },
           { name: 'Alltag absurd', title: 'Banales neu gedacht', duration: 12*60,
@@ -1473,7 +1473,7 @@ window.THEMES = {
           { name: 'Pop', title: 'Medien neu sortiert', duration: 10*60,
             hostNote: 'Frech sein erlaubt.',
             items: [
-              { accent: 'Frage 7', text: 'Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten?' },
+              { accent: 'Frage 7', text: 'Welche kleine Eigenart von dir fällt erst auf, wenn man mit dir wohnt?' },
               { accent: 'Frage 8', text: 'Welcher Film müsste als TikTok-Tanzchallenge neu verfilmt werden?' },
               { accent: 'Frage 9', text: 'Welche App sollte dringend eine „Das war Sarkasmus!“-Autokorrektur einführen?' }
             ] },
@@ -1528,7 +1528,7 @@ window.THEMES = {
           { name: 'Stolz', title: 'Wofür würde es dich beneiden?', duration: 10*60,
             hostNote: 'Reihum, je 1-2 Min. Nicht: „Was läuft gut." Sondern: Was wird mit 80 nicht mehr selbstverständlich sein?',
             description: 'Manches, was wir heute selbstverständlich finden — dass wir laufen können, dass wir uns spontan verlieben können, dass es noch Jahrzehnte zu gestalten gibt — wird mit 80 nicht mehr selbstverständlich sein. Was davon sieht dein älteres Ich besonders deutlich?',
-            question: 'Wofür würde dich dein 80-jähriges Ich heute beneiden — und merkst du das gerade selbst?' },
+            question: 'Wofür würde dich dein 80-jähriges Ich heute beneiden — um etwas, das dir selbst kaum noch auffällt?' },
           { name: 'Sorge', title: 'Worüber würde es weinen?', duration: 10*60,
             hostNote: 'Reihum. Nicht der dramatische Lebensfehler — der leise, der sich gerade einschleicht.',
             description: 'Manchmal sieht das ältere Ich etwas, das das heutige Ich noch ignorieren kann: eine Beziehung, die langsam einschläft. Eine Gewohnheit, die mehr nimmt als gibt. Eine Sehnsucht, die jedes Jahr kleiner wird, weil sie nie gelebt wird.',
@@ -1550,7 +1550,7 @@ window.THEMES = {
           { name: 'Dank', title: 'Wofür würde es am meisten danken?', duration: 8*60,
             hostNote: 'Reihum, kurz. Nicht die offensichtlichen Dinge — das Überraschende.',
             description: 'Mit 80 dankt man nicht mehr für die spektakulären Dinge. Man dankt für: einen Nachmittag mit der Großmutter, ein Gespräch am Küchentisch, den kleinen Moment, in dem man aufgewacht ist und gespürt hat, dass alles genug ist.',
-            question: 'Wofür würde dein 80-jähriges Ich am meisten danken — und wie oft nimmst du das heute bewusst wahr?' },
+            question: 'Wofür würde dein 80-jähriges Ich dir am meisten danken — welche Entscheidung, welche Gewohnheit, welcher Mut wäre es?' },
           { name: 'Stille', title: 'Zwei Minuten ohne Worte', duration: 2*60,
             hostNote: 'Alle schauen zur Kerze. Zwei Minuten. Atmen.',
             description: 'Das Ältere und das Heutige treffen sich jetzt auf halbem Weg.' },
@@ -1587,7 +1587,7 @@ window.THEMES = {
             description: 'Wir treffen unsere wichtigsten Entscheidungen aus einer engen Mitte heraus: getrieben vom Druck dieser Wochen.\n\nHeute borgen wir uns die Augen einer 80-jährigen Version von uns selbst — und schauen, was sie zu uns sagen würde.' },
           { name: 'Ankunft', title: 'Stell dir dein 80-jähriges Ich vor', duration: 8*60,
             hostNote: 'Audio anhören — Augen schließen ist okay. Oder eine:r liest vor.',
-            description: 'Es ist Morgen. Du bist 80. Du sitzt irgendwo, wo du dich wohlfühlst. Was siehst du? Wie sitzt du? Was hast du vor dir?\n\nDieses ältere Ich weiß, was aus dir geworden ist. Es schaut dich freundlich an. Und jetzt fängt es an zu sprechen.' },
+            description: 'Es ist Morgen. Du bist 80. Du sitzt irgendwo, wo du dich wohlfühlst. Was siehst du? Wie sitzt du? Was hast du vor dir?\n\nDieses ältere Ich weiß, was aus euch beiden geworden ist. Es hat keine Ratschläge mitgebracht, nur einen freundlichen Blick. Und jetzt beginnt es zu erzählen.' },
           { name: 'Stolz & Sorge', title: 'Was sieht es bei dir?', duration: 14*60,
             hostNote: 'Eine:r erzählt 5 min, die andere Person hört zu (keine Rückfragen). Dann tauschen.',
             description: 'Zwei Fragen, die du dir abwechselnd stellst — eine direkt nach der anderen.',
@@ -1641,11 +1641,11 @@ window.THEMES = {
             ] },
           { name: 'Ankunft', title: 'Stell dir dein 80-jähriges Ich vor', duration: 8*60,
             hostNote: 'Audio anhören (gerne mit geschlossenen Augen). Danach 2 Minuten Stille, bevor es weitergeht.',
-            description: 'Stell dir vor: Es ist Morgen. Du bist 80. Du sitzt irgendwo, wo du dich wohlfühlst. Was siehst du? Wie sitzt du? Was riechst du? Was hast du vor dir auf dem Tisch?\n\nDieses ältere Ich weiß, was aus dir geworden ist. Es schaut dich freundlich an. Und jetzt fängt es an zu sprechen.' },
+            description: 'Stell dir vor: Es ist Morgen. Du bist 80. Du sitzt irgendwo, wo du dich wohlfühlst. Was siehst du? Wie sitzt du? Was riechst du? Was hast du vor dir auf dem Tisch?\n\nDieses ältere Ich kennt jede deiner Abzweigungen — und trägt dir keine einzige nach. Jetzt beginnt es zu sprechen.' },
           { name: 'Stolz', title: 'Wofür würde es dich beneiden?', duration: 5*60,
             hostNote: 'Schreibe 4-5 Min am Stück. Nicht „was läuft gut" — was wird mit 80 nicht mehr selbstverständlich sein?',
             description: 'Dass du laufen kannst, dich spontan verlieben kannst, noch Jahrzehnte zu gestalten hast — das ist mit 80 nicht mehr selbstverständlich. Was davon sieht dein älteres Ich besonders deutlich?',
-            question: 'Wofür würde dich dein 80-jähriges Ich heute beneiden — und merkst du das gerade selbst?' },
+            question: 'Wofür würde dich dein 80-jähriges Ich heute beneiden? Schreib es auf, bevor du es kleinredest.' },
           { name: 'Sorge', title: 'Worüber würde es weinen?', duration: 5*60,
             hostNote: 'Schreibe. Nicht der dramatische Lebensfehler — der leise, der sich gerade einschleicht.',
             description: 'Manchmal sieht das ältere Ich etwas, das das heutige noch ignorieren kann: eine Beziehung, die einschläft. Eine Gewohnheit, die mehr nimmt als gibt. Eine Sehnsucht, die kleiner wird, weil sie nie gelebt wird.',
@@ -1667,7 +1667,7 @@ window.THEMES = {
           { name: 'Dank', title: 'Wofür würde es am meisten danken?', duration: 4*60,
             hostNote: 'Schreibe. Die unoffensichtlichen Dinge.',
             description: 'Mit 80 dankt man nicht für die spektakulären Dinge. Man dankt für: einen Nachmittag mit der Großmutter, ein Gespräch am Küchentisch, den kleinen Moment, in dem man aufwacht und spürt: alles ist genug.',
-            question: 'Wofür würde dein 80-jähriges Ich am meisten danken — und wie oft nimmst du das heute bewusst wahr?' },
+            question: 'Wofür würde dein 80-jähriges Ich dir danken — und was davon liegt heute schon in deiner Hand?' },
           { name: 'Stille', title: 'Zwei Minuten ohne Worte', duration: 2*60,
             hostNote: 'Augen zu oder Blick zur Kerze. Nichts schreiben.',
             description: 'Das Ältere und das Heutige treffen sich jetzt auf halbem Weg.' },
@@ -1716,7 +1716,7 @@ window.THEMES = {
             description: 'Wir sind eine Generation, die mehr umzieht, mehr reist, mehr wechselt als jede davor. Das Wort „Heimat" klingt für viele zu groß, zu pathetisch, zu politisch besetzt.\n\nUnd doch: Jede:r kennt das Gefühl. Diesen einen Ort, diesen einen Menschen, diese eine Tätigkeit, in der man nicht weitermuss. Der Philosoph Ernst Bloch hat es einmal so gesagt: Heimat ist ein Ort, an dem noch nie jemand gewesen ist — und nach dem sich trotzdem alle sehnen. Gemeint war: Heimat ist nicht hinter uns, in der Kindheit. Sie ist etwas, das wir uns lebenslang komponieren.' },
           { name: 'Drei Türen', title: 'Heimat hat drei Türen', duration: 6*60,
             hostNote: 'Audio abspielen oder vorlesen. Drei Definitionen — alle gleichzeitig wahr.',
-            description: 'Heimat ist selten nur eine Sache. Meistens aus mehreren Quellen zusammengesetzt. Wir unterscheiden drei Türen:',
+            description: 'Heimat ist selten nur eine Sache — meistens eine Komposition. Wir unterscheiden drei Türen. Sie sind die Alltagssprache für das, was der Soziologe Hartmut Rosa „Resonanzachsen" nennt: Verbindungen, in denen die Welt antwortet, statt stumm zu bleiben.',
             items: [
               { accent: 'Ort', label: 'Heimat als Raum', text: 'Eine Wohnung, eine Stadt, ein Land, eine Landschaft. Der physische Ort, an dem dein Körper zur Ruhe kommt.' },
               { accent: 'Mensch', label: 'Heimat als Beziehung', text: 'Eine Person, in deren Anwesenheit du nicht mehr darstellen musst. Heimat als „bei dir bin ich angekommen".' },
@@ -2507,7 +2507,7 @@ window.THEMES = {
             question: 'Welches Jahr deines Lebens war schwer — und was trug dich durch, was niemand wusste?' },
           { name: 'Stille', title: 'Drei Minuten ohne Worte', duration: 3*60,
             hostNote: 'Kerze anschauen, Tee trinken, aus dem Fenster schauen. Nichts auflösen wollen. Wer weinen mag, weint. Wer eine Hand auf die des anderen legen will, tut es. Wer Distanz braucht, nimmt sie.',
-            description: 'Nach dem, was gerade im Raum war, braucht es Zeit, bevor weitere Worte kommen. Diese drei Minuten sind kein Pflicht-Schweigen — sie sind ein Geschenk an das, was gerade gesagt wurde.' },
+            description: 'Nach dem, was gerade im Raum war, braucht es einen Moment, bevor neue Worte kommen. Drei Minuten, in denen nichts erklärt und nichts eingeordnet wird — das Gesagte darf einfach dastehen.' },
           { name: 'Unsichtbar', title: 'Das, was ich nie von dir wusste', duration: 10*60,
             hostNote: 'Beide je 4-5 Min. Nicht vorbereiten — spontan antworten, was auftaucht.\n→ Mit Eltern/Großeltern: Frag zuerst, dann erzählst du. Manche Antworten hörst du zum ersten Mal.\n→ Mit Geschwistern: Ein Ereignis aus eurer gemeinsamen Kindheit, von dem du glaubst, der/die andere hat es anders erlebt.\n→ Mit erwachsenem Kind: Als Elternteil erzähl etwas aus deinem Leben VOR deinem Kind — was es nie gekannt hat.',
             description: 'Wir halten uns mit den Menschen, die wir lieben, für gut eingelesen. In Wahrheit kennen wir oft nur die Version, die uns in unseren eigenen Jahren begegnet ist. Alles davor ist für uns nicht existent — obwohl es den Menschen zu dem gemacht hat, der er ist.',
@@ -2526,7 +2526,7 @@ window.THEMES = {
             question: 'Was sage ich dir für die nächste Zeit zu — klein, konkret, einlösbar?' },
           { name: 'Artefakt', title: 'Was nehmen wir mit?', duration: 4*60,
             hostNote: 'Jetzt kurz aus dem Innern heraustreten, falls ihr aufgenommen habt: Aufnahme stoppen, beide zustimmen, wer die Datei bekommt (AirDrop, Signal, WhatsApp, USB-Stick — was euch gehört, bleibt euer). Wer schreiben wollte, notiert drei Sätze. Wer nichts aufgezeichnet hat, wählt einen gemeinsamen Satz, den beide sich in die Notizen-App tippen.',
-            description: 'Damit dieser Abend nicht mit der letzten Kerze verlöscht, nehmt ihr etwas mit. Das kann eine Datei sein, ein Zettel, ein Satz, ein Foto, das ihr jetzt zusammen macht. Das Wichtige ist nicht das Artefakt selbst — das Wichtige ist, dass ihr den Moment bewusst versiegelt, bevor ihr zurück in den Alltag geht.' },
+            description: 'Nehmt etwas Konkretes mit aus diesem Abend: eine Datei, einen Zettel, einen Satz, ein Foto, das ihr jetzt zusammen macht. Nicht fürs Regal — als Wiedereinstieg. Wer das Artefakt später in der Hand hält, ist sofort wieder in diesem Gespräch.' },
           { name: 'Wort', title: 'Ein Wort, mit dem wir gehen', duration: 3*60,
             hostNote: 'Beide je ein Wort. Keine Begründung. Der/die Ältere fängt an — oder bei Geschwistern: wer zuerst sprechen will.',
             description: 'Nicht drei Sätze. Ein Wort. Oft ist es präziser.',
@@ -4407,7 +4407,7 @@ window.THEMES = {
           // ---------- PHASE 2: KOGNITIVE & EMOTIONALE ESKALATION (15-40 Min) ----------
           { name: 'Substanz', title: 'Was dich gerade wirklich bewegt', duration: 10*60,
             hostNote: 'Beide nehmen sich je 4-5 Min. Wählt eine Frage aus der Liste (oder nehmt sie der Reihe nach). Wichtig: Nicht mit einer witzigen Bemerkung runterspielen, wenn die/der andere etwas Ehrliches geteilt hat. Zuhören, nachfragen, dann selbst öffnen.',
-            description: 'Smalltalk-Phase beendet. Diese Fragen zwingen euch heraus aus dem Lebenslauf-Modus (Beruf, Wohnort, Hobbys) in das, was die Psychologin Esther Perel „echte Chemie" nennt: Werte, Fragilitäten, Sehnsüchte.',
+            description: 'Smalltalk-Phase beendet. Diese Fragen holen euch aus dem Lebenslauf-Modus heraus (Beruf, Wohnort, Hobbys) — dorthin, wo nach Esther Perel echte Chemie entsteht: nicht in der Übereinstimmung, sondern in der Neugier auf das, was hinter der Fassade liegt. Werte, wunde Punkte, Sehnsüchte.',
             items: [
               { accent: '1.', label: 'Dankbarkeit', text: 'Wofür in deinem Leben empfindest du momentan die meiste und ehrlichste Dankbarkeit?' },
               { accent: '2.', label: 'Verlorene Überzeugung', text: 'Was ist eine tiefe Überzeugung über dich selbst, die du vor Kurzem endgültig über Bord werfen musstest?' },
