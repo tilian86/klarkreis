@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720g" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260720g"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720h" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260720h"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -42,8 +42,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260720g"/>
-<script src="theme-toggle.js?v=20260720g"></script>
+<link rel="stylesheet" href="dark.css?v=20260720h"/>
+<script src="theme-toggle.js?v=20260720h"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -172,7 +172,7 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20260720g"></script>
+<script src="questions.js?v=20260720h"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -411,8 +411,13 @@ function renderList() {
   const info = document.getElementById('countInfo');
   const filtered = getFiltered();
   const totalSeen = seenCountInPool(filtered);
-  info.innerHTML = `${filtered.length} Frage${filtered.length === 1 ? '' : 'n'}${currentCat === 'alle' ? '' : ' in „' + currentCat + '"'}` +
-    (totalSeen > 0 ? ` · <span class="text-secondary">${totalSeen} gesehen</span>` : '');
+  info.innerHTML = `<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+    <span>${filtered.length} Frage${filtered.length === 1 ? '' : 'n'}${currentCat === 'alle' ? '' : ' in „' + currentCat + '"'}` +
+    (totalSeen > 0 ? ` · <span class="text-secondary">${totalSeen} gesehen</span>` : '') + `</span>
+    <button id="copyWholeBtn" class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-semibold text-secondary hover:text-on-tertiary-container transition-colors px-3 py-1.5 border border-secondary/40 rounded-full">
+      <span class="material-symbols-outlined text-[14px]">format_list_bulleted</span> Liste &amp; kopieren
+    </button>
+  </div>`;
   if (!filtered.length) {
     groups.innerHTML = `<p class="text-center text-on-surface-variant italic py-12">Hier fehlt noch was.</p>`;
     return;
@@ -445,15 +450,21 @@ function renderList() {
       </section>`;
   }).join('');
   groups.querySelectorAll('.copylist-btn').forEach(btn => {
-    btn.addEventListener('click', () => openCopyList(btn.dataset.copylist));
+    const c = btn.dataset.copylist;
+    btn.addEventListener('click', () => openCopyList(c, getFiltered().filter(q => q.category === c)));
   });
+  const allBtn = document.getElementById('copyWholeBtn');
+  if (allBtn) {
+    const title = currentCat === 'alle' ? 'Alle Fragen' : currentCat;
+    allBtn.onclick = () => openCopyList(title, getFiltered());
+  }
 }
 
 // ===== Kompakt-Liste zum Kopieren (dezent, über das Listen-Icon je Kategorie) =====
-function openCopyList(cat) {
-  // Respektiert den aktiven Filter: in „Best of" nur die Best-of-Fragen dieser Kategorie
-  const qs = getFiltered().filter(q => q.category === cat);
+function openCopyList(title, qsList) {
+  const qs = qsList || [];
   if (!qs.length) return;
+  const cat = title;
   const overlay = document.createElement('div');
   overlay.id = 'copyListOverlay';
   overlay.setAttribute('role','dialog'); overlay.setAttribute('aria-modal','true');
@@ -693,10 +704,10 @@ render();
   }
 })();
 </script>
-<script src="config.js?v=20260720g"></script>
-<script src="auth.js?v=20260720g"></script>
-<script src="login-ui.js?v=20260720g"></script>
-<script src="mobile-nav.js?v=20260720g"></script>
-<script src="page-audio.js?v=20260720g"></script>
+<script src="config.js?v=20260720h"></script>
+<script src="auth.js?v=20260720h"></script>
+<script src="login-ui.js?v=20260720h"></script>
+<script src="mobile-nav.js?v=20260720h"></script>
+<script src="page-audio.js?v=20260720h"></script>
 </body>
 </html>
