@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720e" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260720e"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720f" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260720f"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -42,8 +42,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260720e"/>
-<script src="theme-toggle.js?v=20260720e"></script>
+<link rel="stylesheet" href="dark.css?v=20260720f"/>
+<script src="theme-toggle.js?v=20260720f"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -172,7 +172,7 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20260720e"></script>
+<script src="questions.js?v=20260720f"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -189,7 +189,9 @@ function saveSeen() {
 }
 let seen = loadSeen();
 
+const BEST_CAT = '★ Best of';
 function getFiltered() {
+  if (currentCat === BEST_CAT) return window.QUESTIONS.filter(q => q.best);
   return currentCat === 'alle' ? window.QUESTIONS : window.QUESTIONS.filter(q => q.category === currentCat);
 }
 
@@ -220,15 +222,20 @@ function seekFirstUnseenFrom(startIdx) {
 
 function renderChips() {
   const chips = document.getElementById('catChips');
-  const cats = ['alle', ...window.QUESTION_CATEGORIES];
+  const cats = ['alle', BEST_CAT, ...window.QUESTION_CATEGORIES];
   chips.innerHTML = cats.map(c => {
     const active = c === currentCat;
-    const count = c === 'alle' ? window.QUESTIONS.length : window.QUESTIONS.filter(q => q.category === c).length;
+    const count = c === 'alle' ? window.QUESTIONS.length
+      : c === BEST_CAT ? window.QUESTIONS.filter(q => q.best).length
+      : window.QUESTIONS.filter(q => q.category === c).length;
     const label = c === 'alle' ? `Alle · ${count}` : `${c} · ${count}`;
     const isSpicy = c.startsWith('Ü18');
+    const isBest = c === BEST_CAT;
     let cls;
     if (active) {
-      cls = isSpicy ? 'bg-secondary text-on-primary border-secondary' : 'bg-primary-container text-on-primary border-primary-container';
+      cls = (isSpicy || isBest) ? 'bg-secondary text-on-primary border-secondary' : 'bg-primary-container text-on-primary border-primary-container';
+    } else if (isBest) {
+      cls = 'bg-surface-container-low text-secondary border-secondary/50 hover:border-secondary font-semibold';
     } else {
       cls = isSpicy
         ? 'bg-tertiary-container/30 text-secondary border-secondary/40 hover:border-secondary'
@@ -685,10 +692,10 @@ render();
   }
 })();
 </script>
-<script src="config.js?v=20260720e"></script>
-<script src="auth.js?v=20260720e"></script>
-<script src="login-ui.js?v=20260720e"></script>
-<script src="mobile-nav.js?v=20260720e"></script>
-<script src="page-audio.js?v=20260720e"></script>
+<script src="config.js?v=20260720f"></script>
+<script src="auth.js?v=20260720f"></script>
+<script src="login-ui.js?v=20260720f"></script>
+<script src="mobile-nav.js?v=20260720f"></script>
+<script src="page-audio.js?v=20260720f"></script>
 </body>
 </html>
