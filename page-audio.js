@@ -12,7 +12,7 @@
 
 (function () {
   // Globales Speed-Setting, geteilt über alle Player der Seite UND über Seiten hinweg.
-  const SPEEDS = [1, 1.25, 1.5, 1.75, 2, 0.75];
+  const SPEEDS = [1, 1.25, 1.5, 1.75, 2, 2.5, 0.75];
   // Registry aller Audio-Elemente, die via buildPlayer erstellt wurden.
   // Nötig, weil `new Audio()` das Element NICHT ins DOM hängt — ein
   // querySelectorAll('audio') findet solche Elemente nicht.
