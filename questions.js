@@ -195,6 +195,11 @@ window.QUESTIONS = [
   { text: "Was bedeutet Versöhnung für dich — mit dir selbst?", category: "Tiefgang" },
 
   // ---------- Leicht & Humor (22) ----------
+  { text: "Wenn du dein Leben lang nur noch einen einzigen Song hören dürftest — welcher wäre es?", category: "Leicht & Humor" },
+  { text: "Welches Lied wirft dich sofort an einen bestimmten Ort oder zu einem bestimmten Menschen zurück?", category: "Leicht & Humor" },
+  { text: "Welcher Song muss auf deiner Beerdigung laufen — und welcher auf gar keinen Fall?", category: "Leicht & Humor" },
+  { text: "Zu welchem Song kennst du heimlich jede einzelne Zeile?", category: "Leicht & Humor" },
+  { text: "Wenn dein Leben ein Film mit Vorspann wäre — welcher Song liefe dazu?", category: "Leicht & Humor" },
   { text: "Welche Superkraft hättest du gern — und was verrät deine Wahl über das, was dir gerade fehlt?", category: "Leicht & Humor" },
   { text: "Für welche völlig normale Alltagstätigkeit verdienst du deiner Meinung nach eine Medaille?", category: "Leicht & Humor" },
   { text: "Welcher Haushaltsgegenstand beschreibt dich als Person am treffendsten?", category: "Leicht & Humor" },
