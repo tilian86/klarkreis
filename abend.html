@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720d" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260720d"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720e" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260720e"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -33,6 +33,10 @@ body { background-color: #FBF9F4; }
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .star-btn { transition: transform .15s; }
 .star-btn:hover { transform: scale(1.2); }
+.speak-btn.speaking { color: #924C00; }
+.dark .speak-btn.speaking { color: #d98f45; }
+.speak-btn.speaking .material-symbols-outlined { animation: speakpulse 1s ease-in-out infinite; }
+@keyframes speakpulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.18); } }
 
 /* ===== Abendmodus (Dark Mode für den Abend-Flow) =====
    Überschreibt die semantischen Tailwind-Klassen mit einer warmen,
@@ -64,7 +68,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260720d"/>
+<link rel="stylesheet" href="dark.css?v=20260720e"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -146,6 +150,7 @@ body { background-color: #FBF9F4; }
 
     <div id="questionBox" class="mb-10 max-w-2xl w-full hidden">
       <p id="question" class="text-xl md:text-3xl font-headline italic text-primary-container text-center leading-snug"></p>
+      <div id="questionSpeak" class="flex justify-center mt-4"></div>
     </div>
 
     <div id="itemsBox" class="mb-10 w-full max-w-5xl hidden">
@@ -297,9 +302,9 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260720d"></script>
-<script src="player.js?v=20260720d"></script>
-<script src="questions.js?v=20260720d"></script>
+<script src="themes.js?v=20260720e"></script>
+<script src="player.js?v=20260720e"></script>
+<script src="questions.js?v=20260720e"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -439,12 +444,51 @@ function renderItems(items) {
         <h3 class="font-headline text-xl text-primary-container">${it.label || ''}</h3>
         ${it.accent ? `<span class="font-label text-[10px] uppercase tracking-widest text-secondary shrink-0">${it.accent}</span>` : ''}
       </div>
-      <p class="text-sm text-on-surface-variant leading-relaxed">${it.text || ''}</p>
+      <div class="flex items-start justify-between gap-3">
+        <p class="text-sm text-on-surface-variant leading-relaxed">${it.text || ''}</p>
+        ${speakBtn(it.text)}
+      </div>
     </div>
   `).join('');
 }
 
+// Vorlese-Option: nutzt die eingebaute Sprachausgabe des Geräts (Web Speech API,
+// kostenlos, keine Server-Audios). Erscheint nur, wenn das Gerät sie unterstützt.
+const SPEECH_OK = typeof window !== 'undefined' && 'speechSynthesis' in window;
+function speakBtn(text) {
+  if (!SPEECH_OK || !text) return '';
+  return `<button type="button" class="speak-btn shrink-0 -mt-1 -mr-1 p-2 rounded-full text-on-surface-variant/50 hover:text-secondary hover:bg-surface-container transition-colors"
+    data-speak="${encodeURIComponent(text)}" title="Frage vorlesen" aria-label="Frage vorlesen">
+    <span class="material-symbols-outlined text-[20px]">volume_up</span></button>`;
+}
+let _speakingBtn = null;
+function speakStop() {
+  if (SPEECH_OK) window.speechSynthesis.cancel();
+  if (_speakingBtn) { _speakingBtn.classList.remove('speaking'); _speakingBtn = null; }
+}
+function speakText(text, btn) {
+  if (!SPEECH_OK) return;
+  const wasActive = (_speakingBtn === btn);
+  speakStop();
+  if (wasActive) return; // zweiter Klick = Stopp
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'de-DE'; u.rate = 0.95;
+  const de = window.speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+  if (de) u.voice = de;
+  u.onend = () => { if (btn) btn.classList.remove('speaking'); if (_speakingBtn === btn) _speakingBtn = null; };
+  if (btn) btn.classList.add('speaking');
+  _speakingBtn = btn;
+  window.speechSynthesis.speak(u);
+}
+// Delegierter Klick-Handler für alle Vorlese-Knöpfe (Items + Einzelfrage)
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('.speak-btn');
+  if (!b) return;
+  speakText(decodeURIComponent(b.dataset.speak || ''), b);
+});
+
 function hideAllContentBoxes() {
+  speakStop();
   el.hostNoteBox.classList.add('hidden');
   el.quoteBox.classList.add('hidden');
   el.descriptionBox.classList.add('hidden');
@@ -596,7 +640,12 @@ function render() {
       el.quoteBox.classList.remove('hidden');
     }
     if (s.description) { el.description.textContent = s.description; el.descriptionBox.classList.remove('hidden'); }
-    if (s.question) { el.question.textContent = s.question; el.questionBox.classList.remove('hidden'); }
+    if (s.question) {
+      el.question.textContent = s.question;
+      el.questionBox.classList.remove('hidden');
+      const qs = document.getElementById('questionSpeak');
+      if (qs) qs.innerHTML = speakBtn(s.question);
+    }
     if (s.items && s.items.length) {
       el.itemsGrid.innerHTML = renderItems(s.items);
       el.itemsBox.classList.remove('hidden');
