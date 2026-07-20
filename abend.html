@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720e" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260720e"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720f" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260720f"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -68,7 +68,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260720e"/>
+<link rel="stylesheet" href="dark.css?v=20260720f"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -302,9 +302,9 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260720e"></script>
-<script src="player.js?v=20260720e"></script>
-<script src="questions.js?v=20260720e"></script>
+<script src="themes.js?v=20260720f"></script>
+<script src="player.js?v=20260720f"></script>
+<script src="questions.js?v=20260720f"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -437,8 +437,9 @@ function renderProgress() {
   }).join('');
 }
 
-function renderItems(items) {
-  return items.map(it => `
+function renderItems(items, station) {
+  const base = station ? `audio/${themaId}/items/${itemSlug(station.name)}-` : null;
+  return items.map((it, i) => `
     <div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
       <div class="flex items-baseline justify-between gap-3 mb-2">
         <h3 class="font-headline text-xl text-primary-container">${it.label || ''}</h3>
@@ -446,45 +447,57 @@ function renderItems(items) {
       </div>
       <div class="flex items-start justify-between gap-3">
         <p class="text-sm text-on-surface-variant leading-relaxed">${it.text || ''}</p>
-        ${speakBtn(it.text)}
+        ${base ? speakBtn(base + String(i + 1).padStart(2, '0') + '.mp3') : ''}
       </div>
     </div>
   `).join('');
 }
 
-// Vorlese-Option: nutzt die eingebaute Sprachausgabe des Geräts (Web Speech API,
-// kostenlos, keine Server-Audios). Erscheint nur, wenn das Gerät sie unterstützt.
-const SPEECH_OK = typeof window !== 'undefined' && 'speechSynthesis' in window;
-function speakBtn(text) {
-  if (!SPEECH_OK || !text) return '';
-  return `<button type="button" class="speak-btn shrink-0 -mt-1 -mr-1 p-2 rounded-full text-on-surface-variant/50 hover:text-secondary hover:bg-surface-container transition-colors"
-    data-speak="${encodeURIComponent(text)}" title="Frage vorlesen" aria-label="Frage vorlesen">
+// Vorlese-Option: echte ElevenLabs-Clips pro Frage (audio/<thema>/items/…).
+// Der Knopf erscheint erst nach erfolgreichem HEAD-Check — kein Clip, kein Knopf.
+function itemSlug(s) {
+  return (s || '').toLowerCase()
+    .replace(/[äöüß]/g, c => ({ ä: 'ae', ö: 'oe', ü: 'ue', ß: 'ss' }[c]))
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+function speakBtn(src) {
+  if (!src) return '';
+  return `<button type="button" class="speak-btn hidden shrink-0 -mt-1 -mr-1 p-2 rounded-full text-on-surface-variant/50 hover:text-secondary hover:bg-surface-container transition-colors"
+    data-src="${src}" title="Frage vorlesen" aria-label="Frage vorlesen">
     <span class="material-symbols-outlined text-[20px]">volume_up</span></button>`;
 }
+const _speakChecked = new Map();  // URL -> true/false
+function revealSpeakButtons() {
+  document.querySelectorAll('.speak-btn.hidden').forEach(btn => {
+    const src = btn.dataset.src;
+    if (_speakChecked.has(src)) {
+      if (_speakChecked.get(src)) btn.classList.remove('hidden');
+      return;
+    }
+    fetch(src, { method: 'HEAD' }).then(r => {
+      _speakChecked.set(src, r.ok);
+      if (r.ok) btn.classList.remove('hidden');
+    }).catch(() => _speakChecked.set(src, false));
+  });
+}
+let _speakAudio = null;
 let _speakingBtn = null;
 function speakStop() {
-  if (SPEECH_OK) window.speechSynthesis.cancel();
+  if (_speakAudio) { _speakAudio.pause(); _speakAudio = null; }
   if (_speakingBtn) { _speakingBtn.classList.remove('speaking'); _speakingBtn = null; }
 }
-function speakText(text, btn) {
-  if (!SPEECH_OK) return;
-  const wasActive = (_speakingBtn === btn);
-  speakStop();
-  if (wasActive) return; // zweiter Klick = Stopp
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'de-DE'; u.rate = 0.95;
-  const de = window.speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith('de'));
-  if (de) u.voice = de;
-  u.onend = () => { if (btn) btn.classList.remove('speaking'); if (_speakingBtn === btn) _speakingBtn = null; };
-  if (btn) btn.classList.add('speaking');
-  _speakingBtn = btn;
-  window.speechSynthesis.speak(u);
-}
-// Delegierter Klick-Handler für alle Vorlese-Knöpfe (Items + Einzelfrage)
 document.addEventListener('click', (e) => {
   const b = e.target.closest && e.target.closest('.speak-btn');
   if (!b) return;
-  speakText(decodeURIComponent(b.dataset.speak || ''), b);
+  const wasActive = (_speakingBtn === b);
+  speakStop();
+  if (wasActive) return; // zweiter Klick = Stopp
+  const a = new Audio(b.dataset.src);
+  a.playbackRate = parseFloat(localStorage.getItem('klarkreis:playbackRate') || '1') || 1;
+  a.onended = () => { if (_speakingBtn === b) speakStop(); };
+  b.classList.add('speaking');
+  _speakingBtn = b; _speakAudio = a;
+  a.play().catch(() => speakStop());
 });
 
 function hideAllContentBoxes() {
@@ -644,12 +657,13 @@ function render() {
       el.question.textContent = s.question;
       el.questionBox.classList.remove('hidden');
       const qs = document.getElementById('questionSpeak');
-      if (qs) qs.innerHTML = speakBtn(s.question);
+      if (qs) qs.innerHTML = s.name === 'Zugabe' ? '' : speakBtn(`audio/${themaId}/items/${itemSlug(s.name)}-frage.mp3`);
     }
     if (s.items && s.items.length) {
-      el.itemsGrid.innerHTML = renderItems(s.items);
+      el.itemsGrid.innerHTML = renderItems(s.items, s);
       el.itemsBox.classList.remove('hidden');
     }
+    revealSpeakButtons();
     mountStationAudio(s, currentIdx);
   }
 
