@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720c" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260720c"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260720d" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260720d"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -64,7 +64,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260720c"/>
+<link rel="stylesheet" href="dark.css?v=20260720d"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -297,9 +297,9 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260720c"></script>
-<script src="player.js?v=20260720c"></script>
-<script src="questions.js?v=20260720c"></script>
+<script src="themes.js?v=20260720d"></script>
+<script src="player.js?v=20260720d"></script>
+<script src="questions.js?v=20260720d"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -455,6 +455,8 @@ function hideAllContentBoxes() {
   if (zb) zb.classList.add('hidden');
   const kb = document.getElementById('kiBox');
   if (kb) kb.classList.add('hidden');
+  const hl = document.getElementById('handoutLink');
+  if (hl) hl.classList.add('hidden');
   KlarKreisPlayer.destroyAll();
 }
 
@@ -560,7 +562,11 @@ function render() {
     el.description.textContent = s.description || '';
     el.descriptionBox.classList.toggle('hidden', !s.description);
     const zb = document.getElementById('zugabeBox');
-    if (zb && window.QUESTIONS) zb.classList.remove('hidden');
+    if (zb && window.QUESTIONS) {
+      zb.classList.remove('hidden');
+      const zt = zb.querySelector('.font-headline');
+      if (zt) zt.textContent = 'Zu schnell durch? Zieht eine Zugabe.';
+    }
     const kb = document.getElementById('kiBox');
     if (kb && formatKey === 'solo') kb.classList.remove('hidden');
     el.feedbackForm.classList.remove('hidden');
@@ -573,6 +579,15 @@ function render() {
       }).catch(() => {});
     }
   } else {
+    // Auf einer Zugabe-Station direkt „noch eine ziehen" anbieten
+    if (s.name === 'Zugabe') {
+      const zb = document.getElementById('zugabeBox');
+      if (zb && window.QUESTIONS) {
+        zb.classList.remove('hidden');
+        const zt = zb.querySelector('.font-headline');
+        if (zt) zt.textContent = 'Noch eine? Zieht die nächste Frage.';
+      }
+    }
     if (s.hostNote) { el.hostNote.textContent = s.hostNote; el.hostNoteBox.classList.remove('hidden'); }
     if (s.quote) {
       el.quoteText.textContent = '„' + s.quote.text + '"';

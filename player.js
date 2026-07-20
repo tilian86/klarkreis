@@ -11,7 +11,7 @@
 (function () {
   if (window.KlarKreisPlayer) return;
 
-  const SPEEDS = [0.75, 1, 1.15, 1.3, 1.5, 1.75];
+  const SPEEDS = [0.75, 1, 1.15, 1.3, 1.5, 1.75, 2, 2.5];
   const STORAGE_KEY = 'klarkreis:playbackRate';
 
   const CSS = `
