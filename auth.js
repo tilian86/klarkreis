@@ -39,6 +39,9 @@
     auth.loadSeen = async () => [];
     auth.markSeen = async () => {};
     auth.clearSeen = async () => {};
+    auth.loadFavs = async () => [];
+    auth.syncFavs = async (k, s) => ({ merged: Array.from(s || []), added: 0 });
+    auth.setFav = async () => {};
     window.KLARKREIS_AUTH = auth;
     return;
   }
@@ -160,6 +163,56 @@
     const { error } = await auth._client.from('seen_questions')
       .delete().eq('user_id', auth._user.id);
     if (error) console.error('[auth] clearSeen:', error);
+  };
+
+  // --- Sync Favoriten (Fragen + Zitate) ---
+  const FAV = {
+    question: { table: 'question_favorites', col: 'question_text' },
+    quote:    { table: 'quote_favorites',    col: 'quote_text' },
+  };
+
+  auth.loadFavs = async (kind) => {
+    await auth.ready;
+    if (!auth._user || !FAV[kind]) return [];
+    const { table, col } = FAV[kind];
+    const { data, error } = await auth._client.from(table).select(col).eq('user_id', auth._user.id);
+    if (error) { console.error('[auth] loadFavs:', error); return []; }
+    return data.map(r => r[col]);
+  };
+
+  // Merge lokale Favoriten mit Remote (Union), pusht fehlende
+  auth.syncFavs = async (kind, localSet) => {
+    await auth.ready;
+    if (!auth._user || !FAV[kind]) return { merged: Array.from(localSet), added: 0 };
+    const { table, col } = FAV[kind];
+    const remote = await auth.loadFavs(kind);
+    const remoteSet = new Set(remote);
+    const toPush = [];
+    for (const text of localSet) {
+      if (!remoteSet.has(text)) toPush.push({ user_id: auth._user.id, [col]: text });
+    }
+    if (toPush.length > 0) {
+      const { error } = await auth._client.from(table).upsert(toPush, { onConflict: 'user_id,' + col });
+      if (error) console.error('[auth] syncFavs push:', error);
+    }
+    const merged = new Set(remote);
+    for (const t of localSet) merged.add(t);
+    return { merged: Array.from(merged), added: toPush.length };
+  };
+
+  auth.setFav = async (kind, text, category, on) => {
+    await auth.ready;
+    if (!auth._user || !FAV[kind]) return;
+    const { table, col } = FAV[kind];
+    if (on) {
+      const { error } = await auth._client.from(table)
+        .upsert({ user_id: auth._user.id, [col]: text, category }, { onConflict: 'user_id,' + col });
+      if (error) console.error('[auth] setFav:', error);
+    } else {
+      const { error } = await auth._client.from(table)
+        .delete().eq('user_id', auth._user.id).eq(col, text);
+      if (error) console.error('[auth] setFav del:', error);
+    }
   };
 
   window.KLARKREIS_AUTH = auth;

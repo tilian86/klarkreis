@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260721a" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260721a"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260721b" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260721b"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -42,8 +42,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260721a"/>
-<script src="theme-toggle.js?v=20260721a"></script>
+<link rel="stylesheet" href="dark.css?v=20260721b"/>
+<script src="theme-toggle.js?v=20260721b"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -128,7 +128,7 @@
   </div>
 </footer>
 
-<script src="quotes.js?v=20260721a"></script>
+<script src="quotes.js?v=20260721b"></script>
 <script>
 // Zieh einen Impuls (Glückskeks)
 (function () {
@@ -175,16 +175,51 @@
 
 let currentCat = 'alle';
 
+// --- Favoriten (Herz) — lokal, mit Supabase-Sync bei Login ---
+const FAV_CAT = '♥ Favoriten';
+const QFAV_KEY = 'klarkreis.impulse.favs.v1';
+function loadQFavs() {
+  try { return new Set(JSON.parse(localStorage.getItem(QFAV_KEY) || '[]')); }
+  catch (e) { return new Set(); }
+}
+function saveQFavs() {
+  try { localStorage.setItem(QFAV_KEY, JSON.stringify([...qfavs])); } catch (e) {}
+}
+let qfavs = loadQFavs();
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('.fav-btn');
+  if (!b) return;
+  const q = window.QUOTES[Number(b.dataset.favIdx)];
+  if (!q) return;
+  const on = !qfavs.has(q.text);
+  if (on) qfavs.add(q.text); else qfavs.delete(q.text);
+  saveQFavs();
+  const a = window.KLARKREIS_AUTH;
+  if (a && a.enabled && a.user && a.user() && a.setFav) a.setFav('quote', q.text, q.category, on);
+  b.classList.toggle('text-secondary', on);
+  b.classList.toggle('text-on-surface-variant/40', !on);
+  b.querySelector('.material-symbols-outlined').style.fontVariationSettings = `'FILL' ${on ? 1 : 0}`;
+  if (currentCat === FAV_CAT && !on) {
+    if (!qfavs.size) currentCat = 'alle';
+    render();
+  } else renderChips();
+});
+
 function renderChips() {
   const chips = document.getElementById('catChips');
-  const cats = ['alle', ...window.QUOTE_CATEGORIES];
+  const cats = ['alle', ...(qfavs.size > 0 ? [FAV_CAT] : []), ...window.QUOTE_CATEGORIES];
   chips.innerHTML = cats.map(c => {
     const active = c === currentCat;
-    const count = c === 'alle' ? window.QUOTES.length : window.QUOTES.filter(q => q.category === c).length;
+    const isFav = c === FAV_CAT;
+    const count = c === 'alle' ? window.QUOTES.length
+      : isFav ? qfavs.size
+      : window.QUOTES.filter(q => q.category === c).length;
     const label = c === 'alle' ? `Alle · ${count}` : `${c} · ${count}`;
-    return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${active
-      ? 'bg-primary-container text-on-primary border-primary-container'
-      : 'bg-surface-container-low text-on-background border-outline-variant/30 hover:border-secondary/50'}">${label}</button>`;
+    let cls;
+    if (active) cls = isFav ? 'bg-secondary text-on-primary border-secondary' : 'bg-primary-container text-on-primary border-primary-container';
+    else if (isFav) cls = 'bg-surface-container-low text-secondary border-secondary/50 hover:border-secondary font-semibold';
+    else cls = 'bg-surface-container-low text-on-background border-outline-variant/30 hover:border-secondary/50';
+    return `<button data-cat="${c}" class="cat-chip px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest transition-colors ${cls}">${label}</button>`;
   }).join('');
   chips.querySelectorAll('.cat-chip').forEach(btn => {
     btn.addEventListener('click', () => { currentCat = btn.dataset.cat; render(); });
@@ -194,9 +229,16 @@ function renderChips() {
 function quoteCardHtml(q, originalIdx) {
   const isLong = q.text.length > 260;
   const padded = String(originalIdx).padStart(3, '0');
+  const favOn = qfavs.has(q.text);
   return `
     <article class="quote-card bg-surface-container-low rounded-lg p-6 md:p-8 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
-      <div class="mb-4 quote-player" data-impulse-idx="${padded}"></div>
+      <div class="mb-4 flex items-center justify-between gap-2">
+        <div class="quote-player flex-1" data-impulse-idx="${padded}"></div>
+        <button type="button" data-fav-idx="${originalIdx}" aria-label="${favOn ? 'Aus Favoriten entfernen' : 'Zu Favoriten'}"
+          class="fav-btn ${favOn ? 'text-secondary' : 'text-on-surface-variant/40 hover:text-secondary'} transition-colors p-1 shrink-0" title="${favOn ? 'Favorit' : 'Als Favorit merken'}">
+          <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' ${favOn ? 1 : 0};">favorite</span>
+        </button>
+      </div>
       <p class="font-headline italic ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed mb-4">${q.text}</p>
       <footer class="flex items-center justify-between gap-3 flex-wrap">
         <span class="font-label text-[11px] uppercase tracking-widest text-secondary">${q.author || '— unbekannt'}</span>
@@ -220,7 +262,7 @@ function render() {
   const grid = document.getElementById('quoteGrid');
   const filtered = [];
   window.QUOTES.forEach((q, i) => {
-    if (currentCat === 'alle' || q.category === currentCat) {
+    if (currentCat === 'alle' || (currentCat === FAV_CAT ? qfavs.has(q.text) : q.category === currentCat)) {
       filtered.push({ q, originalIdx: i });
     }
   });
@@ -236,10 +278,27 @@ function render() {
 
 render();
 </script>
-<script src="config.js?v=20260721a"></script>
-<script src="auth.js?v=20260721a"></script>
-<script src="login-ui.js?v=20260721a"></script>
-<script src="mobile-nav.js?v=20260721a"></script>
-<script src="page-audio.js?v=20260721a"></script>
+<script src="config.js?v=20260721b"></script>
+<script src="auth.js?v=20260721b"></script>
+<script src="login-ui.js?v=20260721b"></script>
+<script src="mobile-nav.js?v=20260721b"></script>
+<script src="page-audio.js?v=20260721b"></script>
+<script>
+// Favoriten mit dem Konto mergen (Union), wenn eingeloggt
+(async function () {
+  const auth = window.KLARKREIS_AUTH;
+  if (!auth || !auth.enabled || !auth.syncFavs) return;
+  await auth.ready;
+  async function mergeFavs() {
+    if (!auth.user()) return;
+    const f = await auth.syncFavs('quote', qfavs);
+    qfavs = new Set(f.merged);
+    saveQFavs();
+    render();
+  }
+  if (auth.user()) await mergeFavs();
+  auth.onChange && auth.onChange(u => { if (u) mergeFavs(); });
+})();
+</script>
 </body>
 </html>
