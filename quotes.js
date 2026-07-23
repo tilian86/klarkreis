@@ -237,6 +237,7 @@ window.QUOTES = [
   { text: "Liebe ist eine Tätigkeit und kein passiver Affekt.", author: "Erich Fromm", category: "Liebe" },
   { text: "Und dann muss man ja auch noch Zeit haben, einfach dazusitzen und vor sich hin zu schauen.", author: "Astrid Lindgren", category: "Stille" },
   { text: "Zeit ist Leben. Und das Leben wohnt im Herzen.", author: "Michael Ende", category: "Zeit" },
+  { text: "Wissen ist zu wissen, dass eine Tomate eine Frucht ist. Weisheit ist, sie nicht in einen Obstsalat zu tun.", author: "Miles Kington (zugeschrieben)", category: "Wachstum" },
 ];
 
 window.QUOTE_CATEGORIES = [...new Set(window.QUOTES.map(q => q.category))];
