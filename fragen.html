@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260721a" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260721a"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260721b" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260721b"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -42,8 +42,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260721a"/>
-<script src="theme-toggle.js?v=20260721a"></script>
+<link rel="stylesheet" href="dark.css?v=20260721b"/>
+<script src="theme-toggle.js?v=20260721b"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -125,7 +125,7 @@
         </blockquote>
       </div>
       <div class="flex flex-wrap items-center gap-3 mt-10 pt-8 border-t border-on-primary/10">
-        <div id="singlePlayerMount"></div>
+        <div class="flex items-center gap-3"><div id="singlePlayerMount"></div><span id="singleFav"></span></div>
         <button id="singlePrev" class="inline-flex items-center gap-2 bg-on-primary/10 hover:bg-on-primary/20 text-on-primary px-5 py-3 rounded-lg text-[11px] uppercase tracking-widest font-semibold transition-colors">
           <span class="material-symbols-outlined text-[16px]">arrow_back</span>
           Zurück
@@ -172,7 +172,7 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20260721a"></script>
+<script src="questions.js?v=20260721b"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -189,9 +189,53 @@ function saveSeen() {
 }
 let seen = loadSeen();
 
+// --- Favoriten (Herz) — lokal, mit Supabase-Sync bei Login ---
+const FAV_KEY = 'klarkreis.fragen.favs.v1';
+function loadFavsLocal() {
+  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); }
+  catch (e) { return new Set(); }
+}
+function saveFavs() {
+  try { localStorage.setItem(FAV_KEY, JSON.stringify([...favs])); } catch (e) {}
+}
+let favs = loadFavsLocal();
+function toggleFav(text, category) {
+  const on = !favs.has(text);
+  if (on) favs.add(text); else favs.delete(text);
+  saveFavs();
+  const a = window.KLARKREIS_AUTH;
+  if (a && a.enabled && a.user && a.user()) a.setFav('question', text, category, on);
+  return on;
+}
+function favBtnHtml(q, extra = '') {
+  const on = favs.has(q.text);
+  const idx = window.QUESTIONS.indexOf(q);
+  return `<button type="button" data-fav-idx="${idx}" aria-label="${on ? 'Aus Favoriten entfernen' : 'Zu Favoriten'}"
+    class="fav-btn ${on ? 'text-secondary' : 'text-on-surface-variant/40 hover:text-secondary'} transition-colors p-1 ${extra}" title="${on ? 'Favorit' : 'Als Favorit merken'}">
+    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' ${on ? 1 : 0};">favorite</span>
+  </button>`;
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('.fav-btn');
+  if (!b) return;
+  const q = window.QUESTIONS[Number(b.dataset.favIdx)];
+  if (!q) return;
+  const on = toggleFav(q.text, q.category);
+  b.classList.toggle('text-secondary', on);
+  b.classList.toggle('text-on-surface-variant/40', !on);
+  b.querySelector('.material-symbols-outlined').style.fontVariationSettings = `'FILL' ${on ? 1 : 0}`;
+  // Im Favoriten-Filter Liste aktualisieren, sonst nur Chip-Zähler
+  if (currentCat === FAV_CAT && !on) {
+    if (!favs.size) currentCat = 'alle';
+    render();
+  } else renderChips();
+});
+
 const BEST_CAT = '★ Best of';
+const FAV_CAT = '♥ Favoriten';
 function getFiltered() {
   if (currentCat === BEST_CAT) return window.QUESTIONS.filter(q => q.best);
+  if (currentCat === FAV_CAT) return window.QUESTIONS.filter(q => favs.has(q.text));
   return currentCat === 'alle' ? window.QUESTIONS : window.QUESTIONS.filter(q => q.category === currentCat);
 }
 
@@ -222,15 +266,16 @@ function seekFirstUnseenFrom(startIdx) {
 
 function renderChips() {
   const chips = document.getElementById('catChips');
-  const cats = ['alle', BEST_CAT, ...window.QUESTION_CATEGORIES];
+  const cats = ['alle', BEST_CAT, ...(favs.size > 0 ? [FAV_CAT] : []), ...window.QUESTION_CATEGORIES];
   chips.innerHTML = cats.map(c => {
     const active = c === currentCat;
     const count = c === 'alle' ? window.QUESTIONS.length
       : c === BEST_CAT ? window.QUESTIONS.filter(q => q.best).length
+      : c === FAV_CAT ? favs.size
       : window.QUESTIONS.filter(q => q.category === c).length;
     const label = c === 'alle' ? `Alle · ${count}` : `${c} · ${count}`;
     const isSpicy = c.startsWith('Ü18');
-    const isBest = c === BEST_CAT;
+    const isBest = c === BEST_CAT || c === FAV_CAT;
     let cls;
     if (active) {
       cls = (isSpicy || isBest) ? 'bg-secondary text-on-primary border-secondary' : 'bg-primary-container text-on-primary border-primary-container';
@@ -313,6 +358,8 @@ function renderSingle() {
     }
     const seenInPool = seenCountInPool(pool);
     counter.textContent = (singleIdx + 1) + ' / ' + pool.length + (seenInPool > 0 ? ' · ' + seenInPool + ' gesehen' : '');
+    const sf = document.getElementById('singleFav');
+    if (sf) sf.innerHTML = favBtnHtml(q);
     // Single-Mode-Player aktualisieren — Audio-URL wechselt mit jeder Frage
     const mount = document.getElementById('singlePlayerMount');
     if (mount && window.KlarKreisMiniPlayer) {
@@ -400,7 +447,7 @@ function questionCardHtml(q, ctx) {
       ${phaseMarker}
       <div class="flex items-center justify-between mb-3">
         <div class="question-player" data-fragen-idx="${padded}"></div>
-        ${seenBadge}
+        <span class="inline-flex items-center gap-1">${seenBadge}${favBtnHtml(q)}</span>
       </div>
       <p class="font-headline ${isLong ? 'text-base md:text-lg' : 'text-lg md:text-xl'} text-primary-container leading-relaxed">${q.text}</p>
     </article>`;
@@ -658,6 +705,12 @@ render();
     const { merged } = await auth.syncSeen(seen);
     seen = new Set(merged);
     saveSeen();
+    // Favoriten ebenfalls mergen (Union aus lokal + Konto)
+    if (auth.syncFavs) {
+      const f = await auth.syncFavs('question', favs);
+      favs = new Set(f.merged);
+      saveFavs();
+    }
     // Re-render to reflect merged state
     allSeenState = false;
     seekFirstUnseenFrom(singleIdx);
@@ -704,10 +757,10 @@ render();
   }
 })();
 </script>
-<script src="config.js?v=20260721a"></script>
-<script src="auth.js?v=20260721a"></script>
-<script src="login-ui.js?v=20260721a"></script>
-<script src="mobile-nav.js?v=20260721a"></script>
-<script src="page-audio.js?v=20260721a"></script>
+<script src="config.js?v=20260721b"></script>
+<script src="auth.js?v=20260721b"></script>
+<script src="login-ui.js?v=20260721b"></script>
+<script src="mobile-nav.js?v=20260721b"></script>
+<script src="page-audio.js?v=20260721b"></script>
 </body>
 </html>
