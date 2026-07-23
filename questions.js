@@ -643,6 +643,32 @@ window.QUESTIONS = [
   { text: "Ich habe eine Theorie, dass man Menschen an ihrer Antwort auf eine Frage erkennt: Worüber kannst du reden, ohne auf die Uhr zu schauen?", category: "Match-Eisbrecher" },
   { text: "Du wirkst, als wärst du im echten Leben deutlich witziger als in Textform — geht mir genauso. Woran würde ich das bei dir merken?", category: "Match-Eisbrecher" },
 
+  // ---------- Aus Florians Sammlung (25) ----------
+  { text: "Warum bist du, du?", category: "Über dich" },
+  { text: "Zu welchem Zeitpunkt in der jüngsten Vergangenheit hast du dich am wohlsten und lebendigsten gefühlt?", category: "Über dich" },
+  { text: "In welcher Situation ist dein innerer Schweinehund am größten — wo fällt dir die Überwindung am schwersten?", category: "Über dich" },
+  { text: "Machst du, woran du von tiefem Herzen glaubst, oder bist du auf deinem Weg faule Kompromisse eingegangen?", category: "Werte & Richtung" },
+  { text: "Auf was könntest du in deinem Leben nicht verzichten?", category: "Werte & Richtung" },
+  { text: "Wenn du drei Wünsche frei hättest — welche wären es?", category: "Träume & Zukunft" },
+  { text: "Ist dein größter Lebenstraum bereits in Erfüllung gegangen?", category: "Träume & Zukunft" },
+  { text: "Was ist deine glücklichste Kindheitserinnerung — und was macht sie so besonders?", category: "Kindheit & Wurzeln" },
+  { text: "Was ist die schönste Erinnerung an deine Familie?", category: "Kindheit & Wurzeln" },
+  { text: "Wenn du wüsstest, dass alle Menschen, die du kennst, morgen sterben würden — wen würdest du heute noch besuchen?", category: "Herzensmenschen" },
+  { text: "Was ist — abgesehen vom Äußeren — das Attraktivste an einem Menschen?", category: "Herzensmenschen" },
+  { text: "Warst du immer der Freund, den du dir für dich selbst gewünscht hättest?", category: "Herzensmenschen" },
+  { text: "In welchem Bereich gehörst du zu den 1 % Besten — was ist dein Signature-Ding?", category: "Arbeit & Berufung" },
+  { text: "Glaubst du an Gott — und wie stellst du ihn dir vor?", category: "Tiefgang" },
+  { text: "Was ist schlimmer: zu scheitern oder es nicht zu versuchen?", category: "Tiefgang" },
+  { text: "Wer ist der Ghostwriter deines Lebens?", category: "Tiefgang" },
+  { text: "Wenn du auf einem Post-it eine Nachricht an dein Ich schreiben müsstest, das morgen vergessen hat, wer du bist — was würdest du draufschreiben?", category: "Tiefgang" },
+  { text: "Wenn du dich für 30 Sekunden selbst anrufen könntest, zu jedem Zeitpunkt in Vergangenheit oder Zukunft — wann würdest du anrufen und was sagen?", category: "Tiefgang" },
+  { text: "Wonach bist du süchtig?", category: "Schräg & Ehrlich" },
+  { text: "Was ist der seltsamste Ort, an dem du je warst?", category: "Absurd & Erlebt" },
+  { text: "Was war das gefährlichste Erlebnis deines Lebens?", category: "Absurd & Erlebt" },
+  { text: "Wenn du eine Erfindung rückgängig machen könntest — welche wäre das, und warum?", category: "Bunt gemischt" },
+  { text: "Literatur oder Musik?", category: "Blitzrunde" },
+  { text: "Magst du es im Bett eher kuschelig, oder darf es auch mal wilder und härter zugehen?", category: "Ü18 · Spicy" },
+  { text: "Würdest du lieber zwei Jahre auf Sex oder zwei Jahre auf Internet verzichten?", category: "Ü18 · Spicy" },
 ];
 
 window.QUESTION_CATEGORIES = [...new Set(window.QUESTIONS.map(q => q.category))];
