@@ -1052,7 +1052,7 @@ window.THEMES = {
   // =====================================================================
   frageabend: {
     title: 'Ein Abend mit guten Fragen',
-    category: 'Begegnung',
+    category: 'Frageabend',
     lead: 'Kein Thema, keine Landkarte — nur Fragen, die sich nicht jeden Tag stellen lassen. Ideal für neue Gruppen, Dates oder Freund:innen, die sich nochmal neu kennenlernen wollen.',
     image: 'images/frageabend.jpg',
     philosophy1: 'Gute Fragen tun etwas, was Aussagen nicht können: sie öffnen. Sie laden eine Person ein, von sich zu erzählen — ohne dass es sich wie Verhör anfühlt.',
@@ -1488,6 +1488,596 @@ window.THEMES = {
   // =====================================================================
   // ACHTZIG  — Was würde mein 80-jähriges Ich sagen?
   // =====================================================================
+  frageabend_wurzeln: {
+    title: 'Frageabend: Woher ich komme',
+    category: 'Frageabend',
+    lead: 'Ein Abend über Herkunft — Elternhaus, Kindheit, die Sätze, die man mitbekommt, ohne sie je zu hören. Für Runden, die wissen wollen, aus welchem Holz die anderen geschnitzt sind.',
+    image: 'images/heimat.jpg',
+    philosophy1: 'Niemand fängt bei null an. Wir tragen Sätze mit uns, die nie ausgesprochen wurden, Gerüche, die uns sofort zurückwerfen, und Regeln, die wir längst abgelegt zu haben glauben — bis wir sie bei uns selbst hören.',
+    philosophy2: 'An diesem Abend geht es nicht um Familientherapie. Es geht um Neugier: Woher kommt eigentlich das, was du für selbstverständlich hältst? Und was davon willst du behalten?',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 45 Min.',
+        people: '3-10 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wo kommst du her — wirklich?', duration: 10*60,
+            hostNote: 'Reihum, ein Satz. Kein Lebenslauf — ein Ort, ein Geräusch, ein Gefühl.',
+            question: 'Wenn du an das Zuhause deiner Kindheit denkst: Was ist das Erste, was auftaucht?',
+            teaser: 'Ein Satz zum Ankommen.'
+          },
+          { name: 'Einstieg', title: 'Das Gepäck, das niemand gepackt hat', duration: 6*60,
+            hostNote: 'Host liest vor.',
+            quote: { text: 'Was wir nicht in Worte fassen, geben wir in Gesten weiter.', author: 'Anne Ancelin Schützenberger' },
+            description: 'Herkunft ist nicht nur, wo man geboren wurde. Es sind die Tischsitten, die Lautstärke beim Streiten, die Frage, ob über Geld gesprochen wurde. Vieles davon merkt man erst, wenn man zum ersten Mal bei einer anderen Familie am Tisch sitzt.',
+            teaser: 'Warum Herkunft mehr ist als ein Ort.'
+          },
+          { name: 'Das Haus', title: 'Was drinnen normal war', duration: 18*60,
+            hostNote: 'Eine Frage nach der anderen, reihum. Bei den stillen Antworten nicht drängen.',
+            items: [
+              { accent: 'Frage 1', text: 'Was galt in deiner Familie als völlig normal — und erst viel später hast du gemerkt, dass es das gar nicht ist?' },
+              { accent: 'Frage 2', text: 'Welcher Satz wurde in deinem Elternhaus nie gesagt — und wie hat diese Stille dich geprägt?' },
+              { accent: 'Frage 3', text: 'Welches Geräusch aus deinem Elternhaus würdest du unter tausend anderen wiedererkennen?' },
+              { accent: 'Frage 4', text: 'Wurde bei euch über Geld gesprochen — und wie?' }
+            ],
+            teaser: 'Was hinter eurer Haustür normal war.'
+          },
+          { name: 'Die Erwachsenen', title: 'Wer sie waren, bevor du kamst', duration: 18*60,
+            hostNote: 'Ruhiger Abschnitt. Zeit lassen, nicht kommentieren.',
+            items: [
+              { accent: 'Frage 5', text: 'Was hat deine Eltern geprägt, das sich bei dir fortgesetzt hat — ob du willst oder nicht?' },
+              { accent: 'Frage 6', text: 'Welche Regel deiner Eltern hast du gehasst — und ertappst dich heute dabei, sie selbst zu verteidigen?' },
+              { accent: 'Frage 7', text: 'Wer in deiner Familie versteht dich am wenigsten — und wer am meisten?' },
+              { accent: 'Frage 8', text: 'Was hättest du als Kind gebraucht, das du nicht bekommen hast?' }
+            ],
+            teaser: 'Die Menschen, die da waren.'
+          },
+          { name: 'Stille', title: 'Ein Moment für das, was hochkam', duration: 5*60,
+            hostNote: 'Wirklich schweigen. Zwei Minuten fühlen sich lang an — das ist der Punkt. Danach darf, wer mag, einen Satz sagen. Muss aber nicht.',
+            description: 'Bei Herkunftsfragen kommt manchmal mehr hoch als erwartet. Diese Minuten gehören dem, was sich gerade gemeldet hat.',
+            teaser: 'Kurz nichts sagen.'
+          },
+          { name: 'Das Kind', title: 'Wer du warst', duration: 15*60,
+            hostNote: 'Hier darf gelacht werden. Die leichteren Fragen nach dem schweren Teil.',
+            items: [
+              { accent: 'Frage 9', text: 'Welchen Beruf wolltest du werden, bevor du überhaupt wusstest, was ein Beruf ist?' },
+              { accent: 'Frage 10', text: 'Worauf warst du als Kind so richtig stolz?' },
+              { accent: 'Frage 11', text: 'Welche Geschichte wird in deiner Familie bis heute immer wieder erzählt?' },
+              { accent: 'Frage 12', text: 'Was war der größte Mist, den du als Jugendlicher gebaut hast?' }
+            ],
+            teaser: 'Das Kind, das du mal warst.'
+          },
+          { name: 'Weitergeben', title: 'Was mitkommt, was bleibt', duration: 15*60,
+            hostNote: 'Reihum. Auch für Menschen ohne Kinder — es geht um alles, was man weitergibt.',
+            items: [
+              { accent: 'Frage 13', text: 'Was aus deiner Herkunft willst du unbedingt weitergeben?' },
+              { accent: 'Frage 14', text: 'Und was soll bei dir enden?' }
+            ],
+            teaser: 'Was weiterwandert — und was aufhört.'
+          },
+          { name: 'Schritt', title: 'Ein Anruf, ein Satz, eine Frage', duration: 10*60,
+            hostNote: 'Konkret und klein. Diese Woche, nicht irgendwann.',
+            question: 'Wen aus deiner Familie könntest du diese Woche etwas fragen, das du noch nie gefragt hast?',
+            teaser: 'Etwas, das diese Woche passt.'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 8*60,
+            hostNote: 'Ein Wort oder ein Satz. Reihum.',
+            question: 'Welche Frage von heute wirst du morgen noch mit dir herumtragen?',
+            teaser: 'Ein Wort zum Schluss.'
+          },
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 10 Min.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wo kommst du her?', duration: 8*60,
+            hostNote: 'Beide nacheinander, je 3-4 Min.',
+            question: 'Wenn du an das Zuhause deiner Kindheit denkst — was taucht als Erstes auf?'
+          },
+          { name: 'Einstieg', title: 'Das Gepäck, das niemand gepackt hat', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Was wir nicht in Worte fassen, geben wir in Gesten weiter.', author: 'Anne Ancelin Schützenberger' },
+            description: 'Herkunft ist mehr als ein Ort: Tischsitten, Streitlautstärke, ob über Geld gesprochen wurde. Vieles merkt man erst, wenn man woanders am Tisch sitzt.'
+          },
+          { name: 'Das Haus', title: 'Was drinnen normal war', duration: 15*60,
+            hostNote: 'Je 7 Minuten pro Frage.',
+            items: [
+              { accent: 'Frage 1', text: 'Was galt in deiner Familie als völlig normal — und du hast erst später gemerkt, dass es das nicht ist?' },
+              { accent: 'Frage 2', text: 'Welcher Satz wurde bei euch nie gesagt — und was hat diese Stille mit dir gemacht?' }
+            ]
+          },
+          { name: 'Die Erwachsenen', title: 'Wer sie waren, bevor du kamst', duration: 15*60,
+            hostNote: 'Ruhig. Nachfragen erlaubt.',
+            items: [
+              { accent: 'Frage 3', text: 'Was hat deine Eltern geprägt, das sich bei dir fortgesetzt hat?' },
+              { accent: 'Frage 4', text: 'Was hättest du als Kind gebraucht, das du nicht bekommen hast?' }
+            ]
+          },
+          { name: 'Das Kind', title: 'Wer du warst', duration: 12*60,
+            hostNote: 'Leichter jetzt. Ruhig lachen.',
+            items: [
+              { accent: 'Frage 5', text: 'Worauf warst du als Kind so richtig stolz?' },
+              { accent: 'Frage 6', text: 'Welche Geschichte wird in deiner Familie bis heute erzählt?' }
+            ]
+          },
+          { name: 'Weitergeben', title: 'Was bleibt, was endet', duration: 10*60,
+            hostNote: 'Beide, nacheinander.',
+            question: 'Was aus deiner Herkunft willst du weitergeben — und was soll bei dir enden?'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 8*60,
+            hostNote: 'Ein Satz.',
+            question: 'Was hast du heute über den anderen erfahren, das dich überrascht hat?'
+          },
+        ])
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~30 Min.',
+        people: 'Nur du',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Ein Moment für dich', duration: 3*60,
+            hostNote: 'Stift und Papier. Kein Handy.',
+            description: 'Herkunft anzuschauen geht auch allein — manchmal sogar ehrlicher, weil niemand zuhört.'
+          },
+          { name: 'Einstieg', title: 'Das Gepäck', duration: 4*60,
+            quote: { text: 'Was wir nicht in Worte fassen, geben wir in Gesten weiter.', author: 'Anne Ancelin Schützenberger' },
+            description: 'Die Sätze, die nie gesagt wurden, wirken oft länger als die, die gesagt wurden.'
+          },
+          { name: 'Das Haus', title: 'Was normal war', duration: 6*60,
+            hostNote: 'Schreib auf, was kommt. Nicht sortieren.',
+            question: 'Was galt in deiner Familie als völlig normal — und war es das gar nicht?'
+          },
+          { name: 'Die Stille', title: 'Was nie gesagt wurde', duration: 6*60,
+            hostNote: 'Diese Frage braucht Zeit. Lass sie wirken, bevor du schreibst.',
+            question: 'Welcher Satz wurde in deinem Elternhaus nie gesagt — und wie hat diese Stille dich geprägt?'
+          },
+          { name: 'Das Kind', title: 'Was du gebraucht hättest', duration: 6*60,
+            hostNote: 'Freundlich mit dir bleiben.',
+            question: 'Was hättest du als Kind gebraucht, das du nicht bekommen hast — und wer könnte es dir heute geben?'
+          },
+          { name: 'Mitnahme', title: 'Was bleibt, was endet', duration: 5*60,
+            hostNote: 'Ein Satz, aufgeschrieben.',
+            question: 'Was aus deiner Herkunft willst du weitergeben — und was soll bei dir enden?'
+          },
+        ])
+      }
+    }
+  },
+  frageabend_menschen: {
+    title: 'Frageabend: Die Menschen in meinem Leben',
+    category: 'Frageabend',
+    lead: 'Ein Abend über die, die uns geprägt haben — Freundschaften, die blieben, und die, die still verschwanden. Für Runden, in denen es um mehr gehen darf als um Namen.',
+    image: 'images/kaffee.jpg',
+    philosophy1: 'Wir reden ständig über Menschen — aber selten über das, was sie mit uns machen. Wessen Urteil wiegt schwer? Wem gegenüber verstellen wir uns? Und welche Freundschaft ist eigentlich gerade dabei, leise zu enden?',
+    philosophy2: 'Dieser Abend ist kein Beziehungsinventar. Er stellt die Fragen, die man sich sonst nur nachts stellt — und beantwortet sie einmal laut, unter Menschen, die zuhören.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 45 Min.',
+        people: '3-10 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wer ist gerade wichtig?', duration: 10*60,
+            hostNote: 'Reihum, ein Name oder eine Beschreibung — ohne Erklärung. Die kommt später.',
+            question: 'An welchen Menschen hast du in dieser Woche am häufigsten gedacht?',
+            teaser: 'Ein Name zum Ankommen.'
+          },
+          { name: 'Einstieg', title: 'Wir werden aneinander', duration: 6*60,
+            hostNote: 'Host liest vor.',
+            quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
+            description: 'Wir entstehen nicht allein. Wer wir sind, hat viel damit zu tun, wer uns angeschaut hat — und wie. Heute geht es um diese Menschen: die nahen, die verlorenen, die, an die wir denken, ohne es zu sagen.',
+            teaser: 'Worum es heute geht.'
+          },
+          { name: 'Die Nahen', title: 'Wer dich kennt', duration: 18*60,
+            hostNote: 'Eine Frage nach der anderen, reihum. Nicht bewerten, was andere sagen.',
+            items: [
+              { accent: 'Frage 1', text: 'Bei wem bist du die beste Version von dir — und was genau macht diese Person mit dir?' },
+              { accent: 'Frage 2', text: 'Mit welchem Menschen fühlst du dich ohne Worte verstanden?' },
+              { accent: 'Frage 3', text: 'Wer in deinem Leben weiß etwas über dich, das sonst niemand weiß?' },
+              { accent: 'Frage 4', text: 'Wessen Lachen würdest du unter tausend anderen erkennen?' }
+            ],
+            teaser: 'Die, die dich wirklich kennen.'
+          },
+          { name: 'Die Macht', title: 'Wessen Blick zählt', duration: 18*60,
+            hostNote: 'Der ehrlichste Abschnitt. Wer passen will, sagt „pass“.',
+            items: [
+              { accent: 'Frage 5', text: 'Wessen Urteil über dich hat mehr Macht, als dir lieb ist?' },
+              { accent: 'Frage 6', text: 'Wem gegenüber hast du dich am meisten verstellt — und warum?' },
+              { accent: 'Frage 7', text: 'Mit wem führst du im Kopf Gespräche, die ihr in Wirklichkeit nie führt — und worüber?' },
+              { accent: 'Frage 8', text: 'Wen hast du in deinem Leben unterschätzt?' }
+            ],
+            teaser: 'Wessen Meinung schwerer wiegt, als sie sollte.'
+          },
+          { name: 'Stille', title: 'Ein Moment für die Abwesenden', duration: 5*60,
+            hostNote: 'Zwei Minuten schweigen. Wer mag, sagt danach einen Namen — nur den Namen, ohne Geschichte.',
+            description: 'Bei diesen Fragen sind immer Menschen mit im Raum, die nicht da sind. Diese Minuten gehören ihnen.',
+            teaser: 'Kurz an die denken, die fehlen.'
+          },
+          { name: 'Die Verlorenen', title: 'Was still zu Ende ging', duration: 18*60,
+            hostNote: 'Ruhig. Hier braucht niemand eine Lösung — nur Zuhören.',
+            items: [
+              { accent: 'Frage 9', text: 'Welche Freundschaft hat sich still verabschiedet, ganz ohne Streit — und vermisst du sie?' },
+              { accent: 'Frage 10', text: 'Wem schuldest du eine Entschuldigung, die du nie ausgesprochen hast?' },
+              { accent: 'Frage 11', text: 'Wen vermisst du, ohne es je zu sagen?' },
+              { accent: 'Frage 12', text: 'Welche Person hat dich am meisten liebgehabt — und weiß sie das eigentlich?' }
+            ],
+            teaser: 'Was leise aufgehört hat.'
+          },
+          { name: 'Schritt', title: 'Eine Nachricht, die rausgeht', duration: 10*60,
+            hostNote: 'Konkret. Wer mag, schreibt die Nachricht direkt hier — Handys sind für diese fünf Minuten ausdrücklich erlaubt.',
+            question: 'Wem schreibst du heute Abend noch eine Nachricht — und was steht drin?',
+            teaser: 'Eine Nachricht, jetzt.'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 8*60,
+            hostNote: 'Ein Wort oder Satz, reihum.',
+            question: 'Welcher Mensch hat dich heute Abend am häufigsten begleitet, ohne hier zu sein?',
+            teaser: 'Ein Wort zum Schluss.'
+          },
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 10 Min.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wer ist gerade wichtig?', duration: 8*60,
+            hostNote: 'Beide nacheinander.',
+            question: 'An welchen Menschen hast du diese Woche am häufigsten gedacht?'
+          },
+          { name: 'Einstieg', title: 'Wir werden aneinander', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
+            description: 'Wer wir sind, hat viel damit zu tun, wer uns angeschaut hat — und wie.'
+          },
+          { name: 'Die Nahen', title: 'Wer dich kennt', duration: 15*60,
+            hostNote: 'Je 7 Minuten pro Frage.',
+            items: [
+              { accent: 'Frage 1', text: 'Bei wem bist du die beste Version von dir — und was macht diese Person mit dir?' },
+              { accent: 'Frage 2', text: 'Wer in deinem Leben weiß etwas über dich, das sonst niemand weiß?' }
+            ]
+          },
+          { name: 'Die Macht', title: 'Wessen Blick zählt', duration: 15*60,
+            hostNote: 'Ehrlich werden. „Pass“ ist erlaubt.',
+            items: [
+              { accent: 'Frage 3', text: 'Wessen Urteil über dich hat mehr Macht, als dir lieb ist?' },
+              { accent: 'Frage 4', text: 'Wem gegenüber hast du dich am meisten verstellt — und warum?' }
+            ]
+          },
+          { name: 'Die Verlorenen', title: 'Was still zu Ende ging', duration: 15*60,
+            hostNote: 'Ruhig. Zuhören reicht.',
+            items: [
+              { accent: 'Frage 5', text: 'Welche Freundschaft hat sich still verabschiedet, ganz ohne Streit?' },
+              { accent: 'Frage 6', text: 'Wem schuldest du eine Entschuldigung, die du nie ausgesprochen hast?' }
+            ]
+          },
+          { name: 'Schritt', title: 'Eine Nachricht', duration: 8*60,
+            hostNote: 'Handys für fünf Minuten erlaubt.',
+            question: 'Wem schreibst du heute Abend noch — und was steht drin?'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 6*60,
+            hostNote: 'Ein Satz.',
+            question: 'Was hast du heute über den anderen erfahren, das du noch nicht wusstest?'
+          },
+        ])
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~30 Min.',
+        people: 'Nur du',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Ein Moment für dich', duration: 3*60,
+            hostNote: 'Stift und Papier.',
+            description: 'Über Menschen nachzudenken geht allein oft ehrlicher — weil niemand mithört, wen du nennst.'
+          },
+          { name: 'Einstieg', title: 'Wir werden aneinander', duration: 4*60,
+            quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
+            description: 'Wer dich angeschaut hat, hat mitgebaut an dem, was du heute bist.'
+          },
+          { name: 'Die Nahen', title: 'Wer dich kennt', duration: 6*60,
+            hostNote: 'Schreib die Namen auf. Auch die, die dich überraschen.',
+            question: 'Bei wem bist du die beste Version von dir — und was macht diese Person mit dir?'
+          },
+          { name: 'Die Macht', title: 'Wessen Blick zählt', duration: 6*60,
+            hostNote: 'Ehrlich. Das liest niemand.',
+            question: 'Wessen Urteil über dich hat mehr Macht, als dir lieb ist?'
+          },
+          { name: 'Die Abwesenden', title: 'Wer fehlt', duration: 6*60,
+            hostNote: 'Zeit lassen.',
+            question: 'Wen vermisst du, ohne es je zu sagen — und was hält dich davon ab?'
+          },
+          { name: 'Mitnahme', title: 'Eine Nachricht', duration: 5*60,
+            hostNote: 'Wenn du magst: schreib sie jetzt wirklich.',
+            question: 'Wem schreibst du heute noch eine Nachricht — und was steht drin?'
+          },
+        ])
+      }
+    }
+  },
+  frageabend_zukunft: {
+    title: 'Frageabend: Was noch kommt',
+    category: 'Frageabend',
+    lead: 'Ein Abend über Träume, Pläne und das, was man sich nicht zu sagen traut. Für Runden, die nach vorne schauen wollen — ohne Fünfjahresplan-Ernst.',
+    image: 'images/nachthimmel.jpg',
+    philosophy1: 'Über die Zukunft reden wir meistens in Terminen: nächster Urlaub, nächstes Projekt. Selten darüber, was wir eigentlich wollen — und noch seltener über das, was wir uns nicht mehr zu wollen trauen.',
+    philosophy2: 'Dieser Abend ist kein Zielsetzungs-Workshop. Er macht Platz für die Sätze, die mit „Eigentlich würde ich gern…“ anfangen — und schaut, was sie mit euch machen, wenn sie einmal laut im Raum stehen.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 40 Min.',
+        people: '3-10 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Worauf freust du dich?', duration: 10*60,
+            hostNote: 'Reihum, ein Satz. Etwas Kleines reicht völlig.',
+            question: 'Worauf freust du dich in den nächsten Wochen — auch wenn es winzig ist?',
+            teaser: 'Ein Satz zum Ankommen.'
+          },
+          { name: 'Einstieg', title: 'Die Zukunft als Möglichkeit', duration: 6*60,
+            hostNote: 'Host liest vor.',
+            quote: { text: 'Man muss das Mögliche tun, damit das Unmögliche sichtbar wird.', author: null },
+            description: 'Zukunft ist kein Ort, an dem wir irgendwann ankommen — sie ist das, was wir uns heute überhaupt zutrauen zu denken. Heute Abend denken wir größer als sonst. Und ehrlicher.',
+            teaser: 'Warum es heute größer werden darf.'
+          },
+          { name: 'Das Ungesagte', title: 'Träume, die noch nie laut waren', duration: 18*60,
+            hostNote: 'Reihum. Nach jeder Antwort kurz Stille lassen, bevor der nächste dran ist.',
+            items: [
+              { accent: 'Frage 1', text: 'Gibt es einen Traum, den du noch nie laut ausgesprochen hast?' },
+              { accent: 'Frage 2', text: 'Was würdest du sofort anfangen, wenn du sicher wüsstest, dass niemand es bewertet?' },
+              { accent: 'Frage 3', text: 'Welchen Traum hast du so lange aufgeschoben, dass er sich inzwischen fast fremd anfühlt?' },
+              { accent: 'Frage 4', text: 'Welchen kleinen Luxus wünschst du dir im Alltag — und erlaubst ihn dir trotzdem nicht?' }
+            ],
+            teaser: 'Was noch nie laut war.'
+          },
+          { name: 'Die Angst', title: 'Was dich hält', duration: 18*60,
+            hostNote: 'Ruhiger Abschnitt. Nicht trösten, nicht lösen — zuhören.',
+            items: [
+              { accent: 'Frage 5', text: 'Welche Version deiner Zukunft macht dir mehr Angst: dass alles so bleibt, wie es ist — oder dass sich alles ändert?' },
+              { accent: 'Frage 6', text: 'Was hält dich davon ab, das zu machen, wovon du träumst? Die ehrliche Antwort, nicht die vernünftige.' },
+              { accent: 'Frage 7', text: 'Wovon glaubst du, dass es zu spät dafür ist — und stimmt das wirklich?' }
+            ],
+            teaser: 'Was dazwischen steht.'
+          },
+          { name: 'Der Ort', title: 'Wo du landen willst', duration: 15*60,
+            hostNote: 'Hier darf es wieder leichter werden.',
+            items: [
+              { accent: 'Frage 8', text: 'An welchem Ort würdest du gern alt werden — und an welchem auf keinen Fall?' },
+              { accent: 'Frage 9', text: 'Welche Reise willst du unbedingt noch machen — und was würde sie an dir verändern?' },
+              { accent: 'Frage 10', text: 'Wenn du ein Buch schreiben würdest: wovon würde es handeln?' }
+            ],
+            teaser: 'Wo es hingehen soll.'
+          },
+          { name: 'Der Stuhl', title: 'In fünf Jahren, hier', duration: 12*60,
+            hostNote: 'Reihum, jede:r beantwortet für sich. Das ist die Kernfrage des Abends — Zeit lassen.',
+            question: 'In fünf Jahren sitzt du wieder hier, in genau dieser Runde. Was muss bis dahin passiert sein, damit du zufrieden bist?',
+            teaser: 'Die Kernfrage des Abends.'
+          },
+          { name: 'Schritt', title: 'Der erste kleine Zug', duration: 10*60,
+            hostNote: 'Klein und konkret. Diese Woche, nicht dieses Jahr.',
+            question: 'Was ist der allerkleinste Schritt in Richtung deines Traums, den du diese Woche gehen könntest?',
+            teaser: 'Etwas, das diese Woche geht.'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 8*60,
+            hostNote: 'Ein Wort. Reihum.',
+            question: 'Mit welchem Satz gehst du heute nach Hause?',
+            teaser: 'Ein Wort zum Schluss.'
+          },
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 5 Min.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Worauf freust du dich?', duration: 8*60,
+            hostNote: 'Beide nacheinander.',
+            question: 'Worauf freust du dich in den nächsten Wochen — auch wenn es klein ist?'
+          },
+          { name: 'Einstieg', title: 'Die Zukunft als Möglichkeit', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Man muss das Mögliche tun, damit das Unmögliche sichtbar wird.', author: null },
+            description: 'Zukunft ist das, was wir uns heute zutrauen zu denken. Heute denken wir größer — und ehrlicher.'
+          },
+          { name: 'Das Ungesagte', title: 'Träume, die noch nie laut waren', duration: 15*60,
+            hostNote: 'Je 7 Minuten. Nach der Antwort kurz Stille.',
+            items: [
+              { accent: 'Frage 1', text: 'Gibt es einen Traum, den du noch nie laut ausgesprochen hast?' },
+              { accent: 'Frage 2', text: 'Was würdest du sofort anfangen, wenn du wüsstest, dass niemand es bewertet?' }
+            ]
+          },
+          { name: 'Die Angst', title: 'Was dich hält', duration: 15*60,
+            hostNote: 'Nicht lösen. Zuhören.',
+            items: [
+              { accent: 'Frage 3', text: 'Was macht dir mehr Angst: dass alles so bleibt — oder dass sich alles ändert?' },
+              { accent: 'Frage 4', text: 'Was hält dich wirklich davon ab? Die ehrliche Antwort, nicht die vernünftige.' }
+            ]
+          },
+          { name: 'Der Stuhl', title: 'In fünf Jahren, hier', duration: 12*60,
+            hostNote: 'Beide, je 5-6 Min. Die Kernfrage.',
+            question: 'In fünf Jahren sitzt ihr wieder hier. Was muss bis dahin passiert sein, damit du zufrieden bist?'
+          },
+          { name: 'Schritt', title: 'Der erste kleine Zug', duration: 8*60,
+            hostNote: 'Konkret. Und: fragt euch in einem Monat nach.',
+            question: 'Was ist der kleinste Schritt, den du diese Woche gehen könntest?'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 6*60,
+            hostNote: 'Ein Satz.',
+            question: 'Mit welchem Satz gehst du heute nach Hause?'
+          },
+        ])
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~30 Min.',
+        people: 'Nur du',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Ein Moment für dich', duration: 3*60,
+            hostNote: 'Stift und Papier, kein Handy.',
+            description: 'Über die eigene Zukunft nachzudenken funktioniert allein oft am ehrlichsten — keiner hört mit, keiner bewertet.'
+          },
+          { name: 'Einstieg', title: 'Die Zukunft als Möglichkeit', duration: 4*60,
+            quote: { text: 'Man muss das Mögliche tun, damit das Unmögliche sichtbar wird.', author: null },
+            description: 'Was du dir heute zutraust zu denken, ist die Grenze dessen, was möglich wird.'
+          },
+          { name: 'Das Ungesagte', title: 'Der Traum ohne Publikum', duration: 6*60,
+            hostNote: 'Schreib ihn wirklich auf. Papier vergisst nicht.',
+            question: 'Gibt es einen Traum, den du noch nie laut ausgesprochen hast — und was hält dich davon ab?'
+          },
+          { name: 'Die Angst', title: 'Was dich hält', duration: 6*60,
+            hostNote: 'Die ehrliche Antwort, nicht die vernünftige.',
+            question: 'Was macht dir mehr Angst: dass alles so bleibt, oder dass sich alles ändert?'
+          },
+          { name: 'Der Stuhl', title: 'In fünf Jahren', duration: 6*60,
+            hostNote: 'Nimm dir die vollen Minuten.',
+            question: 'In fünf Jahren schaust du auf heute zurück. Was muss passiert sein, damit du zufrieden bist?'
+          },
+          { name: 'Mitnahme', title: 'Der erste Zug', duration: 5*60,
+            hostNote: 'Ein Schritt, aufgeschrieben, mit Datum.',
+            question: 'Was ist der allerkleinste Schritt, den du diese Woche gehen könntest?'
+          },
+        ])
+      }
+    }
+  },
+  frageabend_ehrlich: {
+    title: 'Frageabend: Kleine Wahrheiten',
+    category: 'Frageabend',
+    lead: 'Ein Abend über die unspektakulären Ehrlichkeiten — die ungelesene Nachricht, die Trostmahlzeit, das Ding, das du absichtlich nicht reparierst. Leicht im Ton, überraschend tief im Ergebnis.',
+    image: 'images/stilleben.jpg',
+    philosophy1: 'Die großen Fragen sind nicht immer die ergiebigsten. Manchmal erfährt man mehr über einen Menschen, wenn man ihn fragt, was er kocht, wenn es ihm schlecht geht — als wenn man nach seinen Werten fragt.',
+    philosophy2: 'Dieser Abend sammelt die kleinen, schrägen, banalen Ehrlichkeiten. Er startet zum Lachen und endet oft erstaunlich nah. Genau deshalb funktioniert er auch in Runden, die sich noch nicht gut kennen.',
+    formats: {
+      group: {
+        label: 'Kleine Gruppe',
+        duration: '~1 Std. 35 Min.',
+        people: '3-10 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie geht\'s dir — wirklich?', duration: 8*60,
+            hostNote: 'Reihum. Beide Antworten laut sagen: erst die höfliche, dann die ehrliche.',
+            question: 'Was sagst du, wenn jemand fragt, wie es dir geht — und was wäre die ehrliche Antwort?',
+            teaser: 'Zwei Antworten auf eine Frage.'
+          },
+          { name: 'Einstieg', title: 'Die kleinen Wahrheiten', duration: 6*60,
+            hostNote: 'Host liest vor.',
+            quote: { text: 'Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.', author: 'Antoine de Saint-Exupéry' },
+            description: 'Heute geht es nicht um die großen Themen. Es geht um das, was zwischen den großen Themen passiert: die Nachricht, die du seit Tagen nicht beantwortest. Das Essen, das du kochst, wenn es dir schlecht geht. Die Uhrzeit, die sich anders anfühlt als alle anderen.',
+            teaser: 'Warum die kleinen Fragen die besten sind.'
+          },
+          { name: 'Was du nicht zugibst', title: 'Die schrägen Ehrlichkeiten', duration: 18*60,
+            hostNote: 'Schnell und leicht. Wer lacht, lacht — das gehört dazu.',
+            items: [
+              { accent: 'Frage 1', text: 'Welche Nachricht markierst du seit Tagen als ungelesen, weil die Antwort zu anstrengend wäre?' },
+              { accent: 'Frage 2', text: 'Was googelst du regelmäßig, obwohl du die Antwort längst kennst?' },
+              { accent: 'Frage 3', text: 'Wann hast du zuletzt begeistert genickt, obwohl du kein einziges Wort verstanden hast?' },
+              { accent: 'Frage 4', text: 'Was war die letzte Lüge, die du erzählt hast — auch eine ganz kleine?' }
+            ],
+            teaser: 'Die Sachen, die man nicht zugibt.'
+          },
+          { name: 'Was dich tröstet', title: 'Die kleinen Rettungen', duration: 18*60,
+            hostNote: 'Der Ton wird wärmer. Zeit lassen, nachfragen erlaubt.',
+            items: [
+              { accent: 'Frage 5', text: 'Welches Essen kochst du dir, wenn du Trost brauchst — und wer hat es dir zum ersten Mal gemacht?' },
+              { accent: 'Frage 6', text: 'Welche kleine Routine hält dich stabil, wenn gerade wenig stabil ist?' },
+              { accent: 'Frage 7', text: 'Welcher Gegenstand in deiner Wohnung hat dich am längsten begleitet — und warum ist er noch da?' },
+              { accent: 'Frage 8', text: 'Welchen kaputten Gegenstand reparierst du absichtlich nicht — und was hängt daran?' }
+            ],
+            teaser: 'Was hilft, wenn es nicht läuft.'
+          },
+          { name: 'Was dich verrät', title: 'Die Spuren der anderen', duration: 18*60,
+            hostNote: 'Hier wird es unerwartet nah. Nicht drängen.',
+            items: [
+              { accent: 'Frage 9', text: 'Welche Geste deiner Eltern machst du nach, ohne dass du es merkst?' },
+              { accent: 'Frage 10', text: 'Welcher Geruch reißt dich sofort in eine ganz konkrete Erinnerung — und in welche?' },
+              { accent: 'Frage 11', text: 'Welcher Satz, den jemand mal zu dir gesagt hat, läuft seitdem wie eine Hintergrundmusik mit?' },
+              { accent: 'Frage 12', text: 'Welche Uhrzeit hat für dich eine ganz eigene Stimmung — und woher kommt das?' }
+            ],
+            teaser: 'Woran man sieht, wer dich geprägt hat.'
+          },
+          { name: 'Was du nicht erzählst', title: 'Das Schöne, das keiner weiß', duration: 10*60,
+            hostNote: 'Ruhige Schlussrunde vor dem Abschluss. Reihum, ohne Kommentar.',
+            question: 'Wann hast du zuletzt etwas Schönes gesehen und es niemandem erzählt — was war es?',
+            teaser: 'Etwas Schönes, das keiner weiß.'
+          },
+          { name: 'Abschluss', title: 'Was du mitnimmst', duration: 8*60,
+            hostNote: 'Ein Wort oder ein Satz.',
+            question: 'Welche kleine Wahrheit von heute Abend bleibt dir im Kopf?',
+            teaser: 'Ein Wort zum Schluss.'
+          },
+        ])
+      },
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std.',
+        people: '2 Personen',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Wie geht\'s dir — wirklich?', duration: 8*60,
+            hostNote: 'Beide: erst die höfliche Antwort, dann die ehrliche.',
+            question: 'Was sagst du, wenn jemand fragt wie\'s geht — und was wäre die ehrliche Antwort?'
+          },
+          { name: 'Einstieg', title: 'Die kleinen Wahrheiten', duration: 5*60,
+            hostNote: 'Eine:r liest vor.',
+            quote: { text: 'Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.', author: 'Antoine de Saint-Exupéry' },
+            description: 'Heute geht es um das, was zwischen den großen Themen passiert — und dabei oft mehr verrät.'
+          },
+          { name: 'Was du nicht zugibst', title: 'Die schrägen Ehrlichkeiten', duration: 15*60,
+            hostNote: 'Schnell, leicht, im Wechsel.',
+            items: [
+              { accent: 'Frage 1', text: 'Welche Nachricht markierst du seit Tagen als ungelesen — und warum?' },
+              { accent: 'Frage 2', text: 'Was war die letzte kleine Lüge, die du erzählt hast?' }
+            ]
+          },
+          { name: 'Was dich tröstet', title: 'Die kleinen Rettungen', duration: 15*60,
+            hostNote: 'Wärmer jetzt. Nachfragen erlaubt.',
+            items: [
+              { accent: 'Frage 3', text: 'Welches Essen kochst du dir, wenn du Trost brauchst — und wer hat es dir zuerst gemacht?' },
+              { accent: 'Frage 4', text: 'Welche kleine Routine hält dich stabil, wenn wenig stabil ist?' }
+            ]
+          },
+          { name: 'Was dich verrät', title: 'Die Spuren der anderen', duration: 12*60,
+            hostNote: 'Unerwartet nah. Zeit lassen.',
+            items: [
+              { accent: 'Frage 5', text: 'Welche Geste deiner Eltern machst du nach, ohne es zu merken?' },
+              { accent: 'Frage 6', text: 'Welcher Satz von früher läuft bei dir bis heute wie Hintergrundmusik mit?' }
+            ]
+          },
+          { name: 'Abschluss', title: 'Das Schöne, das keiner weiß', duration: 8*60,
+            hostNote: 'Zum Schluss, beide.',
+            question: 'Wann hast du zuletzt etwas Schönes gesehen und niemandem davon erzählt?'
+          },
+        ])
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~25 Min.',
+        people: 'Nur du',
+        stations: withFeedback([
+          { name: 'Ankommen', title: 'Ein Moment für dich', duration: 3*60,
+            hostNote: 'Stift und Papier.',
+            description: 'Die kleinen Fragen sind allein oft die ehrlichsten — weil man sich vor sich selbst schlechter rausreden kann.'
+          },
+          { name: 'Einstieg', title: 'Die kleinen Wahrheiten', duration: 4*60,
+            quote: { text: 'Man sieht nur mit dem Herzen gut. Das Wesentliche ist für die Augen unsichtbar.', author: 'Antoine de Saint-Exupéry' },
+            description: 'Was zwischen den großen Themen passiert, verrät oft mehr als die großen Themen selbst.'
+          },
+          { name: 'Die höfliche Antwort', title: 'Was du sagst, was du meinst', duration: 5*60,
+            hostNote: 'Beide Antworten aufschreiben. Der Unterschied ist der Punkt.',
+            question: 'Was sagst du, wenn jemand fragt wie\'s geht — und was wäre die ehrliche Antwort?'
+          },
+          { name: 'Der Trost', title: 'Was hilft', duration: 5*60,
+            hostNote: 'Schreib auch auf, wer es dir beigebracht hat.',
+            question: 'Welches Essen kochst du dir, wenn du Trost brauchst — und wer hat es dir zum ersten Mal gemacht?'
+          },
+          { name: 'Die Spur', title: 'Wer in dir mitläuft', duration: 5*60,
+            hostNote: 'Zeit lassen. Da kommt oft mehr als erwartet.',
+            question: 'Welcher Satz, den jemand mal zu dir gesagt hat, läuft seitdem wie Hintergrundmusik mit?'
+          },
+          { name: 'Mitnahme', title: 'Das Schöne, das keiner weiß', duration: 4*60,
+            hostNote: 'Und: erzähl es heute noch jemandem.',
+            question: 'Wann hast du zuletzt etwas Schönes gesehen und niemandem davon erzählt?'
+          },
+        ])
+      }
+    }
+  },
   achtzig: {
     title: 'Was würde mein 80-jähriges Ich sagen?',
     category: 'Lebensperspektive',
