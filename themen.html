@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260721b" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260721b"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260723a" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260723a"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -46,8 +46,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260721b"/>
-<script src="theme-toggle.js?v=20260721b"></script>
+<link rel="stylesheet" href="dark.css?v=20260723a"/>
+<script src="theme-toggle.js?v=20260723a"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -102,6 +102,20 @@
 
   <!-- Alle Themen, einheitliches Grid -->
   <div id="themesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"></div>
+
+  <!-- Frageabend-Familie: eigene Sektion, damit die Varianten nicht unsichtbar bleiben -->
+  <section id="frageabendSection" class="mt-28 hidden">
+    <div class="border-t border-outline-variant/20 pt-16">
+      <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Die Frageabende</p>
+      <h2 class="font-serif text-4xl md:text-5xl leading-tight tracking-tight text-on-background mb-6 max-w-2xl">Wenn ihr einfach gute Fragen wollt.</h2>
+      <p class="text-on-surface-variant font-light max-w-2xl leading-relaxed mb-12">
+        Kein Modell, keine Theorie — nur Fragen, in eine Dramaturgie gebracht. Jeder Abend nimmt sich
+        ein Feld vor: Herkunft, Menschen, Arbeit, Zukunft, das Stille, das Absurde, die kleinen Wahrheiten.
+        Ideal für Runden, die sich noch nicht so gut kennen — oder für alle, die einfach reden wollen.
+      </p>
+      <div id="frageabendGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
 </main>
 
 <footer class="bg-surface-container flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full mt-24">
@@ -123,7 +137,7 @@
   </div>
 </footer>
 
-<script src="themes.js?v=20260721b"></script>
+<script src="themes.js?v=20260723a"></script>
 <script>
 // Restore previous filter from URL or session
 const params = new URLSearchParams(location.search);
@@ -157,8 +171,11 @@ function renderGrid() {
   // — sie sind via thema.html?id=frageabend_X erreichbar, aber die Übersicht zeigt nur Haupt-Themen.
   // Werte-Reise Abend 1 + Wir-Reise Abend 1 werden gelistet (kostenlose Einstiege in die Reisen);
   // Abende 2-7 sind paywalled und werden hier nicht einzeln gezeigt — sie erscheinen nur über reise.html / reise-wir.html.
+  // Frageabende laufen in einer eigenen Sektion darunter (renderFrageabende) — hier raus,
+  // sonst stünde der Basis-Frageabend doppelt auf der Seite.
   const themes = Object.entries(window.THEMES)
     .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1' || id === 'wir_reise_1' || id === 'inneres_kind')
+    .filter(([id, t]) => t.category !== 'Frageabend')
     .map(([_, t]) => t);
   const filtered = currentFilter === 'all'
     ? themes
@@ -207,6 +224,39 @@ function renderGrid() {
   }).join('');
 }
 
+// Frageabend-Familie als eigene Sektion (kompaktere Karten als das Haupt-Grid)
+function renderFrageabende() {
+  const section = document.getElementById('frageabendSection');
+  const grid = document.getElementById('frageabendGrid');
+  if (!section || !grid) return;
+  const list = Object.entries(window.THEMES)
+    .filter(([id, t]) => t.category === 'Frageabend')
+    .filter(([id, t]) => currentFilter === 'all' || !!t.formats[currentFilter]);
+  if (!list.length) { section.classList.add('hidden'); return; }
+  section.classList.remove('hidden');
+  grid.innerHTML = list.map(([id, t]) => {
+    const fmt = currentFilter !== 'all' ? t.formats[currentFilter] : (t.formats.group || t.formats.pair);
+    const stations = (fmt.stations || []).filter(s => s.type !== 'feedback').length;
+    const href = (currentFilter !== 'all' && t.formats[currentFilter])
+      ? `thema.html?id=${id}&format=${currentFilter}` : `thema.html?id=${id}`;
+    const kurz = t.title.replace(/^Frageabend:\s*/, '');
+    return `
+      <a href="${href}" class="group flex gap-4 items-center bg-surface-container-low hover:bg-surface-container border border-outline-variant/20 hover:border-secondary/40 rounded-xl p-4 transition-colors">
+        <div class="w-20 h-20 shrink-0 overflow-hidden rounded-lg">
+          <img loading="lazy" src="${t.image}" alt="${t.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"/>
+        </div>
+        <div class="min-w-0">
+          <h3 class="font-serif text-xl text-on-background leading-snug group-hover:text-secondary transition-colors">${kurz}</h3>
+          <div class="flex flex-wrap gap-x-4 text-[10px] uppercase tracking-widest text-on-surface-variant mt-1.5">
+            <span class="flex items-center"><span class="material-symbols-outlined text-[13px] mr-1">schedule</span>${fmt.duration}</span>
+            <span class="flex items-center"><span class="material-symbols-outlined text-[13px] mr-1">checklist</span>${stations} Stationen</span>
+          </div>
+          <p class="text-xs text-on-surface-variant/80 leading-relaxed line-clamp-2 italic mt-2">${t.lead || ''}</p>
+        </div>
+      </a>`;
+  }).join('');
+}
+
 function updateFilterButtons() {
   document.querySelectorAll('.format-filter').forEach(btn => {
     const active = btn.dataset.filter === currentFilter;
@@ -221,6 +271,7 @@ function updateFilterButtons() {
 function refresh() {
   updateFilterButtons();
   renderGrid();
+  renderFrageabende();
 }
 
 document.querySelectorAll('.format-filter').forEach(btn => {
@@ -236,9 +287,9 @@ document.querySelectorAll('.format-filter').forEach(btn => {
 
 refresh();
 </script>
-<script src="config.js?v=20260721b"></script>
-<script src="auth.js?v=20260721b"></script>
-<script src="login-ui.js?v=20260721b"></script>
-<script src="mobile-nav.js?v=20260721b"></script>
+<script src="config.js?v=20260723a"></script>
+<script src="auth.js?v=20260723a"></script>
+<script src="login-ui.js?v=20260723a"></script>
+<script src="mobile-nav.js?v=20260723a"></script>
 </body>
 </html>
