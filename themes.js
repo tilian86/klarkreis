@@ -4487,6 +4487,66 @@ window.THEMES = {
     }
   },
 
+  frei_reise_9: {
+    title: "Körper zuerst — und Gewohnheiten, die halten",
+    subtitle: "Frei-Reise · Abend 9 von 10",
+    lead: "Es gibt eine Reihenfolge, die viele erst nach einer Diagnose ernst nehmen: zuerst der Körper, dann der Kopf, dann alles andere. Nicht aus Egoismus — sondern weil Arbeit, Beziehungen und Gelassenheit auf etwas aufsitzen, das täglich gepflegt werden will oder eben nicht.",
+    category: "Frei-Reise",
+    image: "images/frei-reise-9.jpg",
+    reise: { id: "frei", nr: 9, total: 10, titel: "Frei-Reise — Zehn Abende über Wohlstand, Urteilskraft und Ruhe" },
+    philosophy1: "Fast alle sagen „ich habe keine Zeit“, wenn ihnen eine gute Gewohnheit vorgeschlagen wird. Das ist fast immer die höfliche Übersetzung von „es ist mir nicht wichtig genug“. Wer eine Sache tatsächlich an die erste Stelle setzt, hat plötzlich Zeit dafür — nicht weil der Tag länger wird, sondern weil etwas anderes weicht.",
+    philosophy2: "Der zweite Teil ist der ehrlichste Satz dieser Reise über Veränderung: Wenn du etwas wirklich willst, tust du es. „Ich versuche“ heißt, du willst noch nicht. Das ist kein Vorwurf, sondern eine Einladung, aufzuhören, sich für etwas zu geißeln, das man gar nicht vorhat — und stattdessen etwas Kleineres zu wählen, das man tatsächlich durchhält.\n\nIhr braucht für diesen Abend nichts gelesen zu haben. Wer parallel lesen möchte: „Der Almanach des Naval Ravikant“ behandelt das im zweiten Teil, in den Abschnitten über Gesundheit, Meditation und Veränderung. Am besten danach statt davor.",
+    paid: 'frei_reise',
+        formats: {
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 45 Min.',
+        people: '2 Personen',
+        stationCount: 13,
+        totalMinutes: 105,
+        stations: null,   // Inhalt serverseitig (paid_content)
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~1 Std.',
+        people: 'Nur du',
+        stationCount: 12,
+        totalMinutes: 60,
+        stations: null,   // Inhalt serverseitig (paid_content)
+      },
+    }
+  },
+
+  frei_reise_10: {
+    title: "Freiheit, Werte — und die Bilanz",
+    subtitle: "Frei-Reise · Abend 10 von 10",
+    lead: "Am Anfang bedeutet Freiheit meistens „Freiheit, um“ — alles tun zu können. Später verschiebt sie sich zu „Freiheit von“: von Reaktionen, von Wut, von fremden Erwartungen, vom eigenen unkontrollierten Denken. Der letzte Abend zieht Bilanz und fragt, was von zehn Abenden tatsächlich geblieben ist.",
+    category: "Frei-Reise",
+    image: "images/frei-reise-10.jpg",
+    reise: { id: "frei", nr: 10, total: 10, titel: "Frei-Reise — Zehn Abende über Wohlstand, Urteilskraft und Ruhe" },
+    philosophy1: "Werte sind nicht die Wörter, die man auf eine Liste schreibt. Werte sind die Punkte, an denen jemand nicht verhandelt — und man erkennt sie nicht an Bekenntnissen, sondern daran, was sie ihren Träger schon gekostet haben. Ein Wert, für den noch nie etwas bezahlt wurde, ist eine Vorliebe.",
+    philosophy2: "Zum Sinn gibt es keine Auskunft, die von außen trägt. Wer eine bekommt, wird sie prüfen und die nächste Frage stellen, und so weiter. Was bleibt, ist unbequem und befreiend zugleich: Es gibt keinen vorgegebenen Sinn. Ihr müsst euren eigenen machen — und das ist keine Notlösung, sondern die einzige Fassung, die überhaupt tragen kann.\n\nIhr braucht für diesen Abend nichts gelesen zu haben. Wer parallel lesen möchte: „Der Almanach des Naval Ravikant“ behandelt das in den Abschnitten über Freiheit, Werte und Philosophie am Ende. Am besten danach statt davor.",
+    paid: 'frei_reise',
+        formats: {
+      pair: {
+        label: 'Zu zweit',
+        duration: '~1 Std. 45 Min.',
+        people: '2 Personen',
+        stationCount: 13,
+        totalMinutes: 105,
+        stations: null,   // Inhalt serverseitig (paid_content)
+      },
+      solo: {
+        label: 'Allein',
+        duration: '~1 Std.',
+        people: 'Nur du',
+        stationCount: 12,
+        totalMinutes: 62,
+        stations: null,   // Inhalt serverseitig (paid_content)
+      },
+    }
+  },
+
 };
 
 // =====================================================================
