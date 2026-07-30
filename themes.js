@@ -3851,10 +3851,10 @@ window.THEMES = {
   wir_reise_1: {
     title: "Wir — sehen, was uns trägt",
     subtitle: "Wir-Reise · Abend 1 von 7 (frei)",
-    lead: "Die meisten Paare reden über das, was nicht klappt. Wenige verstehen, woran sich das wirklich zeigt. John Gottman hat über Jahrzehnte Paare im Labor beobachtet und kann nach kurzer Zeit mit hoher Treffsicherheit vorhersagen, ob eine Beziehung halten wird. Dieser Abend bringt euch sein Frühwarnsystem nahe — die Vier Reiter — und legt die Grundlage für die sieben Geheimnisse, die folgen.",
+    lead: "Die meisten Paare reden über das, was nicht klappt. Wenige verstehen, woran sich das wirklich zeigt. John Gottman hat über Jahrzehnte Paare im Labor beobachtet und kann nach kurzer Zeit mit hoher Treffsicherheit vorhersagen, ob eine Beziehung halten wird. Dieser Abend bringt euch das Frühwarnsystem nahe — die Vier Reiter — und legt die Grundlage für die sechs Abende, die folgen.",
     category: "Wir-Reise",
     image: "images/wir-reise-1.jpg",
-    reise: { id: "wir", nr: 1, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 1, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "John Gottman hat das umfangreichste Datenset der Beziehungsforschung gesammelt. Sein Befund ist überraschend nüchtern: was glückliche Paare auszeichnet, ist nicht Glück, Schönheit oder Tiefenanalyse. Es ist ein Set von Mikro-Gewohnheiten, das verhindert, dass Negatives das Positive überwächst. Er nennt das emotionale Intelligenz in der Ehe.",
     philosophy2: "Heute identifiziert ihr die Vier Apokalyptischen Reiter — Kritik, Verachtung, Rechtfertigung, Mauern. Sie sind die präzisesten Frühwarnzeichen, die die Beziehungsforschung kennt. Und ihr lernt die Reparatur-Versuche kennen, die sie entschärfen. Das ist die Diagnose-Werkstatt vor der eigentlichen Reise.",
     formats: {
@@ -3882,10 +3882,10 @@ window.THEMES = {
             description: "Gottman hat über 16 Jahre Paare im Labor beobachtet und dabei etwas erstaunlich Unspektakuläres gefunden: stabile Paare sind nicht klüger oder bewusster — sie haben kleine Gewohnheiten, die das Negative klein halten und das Positive sichtbar. Heute schaut ihr, welche dieser Gewohnheiten ihr habt und welche fehlen.",
             teaser: "Der überraschende Befund der größten Beziehungsstudie aller Zeiten." },
           { name: "Modell",
-            title: "Das Haus der tragenden Beziehung",
+            title: "Sieben Bausteine, die tragen",
             duration: 420,
             hostNote: "Eine:r liest vor. Beide visualisieren das Haus im Kopf — die sieben Ebenen sind die Architektur der Reise.",
-            description: "Gottman fasst seine sieben Geheimnisse in einem Bild zusammen: das Sound Relationship House. Sieben Stockwerke, zwei tragende Säulen.\n\nDie Reihenfolge ist kein Zufall — die unteren Stockwerke tragen die oberen. Wer beim Streiten (Stockwerk 5) immer wieder feststeckt, dem fehlt meist etwas weiter unten: Wissen voneinander, Zuwendung, das Gefühl, gemocht zu sein.",
+            description: "Die Beziehungsforschung findet immer wieder dieselben sieben Bausteine. Sie bauen aufeinander auf — die unteren tragen die oberen.\n\nDie Reihenfolge ist kein Zufall — die unteren Stockwerke tragen die oberen. Wer beim Streiten (Stockwerk 5) immer wieder feststeckt, dem fehlt meist etwas weiter unten: Wissen voneinander, Zuwendung, das Gefühl, gemocht zu sein.",
             items: [
               { accent: "7.", label: "Gemeinsamer Sinn", text: "Eure Kultur, Rituale, das Wir-Gefühl jenseits des Alltags." },
               { accent: "6.", label: "Pattsituationen überwinden", text: "Die Träume hinter ewigen Konflikten entdecken." },
@@ -4064,12 +4064,12 @@ window.THEMES = {
   },
 
   wir_reise_2: {
-    title: "Liebeslandkarten",
+    title: "Wie gut kennt ihr einander?",
     subtitle: "Wir-Reise · Abend 2 von 7",
     lead: "Im biblischen Sinn hieß sexuelle Liebe „erkennen“. Der Gedanke dahinter: Wer die andere Person nicht wirklich kennt, kann sie auch nicht wirklich halten. Heute aktualisiert ihr eure innere Karte voneinander — inspiriert von John Gottmans Liebeslandkarten-Forschung, in einer 20-Aussagen-Diagnose, einem 60-Fragen-Spiel und fünf Selbstbild-Fragen.",
     category: "Wir-Reise",
     image: "images/wir-reise-2.jpg",
-    reise: { id: "wir", nr: 2, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 2, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "Gottmans Daten sind nüchtern: Rund zwei Drittel der Paare erleben nach der Geburt des ersten Kindes einen deutlichen Einbruch der Beziehungszufriedenheit. Das Drittel, das ihn nicht erlebt, hat eine auffällige Gemeinsamkeit — detaillierte Liebeslandkarten. Diese Paare wissen, wie die andere Person innerlich tickt, und sie halten dieses Wissen aktuell. Krisen werfen sie seltener aus der Bahn, weil ihre Innenkarte noch zur echten Person passt.",
     philosophy2: "Liebeslandkarten sind nicht Trivia wie „Lieblingsfarbe Blau“. Gottman meint damit den „kognitiven Raum“, den dein Kopf für die Innenwelt der anderen Person freihält — wie viel du gerade wirklich mitbekommst von dem, was sie beschäftigt, ängstigt, antreibt. Der Alltag frisst diesen Raum leise auf: Irgendwann weißt du, wie sie ihren Kaffee trinkt, aber nicht mehr, was sie nachts wachhält. Heute prüft ihr, wie genau eure Karten noch stimmen, und füllt die weißen Flecken. Es wird leichter, als ihr denkt — und ehrlicher, als ihr erwartet.",
     paid: 'wir_reise',
@@ -4094,12 +4094,12 @@ window.THEMES = {
   },
 
   wir_reise_3: {
-    title: "Zuneigung und Bewunderung",
+    title: "Wärme, die man zeigt",
     subtitle: "Wir-Reise · Abend 3 von 7",
     lead: "Wissen allein hält keine Beziehung — es ist nur der Rohstoff. Was trägt, ist die positive innere Brille, durch die ihr euch seht. Gottman nennt sie „Zuneigung und Bewunderung“ und hält sie für das stärkste Gegengift gegen Verachtung, den gefährlichsten der vier Reiter. Heute stellt ihr sie wieder scharf — mit drei Werkzeugen aus Gottmans Forschung: dem Erinnern eurer Geschichte, dem Wertschätzungs-Ritual und einem Sieben-Wochen-Plan für den Alltag.",
     category: "Wir-Reise",
     image: "images/wir-reise-3.jpg",
-    reise: { id: "wir", nr: 3, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 3, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "In glücklichen Beziehungen läuft ständig ein leiser Doppel-Vorgang: Einer tut etwas Kleines, die andere Person bemerkt es und legt es positiv aus. Gottman nennt diese Grundstimmung — mit dem Forscher Robert Weiss — „positive sentiment override“. Bei Paaren in der Krise kippt sie ins Gegenteil: Selbst gut gemeinte Taten werden misstrauisch gelesen („was will sie jetzt von mir?“). Dieselbe Handlung, entgegengesetzte Deutung. Diese Verschiebung ist messbar — und sie lässt sich zurückdrehen.",
     philosophy2: "Woran man den Zustand einer Beziehung früh erkennt, ist erstaunlich einfach: daran, wie ein Paar seine eigene Geschichte erzählt. Wer die gemeinsame Vergangenheit — auch die schweren Kapitel — noch mit Wärme und einer Spur Stolz erzählen kann, hat ein Polster, das Stürme trägt. Wer sie nur noch als Kette von Enttäuschungen erinnert, ist gefährdet. Heute erinnert ihr eure Geschichte und übt die Wärme wieder ein.",
     paid: 'wir_reise',
@@ -4124,12 +4124,12 @@ window.THEMES = {
   },
 
   wir_reise_4: {
-    title: "Sich einander zuwenden",
+    title: "Die kleinen Momente im Alltag",
     subtitle: "Wir-Reise · Abend 4 von 7",
     lead: "Romantik entsteht nicht bei Kerzenschein, sondern in dem, was Gottman „bids for connection\“ nennt — den winzigen Angeboten zur Verbindung im Alltag. In stabilen Paaren werden 86 Prozent davon aufgegriffen, in zerbrechenden nur 33. Heute lernt ihr, diese Angebote zu erkennen, selbst zu senden und nicht zu verpassen — und ihr übt Gottmans wirksamstes Alltagswerkzeug direkt: das Stress-Reduktions-Gespräch.",
     category: "Wir-Reise",
     image: "images/wir-reise-4.jpg",
-    reise: { id: "wir", nr: 4, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 4, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "In Gottmans Ehelabor verraten nicht die Streits am meisten, sondern die langweiligsten Szenen: Einer schaut aus dem Fenster und sagt „schau mal, ein Reiher\“, und der andere blickt kurz auf — oder eben nicht. Aus solchen Sekunden ist Verbundenheit gemacht. Sie wirken banal und sind in Wahrheit das Rohmaterial jeder tragenden Beziehung.",
     philosophy2: "Das gemeinsame Konto wächst nicht durch große Abende, sondern durch hunderte kleiner Einzahlungen am Tag. Wer sich gewohnheitsmäßig abwendet — weiterscrollt, statt aufzuschauen —, kündigt keine große Liebe auf. Er zehrt vom täglichen Polster, bis nichts mehr da ist. Heute schaut ihr genau hin: wo wendet ihr euch zu, wo aneinander vorbei.",
     paid: 'wir_reise',
@@ -4154,12 +4154,12 @@ window.THEMES = {
   },
 
   wir_reise_5: {
-    title: "Einfluss zulassen",
+    title: "Wer entscheidet — und wer gibt nach?",
     subtitle: "Wir-Reise · Abend 5 von 7",
     lead: "Gottmans schärfste Statistik betrifft die Männer: Wer den Einfluss seiner Partnerin nicht zulässt, dessen Ehe scheitert zu 81 Prozent. Dahinter steckt ein Prinzip für alle Konstellationen — wer die Stimme der anderen Person nicht wirklich an sich heranlässt, verliert sie irgendwann ganz. Das ist kein „nett sein müssen\“, sondern Beziehungs-Physik. Heute schaut ihr ehrlich hin, wo ihr Einfluss zulasst und wo ihr abblockt — an echten Alltagsszenen, an Gottmans Selbsttest und an einer Entscheidung, die bei euch gerade wirklich ansteht.",
     category: "Wir-Reise",
     image: "images/wir-reise-5.jpg",
-    reise: { id: "wir", nr: 5, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 5, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "Einfluss zulassen heißt nicht nachgeben und nicht meinungslos werden. Es heißt: die Position der anderen Person ernsthaft in dein Entscheiden einbauen — als gleichwertige Stimme, nicht als Bittstellerin. Gottman fand in seinen Daten, dass genau diese Paare in den meisten Konflikten bei einer besseren Lösung landen als der scheinbare „Sieger\“ eines Machtkampfs. Beeinflussbarkeit ist keine Schwäche, sondern Beziehungs-Intelligenz.",
     philosophy2: "Es ist das Geheimnis, das am stärksten am Selbstbild kratzt — fast jeder hält sich für flexibel. Heute wird das konkret: Ihr seht dieselbe Alltagsszene zweimal, einmal als Machtkampf, einmal mit dem einen Satz „da hast du einen Punkt\“. Ihr prüft mit Gottmans Selbsttest, wo ihr in Wahrheit blockt. Und ihr spielt eine echte anstehende Entscheidung durch — nicht als Tauziehen, sondern als Suche nach dem gemeinsamen Boden.",
     paid: 'wir_reise',
@@ -4184,12 +4184,12 @@ window.THEMES = {
   },
 
   wir_reise_6: {
-    title: "Konflikte: lösbar und ewig",
+    title: "Streit, der sich löst — und Streit, der bleibt",
     subtitle: "Wir-Reise · Abend 6 von 7",
     lead: "Gottman hat tausende Paare im Streit gefilmt und ausgezählt: 69 Prozent aller Konflikte werden nie gelöst — dieselbe Reibung nach zwölf Jahren wie nach zwei. Das sind keine kaputten Paare, das sind alle Paare. Die restlichen 31 Prozent sind wirklich lösbar, brauchen aber Handwerk. Der teure Fehler: ein ewiges Problem behandeln, als wäre es lösbar — da zerreibt man sich an einer Wand. Heute lernt ihr, die zwei Sorten auseinanderzuhalten und in beiden zu navigieren.",
     category: "Wir-Reise",
     image: "images/wir-reise-6.jpg",
-    reise: { id: "wir", nr: 6, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 6, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "In Gottmans Langzeitstudie tauchten bei denselben Paaren nach Jahren dieselben Konflikte auf — fast Wort für Wort. „Sie wollte mehr Nähe, er mehr Zeit für sich.“ Das verschwindet nicht. Was glückliche von unglücklichen Paaren trennt, ist nicht das Fehlen dieser Themen, sondern der Umgang damit: Die einen finden einen Weg, mit Humor und Respekt immer wieder daran vorbeizukommen. Die anderen fahren sich fest und werfen sich seit Jahren dieselben Sätze an den Kopf.",
     philosophy2: "Hinter fast jedem festgefahrenen Streit steht auf beiden Seiten ein Traum oder eine alte Geschichte — meist unausgesprochen. Sie besteht auf dem gemeinsamen Sonntagsessen, weil der Tisch das Einzige war, was in ihrer Kindheit verlässlich war. Er will den Sonntag frei, weil verplante Tage sich anfühlen wie das enge Elternhaus, aus dem er raus wollte. Solange der Streit an der Oberfläche bleibt — „Essen gehen oder nicht?“ —, ist er unlösbar. Legt man die Träume darunter frei, muss man ihn nicht mehr lösen. Man versteht ihn. Und ein verstandener Patt verliert seine Schärfe.",
     paid: 'wir_reise',
@@ -4214,12 +4214,12 @@ window.THEMES = {
   },
 
   wir_reise_7: {
-    title: "Gemeinsamer Sinn",
+    title: "Wofür ihr zusammen seid",
     subtitle: "Wir-Reise · Abend 7 von 7 · Abschluss",
     lead: "Die ersten sechs Geheimnisse machen eine Beziehung stabil und freundlich. Trotzdem berichten Gottman viele Paare nach Jahren dasselbe: „Wir funktionieren gut nebeneinander — aber es fehlt etwas.“ Was fehlt, ist gemeinsamer Sinn: die eigene Kultur aus Ritualen, Rollen, Zielen und Symbolen, die aus zwei Leben ein „wir“ macht. Daran arbeitet ihr heute — und am Ende schaut ihr zurück auf die ganze Reise.",
     category: "Wir-Reise",
     image: "images/wir-reise-7.jpg",
-    reise: { id: "wir", nr: 7, total: 7, titel: "Wir-Reise — Sieben Abende nach Gottman" },
+    reise: { id: "wir", nr: 7, total: 7, titel: "Wir-Reise — Sieben Abende für Paare" },
     philosophy1: "Jedes Paar ist eine eigene kleine Kultur. Wie eine gewachsene Kultur hat sie Bräuche — sonntags wird zusammen gekocht. Rituale — vor jedem Abschied eine Umarmung. Symbole — ein Ring, ein Ort, eine Geschichte, die nur euch gehört. Und Erzählungen darüber, wer „wir“ sind und wie wir zusammengekommen sind. Wer diese Kultur bewusst pflegt, hat nicht nur eine stabile Beziehung, sondern eine mit Tiefe.",
     philosophy2: "Gottman ist an diesem Punkt betont nüchtern: Ihr müsst nicht dieselben Werte teilen. Entscheidend ist, dass jede:r offen sagen kann, was ihm oder ihr etwas bedeutet — und dass der andere es ernst nimmt. Je öfter ihr freundlich darüber redet, desto mehr nähern sich eure Vorstellungen von einem sinnvollen Leben an. Identisch werden sie nie. Aber ihr bekommt eine gemeinsame Sprache für sie.",
     paid: 'wir_reise',
