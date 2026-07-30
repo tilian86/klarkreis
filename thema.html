@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730d" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260730d"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730e" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260730e"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -40,8 +40,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260730d"/>
-<script src="theme-toggle.js?v=20260730d"></script>
+<link rel="stylesheet" href="dark.css?v=20260730e"/>
+<script src="theme-toggle.js?v=20260730e"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
 <header class="w-full top-0 border-none bg-[#FBF9F4] sticky z-50">
@@ -193,12 +193,12 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-<script src="themes.js?v=20260730d"></script>
-<script src="config.js?v=20260730d"></script>
-<script src="auth.js?v=20260730d"></script>
-<script src="login-ui.js?v=20260730d"></script>
-<script src="paid.js?v=20260730d"></script>
-<script src="player.js?v=20260730d"></script>
+<script src="themes.js?v=20260730e"></script>
+<script src="config.js?v=20260730e"></script>
+<script src="auth.js?v=20260730e"></script>
+<script src="login-ui.js?v=20260730e"></script>
+<script src="paid.js?v=20260730e"></script>
+<script src="player.js?v=20260730e"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
@@ -221,7 +221,7 @@ const PAID_GATES = {
   },
   werte_reise_2: { price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Werte-Reise · Abend 2 – 6', subtitle: 'Fünf geführte Abende als Paket', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich — die fünf weiteren Abende führen durch Vokabular (Schwartz, Rokeach), Wurzeln (Simone Weil), Schatten (C.G. Jung, Brené Brown), harte Entscheidungen (Ruth Chang) und Integration (Aristoteles). Für Kleingruppen, Paare und Solo-Reflexion. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WERTE_REISE_LINK' },
   werte_reise_3: null, werte_reise_4: null, werte_reise_5: null, werte_reise_6: null, // Fallback unten
-  wir_reise_2: { price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Wir-Reise · Abend 2 – 7', subtitle: 'Sechs geführte Abende nach John Gottman', body: 'Abend 1 („Wir — sehen, was uns trägt") ist frei zugänglich. Die sechs weiteren Abende führen euch durch John Gottmans „Sieben Geheimnisse der glücklichen Ehe" — Liebeslandkarten, Zuneigung und Bewunderung, Sich-Zuwenden, Einfluss zulassen, Konflikte (lösbar und ewig), Gemeinsamer Sinn. Für Paare. Solo- und Paar-Format jeweils enthalten. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WIR_REISE_LINK' },
+  wir_reise_2: { price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Wir-Reise · Abend 2 – 7', subtitle: 'Sechs geführte Abende für Paare', body: 'Abend 1 („Wir — sehen, was uns trägt") ist frei zugänglich. Die sechs weiteren Abende führen euch durch das, was die Paarforschung über tragfähige Beziehungen weiß — einander kennen, Wärme zeigen, der Alltag, Macht teilen, Konflikte (lösbar und ewig), gemeinsame Richtung. Für Paare. Solo- und Paar-Format jeweils enthalten. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WIR_REISE_LINK' },
   wir_reise_3: null, wir_reise_4: null, wir_reise_5: null, wir_reise_6: null, wir_reise_7: null,
   // Frei-Reise: vorerst KOMPLETT hinter Passwort — auch Abend 1. Zum Launch
   // 'frei_reise_1' unten aus der Liste nehmen, dann ist Abend 1 frei wie bei
@@ -517,7 +517,7 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
     </a>`;
 }).join('');
 </script>
-<script src="mobile-nav.js?v=20260730d"></script>
-<script src="page-audio.js?v=20260730d"></script>
+<script src="mobile-nav.js?v=20260730e"></script>
+<script src="page-audio.js?v=20260730e"></script>
 </body>
 </html>
