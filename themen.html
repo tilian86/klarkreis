@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260723a" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260723a"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730a" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260730a"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -46,8 +46,8 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20260723a"/>
-<script src="theme-toggle.js?v=20260723a"></script>
+<link rel="stylesheet" href="dark.css?v=20260730a"/>
+<script src="theme-toggle.js?v=20260730a"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -100,7 +100,22 @@
     </button>
   </section>
 
-  <!-- Alle Themen, einheitliches Grid -->
+  <!-- Produkt-Regal: mehrteilige Reisen + Extras, klar abgesetzt vom freien Angebot -->
+  <section class="mb-20 bg-primary-container rounded-xl p-8 md:p-12 text-on-primary">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-3">
+      <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary-fixed-dim">Reisen &amp; Extras</p>
+      <p class="font-label uppercase tracking-widest text-[10px] text-on-primary-container">Abend 1 immer kostenlos</p>
+    </div>
+    <h2 class="font-serif text-3xl md:text-4xl leading-tight tracking-tight mb-4 max-w-2xl">Wenn ein Abend nicht reicht.</h2>
+    <p class="text-sm md:text-base text-on-primary-container leading-relaxed max-w-2xl mb-10">
+      Mehrteilige Formate, die über Monate zusammen wachsen — plus zwei Extras für besondere Anlässe.
+      Alles andere auf dieser Seite bleibt kostenlos; diese vier Angebote finanzieren das Projekt.
+    </p>
+    <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+  </section>
+
+  <!-- Alle freien Themen, einheitliches Grid -->
+  <h2 class="font-serif text-3xl md:text-4xl leading-tight tracking-tight text-on-background mb-10">Alle freien Themenabende</h2>
   <div id="themesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"></div>
 
   <!-- Frageabend-Familie: eigene Sektion, damit die Varianten nicht unsichtbar bleiben -->
@@ -137,7 +152,7 @@
   </div>
 </footer>
 
-<script src="themes.js?v=20260723a"></script>
+<script src="themes.js?v=20260730a"></script>
 <script>
 // Restore previous filter from URL or session
 const params = new URLSearchParams(location.search);
@@ -173,9 +188,11 @@ function renderGrid() {
   // Abende 2-7 sind paywalled und werden hier nicht einzeln gezeigt — sie erscheinen nur über reise.html / reise-wir.html.
   // Frageabende laufen in einer eigenen Sektion darunter (renderFrageabende) — hier raus,
   // sonst stünde der Basis-Frageabend doppelt auf der Seite.
+  // Bezahlprodukte (date) laufen im Produkt-Regal oben — hier zeigt das Grid nur Freies.
   const themes = Object.entries(window.THEMES)
     .filter(([id, t]) => !id.includes('_') || id === 'werte_reise_1' || id === 'wir_reise_1' || id === 'inneres_kind')
     .filter(([id, t]) => t.category !== 'Frageabend')
+    .filter(([id, t]) => id !== 'date')
     .map(([_, t]) => t);
   const filtered = currentFilter === 'all'
     ? themes
@@ -188,14 +205,15 @@ function renderGrid() {
   }
   grid.innerHTML = filtered.map((t, idx) => {
     const firstFormat = currentFilter !== 'all' ? t.formats[currentFilter] : (t.formats.group || t.formats.pair);
+    // Einstiegs-Abend einer Reise: kostenlos, aber sichtbar als Tür zum Bezahlprodukt.
+    // Zweifarbig — grün „gratis", orange der Preis der Fortsetzung (orange = kostet was).
     const reiseBadge = t.reise
-      ? `<span class="absolute top-4 left-4 bg-primary-container text-on-primary px-3 py-1 text-[9px] uppercase tracking-widest font-semibold rounded">Teil einer ${t.reise.total}-Abende-Reise</span>`
+      ? `<span class="absolute top-4 left-4 flex items-stretch text-[9px] uppercase tracking-widest font-semibold rounded overflow-hidden">
+           <span class="bg-primary-container text-on-primary px-2.5 py-1">Abend 1 gratis</span>
+           <span class="bg-secondary text-white px-2.5 py-1">Reise 29 €</span>
+         </span>`
       : '';
-    // Preis-Badge für bezahlte Einzel-Themen (Date). Werte-Reise-Badges laufen über reiseBadge.
-    const PRICES = { date: '9 €' };
-    const priceBadge = PRICES[Object.entries(window.THEMES).find(([_,v]) => v === t)?.[0]]
-      ? `<span class="absolute top-4 left-4 bg-primary-container text-on-primary px-3 py-1 text-[9px] uppercase tracking-widest font-semibold rounded">${PRICES[Object.entries(window.THEMES).find(([_,v]) => v === t)[0]]}</span>`
-      : '';
+    const priceBadge = '';
     return `
       <article class="group flex flex-col h-full">
         <a href="${cardHref(t)}" class="block">
@@ -222,6 +240,49 @@ function renderGrid() {
         </div>
       </article>`;
   }).join('');
+}
+
+// Produkt-Regal: die vier Bezahlangebote, klar als Produkte erkennbar.
+// Preise stehen zentral hier — bei Preisänderung auch PAID_GATES in thema.html anpassen.
+const PRODUCTS = [
+  { titel: 'Die Werte-Reise', preis: '29 €', statt: '39 €',
+    zeile: '6 Abende · Abend 1 kostenlos',
+    text: 'Ein halbes Jahr, sechs Abende: von „Was zählt wirklich?" über Wurzeln und Schatten bis zur Integration. Für Runden, die zusammen dranbleiben wollen.',
+    bild: 'images/werte-reise.jpg', href: 'reise.html', cta: 'Die Reise ansehen' },
+  { titel: 'Die Wir-Reise', preis: '29 €', statt: '39 €',
+    zeile: '7 Abende für Paare · Abend 1 kostenlos',
+    text: 'Sieben Abende nach der Paarforschung von John Gottman — Liebeslandkarten, Zuwendung, Konflikte, gemeinsamer Sinn. Eigenständig ausgearbeitet, kein Therapie-Ersatz.',
+    bild: 'images/wir-reise.jpg', href: 'reise-wir.html', cta: 'Die Reise ansehen' },
+  { titel: 'Erstes Date', preis: '9 €',
+    zeile: 'Ein Abend · 15 Stationen · ~1 Std. 35 Min.',
+    text: 'Ein geführtes Gespräch für zwei, die sich gerade erst treffen — leicht, flirty, ehrlich, mit einer klaren Entscheidung am Ende.',
+    bild: 'images/date.jpg', href: 'thema.html?id=date', cta: 'Ansehen' },
+  { titel: 'Der Gastgeber-Kompass', preis: '7 €',
+    zeile: 'PDF · 10 Seiten zum Ausdrucken',
+    text: 'Die Rollen des Gastgebens, Einladungs- und Eröffnungs-Skripte zum Nachsprechen, Timing, die zehn Not-Fragen — und eine herausnehmbare Kompass-Karte.',
+    bild: 'images/gastgeber-hero.jpg', href: 'gastgeber.html#kompass', cta: 'Ansehen' }
+];
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  if (!grid) return;
+  grid.innerHTML = PRODUCTS.map(p => `
+    <a href="${p.href}" class="group flex gap-4 bg-primary/30 hover:bg-primary/50 border border-secondary-fixed-dim/25 hover:border-secondary-fixed-dim/60 rounded-lg p-4 transition-colors">
+      <div class="w-24 h-28 shrink-0 overflow-hidden rounded">
+        <img loading="lazy" src="${p.bild}" alt="${p.titel}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"/>
+      </div>
+      <div class="min-w-0 flex flex-col">
+        <div class="flex items-baseline gap-2 flex-wrap">
+          <h3 class="font-serif text-xl leading-snug">${p.titel}</h3>
+          <span class="bg-secondary text-white px-2 py-0.5 text-[10px] uppercase tracking-widest font-bold rounded shrink-0">${p.preis}</span>
+          ${p.statt ? `<span class="text-[10px] text-on-primary-container/70 line-through">${p.statt}</span>` : ''}
+        </div>
+        <p class="font-label text-[10px] uppercase tracking-widest text-secondary-fixed-dim mt-1">${p.zeile}</p>
+        <p class="text-xs text-on-primary-container leading-relaxed mt-2 line-clamp-3">${p.text}</p>
+        <span class="font-label text-[10px] uppercase tracking-widest text-on-primary mt-auto pt-3 inline-flex items-center gap-1 group-hover:text-secondary-fixed-dim transition-colors">
+          ${p.cta} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </span>
+      </div>
+    </a>`).join('');
 }
 
 // Frageabend-Familie als eigene Sektion (kompaktere Karten als das Haupt-Grid)
@@ -272,6 +333,7 @@ function refresh() {
   updateFilterButtons();
   renderGrid();
   renderFrageabende();
+  renderProducts();
 }
 
 document.querySelectorAll('.format-filter').forEach(btn => {
@@ -287,9 +349,9 @@ document.querySelectorAll('.format-filter').forEach(btn => {
 
 refresh();
 </script>
-<script src="config.js?v=20260723a"></script>
-<script src="auth.js?v=20260723a"></script>
-<script src="login-ui.js?v=20260723a"></script>
-<script src="mobile-nav.js?v=20260723a"></script>
+<script src="config.js?v=20260730a"></script>
+<script src="auth.js?v=20260730a"></script>
+<script src="login-ui.js?v=20260730a"></script>
+<script src="mobile-nav.js?v=20260730a"></script>
 </body>
 </html>

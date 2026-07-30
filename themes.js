@@ -6683,7 +6683,229 @@ window.THEMES = {
         ])
       }
     }
-  }
+  },
+
+
+  // =====================================================================
+  // FREI-REISE — Zehn Abende über Wohlstand, Urteilskraft und Ruhe
+  // =====================================================================
+  frei_reise_1: {
+    title: "Wohlstand, Status — und was nur du kannst",
+    subtitle: "Frei-Reise · Abend 1 von 10 (frei)",
+    lead: "Die meisten Gespräche über Geld drehen sich um Beträge. Kaum eines um die Frage, was davon eigentlich einem selbst gehört. Dieser Abend trennt drei Dinge, die im Alltag ständig ineinanderlaufen — Geld, Wohlstand und Status —, und stellt danach die unangenehmere Frage: Was kannst du eigentlich, wofür es keine Ausbildung gibt?",
+    category: "Frei-Reise",
+    image: "images/frei-reise-1.jpg",
+    reise: { id: "frei", nr: 1, total: 10, titel: "Frei-Reise — Zehn Abende über Wohlstand, Urteilskraft und Ruhe" },
+    philosophy1: "Geld verdienen gilt als Tätigkeit. Wahrscheinlich ist es eher eine Fähigkeit — eine, die man lernen kann, und die mit einer einzigen Unterscheidung anfängt: Geld ist etwas anderes als Wohlstand, und Wohlstand etwas anderes als Status. Wer die drei durcheinanderwirft, arbeitet oft jahrelang auf das falsche Ziel zu und merkt es nicht, weil sich alle drei von innen ähnlich anfühlen.",
+    philosophy2: "Heute trennt ihr die drei. Ihr schaut nach, was von eurem Einkommen ohne euch weiterläuft. Und ihr kommt zu dem, was manchmal spezifisches Wissen genannt wird: das, wofür es keine Ausbildung gibt und was ihr euch über Neugier und Eigenart angeeignet habt. Das merkt man an sich selbst zuletzt — deshalb macht ihr diesen Teil zu zweit.\n\nWenn ihr zum Thema weiterlesen wollt: Eric Jorgensons „Der Almanach des Naval Ravikant“ versammelt viele dieser Gedanken pointiert. Für die Reise ist das Buch nicht nötig.",
+    formats: {
+      pair: {
+        label: "Zu zweit",
+        duration: "~1 Std. 45 Min.",
+        people: "2 Personen",
+        stations: withFeedback([
+          { name: "Öffnen",
+            title: "Ein Moment, bevor ihr anfangt",
+            duration: 180,
+            hostNote: "Handys stumm und außer Reichweite. Drei gemeinsame Atemzüge. Über Geld zu reden ist für die meisten unangenehmer als über Gefühle — kommt erst kurz an.",
+            description: "Ein Abend über Geld funktioniert nur, wenn niemand etwas beweisen muss. Ihr werdet euch gleich Zahlen vorlesen und Dinge zugeben, die man normalerweise für sich behält. Das geht nur unter einer Bedingung: Hier wird nicht verglichen, wer weiter ist.\n\nEine Abmachung vorweg, sprecht sie laut aus: Was heute an Zahlen fällt, bleibt zwischen euch.",
+            teaser: "Drei Atemzüge, bevor es ums Geld geht." },
+
+          { name: "Ankommen",
+            title: "Womit kommst du heute an?",
+            duration: 480,
+            hostNote: "Beide nacheinander, je vier Minuten. Die andere Person hört nur zu — nicht antworten, nicht relativieren, nicht trösten.",
+            question: "Womit kommst du heute hier an — und welcher Satz über Geld ist dir aus deinem Elternhaus geblieben?",
+            description: "Fast alle tragen einen unausgesprochenen Satz über Geld mit sich herum. „Davon redet man nicht.“ „Wir sind keine Leute, die so etwas machen.“ „Erst die Arbeit.“ Diese Sätze sind selten je geprüft worden, und sie arbeiten trotzdem weiter.\n\nSagt euren laut. Oft hört man erst beim Aussprechen, wie alt er ist.",
+            teaser: "Der Satz über Geld, den du nie geprüft hast." },
+
+          { name: "Einstieg",
+            title: "Warum kluge Sätze folgenlos bleiben",
+            duration: 480,
+            hostNote: "Eine:r liest vor. Danach kurz austauschen: Kennt ihr das?",
+            description: "Kluge Sätze über Geld gibt es reichlich — kurz, treffend, sofort einleuchtend. Genau darin liegt das Problem. Ein Satz, dem man beim Lesen zustimmt, fühlt sich an wie Verstehen, kostet aber nichts und verändert nichts. Ohne eigene Erfahrung dahinter bleibt er eine Zitatsammlung, aus der man ein hübsches Poster macht und die man dann vergisst.\n\nDeshalb ist diese Reise nicht als Lesekreis gebaut. Jeder Abend endet mit genau einer Sache, die ihr in der Woche danach tut — und der nächste Abend fängt damit an, dass ihr euch fragt, ob ihr sie getan habt. Das ist unbequem und der einzige Grund, warum sich am Ende etwas ändert.",
+            teaser: "Zustimmen fühlt sich an wie Verstehen und kostet nichts." },
+
+          { name: "Modell",
+            title: "Drei Größen, die ständig verwechselt werden",
+            duration: 420,
+            hostNote: "Eine:r liest die drei Punkte langsam vor. Danach ordnet jede:r für sich ein: Wovon habe ich am meisten?",
+            description: "Eine Unterscheidung, die banal klingt und im Alltag fast nie sauber gezogen wird. Wer sie einmal getrennt hat, sieht die eigenen Entscheidungen anders.",
+            items: [
+              { accent: "1.", label: "Geld", text: "Ein Schuldschein der Gesellschaft für Arbeit, die du schon geleistet hast. Es misst Vergangenheit." },
+              { accent: "2.", label: "Wohlstand", text: "Dinge, die Wert erzeugen, während du schläfst — Anteile, Produkte, Rechte, ein Text, der weiter gelesen wird. Es misst, was ohne dich weiterläuft." },
+              { accent: "3.", label: "Status", text: "Dein Rang in einer Rangliste. Ein Nullsummenspiel: Damit du steigst, muss jemand sinken. Es misst nur im Vergleich." }
+            ],
+            teaser: "Geld, Wohlstand, Status — drei völlig verschiedene Spiele." },
+
+          { name: "Kontoauszug",
+            title: "Was läuft weiter, wenn du aufhörst?",
+            duration: 720,
+            hostNote: "Zuerst jede:r fünf Minuten allein und schriftlich. Erst danach vorlesen. Nicht kommentieren, während die andere Person liest.",
+            description: "Schreibt eine Zeile pro Einkommensquelle der letzten zwölf Monate. Alles: Gehalt, Nebentätigkeit, Miete, Zinsen, Verkäufe, Geschenke.\n\nDann geht die Liste ein zweites Mal durch und markiert jede Zeile, die aufhört, wenn ihr drei Monate lang krank im Bett liegt.\n\nWas unmarkiert übrig bleibt, ist euer Wohlstand. Bei den meisten ist das eine sehr kurze Liste oder eine leere. Das ist kein Versagen — es ist der Ausgangspunkt, und man kann ihn nur verändern, wenn man ihn kennt.",
+            question: "Wo genau hört das Geld auf, wenn du aufhörst?",
+            teaser: "Die Liste, die man sich ungern anschaut." },
+
+          { name: "Statusspiel",
+            title: "Welches Spiel spielst du wirklich?",
+            duration: 720,
+            hostNote: "Beide nacheinander. Hier ist die Versuchung groß, sich herauszureden — die andere Person darf einmal nachfragen.",
+            description: "Statusspiele erkennt man daran, dass es ohne Publikum keinen Gewinn gibt. Beruf, Wohnort, Erziehung, Reiseziele, Fitness — überall lässt sich heimlich eine Rangliste führen.\n\nDie unangenehme Pointe: Auch Bescheidenheit ist ein Statusspiel. Wer betont, wie wenig er braucht, spielt genauso um Rang, nur auf einem anderen Feld. Und wer insgeheim gegen Wohlstand ist, baut selten welchen auf — nicht aus Prinzipientreue, sondern weil man schwer bekommt, was man verachtet.",
+            question: "Welches Statusspiel spielst du, ohne es je zugegeben zu haben?",
+            teaser: "Auch Bescheidenheit ist ein Statusspiel." },
+
+          { name: "Haken",
+            title: "Wo Ravikant sich selbst im Weg steht",
+            duration: 420,
+            hostNote: "Eine:r liest vor. Danach: Wo widersprecht ihr — ihm oder mir?",
+            description: "Damit dieser Abend kein Fanabend wird, gehört der Einwand dazu, den das Buch selbst nicht macht.\n\nRavikant zieht die Grenze zwischen Status und Ruf nicht sauber. Sein eigener Aufstieg lief maßgeblich über Reputation im Silicon Valley — also über Rang in einer Rangliste. Dass er Statusspiele für ein notwendiges Übel hält, während er von seinem eigenen erheblich profitiert hat, ist ein blinder Fleck.\n\nDazu kommt: Er erzählt seinen Weg rückwärts. Einwanderung in die USA, ein Technologieboom, ein Jahrzehnt mit historisch günstigem Kapital — das alles taucht bei ihm als Randnotiz auf und war vermutlich entscheidend.\n\nNehmt seine Unterscheidung als Denkwerkzeug. Nicht als Erfolgsrezept.",
+            teaser: "Der Einwand, den das Buch selbst nicht macht." },
+
+          { name: "Stille",
+            title: "Drei Minuten Atem",
+            duration: 180,
+            hostNote: "Timer stellen. Nicht reden. Wenn es unangenehm wird, ist es richtig.",
+            description: "Drei Minuten, in denen niemand etwas leisten muss. Der zweite Teil des Abends dreht sich um euch selbst und fällt leichter, wenn der Kopf vorher einmal leer war.",
+            teaser: "Drei Minuten nichts." },
+
+          { name: "Mühelos",
+            title: "Was du kannst, ohne es für Können zu halten",
+            duration: 840,
+            hostNote: "Zuerst jede:r drei Minuten allein notieren. Dann kommt der wichtigere Teil: Ihr sagt es einander. Zehn Minuten, beide.",
+            description: "Manchmal wird es spezifisches Wissen genannt: das, wofür es keine Ausbildung gibt und was ihr euch über Neugier und Eigenart angeeignet habt statt über einen Lehrplan. Zwei Tests dafür sind brauchbar.\n\nDer erste: Es fühlt sich für euch wie Spielen an und sieht für andere nach Arbeit aus. Der zweite, die Gegenprobe: Wenn man es euch beibringen konnte, kann man es auch jemand anderem beibringen — dann seid ihr ersetzbar.\n\nNotiert für euch: Was habt ihr mit zwölf mühelos getan, ohne es für eine Fähigkeit zu halten? Bei welchen drei Tätigkeiten vergesst ihr die Zeit? Wofür hat euch zuletzt jemand ungefragt um Rat gebeten?\n\nUnd dann der eigentliche Grund, warum dieser Abend zu zweit stattfindet: Sagt der anderen Person, was sie mühelos kann und selbst für selbstverständlich hält. Ihr seht das besser als sie. Genau deshalb übersieht man es an sich selbst.",
+            teaser: "Die andere Person sieht es besser als du." },
+
+          { name: "Schnittmenge",
+            title: "Wo dein Können auf einen Markt trifft",
+            duration: 600,
+            hostNote: "Ruhig bleiben, wenn die Antwort „nirgends“ lautet. Das ist ein Befund, kein Urteil.",
+            description: "„Folge deiner Neugier“ klingt gut und ist nur die halbe Regel. Wer echte, tiefe Neugier für Barockmusik oder Vogelstimmen hat, besitzt genauso spezifisches Wissen und keinen Markt.\n\nDie vollständige Fassung lautet: Sucht die Schnittmenge aus dem, was euch mühelos fällt, und dem, wofür jemand zahlt. Beides ist nötig.\n\nGeht die Liste aus der letzten Station durch und prüft Zeile für Zeile: Gibt jemand dafür Geld aus? Falls nirgends — ist das in Ordnung, oder soll es sich ändern? Beide Antworten sind legitim, aber sie sollten ausgesprochen sein.",
+            question: "Wo überschneidet sich das, was dir leichtfällt, mit etwas, wofür Menschen zahlen?",
+            teaser: "Neugier allein ist noch kein Markt." },
+
+          { name: "Einladung",
+            title: "Wohin die Frei-Reise führt",
+            duration: 300,
+            hostNote: "Eine:r liest vor. Danach entscheidet ihr, ob ihr weitermacht — und tragt den nächsten Termin sofort ein.",
+            description: "Zehn Abende in drei Bewegungen: erst der Standort, dann die Werkzeuge, dann das Halten. Die Reihenfolge ist bewusst nicht die eines Buches — Urteilskraft kommt vor Hebelwirkung, weil ein Hebel jede Entscheidung vervielfacht, auch die schlechte. Über Ruhe reden wir zuletzt, weil sie schwer zu finden ist, solange die Geldfrage ungelöst im Raum steht.",
+            items: [
+              { accent: "1.", label: "Heute", text: "Wohlstand, Status — und was nur du kannst." },
+              { accent: "2.", label: "Klar denken", text: "Identität ablegen und die Realität sehen, wie sie ist." },
+              { accent: "3.", label: "Entscheiden", text: "Wann Nein die Antwort ist — und wann Zögern schon ein Ja ist." },
+              { accent: "4.", label: "Der eigene Name", text: "Verantwortung, langfristige Spiele, Beteiligung." },
+              { accent: "5.", label: "Hebel", text: "Menschen, Kapital, Code, Medien — und wofür du bezahlt wirst." },
+              { accent: "6.", label: "Spielen", text: "Arbeit, die sich nicht wie Arbeit anfühlt. Und Glück, das man baut." },
+              { accent: "7.", label: "Der eine Wunsch", text: "Ruhe statt Freude — und was jeder Wunsch kostet." },
+              { accent: "8.", label: "Neid", text: "Die fünf Menschen, Akzeptanz, Endlichkeit." },
+              { accent: "9.", label: "Körper zuerst", text: "Gesundheit vor allem anderen. Gewohnheiten, die halten." },
+              { accent: "10.", label: "Freiheit", text: "Werte, Sinn, Bilanz." }
+            ],
+            teaser: "Zehn Abende, ein Bogen: erst das Geld, dann die Ruhe." },
+
+          { name: "Schritt",
+            title: "Eine Sache in dieser Woche",
+            duration: 420,
+            hostNote: "Beide legen sich fest, laut und konkret. Schreibt es auf. Abend 2 beginnt genau hier.",
+            description: "Erklärt einmal öffentlich etwas, das euch mühelos fällt. Ein Beitrag, eine Sprachnachricht an drei Leute, ein kurzer Text, ein Video — die Form ist egal, die Öffentlichkeit nicht.\n\nErledigt ist es, wenn es jemand gesehen hat, der nicht ihr zwei seid.\n\nZwei Dinge lernt ihr dabei, die man nicht lesen kann: ob es sich nach Arbeit oder nach Spielen anfühlt — und wie hoch die Hemmschwelle wirklich ist. Fast alle unterschätzen die zweite.",
+            teaser: "Erklär einmal öffentlich, was dir leichtfällt." },
+
+          { name: "Wort",
+            title: "Ein Wort, mit dem ihr geht",
+            duration: 240,
+            hostNote: "Reihum, ohne Erklärung. Ein Wort genügt.",
+            description: "Ein Wort für das, was von diesem Abend hängen bleibt. Keine Zusammenfassung, keine Begründung — das Wort darf auch unbequem sein.",
+            teaser: "Ein Wort, keine Erklärung." }
+        ])
+      },
+
+      solo: {
+        label: "Allein",
+        duration: "~1 Std.",
+        people: "Nur du",
+        stations: withFeedback([
+          { name: "Öffnen",
+            title: "Ein Moment für dich",
+            duration: 120,
+            description: "Telefon weg, Zettel und Stift bereit. Dieser Abend endet mit Zahlen und einer Entscheidung — beides fällt leichter, wenn du nicht nebenbei erreichbar bist.",
+            teaser: "Zettel, Stift, kein Telefon." },
+
+          { name: "Ankommen",
+            title: "Womit kommst du an?",
+            duration: 240,
+            question: "Welcher Satz über Geld ist dir aus deinem Elternhaus geblieben — und hast du ihn je geprüft?",
+            description: "Fast alle tragen einen unausgesprochenen Satz über Geld mit sich. Schreib deinen auf. Oft sieht man erst geschrieben, wie alt er ist.",
+            teaser: "Der Satz, den du nie geprüft hast." },
+
+          { name: "Einstieg",
+            title: "Warum kluge Sätze folgenlos bleiben",
+            duration: 240,
+            description: "Kluge Sätze über Geld gibt es reichlich. Genau darin liegt das Problem: Ein Satz, dem man zustimmt, fühlt sich an wie Verstehen, kostet nichts und ändert nichts.\n\nDeshalb endet jeder Abend dieser Reise mit genau einer Sache, die du in der Woche danach tust. Ohne diesen Teil ist es Unterhaltung.",
+            teaser: "Zustimmen fühlt sich an wie Verstehen." },
+
+          { name: "Modell",
+            title: "Drei Größen, die ständig verwechselt werden",
+            duration: 300,
+            description: "Eine Unterscheidung, die banal klingt und im Alltag fast nie sauber gezogen wird.",
+            items: [
+              { accent: "1.", label: "Geld", text: "Ein Schuldschein der Gesellschaft für Arbeit, die du schon geleistet hast. Es misst Vergangenheit." },
+              { accent: "2.", label: "Wohlstand", text: "Dinge, die Wert erzeugen, während du schläfst. Es misst, was ohne dich weiterläuft." },
+              { accent: "3.", label: "Status", text: "Dein Rang in einer Rangliste. Ein Nullsummenspiel: Damit du steigst, muss jemand sinken." }
+            ],
+            teaser: "Drei völlig verschiedene Spiele." },
+
+          { name: "Kontoauszug",
+            title: "Was läuft weiter, wenn du aufhörst?",
+            duration: 480,
+            description: "Schreib eine Zeile pro Einkommensquelle der letzten zwölf Monate. Alles.\n\nDann geh die Liste ein zweites Mal durch und markiere jede Zeile, die aufhört, wenn du drei Monate krank im Bett liegst.\n\nWas unmarkiert übrig bleibt, ist dein Wohlstand. Bei den meisten ist die Liste kurz oder leer. Das ist kein Versagen, sondern der Ausgangspunkt — und man kann ihn nur verändern, wenn man ihn kennt.",
+            teaser: "Die Liste, die man sich ungern anschaut." },
+
+          { name: "Statusspiel",
+            title: "Welches Spiel spielst du wirklich?",
+            duration: 360,
+            question: "Welches Statusspiel spielst du, ohne es dir einzugestehen?",
+            description: "Statusspiele erkennt man daran, dass es ohne Publikum keinen Gewinn gibt. Beruf, Wohnort, Erziehung, Fitness — überall lässt sich heimlich eine Rangliste führen.\n\nDie unangenehme Pointe: Auch Bescheidenheit ist eine. Wer betont, wie wenig er braucht, spielt um denselben Rang, nur auf einem anderen Feld.",
+            teaser: "Auch Bescheidenheit ist ein Statusspiel." },
+
+          { name: "Haken",
+            title: "Wo Ravikant sich selbst im Weg steht",
+            duration: 240,
+            description: "Damit das hier keine Heldenverehrung wird, der Einwand, den das Buch selbst nicht macht.\n\nRavikant trennt Status und Ruf nicht sauber — sein eigener Aufstieg lief maßgeblich über Reputation im Silicon Valley, also über Rang. Und er erzählt seinen Weg rückwärts: Einwanderung in die USA, ein Technologieboom, ein Jahrzehnt mit billigem Kapital erscheinen bei ihm als Randnotiz und waren vermutlich entscheidend.\n\nNimm seine Unterscheidung als Denkwerkzeug, nicht als Erfolgsrezept.",
+            teaser: "Der Einwand, den das Buch nicht macht." },
+
+          { name: "Mühelos",
+            title: "Was du kannst, ohne es für Können zu halten",
+            duration: 480,
+            description: "Manchmal wird es spezifisches Wissen genannt: das, wofür es keine Ausbildung gibt. Zwei Tests sind brauchbar. Erstens: Es fühlt sich für dich wie Spielen an und sieht für andere nach Arbeit aus. Zweitens, die Gegenprobe: Wenn man es dir beibringen konnte, kann man es auch jemand anderem beibringen — dann bist du ersetzbar.\n\nSchreib auf: Was hast du mit zwölf mühelos getan, ohne es für eine Fähigkeit zu halten? Bei welchen drei Tätigkeiten vergisst du die Zeit? Wofür hat dich zuletzt jemand ungefragt um Rat gebeten?\n\nUnd weil man das an sich selbst zuletzt merkt: Schreib heute drei Menschen an, die dich seit über zehn Jahren kennen, und stell ihnen genau eine Frage — was ist dir an mir früher aufgefallen, das mir selbst wahrscheinlich nicht auffiel?",
+            teaser: "Frag drei Menschen, die dich lange kennen." },
+
+          { name: "Schnittmenge",
+            title: "Wo dein Können auf einen Markt trifft",
+            duration: 360,
+            question: "Wo überschneidet sich das, was dir leichtfällt, mit etwas, wofür Menschen zahlen?",
+            description: "„Folge deiner Neugier“ ist nur die halbe Regel. Wer echte Neugier für Barockmusik hat, besitzt spezifisches Wissen und keinen Markt.\n\nDie vollständige Fassung: die Schnittmenge aus dem, was dir mühelos fällt, und dem, wofür jemand zahlt. Geh deine Liste durch und prüfe jede Zeile. Falls nirgends etwas passt — ist das in Ordnung, oder soll es sich ändern?",
+            teaser: "Neugier allein ist noch kein Markt." },
+
+          { name: "Ausblick",
+            title: "Was die nächsten Abende bringen",
+            duration: 180,
+            description: "Zehn Abende in drei Bewegungen: erst der Standort, dann die Werkzeuge, dann das Halten. Urteilskraft kommt vor Hebelwirkung, weil ein Hebel jede Entscheidung vervielfacht — auch die schlechte.\n\nAbend 2 fragt, welche deiner Überzeugungen du selbst durchdacht hast und welche du im Paket übernommen hast.",
+            teaser: "Erst das Geld, dann die Ruhe." },
+
+          { name: "Schritt",
+            title: "Eine Sache in dieser Woche",
+            duration: 180,
+            description: "Erklär einmal öffentlich etwas, das dir mühelos fällt. Beitrag, Sprachnachricht an drei Leute, kurzer Text, Video — die Form ist egal, die Öffentlichkeit nicht.\n\nErledigt ist es, wenn es jemand gesehen hat, den du nicht darum gebeten hast.",
+            teaser: "Erklär einmal öffentlich, was dir leichtfällt." },
+
+          { name: "Wort",
+            title: "Ein Wort als Anker",
+            duration: 120,
+            description: "Ein Wort für das, was von diesem Abend bleibt. Schreib es auf die erste Seite deines Notizbuchs. In Abend 10 liest du es wieder.",
+            teaser: "Ein Wort, aufgeschrieben." }
+        ])
+      }
+    }
+  },
 
 };
 

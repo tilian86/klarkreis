@@ -19,8 +19,8 @@
 <meta name="robots" content="index, follow"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260723a" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260723a"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730a" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260730a"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -40,8 +40,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260723a"/>
-<script src="theme-toggle.js?v=20260723a"></script>
+<link rel="stylesheet" href="dark.css?v=20260730a"/>
+<script src="theme-toggle.js?v=20260730a"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
 <header class="w-full top-0 border-none bg-[#FBF9F4] sticky z-50">
@@ -193,8 +193,8 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-<script src="themes.js?v=20260723a"></script>
-<script src="player.js?v=20260723a"></script>
+<script src="themes.js?v=20260730a"></script>
+<script src="player.js?v=20260730a"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
@@ -220,12 +220,20 @@ const PAID_GATES = {
   werte_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_werte_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Werte-Reise · Abend 2 – 6', subtitle: 'Fünf geführte Abende als Paket', body: 'Abend 1 („Was zählt wirklich?") ist frei zugänglich — die fünf weiteren Abende führen durch Vokabular (Schwartz, Rokeach), Wurzeln (Simone Weil), Schatten (C.G. Jung, Brené Brown), harte Entscheidungen (Ruth Chang) und Integration (Aristoteles). Für Kleingruppen, Paare und Solo-Reflexion. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WERTE_REISE_LINK' },
   werte_reise_3: null, werte_reise_4: null, werte_reise_5: null, werte_reise_6: null, // Fallback unten
   wir_reise_2: { password: 'privat', unlockKey: 'klarkreis:unlocked_wir_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Wir-Reise · Abend 2 – 7', subtitle: 'Sechs geführte Abende nach John Gottman', body: 'Abend 1 („Wir — sehen, was uns trägt") ist frei zugänglich. Die sechs weiteren Abende führen euch durch John Gottmans „Sieben Geheimnisse der glücklichen Ehe" — Liebeslandkarten, Zuneigung und Bewunderung, Sich-Zuwenden, Einfluss zulassen, Konflikte (lösbar und ewig), Gemeinsamer Sinn. Für Paare. Solo- und Paar-Format jeweils enthalten. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_WIR_REISE_LINK' },
-  wir_reise_3: null, wir_reise_4: null, wir_reise_5: null, wir_reise_6: null, wir_reise_7: null
+  wir_reise_3: null, wir_reise_4: null, wir_reise_5: null, wir_reise_6: null, wir_reise_7: null,
+  // Frei-Reise: vorerst KOMPLETT hinter Passwort — auch Abend 1. Zum Launch
+  // 'frei_reise_1' unten aus der Liste nehmen, dann ist Abend 1 frei wie bei
+  // den anderen Reisen.
+  frei_reise_1: { password: 'privat', unlockKey: 'klarkreis:unlocked_frei_reise', price: '29 €', priceNote: 'Launch-Preis (regulär 39 €) · einmalig', title: 'Frei-Reise · Abend 1 – 10', subtitle: 'Zehn geführte Abende über Wohlstand, Urteilskraft und Ruhe', body: 'Zehn Abende in drei Bewegungen: erst der Standort, dann die Werkzeuge, dann das Halten. Jeder Abend endet mit genau einer Sache, die ihr in der Woche danach tut — und der nächste beginnt mit der Frage, ob ihr sie getan habt. Zu zweit und im Solo-Format. Einmal gekauft, dauerhafter Zugang auf allen Geräten.', stripeLink: 'https://buy.stripe.com/REPLACE_MIT_FREI_REISE_LINK' },
+  frei_reise_2: null, frei_reise_3: null, frei_reise_4: null, frei_reise_5: null,
+  frei_reise_6: null, frei_reise_7: null, frei_reise_8: null, frei_reise_9: null, frei_reise_10: null
 };
 // Alle Werte-Reise-Abende 2-6 teilen dieselbe Gate-Config
 ['werte_reise_3','werte_reise_4','werte_reise_5','werte_reise_6'].forEach(k => { PAID_GATES[k] = PAID_GATES.werte_reise_2; });
 // Alle Wir-Reise-Abende 2-7 teilen dieselbe Gate-Config
 ['wir_reise_3','wir_reise_4','wir_reise_5','wir_reise_6','wir_reise_7'].forEach(k => { PAID_GATES[k] = PAID_GATES.wir_reise_2; });
+// Alle Frei-Reise-Abende teilen dieselbe Gate-Config
+['frei_reise_2','frei_reise_3','frei_reise_4','frei_reise_5','frei_reise_6','frei_reise_7','frei_reise_8','frei_reise_9','frei_reise_10'].forEach(k => { PAID_GATES[k] = PAID_GATES.frei_reise_1; });
 
 // Auto-Unlock nach Stripe-Checkout — Stripe Success-URL enthält ?unlock=<produkt>
 (function() {
@@ -234,6 +242,7 @@ const PAID_GATES = {
   if (unlockCode === 'date') localStorage.setItem('klarkreis:unlocked_date', '1');
   if (unlockCode === 'werte_reise') localStorage.setItem('klarkreis:unlocked_werte_reise', '1');
   if (unlockCode === 'wir_reise') localStorage.setItem('klarkreis:unlocked_wir_reise', '1');
+  if (unlockCode === 'frei_reise') localStorage.setItem('klarkreis:unlocked_frei_reise', '1');
   // Master-Unlock für Tests (Florian): schaltet alle Produkte auf diesem Gerät frei
   if (unlockCode === 'alles') localStorage.setItem('klarkreis:unlocked', '1');
   if (unlockCode) {
@@ -497,7 +506,7 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
     </a>`;
 }).join('');
 </script>
-<script src="mobile-nav.js?v=20260723a"></script>
-<script src="page-audio.js?v=20260723a"></script>
+<script src="mobile-nav.js?v=20260730a"></script>
+<script src="page-audio.js?v=20260730a"></script>
 </body>
 </html>
