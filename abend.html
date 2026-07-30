@@ -324,7 +324,7 @@ let format = theme.formats[formatKey] || theme.formats.group;
 let stations = format.stations;
 
 let currentIdx = 0;
-let timeLeft = stations[0].duration;
+let timeLeft = stations ? stations[0].duration : 0;   // Bezahlabend: erst nach Freischaltung gefüllt
 let timerInterval = null;
 let paused = false;
 let rating = 0;
@@ -742,7 +742,6 @@ el.toggleTimerBtn.addEventListener('click', () => {
 // Start: bei bezahlten Abenden zuerst den Zugang serverseitig prüfen und den
 // Inhalt laden. Ohne gültige Berechtigung zurück auf die Kaufseite.
 (async function boot() {
-  console.log('[boot] gestartet, paid =', theme.paid);
   if (theme.paid) {
     const res = await KlarKreisPaid.ensure(themaId, theme);
     if (!res.ok) {
