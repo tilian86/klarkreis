@@ -215,5 +215,37 @@
     }
   };
 
+  // ===== Bezahlinhalte =====
+  // Die Stationen der bezahlten Abende liegen NICHT im Repo, sondern in der
+  // Tabelle paid_content. Row-Level-Security gibt sie nur heraus, wenn für den
+  // eingeloggten Account eine gültige Berechtigung (entitlements) existiert.
+  // Ohne Login/Kauf kommt eine leere Antwort — serverseitig, nicht umgehbar.
+  auth.myEntitlements = async () => {
+    await auth.ready;
+    if (!auth._user) return [];
+    const { data, error } = await auth._client
+      .from('entitlements').select('product, expires_at');
+    if (error) { console.error('[auth] entitlements:', error); return []; }
+    const now = Date.now();
+    return (data || [])
+      .filter(r => !r.expires_at || new Date(r.expires_at).getTime() > now)
+      .map(r => r.product);
+  };
+
+  auth.hasProduct = async (product) => {
+    if (!product) return true;
+    return (await auth.myEntitlements()).includes(product);
+  };
+
+  // Liefert das formats-Objekt eines bezahlten Abends oder null (kein Zugang).
+  auth.loadPaidFormats = async (themeId) => {
+    await auth.ready;
+    if (!auth._user) return null;
+    const { data, error } = await auth._client
+      .from('paid_content').select('payload').eq('theme_id', themeId).maybeSingle();
+    if (error) { console.error('[auth] loadPaidFormats:', error); return null; }
+    return data ? data.payload : null;
+  };
+
   window.KLARKREIS_AUTH = auth;
 })();

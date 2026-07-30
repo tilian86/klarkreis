@@ -199,6 +199,9 @@
   // React to auth changes
   auth.onChange(() => updateButtonLabel());
 
+  // Von außen aufrufbar (z.B. Paywall-Modal auf thema.html)
+  window.KlarKreisLoginUI = { open: openLoginModal };
+
   // Mount when DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mountButton);

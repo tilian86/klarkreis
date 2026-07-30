@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730b" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260730b"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730c" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260730c"/>
 <style>
   body { font-family: 'Inter', sans-serif; color: #1B1C19; background: #F0EEE9; }
   .font-serif { font-family: 'Noto Serif', serif; }
@@ -151,8 +151,8 @@
     @page { size: A5 landscape; margin: 0; }
   }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260730b"/>
-<script src="theme-toggle.js?v=20260730b"></script>
+<link rel="stylesheet" href="dark.css?v=20260730c"/>
+<script src="theme-toggle.js?v=20260730c"></script>
 </head>
 <body class="min-h-screen">
 
@@ -185,24 +185,19 @@
   <div id="karten"></div>
 </main>
 
-<script src="themes.js?v=20260730b"></script>
+<script src="themes.js?v=20260730c"></script>
+<script src="config.js?v=20260730c"></script>
+<script src="auth.js?v=20260730c"></script>
+<script src="login-ui.js?v=20260730c"></script>
+<script src="paid.js?v=20260730c"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
 
-// Paywall-Redirect: kostenpflichtige Abende laufen über thema.html (Kauf-Modal).
-// Muss mit PAID_GATES in thema.html synchron bleiben.
-(function() {
-  let key = null;
-  if (id === 'date') key = 'klarkreis:unlocked_date';
-  else if (/^werte_reise_[2-6]$/.test(id)) key = 'klarkreis:unlocked_werte_reise';
-  else if (/^wir_reise_[2-7]$/.test(id)) key = 'klarkreis:unlocked_wir_reise';
-  if (key && localStorage.getItem(key) !== '1' && localStorage.getItem('klarkreis:unlocked') !== '1') {
-    location.replace('thema.html?id=' + encodeURIComponent(id));
-    throw new Error('gated');
-  }
-})();
+// Kostenpflichtige Abende: Zugang wird serverseitig geprüft (siehe paid.js),
+// der Karteninhalt erst nach gültiger Berechtigung geladen. Passiert im
+// Bootstrap unten vor dem ersten render().
 
 const FORMAT_LABEL = { group: 'Kleine Gruppe', pair: 'Zu zweit', solo: 'Allein' };
 
@@ -298,8 +293,16 @@ function render() {
   });
 })();
 
-render();
+// Start: bezahlte Karten erst nach serverseitiger Freigabe zeichnen.
+(async function boot() {
+  const t = window.THEMES[id];
+  if (t && t.paid) {
+    const res = await KlarKreisPaid.ensure(id, t);
+    if (!res.ok) { location.replace('thema.html?id=' + encodeURIComponent(id)); return; }
+  }
+  render();
+})();
 </script>
-<script src="mobile-nav.js?v=20260730b"></script>
+<script src="mobile-nav.js?v=20260730c"></script>
 </body>
 </html>
