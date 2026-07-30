@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730b" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260730b"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730c" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20260730c"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -68,7 +68,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260730b"/>
+<link rel="stylesheet" href="dark.css?v=20260730c"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -302,29 +302,26 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20260730b"></script>
-<script src="player.js?v=20260730b"></script>
-<script src="questions.js?v=20260730b"></script>
+<script src="themes.js?v=20260730c"></script>
+<script src="config.js?v=20260730c"></script>
+<script src="auth.js?v=20260730c"></script>
+<script src="login-ui.js?v=20260730c"></script>
+<script src="paid.js?v=20260730c"></script>
+<script src="player.js?v=20260730c"></script>
+<script src="questions.js?v=20260730c"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
 
-// Paywall-Redirect: kostenpflichtige Abende laufen über thema.html (Kauf-Modal).
-// Muss mit PAID_GATES in thema.html synchron bleiben.
-(function() {
-  let key = null;
-  if (themaId === 'date') key = 'klarkreis:unlocked_date';
-  else if (/^werte_reise_[2-6]$/.test(themaId)) key = 'klarkreis:unlocked_werte_reise';
-  else if (/^wir_reise_[2-7]$/.test(themaId)) key = 'klarkreis:unlocked_wir_reise';
-  if (key && localStorage.getItem(key) !== '1' && localStorage.getItem('klarkreis:unlocked') !== '1') {
-    location.replace('thema.html?id=' + encodeURIComponent(themaId));
-    throw new Error('gated');
-  }
-})();
 const theme = window.THEMES[themaId] || window.THEMES.bindung;
-const format = theme.formats[formatKey] || theme.formats.group;
-const stations = format.stations;
+// Kostenpflichtige Abende: Stationen liegen serverseitig (paid_content) und werden
+// erst nach Login + gültiger Berechtigung geladen. Ohne Zugang → zurück zum Kauf-Modal.
+// Der Ladevorgang blockiert den Start, damit `stations` unten garantiert gefüllt ist.
+// Bei Bezahlabenden sind format/stations zunächst leer und werden im Start-Bootstrap
+// (unten, vor dem ersten render()) serverseitig nachgeladen — daher `let`.
+let format = theme.formats[formatKey] || theme.formats.group;
+let stations = format.stations;
 
 let currentIdx = 0;
 let timeLeft = stations[0].duration;
@@ -742,7 +739,25 @@ el.toggleTimerBtn.addEventListener('click', () => {
   el.toggleTimerLabel.textContent = paused ? 'Timer fortsetzen' : 'Timer pausieren';
 });
 
-render();
+// Start: bei bezahlten Abenden zuerst den Zugang serverseitig prüfen und den
+// Inhalt laden. Ohne gültige Berechtigung zurück auf die Kaufseite.
+(async function boot() {
+  if (theme.paid) {
+    const res = await KlarKreisPaid.ensure(themaId, theme);
+    if (!res.ok) {
+      location.replace('thema.html?id=' + encodeURIComponent(themaId));
+      return;
+    }
+    format = theme.formats[formatKey] || theme.formats.pair || theme.formats.group;
+    stations = format.stations;
+    const wm = KlarKreisPaid.watermark();
+    if (wm) {
+      const el = document.getElementById('themeLabel');
+      if (el) el.title = wm;
+    }
+  }
+  render();
+})();
 </script>
 </body>
 </html>
