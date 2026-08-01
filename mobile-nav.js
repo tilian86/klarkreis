@@ -16,8 +16,20 @@
 .kk-mobile-menu a:last-child{border-bottom:0}
 .kk-mobile-menu a:hover{background:rgba(146,76,0,.04);color:#924c00}
 .kk-mobile-menu a.kk-active{color:#924c00;font-weight:600}
-@media (max-width:1023px){
+/* Die volle Leiste braucht rund 780 px. Tailwinds lg (1024 px) schaltete den Burger
+   deshalb unnoetig frueh ein — z.B. bei Browsern mit seitlicher Tab-Leiste oder
+   leicht erhoehtem Zoom. Schwelle daher auf 880 px, mit etwas Luft. */
+@media (max-width:879px){
   .kk-burger{display:inline-flex;align-items:center;justify-content:center}
+}
+@media (min-width:880px){
+  /* Attribut-Selektoren statt lg\:flex — im JS-Template gehen Escapes sonst
+     verloren und die Regel wird ungueltig. */
+  header [class~="lg:flex"], nav[class~="lg:flex"], nav [class~="lg:flex"]{display:flex}
+  .kk-mobile-menu{display:none !important}
+  /* Der schwebende Abendmodus-Knopf traegt lg:hidden (blendet erst ab 1024 aus).
+     Da die Leiste jetzt frueher erscheint, saesse er sonst doppelt im Bild. */
+  .kk-theme-toggle[class~="lg:hidden"]{display:none !important}
 }`;
 
   function inject() {
