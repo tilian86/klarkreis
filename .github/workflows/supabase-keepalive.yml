@@ -1,16 +1,29 @@
 name: Supabase Keep-Alive
 
-# Verhindert, dass das Free-Tier-Projekt nach 7 Tagen Inaktivität pausiert wird.
-# Macht einmal täglich (03:00 UTC = 05:00 deutsche Zeit im Sommer) einen
-# kleinen Read-Request an die Supabase-REST-API.
+# Verhindert, dass das Free-Tier-Projekt nach 7 Tagen Inaktivität pausiert.
 #
-# Außerdem hält der wöchentliche workflow-eigene Commit-Free-Lauf den
-# GitHub-Actions-Schedule selbst aktiv (sonst würde GitHub diesen Workflow
-# nach 60 Tagen Repo-Inaktivität pausieren).
+# Lektion vom 18.09.2026: Bis dahin schickte dieser Job täglich einen
+# LESE-Request. Er lief jeden Tag sauber durch – und Supabase schickte am
+# 10.09. trotzdem die Pause-Warnung (beim Schwesterprojekt „leselog" wurde
+# die Pause am 18.09. sogar vollzogen, trotz grünem Ping). Ein Lesezugriff,
+# den RLS auf eine leere Antwort reduziert, zählt dort nicht als
+# „ausreichende Aktivität".
+#
+# Darum jetzt ein echter SCHREIBzugriff: die RPC-Funktion keepalive_ping()
+# setzt einen Zeitstempel in der einzeiligen Tabelle public.keepalive.
+# Das erzeugt WAL und ist damit unbestreitbar Datenbank-Aktivität.
+#
+# Bewusst ohne Geheimnis: keepalive_ping() ist security definer und kann
+# NUR diese eine feste Zeile anfassen – die Tabelle selbst ist für anon
+# per RLS gesperrt, es gibt keinen Datenzugriff und nichts kann wachsen.
+#
+# Zweite, unabhängige Sicherung läuft auf dem Funk-Server
+# (~/bin/supabase-keepalive.sh) – GitHubs Zeitplan wird unter Last gerne
+# um Stunden verschleppt oder ganz übersprungen.
 
 on:
   schedule:
-    - cron: "0 3 * * *"      # täglich 03:00 UTC
+    - cron: "9 3 * * *"       # täglich ~03:09 UTC; krumme Minute = weniger Verzug
   workflow_dispatch:           # manueller Trigger im UI
 
 permissions:
@@ -20,39 +33,32 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase REST-API
+      - name: Supabase anpingen (Schreibzugriff)
         env:
           SUPABASE_URL: https://liqnavdghqhhavgkhgpx.supabase.co
-          # Publishable Anon-Key – ist clientseitig sowieso öffentlich,
-          # daher unbedenklich hier im Klartext (siehe config.js)
+          # Publishable Anon-Key – steht clientseitig sowieso in config.js
           SUPABASE_ANON_KEY: sb_publishable_5lEVXLCtoG6yvY1w-Q5Xcw_Y9V46rjy
         run: |
           set -u
-          # Leichtgewichtiger Read auf 'profiles' (Tabelle existiert laut
-          # supabase/README.md im Repo).
-          # Wir akzeptieren 200/206 (OK) und auch 401/403 – die zeigen
-          # immerhin, dass die Instanz läuft (Anti-False-Positive).
-          # Bei transienten Errors (521/522/502 von Cloudflare, 5xx, etc.)
-          # versuchen wir es bis zu 3× mit Wartezeit, damit kurze Hänger
-          # nicht zu Fehl-Mails führen.
+          # Bis zu 3 Versuche, damit kurze Cloudflare-Hänger (521/522)
+          # keine Fehl-Mails auslösen.
           attempt=0
           max_attempts=3
           while : ; do
             attempt=$((attempt+1))
             status=$(curl -s -o /tmp/resp.txt -w "%{http_code}" \
-              --max-time 30 \
+              --max-time 30 -X POST \
               -H "apikey: $SUPABASE_ANON_KEY" \
-              -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
-              "$SUPABASE_URL/rest/v1/profiles?select=id&limit=1" || echo "000")
-            echo "Attempt $attempt → HTTP $status"
-            case "$status" in
-              200|206|401|403)
-                echo "✓ Supabase ist erreichbar."
-                exit 0
-                ;;
-            esac
+              -H "Content-Type: application/json" \
+              -d '{}' \
+              "$SUPABASE_URL/rest/v1/rpc/keepalive_ping" || echo "000")
+            echo "Versuch $attempt → HTTP $status"
+            if [ "$status" = "200" ]; then
+              echo "✓ Schreib-Ping gesetzt: $(cat /tmp/resp.txt)"
+              exit 0
+            fi
             if [ "$attempt" -ge "$max_attempts" ]; then
-              echo "✗ Nach $attempt Versuchen kein erfolgreicher Response."
+              echo "::error::Keep-Alive fehlgeschlagen (HTTP $status) – Projekt pausiert?"
               head -c 500 /tmp/resp.txt; echo
               exit 1
             fi
