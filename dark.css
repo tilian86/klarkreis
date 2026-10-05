@@ -106,3 +106,7 @@
 .dark .film-grain { opacity: 0.04; }
 
 } /* @media screen */
+
+/* Nichts darf seitlich überstehen (Deko-Kreise, breite Leisten): sonst lässt sich die Seite
+   auf dem iPhone hin- und herschieben. clip statt hidden, damit sticky-Kopfleisten bleiben. */
+html, body { overflow-x: clip; }

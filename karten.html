@@ -2,7 +2,7 @@
 <html class="light" lang="de">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
 <title>Moderationskarten — KlarKreis</title>
 <meta name="description" content="Druckbare Moderationskarten für KlarKreis-Themenabende. Pro Station eine Karte, A5 quer — zum Durchblättern beim Gastgeben."/>
 <meta name="robots" content="noindex"/>
@@ -127,7 +127,7 @@
     display: flex;
     flex-direction: column;
   }
-  .karte-cover h1 { font-family: 'Noto Serif', serif; font-size: 2.5rem; color: #fff; margin: 1rem 0; padding: 0 2rem; line-height: 1.15; }
+  .karte-cover h1 { font-family: 'Noto Serif', serif; font-size: clamp(1.6rem, 7vw, 2.5rem); hyphens: auto; overflow-wrap: break-word; color: #fff; margin: 1rem 0; padding: 0 2rem; line-height: 1.15; }
   .karte-cover .sub { font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: #FDA055; }
   .karte-cover .logo { font-family: 'Noto Serif', serif; font-style: italic; font-size: 1.2rem; color: #b7895b; margin-bottom: 1.5rem; }
   .karte-cover .format { font-size: 0.85rem; color: #FDA055; margin-top: 1.5rem; }
@@ -151,7 +151,7 @@
     @page { size: A5 landscape; margin: 0; }
   }
 </style>
-<link rel="stylesheet" href="dark.css?v=20260730j"/>
+<link rel="stylesheet" href="dark.css?v=20261005a"/>
 <script src="theme-toggle.js?v=20260730j"></script>
 </head>
 <body class="min-h-screen">
@@ -167,7 +167,7 @@
       <span class="text-white/40">·</span>
       <span class="text-sm text-white/80">Moderationskarten</span>
     </div>
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 flex-wrap">
       <select id="themaSelect" class="bg-[#1B3022] border border-white/20 text-white text-sm rounded px-3 py-1.5 hover:border-white/40 transition-colors"></select>
       <select id="formatSelect" class="bg-[#1B3022] border border-white/20 text-white text-sm rounded px-3 py-1.5 hover:border-white/40 transition-colors"></select>
       <button onclick="window.print()" class="inline-flex items-center gap-2 bg-[#FDA055] hover:bg-[#B7895B] text-[#1B3022] text-sm font-semibold uppercase tracking-widest px-4 py-2 rounded transition-colors">
