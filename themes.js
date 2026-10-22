@@ -134,7 +134,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 50 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen (Paar oder Freundschaft)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -263,7 +263,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 20 Min.',
+        duration: '~2 Std. 25 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -367,7 +367,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 35 Min.',
+        duration: '~1 Std. 30 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -487,7 +487,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 20 Min.',
+        duration: '~2 Std. 10 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -570,7 +570,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 50 Min.',
+        duration: '~1 Std. 45 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -637,7 +637,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 20 Min.',
+        duration: '~2 Std. 10 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -853,7 +853,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -989,7 +989,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -1060,7 +1060,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 25 Min.',
+        duration: '~2 Std. 15 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -1140,7 +1140,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '2 Personen (Date, Paar, Freundschaft)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -1254,7 +1254,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std.',
+        duration: '~1 Std. 5 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wie ist deine Arbeitswoche?', duration: 7*60,
@@ -1304,7 +1304,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe (Vertraut)',
-        duration: '~1 Std. 40 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Womit kommst du heute hier an?', duration: 12*60,
@@ -1349,7 +1349,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit (Vertraut)',
-        duration: '~1 Std. 15 Min.',
+        duration: '~1 Std. 5 Min.',
         people: '2 Personen, die einander vertrauen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wie ehrlich bist du heute?', duration: 8*60,
@@ -1569,7 +1569,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 10 Min.',
+        duration: '~1 Std. 15 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wo kommst du her?', duration: 8*60,
@@ -1804,7 +1804,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~1 Std. 40 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Worauf freust du dich?', duration: 10*60,
@@ -1865,7 +1865,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 5 Min.',
+        duration: '~1 Std. 10 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Worauf freust du dich?', duration: 8*60,
@@ -1948,7 +1948,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~1 Std. 35 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wie geht\'s dir — wirklich?', duration: 8*60,
@@ -2006,7 +2006,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std.',
+        duration: '~1 Std. 5 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wie geht\'s dir — wirklich?', duration: 8*60,
@@ -2162,7 +2162,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 20 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen (Paar oder enge Freundschaft)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -2206,7 +2206,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~60 Min.',
+        duration: '~1 Std. 10 Min.',
         people: 'Nur du',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
@@ -2376,7 +2376,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 40 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '2 Personen (Paar, Familie, enge Freundschaft)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -2424,7 +2424,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~60 Min.',
+        duration: '~1 Std. 5 Min.',
         people: 'Nur du',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
@@ -2514,7 +2514,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 25 Min.',
+        duration: '~2 Std. 15 Min.',
         people: '3-10 Personen (idealerweise mit eigener ADHS-Erfahrung oder nahe am Thema)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -2765,7 +2765,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 15 Min.',
+        duration: '~2 Std. 5 Min.',
         people: '3-8 Personen, die einander wohlwollen (eher kleiner Kreis — das Thema trägt weit)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -2875,7 +2875,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen — Paar oder enge Freund:innen, die einander vertrauen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr beginnt', duration: 3*60,
@@ -3052,7 +3052,7 @@ window.THEMES = {
     formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen aus einer Familie',
         stations: withFeedback([
           { name: 'Konstellation', title: 'Wer ist heute mit dir hier?', duration: 4*60,
@@ -3125,7 +3125,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Vorbereitung allein',
-        duration: '~30 Min.',
+        duration: '~35 Min.',
         people: 'Nur du — bevor du mit deinem Menschen an den Tisch gehst',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du planst', duration: 2*60,
@@ -3189,7 +3189,7 @@ window.THEMES = {
     formats: {
       group: {
         label: "Kleine Gruppe",
-        duration: "~2 Std. 15 Min.",
+        duration: "~2 Std. 5 Min.",
         people: "3-10 Personen",
         stations: withFeedback([
           { name: "Öffnen",
@@ -3295,7 +3295,7 @@ window.THEMES = {
       },
       pair: {
         label: "Zu zweit",
-        duration: "~1 Std. 50 Min.",
+        duration: "~1 Std. 45 Min.",
         people: "2 Personen (Paar, Freundschaft, Familie)",
         stations: withFeedback([
           { name: "Öffnen",
@@ -3400,7 +3400,7 @@ window.THEMES = {
       },
       solo: {
         label: "Allein",
-        duration: "~65 Min.",
+        duration: "~1 Std.",
         people: "Nur du",
         stations: withFeedback([
           { name: "Öffnen",
@@ -3523,7 +3523,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen',
         stationCount: 10,
         totalMinutes: 91,
@@ -3531,7 +3531,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~45 Min.',
+        duration: '~40 Min.',
         people: 'Nur du',
         stationCount: 10,
         totalMinutes: 46,
@@ -3569,7 +3569,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~45 Min.',
+        duration: '~40 Min.',
         people: 'Nur du',
         stationCount: 11,
         totalMinutes: 45,
@@ -3607,7 +3607,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~45 Min.',
+        duration: '~40 Min.',
         people: 'Nur du',
         stationCount: 10,
         totalMinutes: 46,
@@ -3629,7 +3629,7 @@ window.THEMES = {
         formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std.',
+        duration: '~2 Std. 5 Min.',
         people: '3-10 Personen',
         stationCount: 15,
         totalMinutes: 130,
@@ -3637,7 +3637,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 30 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen',
         stationCount: 11,
         totalMinutes: 91,
@@ -3645,7 +3645,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~45 Min.',
+        duration: '~40 Min.',
         people: 'Nur du',
         stationCount: 9,
         totalMinutes: 47,
@@ -3683,7 +3683,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~45 Min.',
+        duration: '~40 Min.',
         people: 'Nur du',
         stationCount: 10,
         totalMinutes: 45,
@@ -3824,7 +3824,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 35 Min.',
+        duration: '~1 Std. 30 Min.',
         people: '2 Personen nach dem ersten Match',
         stationCount: 15,
         totalMinutes: 97,
@@ -3860,7 +3860,7 @@ window.THEMES = {
     formats: {
       pair: {
         label: "Zu zweit",
-        duration: "~2 Std.",
+        duration: "~1 Std. 55 Min.",
         people: "2 Personen",
         stations: withFeedback([
           { name: "Öffnen",
@@ -3983,7 +3983,7 @@ window.THEMES = {
       },
       solo: {
         label: "Allein",
-        duration: "~1 Std.",
+        duration: "~50 Min.",
         people: "Nur du",
         stations: withFeedback([
           { name: "Öffnen",
@@ -4106,7 +4106,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 40 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '2 Personen',
         stationCount: 12,
         totalMinutes: 101,
@@ -4114,7 +4114,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~50 Min.',
+        duration: '~45 Min.',
         people: 'Nur du',
         stationCount: 9,
         totalMinutes: 52,
@@ -4136,7 +4136,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 106,
@@ -4144,7 +4144,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~55 Min.',
+        duration: '~50 Min.',
         people: 'Nur du',
         stationCount: 10,
         totalMinutes: 56,
@@ -4166,7 +4166,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 106,
@@ -4196,7 +4196,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~2 Std.',
+        duration: '~1 Std. 55 Min.',
         people: '2 Personen',
         stationCount: 14,
         totalMinutes: 120,
@@ -4260,7 +4260,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4268,7 +4268,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4290,7 +4290,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4298,7 +4298,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4320,7 +4320,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4328,7 +4328,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4350,7 +4350,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4358,7 +4358,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4380,7 +4380,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4388,7 +4388,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4410,7 +4410,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4418,7 +4418,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4440,7 +4440,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4448,7 +4448,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4470,7 +4470,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4478,7 +4478,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4500,7 +4500,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4508,7 +4508,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 60,
@@ -4530,7 +4530,7 @@ window.THEMES = {
         formats: {
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 40 Min.',
         people: '2 Personen',
         stationCount: 13,
         totalMinutes: 105,
@@ -4538,7 +4538,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~1 Std.',
+        duration: '~55 Min.',
         people: 'Nur du',
         stationCount: 12,
         totalMinutes: 62,
@@ -4582,7 +4582,7 @@ const SOLO_FORMATS = {
   },
 
   prioritaeten: {
-    label: 'Allein', duration: '~55 Min.', people: 'Nur du',
+    label: 'Allein', duration: '~1 Std.', people: 'Nur du',
     stations: withFeedback([
       { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
         hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder Wein, wenn du magst.',
@@ -4645,7 +4645,7 @@ const SOLO_FORMATS = {
   },
 
   stehe: {
-    label: 'Allein', duration: '~55 Min.', people: 'Nur du',
+    label: 'Allein', duration: '~1 Std.', people: 'Nur du',
     stations: withFeedback([
       { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
         hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder Wein.',
@@ -4760,7 +4760,7 @@ const SOLO_FORMATS = {
   },
 
   zehnjahre: {
-    label: 'Allein', duration: '~55 Min.', people: 'Nur du',
+    label: 'Allein', duration: '~1 Std.', people: 'Nur du',
     stations: withFeedback([
       { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
         hostNote: 'Kerze anzünden. Handy weg. Drei tiefe Atemzüge. Tee oder Wein.',
