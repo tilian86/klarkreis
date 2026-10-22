@@ -547,6 +547,7 @@ function hideAllContentBoxes() {
   const hl = document.getElementById('handoutLink');
   if (hl) hl.classList.add('hidden');
   KlarKreisPlayer.destroyAll();
+  document.getElementById('audioMount').innerHTML = '';
 }
 
 // ===== Zugabe: optionale Extra-Frage aus der Fragensammlung =====
@@ -616,11 +617,18 @@ if (kiCopyBtn) kiCopyBtn.addEventListener('click', () => {
 });
 
 function mountStationAudio(station, idx) {
+  // Eigener Halter je Station: Kommt die Prüfung (HEAD) einer vorigen Station
+  // erst nach dem Weiterklicken zurück, landet deren Player im abgehängten
+  // alten Halter statt auf der neuen Station.
+  const mount = document.getElementById('audioMount');
+  mount.innerHTML = '';
   if (station.type === 'feedback') return;
   if (KlarKreisPlayer.isAudioOff()) return;
   // Station kann expliziten audio-Pfad haben (z.B. Solo zeigt auf group-Audio).
   const src = station.audio || KlarKreisPlayer.audioPath(themaId, formatKey, idx, station.name);
-  KlarKreisPlayer.mountIfExists('#audioMount', src, {
+  const holder = document.createElement('div');
+  mount.appendChild(holder);
+  KlarKreisPlayer.mountIfExists(holder, src, {
     title: 'Vorlesen lassen',
     compact: true
   });
