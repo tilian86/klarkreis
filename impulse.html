@@ -19,8 +19,8 @@
 <meta name="robots" content="noindex, nofollow" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730j" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260730j"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022a" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20261022a"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -43,7 +43,7 @@
   } } }
 </script>
 <link rel="stylesheet" href="dark.css?v=20261005a"/>
-<script src="theme-toggle.js?v=20260730j"></script>
+<script src="theme-toggle.js?v=20261022a"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -128,7 +128,7 @@
   </div>
 </footer>
 
-<script src="quotes.js?v=20260730j"></script>
+<script src="quotes.js?v=20261022a"></script>
 <script>
 // Zieh einen Impuls (Glückskeks)
 (function () {
@@ -144,6 +144,7 @@
 
   function updatePlayer(idx) {
     if (!mount) return;
+    if (window.impulseHasAudio && !window.impulseHasAudio(idx)) { mount.style.display = 'none'; return; }
     const url = audioPathFor(idx);
     fetch(url, { method: 'HEAD' }).then(r => {
       if (!r.ok) { mount.style.display = 'none'; return; }
@@ -252,6 +253,7 @@ function mountPlayers() {
   document.querySelectorAll('.quote-player[data-impulse-idx]').forEach(slot => {
     if (slot.dataset.mounted === '1') return;
     const idx = slot.getAttribute('data-impulse-idx');
+    if (window.impulseHasAudio && !window.impulseHasAudio(idx)) { slot.dataset.mounted = '1'; return; }
     window.KlarKreisMiniPlayer.insert(slot, `audio/impulse/${idx}.mp3`, { label: 'Anhören' });
     slot.dataset.mounted = '1';
   });
@@ -278,11 +280,11 @@ function render() {
 
 render();
 </script>
-<script src="config.js?v=20260730j"></script>
-<script src="auth.js?v=20260730j"></script>
-<script src="login-ui.js?v=20260730j"></script>
-<script src="mobile-nav.js?v=20260730j"></script>
-<script src="page-audio.js?v=20260730j"></script>
+<script src="config.js?v=20261022a"></script>
+<script src="auth.js?v=20261022a"></script>
+<script src="login-ui.js?v=20261022a"></script>
+<script src="mobile-nav.js?v=20261022a"></script>
+<script src="page-audio.js?v=20261022a"></script>
 <script>
 // Favoriten mit dem Konto mergen (Union), wenn eingeloggt
 (async function () {

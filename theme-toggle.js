@@ -48,7 +48,32 @@
       nav.appendChild(btn);
     }
 
-    // Mobil: dezenter schwebender Button unten rechts
+    // Mobil: Knopf in der Kopfleiste, direkt neben dem Burger. (Ein schwebender
+    // Knopf unten rechts verdeckte beim Lesen Text, z.B. die Zeile
+    // "Zu zweit · 2 Personen (Paar oder Freundschaft)" auf der Kursseite.)
+    if (nav && nav.parentElement) {
+      const parent = nav.parentElement;
+      if (!document.getElementById('kk-theme-toggle-css')) {
+        const st = document.createElement('style');
+        st.id = 'kk-theme-toggle-css';
+        // Ab 880 px zeigt die volle Leiste den eigenen Knopf (siehe mobile-nav.js).
+        st.textContent = '.kk-theme-toggle-m{margin-left:auto;margin-right:.15rem;width:2.5rem;height:2.5rem;'
+          + 'display:inline-flex;align-items:center;justify-content:center;border-radius:6px;flex:none}'
+          + '@media (min-width:880px){.kk-theme-toggle-m{display:none !important}}';
+        document.head.appendChild(st);
+      }
+      const mbtn = document.createElement('button');
+      mbtn.className = 'kk-theme-toggle kk-theme-toggle-m text-[#1B1C19]/60 hover:text-secondary transition-colors duration-300';
+      mbtn.title = 'Dunkelmodus umschalten'; mbtn.setAttribute('aria-label','Dunkelmodus umschalten');
+      mbtn.innerHTML = '<span class="material-symbols-outlined text-[22px]">' + iconName() + '</span>';
+      mbtn.addEventListener('click', toggle);
+      // Der Burger wird von mobile-nav.js ans Ende der Leiste gehängt — davor einsortieren.
+      const burger = parent.querySelector('.kk-burger');
+      if (burger) parent.insertBefore(mbtn, burger); else parent.appendChild(mbtn);
+      return;
+    }
+
+    // Fallback (Seiten ohne Kopfleiste): dezenter schwebender Button unten rechts
     const fab = document.createElement('button');
     fab.className = 'kk-theme-toggle lg:hidden fixed bottom-5 right-5 z-40 w-11 h-11 rounded-full bg-surface-container shadow-lg border border-outline-variant/30 flex items-center justify-center text-on-surface-variant';
     fab.title = 'Dunkelmodus umschalten';

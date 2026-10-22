@@ -19,8 +19,8 @@
 <meta name="robots" content="noindex, nofollow" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20260730j" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20260730j"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022a" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20261022a"/>
 <style>
   body {
     font-family: 'Inter', sans-serif;
@@ -47,7 +47,7 @@
   } } }
 </script>
 <link rel="stylesheet" href="dark.css?v=20261005a"/>
-<script src="theme-toggle.js?v=20260730j"></script>
+<script src="theme-toggle.js?v=20261022a"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
 <div class="film-grain"></div>
@@ -112,6 +112,7 @@
       Alles andere auf dieser Seite bleibt kostenlos — auch der <a href="gastgeber.html" class="underline hover:text-secondary-fixed-dim">Gastgeber-Kompass</a>. Diese Angebote finanzieren das Projekt.
     </p>
     <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+    <p class="text-[10px] text-on-primary-container/70 mt-5">Alle Preise: Endpreis, keine USt nach § 19 UStG.</p>
   </section>
 
   <!-- Alle freien Themen, einheitliches Grid -->
@@ -152,7 +153,7 @@
   </div>
 </footer>
 
-<script src="themes.js?v=20260730j"></script>
+<script src="themes.js?v=20261022a"></script>
 <script>
 // Restore previous filter from URL or session
 const params = new URLSearchParams(location.search);
@@ -245,15 +246,15 @@ function renderGrid() {
 // Produkt-Regal: die vier Bezahlangebote, klar als Produkte erkennbar.
 // Preise stehen zentral hier — bei Preisänderung auch PAID_GATES in thema.html anpassen.
 const PRODUCTS = [
-  { titel: 'Die Werte-Reise', preis: '29 €', statt: '39 €',
+  { titel: 'Die Werte-Reise', preis: '29 €',
     zeile: '6 Abende · Abend 1 kostenlos',
     text: 'Ein halbes Jahr, sechs Abende: von „Was zählt wirklich?" über Wurzeln und Schatten bis zur Integration. Für Runden, die zusammen dranbleiben wollen.',
     bild: 'images/werte-reise.jpg', href: 'reise.html', cta: 'Die Reise ansehen' },
-  { titel: 'Die Wir-Reise', preis: '29 €', statt: '39 €',
+  { titel: 'Die Wir-Reise', preis: '29 €',
     zeile: '7 Abende für Paare · Abend 1 kostenlos',
     text: 'Sieben Abende für Paare, aufgebaut auf der Paarforschung — Kennen, Zuwendung, Konflikte, gemeinsamer Sinn. Eigenständig ausgearbeitet, kein Therapie-Ersatz.',
     bild: 'images/wir-reise.jpg', href: 'reise-wir.html', cta: 'Die Reise ansehen' },
-  { titel: 'Die Frei-Reise', preis: '29 €', statt: '39 €',
+  { titel: 'Die Frei-Reise', preis: '29 €',
     zeile: '10 Abende · zu zweit oder allein · in Vorbereitung',
     text: 'Zehn Abende über Wohlstand, Urteilskraft und Ruhe. Jeder endet mit einer Sache, die du danach tust — und der nächste fragt, ob du sie getan hast.',
     bild: 'images/frei-reise.jpg', href: 'reise-frei.html', cta: 'Die Reise ansehen' },
@@ -277,7 +278,6 @@ function renderProducts() {
         <div class="flex items-baseline gap-2 flex-wrap">
           <h3 class="font-serif text-xl leading-snug">${p.titel}</h3>
           <span class="bg-secondary text-white px-2 py-0.5 text-[10px] uppercase tracking-widest font-bold rounded shrink-0">${p.preis}</span>
-          ${p.statt ? `<span class="text-[10px] text-on-primary-container/70 line-through">${p.statt}</span>` : ''}
         </div>
         <p class="font-label text-[10px] uppercase tracking-widest text-secondary-fixed-dim mt-1">${p.zeile}</p>
         <p class="text-xs text-on-primary-container leading-relaxed mt-2 line-clamp-3">${p.text}</p>
@@ -352,9 +352,9 @@ document.querySelectorAll('.format-filter').forEach(btn => {
 
 refresh();
 </script>
-<script src="config.js?v=20260730j"></script>
-<script src="auth.js?v=20260730j"></script>
-<script src="login-ui.js?v=20260730j"></script>
-<script src="mobile-nav.js?v=20260730j"></script>
+<script src="config.js?v=20261022a"></script>
+<script src="auth.js?v=20261022a"></script>
+<script src="login-ui.js?v=20261022a"></script>
+<script src="mobile-nav.js?v=20261022a"></script>
 </body>
 </html>

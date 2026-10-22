@@ -187,7 +187,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~55 Min.',
+        duration: '~1 Std. 15 Min.',
         people: 'Nur du',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
@@ -411,7 +411,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~50 Min.',
+        duration: '~1 Std. 10 Min.',
         people: 'Nur du',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,
@@ -716,7 +716,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 10 Min.',
+        duration: '~1 Std. 25 Min.',
         people: '2 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -776,7 +776,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 20 Min.',
+        duration: '~2 Std. 5 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -913,7 +913,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 20 Min.',
+        duration: '~2 Std. 10 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -1655,7 +1655,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~1 Std. 45 Min.',
+        duration: '~1 Std. 35 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Ankommen', title: 'Wer ist gerade wichtig?', duration: 10*60,
@@ -2089,7 +2089,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 25 Min.',
+        duration: '~2 Std.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -2291,7 +2291,7 @@ window.THEMES = {
     formats: {
       group: {
         label: 'Kleine Gruppe',
-        duration: '~2 Std. 25 Min.',
+        duration: '~2 Std. 10 Min.',
         people: '3-10 Personen',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor wir anfangen', duration: 3*60,
@@ -2582,7 +2582,7 @@ window.THEMES = {
             question: 'Was hast du trotzdem geschafft — was dir heute wie selbstverständlich vorkommt, aber für jemanden wie dich eigentlich Hochleistung war?' },
           { name: 'Werkzeuge', title: 'Body Doubling & Externalisierung', duration: 6*60,
             hostNote: 'Host liest kurz vor. Reihum: welches der Werkzeuge kennst du schon?',
-            description: 'Die wichtigsten ADHS-Werkzeuge sind weder Apps noch Medikamente. Es sind simple Mechanismen, mit denen das exekutive System entlastet wird:',
+            description: 'Neben Medikation und Therapie helfen im Alltag vor allem simple Mechanismen, mit denen das exekutive System entlastet wird:',
             items: [
               { label: 'Body Doubling', text: 'Eine andere Person im Raum, während du arbeitest. Kein Gespräch nötig. Allein das Mitsein macht Unmögliches möglich.' },
               { label: 'Externalisierung', text: 'Alles aus dem Kopf raus — auf Papier, in Kalender, in Reminders. Das Arbeitsgedächtnis hat nicht viel Platz.' },
@@ -2616,7 +2616,7 @@ window.THEMES = {
       },
       pair: {
         label: 'Zu zweit',
-        duration: '~1 Std. 40 Min.',
+        duration: '~1 Std. 30 Min.',
         people: '2 Personen (beide ADHS, oder einer ADHS + Partner:in, oder zwei Freund:innen)',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor ihr anfangt', duration: 3*60,
@@ -2668,7 +2668,7 @@ window.THEMES = {
       },
       solo: {
         label: 'Allein',
-        duration: '~55 Min.',
+        duration: '~1 Std. 10 Min.',
         people: 'Nur du',
         stations: withFeedback([
           { name: 'Öffnen', title: 'Ein Moment, bevor du anfängst', duration: 3*60,

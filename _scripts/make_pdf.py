@@ -13,11 +13,17 @@ def get_theme(tid):
     global.window={}; require('%s/themes.js');
     var t=global.window.THEMES['%s'];
     var f=t.formats.pair||t.formats.group;
+    // Bezahlabende sind in themes.js ausgehöhlt (stations: null) — der echte Inhalt liegt
+    // in der lokalen, nicht eingecheckten Kopie _scripts/paid_cache/<id>.json.
+    if(!f.stations){
+      var c=JSON.parse(require('fs').readFileSync('%s/_scripts/paid_cache/%s.json','utf8'));
+      f=c.pair||c.group||c.solo;
+    }
     process.stdout.write(JSON.stringify({title:t.title,subtitle:t.subtitle||'',lead:t.lead,
       reise:t.reise||null,
       stations:f.stations.filter(s=>s.type!=='feedback').map(s=>({name:s.name,title:s.title,
         quote:s.quote||null,description:s.description||'',items:s.items||[],question:s.question||''}))}));
-    """ % (str(REPO),tid)
+    """ % (str(REPO),tid,str(REPO),tid)
     env=dict(os.environ); env["PATH"]=os.path.expanduser("~/.local/node/bin")+":"+env.get("PATH","")
     return json.loads(subprocess.run([os.path.expanduser("~/.local/node/bin/node"),"-e",js],capture_output=True,text=True,env=env).stdout)
 
