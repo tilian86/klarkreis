@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022b" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20261022b"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022c" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20261022c"/>
 <style>
   body { font-family: 'Inter', sans-serif; color: #1B1C19; background: #F0EEE9; }
   .font-serif { font-family: 'Noto Serif', serif; }
@@ -152,7 +152,7 @@
   }
 </style>
 <link rel="stylesheet" href="dark.css?v=20261005a"/>
-<script src="theme-toggle.js?v=20261022b"></script>
+<script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="min-h-screen">
 
@@ -185,11 +185,11 @@
   <div id="karten"></div>
 </main>
 
-<script src="themes.js?v=20261022b"></script>
-<script src="config.js?v=20261022b"></script>
-<script src="auth.js?v=20261022b"></script>
-<script src="login-ui.js?v=20261022b"></script>
-<script src="paid.js?v=20261022b"></script>
+<script src="themes.js?v=20261022c"></script>
+<script src="config.js?v=20261022c"></script>
+<script src="auth.js?v=20261022c"></script>
+<script src="login-ui.js?v=20261022c"></script>
+<script src="paid.js?v=20261022c"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const id = params.get('thema') || 'bindung';
@@ -239,6 +239,8 @@ function render() {
     const parts = [];
     if (s.hostNote) parts.push(`<div class="karte-hostnote">${escHtml(s.hostNote)}</div>`);
     if (s.description) parts.push(`<div class="karte-desc">${escHtml(s.description)}</div>`);
+    // „Aus der Praxis" nur, wenn der Gastgeber schon Text eingetragen hat
+    if (s.praxis && (s.praxis.text || '').trim()) parts.push(`<div class="karte-desc"><strong>Aus der Praxis:</strong> ${escHtml(s.praxis.text.trim())}</div>`);
     if (s.items) {
       const items = s.items.map(it => `
         <div class="karte-item">
@@ -303,6 +305,6 @@ function render() {
   render();
 })();
 </script>
-<script src="mobile-nav.js?v=20261022b"></script>
+<script src="mobile-nav.js?v=20261022c"></script>
 </body>
 </html>

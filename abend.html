@@ -9,8 +9,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="preload" href="fonts/inter_v20_UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022b" as="font" type="font/woff2" crossorigin/>
-<link rel="stylesheet" href="fonts.css?v=20261022b"/>
+<link rel="preload" href="fonts/material-symbols-subset.woff2?v=20261022c" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="fonts.css?v=20261022c"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -146,6 +146,18 @@ body { background-color: #FBF9F4; }
 
     <div id="descriptionBox" class="mb-8 max-w-2xl w-full hidden">
       <p id="description" class="text-lg md:text-xl font-light text-on-background/80 leading-relaxed whitespace-pre-line"></p>
+    </div>
+
+    <!-- Aus der Praxis: Erfahrung des Gastgebers (nur sichtbar, wenn Text da ist – oder mit ?entwurf=1) -->
+    <div id="praxisBox" class="mb-8 max-w-2xl w-full hidden">
+      <div class="bg-surface-container-low rounded-lg p-5 border-l-2 border-secondary/40">
+        <p class="font-label text-[11px] uppercase tracking-widest text-secondary mb-3">Aus der Praxis</p>
+        <p id="praxisText" class="text-base md:text-lg text-on-background/80 leading-relaxed whitespace-pre-line"></p>
+        <div id="praxisEntwurf" class="hidden">
+          <p class="text-sm text-on-surface-variant italic mb-2">Platzhalter — wird noch ergänzt. Leitfragen für den Text:</p>
+          <ul id="praxisFragen" class="list-disc pl-5 space-y-1 text-sm text-on-surface-variant"></ul>
+        </div>
+      </div>
     </div>
 
     <div id="questionBox" class="mb-10 max-w-2xl w-full hidden">
@@ -303,13 +315,13 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20261022b"></script>
-<script src="config.js?v=20261022b"></script>
-<script src="auth.js?v=20261022b"></script>
-<script src="login-ui.js?v=20261022b"></script>
-<script src="paid.js?v=20261022b"></script>
-<script src="player.js?v=20261022b"></script>
-<script src="questions.js?v=20261022b"></script>
+<script src="themes.js?v=20261022c"></script>
+<script src="config.js?v=20261022c"></script>
+<script src="auth.js?v=20261022c"></script>
+<script src="login-ui.js?v=20261022c"></script>
+<script src="paid.js?v=20261022c"></script>
+<script src="player.js?v=20261022c"></script>
+<script src="questions.js?v=20261022c"></script>
 <script>
 const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
@@ -342,6 +354,10 @@ const el = {
   quoteAuthor: document.getElementById('quoteAuthor'),
   descriptionBox: document.getElementById('descriptionBox'),
   description: document.getElementById('description'),
+  praxisBox: document.getElementById('praxisBox'),
+  praxisText: document.getElementById('praxisText'),
+  praxisEntwurf: document.getElementById('praxisEntwurf'),
+  praxisFragen: document.getElementById('praxisFragen'),
   questionBox: document.getElementById('questionBox'),
   question: document.getElementById('question'),
   itemsBox: document.getElementById('itemsBox'),
@@ -440,7 +456,7 @@ function renderItems(items, station) {
   const base = station ? `audio/${themaId}/items/${itemSlug(station.name)}-` : null;
   return items.map((it, i) => `
     <div class="bg-surface-container-low rounded-lg p-5 border border-outline-variant/20 hover:border-secondary/40 transition-colors">
-      <div class="flex items-baseline justify-between gap-3 mb-2">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
         <h3 class="font-headline text-xl text-primary-container">${it.label || ''}</h3>
         ${it.accent ? `<span class="font-label text-[10px] uppercase tracking-widest text-secondary shrink-0">${it.accent}</span>` : ''}
       </div>
@@ -499,11 +515,28 @@ document.addEventListener('click', (e) => {
   a.play().catch(() => speakStop());
 });
 
+// „Aus der Praxis": zeigt den Text des Gastgebers, sobald er eingetragen ist.
+// Solange er leer ist, erscheint der Kasten nur in der Vorschau (?entwurf=1) mit den Leitfragen.
+const praxisEntwurfModus = params.get('entwurf') === '1';
+function renderPraxis(p) {
+  if (!p) return;
+  const text = (p.text || '').trim();
+  const fragen = Array.isArray(p.leitfragen) ? p.leitfragen : [];
+  if (!text && !(praxisEntwurfModus && fragen.length)) return;
+  el.praxisText.textContent = text;
+  el.praxisText.classList.toggle('hidden', !text);
+  el.praxisFragen.innerHTML = '';
+  fragen.forEach(f => { const li = document.createElement('li'); li.textContent = f; el.praxisFragen.appendChild(li); });
+  el.praxisEntwurf.classList.toggle('hidden', !!text || !praxisEntwurfModus);
+  el.praxisBox.classList.remove('hidden');
+}
+
 function hideAllContentBoxes() {
   speakStop();
   el.hostNoteBox.classList.add('hidden');
   el.quoteBox.classList.add('hidden');
   el.descriptionBox.classList.add('hidden');
+  el.praxisBox.classList.add('hidden');
   el.questionBox.classList.add('hidden');
   el.itemsBox.classList.add('hidden');
   el.feedbackForm.classList.add('hidden');
@@ -652,6 +685,7 @@ function render() {
       el.quoteBox.classList.remove('hidden');
     }
     if (s.description) { el.description.textContent = s.description; el.descriptionBox.classList.remove('hidden'); }
+    renderPraxis(s.praxis);
     if (s.question) {
       el.question.textContent = s.question;
       el.questionBox.classList.remove('hidden');
