@@ -1306,7 +1306,7 @@ window.THEMES = {
     title: 'Frageabend: Stille Bereiche',
     category: 'Frageabend',
     lead: 'Für Gruppen, die sich kennen. Fragen, die im normalen Gespräch nie gestellt werden — und manchmal das Wichtigste sind. Bitte nur, wenn ihr einander vertraut.',
-    image: 'images/kerze.jpg',
+    image: 'images/frageabend-tief.jpg',
     philosophy1: 'Es gibt einen Bereich in jedem Menschen, der selten Worte bekommt: die leise Sorge, das ungesagte „eigentlich“, die Frage, die wir uns nicht selbst stellen wollen.',
     philosophy2: 'Dieser Abend ist nicht für jede Gruppe. Er funktioniert nur, wenn ihr einander vertraut — keine erste Begegnung, keine Networking-Runde. Was hier gesagt wird, bleibt im Raum. „Pass“ ist immer okay, oft sogar das Richtige.',
     formats: {
@@ -1400,7 +1400,7 @@ window.THEMES = {
     title: 'Frageabend: Humor & Absurdes',
     category: 'Frageabend',
     lead: 'Wenn der ernste Abend einfach nicht passt. Fragen, die Quatsch erlauben — und durch Quatsch oft mehr verraten als ehrliche Antworten.',
-    image: 'images/wein.jpg',
+    image: 'images/frageabend-humor.jpg',
     philosophy1: 'Manchmal ist der gerade Weg in einen Menschen die völlig schräge Frage. „Welches Tier wird komplett überschätzt?“ verrät oft mehr als „Was machst du beruflich?“.',
     philosophy2: 'Heute kein psychologisches Tiefbohren — sondern hypothetische Szenarien, paradoxe Wahlen und Alltagsphilosophie. Lacht viel. Aber hört auch auf das, was hinter dem Lachen liegt.',
     formats: {
