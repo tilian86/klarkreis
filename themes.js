@@ -1500,7 +1500,7 @@ window.THEMES = {
     title: 'Frageabend: Woher ich komme',
     category: 'Frageabend',
     lead: 'Ein Abend über Herkunft — Elternhaus, Kindheit, die Sätze, die man mitbekommt, ohne sie je zu hören. Für Runden, die wissen wollen, aus welchem Holz die anderen geschnitzt sind.',
-    image: 'images/heimat.jpg',
+    image: 'images/frageabend-wurzeln.jpg',
     philosophy1: 'Niemand fängt bei null an. Wir tragen Sätze mit uns, die nie ausgesprochen wurden, Gerüche, die uns sofort zurückwerfen, und Regeln, die wir längst abgelegt zu haben glauben — bis wir sie bei uns selbst hören.',
     philosophy2: 'An diesem Abend geht es nicht um Familientherapie. Es geht um Neugier: Woher kommt eigentlich das, was du für selbstverständlich hältst? Und was davon willst du behalten?',
     formats: {
@@ -1657,7 +1657,7 @@ window.THEMES = {
     title: 'Frageabend: Die Menschen in meinem Leben',
     category: 'Frageabend',
     lead: 'Ein Abend über die, die uns geprägt haben — Freundschaften, die blieben, und die, die still verschwanden. Für Runden, in denen es um mehr gehen darf als um Namen.',
-    image: 'images/kaffee.jpg',
+    image: 'images/frageabend-menschen.jpg',
     philosophy1: 'Wir reden ständig über Menschen — aber selten über das, was sie mit uns machen. Wessen Urteil wiegt schwer? Wem gegenüber verstellen wir uns? Und welche Freundschaft ist eigentlich gerade dabei, leise zu enden?',
     philosophy2: 'Dieser Abend ist kein Beziehungsinventar. Er stellt die Fragen, die man sich sonst nur nachts stellt — und beantwortet sie einmal laut, unter Menschen, die zuhören.',
     formats: {
@@ -1806,7 +1806,7 @@ window.THEMES = {
     title: 'Frageabend: Was noch kommt',
     category: 'Frageabend',
     lead: 'Ein Abend über Träume, Pläne und das, was man sich nicht zu sagen traut. Für Runden, die nach vorne schauen wollen — ohne Fünfjahresplan-Ernst.',
-    image: 'images/nachthimmel.jpg',
+    image: 'images/frageabend-zukunft.jpg',
     philosophy1: 'Über die Zukunft reden wir meistens in Terminen: nächster Urlaub, nächstes Projekt. Selten darüber, was wir eigentlich wollen — und noch seltener über das, was wir uns nicht mehr zu wollen trauen.',
     philosophy2: 'Dieser Abend ist kein Zielsetzungs-Workshop. Er macht Platz für die Sätze, die mit „Eigentlich würde ich gern…“ anfangen — und schaut, was sie mit euch machen, wenn sie einmal laut im Raum stehen.',
     formats: {
@@ -1950,7 +1950,7 @@ window.THEMES = {
     title: 'Frageabend: Kleine Wahrheiten',
     category: 'Frageabend',
     lead: 'Ein Abend über die unspektakulären Ehrlichkeiten — die ungelesene Nachricht, die Trostmahlzeit, das Ding, das du absichtlich nicht reparierst. Leicht im Ton, überraschend tief im Ergebnis.',
-    image: 'images/stilleben.jpg',
+    image: 'images/frageabend-ehrlich.jpg',
     philosophy1: 'Die großen Fragen sind nicht immer die ergiebigsten. Manchmal erfährt man mehr über einen Menschen, wenn man ihn fragt, was er kocht, wenn es ihm schlecht geht — als wenn man nach seinen Werten fragt.',
     philosophy2: 'Dieser Abend sammelt die kleinen, schrägen, banalen Ehrlichkeiten. Er startet zum Lachen und endet oft erstaunlich nah. Genau deshalb funktioniert er auch in Runden, die sich noch nicht gut kennen.',
     formats: {
