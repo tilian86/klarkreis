@@ -172,7 +172,8 @@
   </div>
 </footer>
 
-<script src="questions.js?v=20261022c"></script>
+<script src="questions.js?v=20261024a"></script>
+<script src="fragen-umbenannt.js?v=20261024a"></script>
 <script>
 let currentCat = 'alle';
 let mode = 'single';
@@ -180,8 +181,10 @@ let singleIdx = 0;
 let allSeenState = false;
 
 const SEEN_KEY = 'klarkreis.fragen.seen.v1';
+// Umformulierte Fragen: alte Texte (lokal oder aus dem Konto) auf den neuen Wortlaut umbiegen
+const umbenannt = arr => new Set([...arr].map(t => (window.QUESTION_RENAMES || {})[t] || t));
 function loadSeen() {
-  try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]')); }
+  try { return umbenannt(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]')); }
   catch (e) { return new Set(); }
 }
 function saveSeen() {
@@ -192,7 +195,7 @@ let seen = loadSeen();
 // --- Favoriten (Herz) — lokal, mit Supabase-Sync bei Login ---
 const FAV_KEY = 'klarkreis.fragen.favs.v1';
 function loadFavsLocal() {
-  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); }
+  try { return umbenannt(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); }
   catch (e) { return new Set(); }
 }
 function saveFavs() {
@@ -703,12 +706,12 @@ render();
   async function mergeRemoteAndLocal() {
     if (!auth.user()) return;
     const { merged } = await auth.syncSeen(seen);
-    seen = new Set(merged);
+    seen = umbenannt(merged);
     saveSeen();
     // Favoriten ebenfalls mergen (Union aus lokal + Konto)
     if (auth.syncFavs) {
       const f = await auth.syncFavs('question', favs);
-      favs = new Set(f.merged);
+      favs = umbenannt(f.merged);
       saveFavs();
     }
     // Re-render to reflect merged state
