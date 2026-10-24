@@ -1,0 +1,1322 @@
+{
+ "aendern": [
+  {
+   "i": 7,
+   "alt": "Was versuchst du vor anderen Menschen zu verbergen?",
+   "neu": "Was versteckst du in Panik, kurz bevor Besuch klingelt?",
+   "best": false
+  },
+  {
+   "i": 8,
+   "alt": "Was möchtest du gewesen sein?",
+   "neu": "Wofür möchtest du mit achtzig bekannt sein — nicht in der Welt, sondern in deiner Straße?",
+   "best": false
+  },
+  {
+   "i": 9,
+   "alt": "Wovor hast du am meisten Angst?",
+   "neu": "Bei welcher harmlosen Alltagssache bekommst du bis heute Herzklopfen — beim Telefonieren, beim Friseur, beim Umtauschen im Laden?",
+   "best": false
+  },
+  {
+   "i": 10,
+   "alt": "Für welche Eigenschaften an dir hast du am öftesten Komplimente bekommen?",
+   "neu": "Wofür würdest du in deinem Freundeskreis den Preis fürs Lebenswerk bekommen?",
+   "best": false
+  },
+  {
+   "i": 12,
+   "alt": "Gibt es ein Gefühl, das du selten zulässt — und wovor hättest du Angst, wenn du es doch zuließest?",
+   "neu": "Wann hast du zuletzt vor anderen die Fassung verloren — vor Lachen, vor Wut oder vor Rührung?",
+   "best": false
+  },
+  {
+   "i": 13,
+   "alt": "Was an dir hat sich in den letzten fünf Jahren am meisten verändert?",
+   "neu": "Was hättest du vor fünf Jahren nie über dich geglaubt, das heute völlig normal ist?",
+   "best": false
+  },
+  {
+   "i": 14,
+   "alt": "Worin bist du heimlich gut — etwas, das kaum jemand von dir weiß?",
+   "neu": "Von welchem Ex hast du eine Angewohnheit übernommen, die du nie wieder losgeworden bist?",
+   "best": false
+  },
+  {
+   "i": 17,
+   "alt": "Gibt es einen Teil von dir, den du erst in einer bestimmten Konstellation zeigst?",
+   "neu": "Wie bist du nach zwei Gläsern Wein — und wie nach vier?",
+   "best": false
+  },
+  {
+   "i": 18,
+   "alt": "Was tust du, wenn du dich unbeobachtet fühlst, was du nie jemandem erzählen würdest?",
+   "neu": "Was machst du, wenn du allein zu Hause bist, das garantiert niemand von dir erwartet?",
+   "best": false
+  },
+  {
+   "i": 19,
+   "alt": "Welcher deiner eigenen Sätze überrascht dich selbst immer wieder?",
+   "neu": "Nur wer mit dir im Urlaub war, kennt eine bestimmte Seite an dir — welche ist es?",
+   "best": false
+  },
+  {
+   "i": 22,
+   "alt": "In welcher Situation bist du am meisten du selbst?",
+   "neu": "Wobei vergisst du komplett, wie du gerade aussiehst?",
+   "best": false
+  },
+  {
+   "i": 23,
+   "alt": "Welchen Teil deiner Kindheit trägst du noch heute in dir?",
+   "neu": "Mit sieben hattest du schon eine Macke, die du bis heute hast — welche?",
+   "best": false
+  },
+  {
+   "i": 24,
+   "alt": "Vor welcher Wahrheit über dich selbst hast du am meisten Angst?",
+   "neu": "Wer hat dich mal kritisiert und lag damit leider richtig — und wann hast du es zugegeben?",
+   "best": false
+  },
+  {
+   "i": 33,
+   "alt": "Worüber ärgerst du dich regelmäßig — und was verrät das darüber, was dir wichtig ist?",
+   "neu": "Worüber regst du dich jedes Mal auf, obwohl es dich eigentlich gar nicht betrifft?",
+   "best": false
+  },
+  {
+   "i": 34,
+   "alt": "Glaubst du an Schicksal?",
+   "neu": "Was in deinem Leben hast du dir wirklich verdient — und was war einfach Glück?",
+   "best": false
+  },
+  {
+   "i": 36,
+   "alt": "Wenn du einem kleinen Kind einen Rat mitgeben könntest für den Rest seines Lebens — welcher wäre das?",
+   "neu": "Welchen gut gemeinten Ratschlag hältst du für kompletten Unsinn?",
+   "best": false
+  },
+  {
+   "i": 37,
+   "alt": "Gibst du dein Geld lieber für materielle Dinge oder für Erlebnisse aus?",
+   "neu": "Bei welcher kleinen Regelverletzung hast du null schlechtes Gewissen?",
+   "best": false
+  },
+  {
+   "i": 38,
+   "alt": "Wärst du lieber weniger attraktiv und steinreich oder extrem gutaussehend, aber dafür arm?",
+   "neu": "Welche Lüge findest du völlig in Ordnung?",
+   "best": false
+  },
+  {
+   "i": 39,
+   "alt": "Wenn du nur noch einen Wert verteidigen dürftest — welcher wäre es?",
+   "neu": "Unpopular Opinion: Welche Tugend, die alle loben, hältst du für überschätzt?",
+   "best": false
+  },
+  {
+   "i": 40,
+   "alt": "Was würdest du tun, wenn du wüsstest, du kannst nicht scheitern?",
+   "neu": "Bei welcher Ungerechtigkeit hast du zuletzt den Mund gehalten, obwohl du hättest eingreifen können?",
+   "best": false
+  },
+  {
+   "i": 43,
+   "alt": "Was hältst du für Luxus, was man nicht kaufen kann?",
+   "neu": "Was findest du bei anderen spießig — und machst es heimlich selbst?",
+   "best": false
+  },
+  {
+   "i": 46,
+   "alt": "Was ist für dich der Unterschied zwischen „gut leben“ und „ehrlich leben“?",
+   "neu": "Wen hast du mit Anfang zwanzig für erfolgreich gehalten — und würdest du heute mit dieser Person tauschen?",
+   "best": false
+  },
+  {
+   "i": 50,
+   "alt": "Wann hast du zuletzt bewusst die Kontrolle abgegeben — wie hat's sich angefühlt?",
+   "neu": "Wo musst du unbedingt die Kontrolle behalten — beim Autofahren, bei der Urlaubsplanung, bei der Musik?",
+   "best": false
+  },
+  {
+   "i": 51,
+   "alt": "Wofür hast du dich zuletzt geschämt — und warum eigentlich?",
+   "neu": "Wofür hast du dich zuletzt geschämt, obwohl du eigentlich nichts falsch gemacht hast?",
+   "best": false
+  },
+  {
+   "i": 52,
+   "alt": "Welche deiner Entscheidungen würdest du wieder genau so treffen, welche nicht?",
+   "neu": "Welche Entscheidung haben dir alle ausgeredet — und du hast sie trotzdem getroffen?",
+   "best": false
+  },
+  {
+   "i": 53,
+   "alt": "Was ist die wichtigste Lektion, die du aus einem Scheitern gelernt hast?",
+   "neu": "Welches Scheitern erzählst du heute als lustige Anekdote, obwohl es damals richtig wehgetan hat?",
+   "best": false
+  },
+  {
+   "i": 55,
+   "alt": "Was ist schwerer für dich: zu geben oder zu nehmen?",
+   "neu": "Wie reagierst du, wenn dir jemand ungefragt hilft — dankbar oder ein bisschen gekränkt?",
+   "best": false
+  },
+  {
+   "i": 56,
+   "alt": "Hat deine Definition von Erfolg sich verändert — wie?",
+   "neu": "Für welche Sache würdest du auf eine Demo gehen — und warst du je wirklich dort?",
+   "best": false
+  },
+  {
+   "i": 61,
+   "alt": "Welchen Beruf würdest du ausüben, wenn Geld keine Rolle spielen würde?",
+   "neu": "Welchen Beruf hast du mal ganz ernsthaft gegoogelt — mit Ausbildungsdauer und Gehalt?",
+   "best": false
+  },
+  {
+   "i": 62,
+   "alt": "Welchen Traum wirst du dir, deiner Meinung nach, nie erfüllen können?",
+   "neu": "Wovon hast du mit sechzehn geträumt, das dir heute niemand mehr zutrauen würde?",
+   "best": false
+  },
+  {
+   "i": 63,
+   "alt": "Wie denkst du, sieht dein Leben in zehn Jahren aus?",
+   "neu": "Beschreib einen ganz normalen Dienstag in zehn Jahren — wo wachst du auf, und was machst du?",
+   "best": false
+  },
+  {
+   "i": 64,
+   "alt": "Gibt es etwas, wovon du schon lange träumst, dich aber noch nicht getraut hast, es zu tun?",
+   "neu": "Was steht auf deiner Irgendwann-Liste schon so lange, dass es langsam peinlich wird?",
+   "best": false
+  },
+  {
+   "i": 67,
+   "alt": "Welchen kleinen Luxus wünschst du dir im Alltag, erlaubst ihn dir aber nicht?",
+   "neu": "Wovon träumst du, das eigentlich ziemlich spießig ist — Schrebergarten, Wohnmobil, eigene Hecke?",
+   "best": false
+  },
+  {
+   "i": 68,
+   "alt": "Wovon würdest du dir mehr wünschen, ohne dass es materiell wäre?",
+   "neu": "Was willst du unbedingt noch lernen, auch wenn du dich anfangs blamierst — Tanzen, Surfen, eine Sprache?",
+   "best": false
+  },
+  {
+   "i": 69,
+   "alt": "Welche Version deiner selbst möchtest du in 10 Jahren sehen?",
+   "neu": "Welche Sorge von heute wird dir später hoffentlich lächerlich vorkommen?",
+   "best": false
+  },
+  {
+   "i": 71,
+   "alt": "Was hält dich davon ab, das zu machen, wovon du träumst?",
+   "neu": "Wer müsste dir die Erlaubnis geben, damit du endlich mit deinem Traum anfängst?",
+   "best": false
+  },
+  {
+   "i": 73,
+   "alt": "Wenn du einen Tag lang eine andere Person sein könntest — wer wäre es?",
+   "neu": "Wo würdest du hinziehen, wenn du morgen neu anfangen müsstest und dich dort niemand kennt?",
+   "best": false
+  },
+  {
+   "i": 79,
+   "alt": "Hattest du eine schöne Kindheit?",
+   "neu": "Wie sah ein ganz normaler Samstag in deiner Kindheit aus — vom Aufwachen bis ins Bett?",
+   "best": false
+  },
+  {
+   "i": 80,
+   "alt": "Für welche Dinge hast du dich schon als Kind begeistert und hast dir diese Begeisterung bis heute beibehalten?",
+   "neu": "Wofür hast du als Kind dein Taschengeld gespart — und kaufst du so etwas heute noch?",
+   "best": false
+  },
+  {
+   "i": 82,
+   "alt": "Welche Geschichte aus deiner Jugend wirst du deinen Kindern und Enkeln am häufigsten erzählen?",
+   "neu": "Welche Geschichte aus deiner Jugend erzählst du nur in der zensierten Version?",
+   "best": false
+  },
+  {
+   "i": 83,
+   "alt": "Welcher Geruch bringt dich sofort in deine Kindheit zurück?",
+   "neu": "Was war bei euch zu Hause verboten, das bei deinen Freunden ganz selbstverständlich war?",
+   "best": false
+  },
+  {
+   "i": 88,
+   "alt": "Gibt es einen Ort aus deiner Kindheit, an den du nie mehr zurück möchtest?",
+   "neu": "An welchen Ort deiner Kindheit willst du nie mehr zurück — und an welchen sofort?",
+   "best": false
+  },
+  {
+   "i": 90,
+   "alt": "Welches Spielzeug hast du vermisst, als du älter wurdest?",
+   "neu": "Welches Spielzeug hast du dir als Kind gewünscht und nie bekommen — und hast du es dir später selbst gekauft?",
+   "best": false
+  },
+  {
+   "i": 92,
+   "alt": "Was hat deine Eltern geprägt, das sich bei dir fortgesetzt hat?",
+   "neu": "Welche Sorge deiner Eltern hast du geerbt, obwohl sie in deinem Leben gar keinen Grund mehr hat?",
+   "best": false
+  },
+  {
+   "i": 93,
+   "alt": "Worauf warst du als Kind besonders stolz?",
+   "neu": "Welche Urkunde, Medaille oder Kinderzeichnung hebst du bis heute auf?",
+   "best": false
+  },
+  {
+   "i": 99,
+   "alt": "Wer war für dich die einflussreichste Person in deinem Leben?",
+   "neu": "Wer hat dir etwas beigebracht, das du jeden Tag benutzt, ohne an diese Person zu denken?",
+   "best": false
+  },
+  {
+   "i": 101,
+   "alt": "Welche aktuell lebende Person würdest du am liebsten treffen — und warum?",
+   "neu": "Wen würdest du nachts um drei von der Polizeiwache aus anrufen — und wer würde wirklich kommen?",
+   "best": false
+  },
+  {
+   "i": 102,
+   "alt": "Wenn du eine berühmte Persönlichkeit — egal ob lebendig oder tot — treffen dürftest: wer wäre es und warum?",
+   "neu": "Wer fühlt sich für dich an wie ein Freund, obwohl du die Person nur aus Büchern, Podcasts oder dem Fernsehen kennst?",
+   "best": false
+  },
+  {
+   "i": 103,
+   "alt": "Was glaubst du haben wir gemeinsam?",
+   "neu": "Mit wem verstehst du dich blendend, obwohl ihr politisch komplett anders tickt?",
+   "best": false
+  },
+  {
+   "i": 108,
+   "alt": "Wer hat dir zuletzt etwas gesagt, das du nicht vergessen konntest?",
+   "neu": "Wer hat dir zuletzt ehrlich die Meinung gesagt — und hatte leider recht?",
+   "best": false
+  },
+  {
+   "i": 110,
+   "alt": "Welche Person in deinem Leben ist am schwersten zu erreichen — emotional?",
+   "neu": "Mit wem kannst du über alles reden, nur nicht über Gefühle?",
+   "best": false
+  },
+  {
+   "i": 112,
+   "alt": "Welche Person hat dich am meisten liebgehabt — und weißt du, ob sie es wusste?",
+   "neu": "Wer zeigt dir Zuneigung auf eine so schräge Art, dass Außenstehende es nie erkennen würden?",
+   "best": false
+  },
+  {
+   "i": 116,
+   "alt": "Welches Verhalten anderer trifft dich am härtesten?",
+   "neu": "Womit kann dich jemand, den du magst, mehr verletzen, als du je zeigen würdest?",
+   "best": false
+  },
+  {
+   "i": 117,
+   "alt": "Wen beneidest du heimlich — und wofür?",
+   "neu": "Von welchem Paar in deinem Umfeld schaust du dir etwas ab — und was genau?",
+   "best": false
+  },
+  {
+   "i": 119,
+   "alt": "Warst du schon mal emotional abhängig von einem Menschen?",
+   "neu": "Für wen hast du schon mal deinen Musikgeschmack, deinen Kleidungsstil oder deine Meinung geändert?",
+   "best": false
+  },
+  {
+   "i": 120,
+   "alt": "Hast du schon mal jemanden gebraucht — und gespürt, dass das ungesund war?",
+   "neu": "Auf wessen Nachricht hast du schon so sehnsüchtig gewartet, dass du dein Handy alle zwei Minuten entsperrt hast?",
+   "best": false
+  },
+  {
+   "i": 121,
+   "alt": "Gibt es einen Menschen, ohne den du dir dein Leben damals nicht vorstellen konntest, und der heute nicht mehr da ist?",
+   "neu": "Ohne wen konntest du dir dein Leben mal nicht vorstellen — und wie geht es heute ohne?",
+   "best": false
+  },
+  {
+   "i": 122,
+   "alt": "Wann hast du zuletzt jemanden festgehalten, obwohl ein Teil von dir wusste, dass es nicht mehr trug?",
+   "neu": "Wem hast du die Treue gehalten, als alle anderen längst abgesprungen waren?",
+   "best": false
+  },
+  {
+   "i": 123,
+   "alt": "Hast du schon mal aus Angst vor dem Allein-Sein bei jemandem gewartet, der nicht zurückkam?",
+   "neu": "Bei wem knickst du nach einem Streit immer zuerst ein — und bei wem nie?",
+   "best": false
+  },
+  {
+   "i": 126,
+   "alt": "Wann hast du dich von einer emotionalen Abhängigkeit gelöst — und woran hast du gemerkt, dass es Zeit war?",
+   "neu": "Was war der Moment, in dem du gemerkt hast: Über diese Person bin ich endgültig hinweg?",
+   "best": false
+  },
+  {
+   "i": 128,
+   "alt": "Was war der erste Mensch, dessen Tod oder Verlust dir wirklich klar gemacht hat, dass Liebe und Zeit endlich sind?",
+   "neu": "Wessen Tod hat dir zum ersten Mal klargemacht, dass auch deine Leute nicht ewig da sind?",
+   "best": false
+  },
+  {
+   "i": 135,
+   "alt": "Wann hast du in deinem Job zuletzt einen echten Moment von Sinn gespürt — und wann das letzte Mal von Leere?",
+   "neu": "Welcher Moment im Job ist dir bis heute peinlich — und wer war alles dabei?",
+   "best": false
+  },
+  {
+   "i": 136,
+   "alt": "Was frisst Energie in deiner Woche, ohne dass es einen klaren Output hat?",
+   "neu": "Welches Meeting könnte man ersatzlos streichen, ohne dass es irgendwer merkt?",
+   "best": false
+  },
+  {
+   "i": 137,
+   "alt": "Wenn dein heutiges Ich mit 22 wäre — würde es deinen jetzigen Job wählen?",
+   "neu": "Was würde dein Schul-Ich sagen, wenn es sehen könnte, womit du heute dein Geld verdienst?",
+   "best": false
+  },
+  {
+   "i": 138,
+   "alt": "Welcher Beruf von Freund:innen oder Bekannten fasziniert dich heimlich?",
+   "neu": "Welchen Beruf aus deinem Freundeskreis verstehst du bis heute nicht — und traust dich nicht mehr nachzufragen?",
+   "best": false
+  },
+  {
+   "i": 140,
+   "alt": "Wenn du in 20 Jahren auf dein Berufsleben zurückblickst — woran wirst du es messen?",
+   "neu": "Was war dein schlimmster Nebenjob — und was hast du dort fürs Leben gelernt?",
+   "best": false
+  },
+  {
+   "i": 141,
+   "alt": "Was machst du heute, was dich in 10 Jahren wahrscheinlich nicht mehr ausfüllt?",
+   "neu": "Wann hast du zuletzt im Job so getan, als wüsstest du genau, was du tust?",
+   "best": false
+  },
+  {
+   "i": 142,
+   "alt": "Was würdest du tun, wenn Geld keine Rolle spielte — und was, wenn Status keine Rolle spielte?",
+   "neu": "Nicht mal fürs doppelte Gehalt: Welchen Job würdest du nie machen?",
+   "best": false
+  },
+  {
+   "i": 143,
+   "alt": "Wofür arbeitest du eigentlich?",
+   "neu": "Wie erklärst du deinen Job auf Familienfeiern — und was machst du in Wahrheit?",
+   "best": false
+  },
+  {
+   "i": 146,
+   "alt": "Wie viel deines Selbstwerts hängt an dem, was du beruflich tust?",
+   "neu": "Wer wärst du, wenn dich niemand mehr fragt, was du beruflich machst?",
+   "best": false
+  },
+  {
+   "i": 148,
+   "alt": "Welches berufliche Kompliment war dir wirklich wichtig?",
+   "neu": "Was war das Beste, das ein Chef je zu dir gesagt hat — und das Schlimmste?",
+   "best": false
+  },
+  {
+   "i": 156,
+   "alt": "Was würdest du sagen, wenn niemand zuhörte — und du wüsstest, dass es keine Folgen hat?",
+   "neu": "In welcher Rolle bist du für andere so gut, dass du manchmal selbst vergisst, dass es nur eine Rolle ist?",
+   "best": false
+  },
+  {
+   "i": 158,
+   "alt": "Was ist eine Sorge, die du mit anderen nicht teilst — und warum nicht?",
+   "neu": "Was spielst du vor anderen herunter, damit sich niemand Sorgen um dich macht?",
+   "best": false
+  },
+  {
+   "i": 159,
+   "alt": "Wovor hast du heimlich Angst, was die meisten Menschen wahrscheinlich nicht ahnen?",
+   "neu": "Wann hat sich eine Angst erst gelegt, als das Schlimmste tatsächlich eingetreten war?",
+   "best": false
+  },
+  {
+   "i": 160,
+   "alt": "Was wäre, wenn deine größte Angst tatsächlich einträte — wie würde dein Leben aussehen?",
+   "neu": "Wann hast du zum ersten Mal gemerkt, dass deine Eltern auch nur Menschen sind?",
+   "best": false
+  },
+  {
+   "i": 161,
+   "alt": "Was hast du noch nie jemandem erzählt, was eigentlich Erzählens wert wäre?",
+   "neu": "Welche Geschichte erzählst du immer lustig, obwohl sie eigentlich traurig ist?",
+   "best": false
+  },
+  {
+   "i": 162,
+   "alt": "Welches Gefühl trägst du oft mit dir, ohne es zu benennen?",
+   "neu": "Wann hast du zuletzt gelacht, obwohl dir eigentlich zum Heulen war?",
+   "best": false
+  },
+  {
+   "i": 163,
+   "alt": "Welche Beziehung in deinem Leben fühlt sich gerade nicht gut an, und du sprichst nicht darüber?",
+   "neu": "Mit wem führst du seit Jahren denselben Streit, nur mit anderen Worten?",
+   "best": false
+  },
+  {
+   "i": 164,
+   "alt": "Welcher Satz, den jemand mal zu dir gesagt hat, trägt dich noch heute?",
+   "neu": "Was hast du mal zu jemandem gesagt, das dir bis heute leidtut?",
+   "best": false
+  },
+  {
+   "i": 167,
+   "alt": "Für welches Ereignis deines Lebens bist du am dankbarsten?",
+   "neu": "Welche Absage, Trennung oder Niederlage war im Nachhinein das Beste, was dir passieren konnte?",
+   "best": false
+  },
+  {
+   "i": 168,
+   "alt": "Gibt es eine Erfahrung, die dein Leben nachhaltig verändert hat?",
+   "neu": "Welcher Tag teilt dein Leben in ein Davor und ein Danach?",
+   "best": false
+  },
+  {
+   "i": 170,
+   "alt": "Was weißt du über dich, das du anderen nicht sagen könntest?",
+   "neu": "Wem verzeihst du nicht, obwohl du so tust, als wäre alles gut?",
+   "best": false
+  },
+  {
+   "i": 172,
+   "alt": "Welche innere Stimme begleitet dich am meisten — und wie klingt sie?",
+   "neu": "Wessen Stimme hörst du im Kopf, wenn du dich selbst kritisierst?",
+   "best": false
+  },
+  {
+   "i": 174,
+   "alt": "Gibt es einen Moment, in dem du jemanden nicht losgelassen hast, obwohl er hätte gehen dürfen?",
+   "neu": "Wen hast du gehen lassen, obwohl du hättest kämpfen können?",
+   "best": false
+  },
+  {
+   "i": 175,
+   "alt": "Was bedeutet Versöhnung für dich — mit dir selbst?",
+   "neu": "Wobei bittest du nie um Hilfe, obwohl du sie gut gebrauchen könntest?",
+   "best": false
+  },
+  {
+   "i": 180,
+   "alt": "Wenn dein Leben ein Film mit Vorspann wäre — welcher Song liefe dazu?",
+   "neu": "Welches Foto von dir würdest du sofort aus dem Internet löschen lassen?",
+   "best": false
+  },
+  {
+   "i": 181,
+   "alt": "Welche Superkraft hättest du gern — und was verrät deine Wahl über das, was dir gerade fehlt?",
+   "neu": "Welche Superkraft hättest du gern — aber bitte eine kleine, alltagstaugliche?",
+   "best": true
+  },
+  {
+   "i": 185,
+   "alt": "Welche historische Figur würde im Gruppenchat ständig auf „Nachricht gelesen“ machen — und warum gerade die?",
+   "neu": "An wen ging schon mal eine Nachricht, die überhaupt nicht für diese Person gedacht war?",
+   "best": false
+  },
+  {
+   "i": 188,
+   "alt": "Würdest du lieber ein Jahr lang nur durch GIFs kommunizieren — oder jeden Satz mit einer Lüge beginnen?",
+   "neu": "Aus welchem Schlager oder welcher Vorabendserie hast du ernsthaft eine Lebensweisheit übernommen?",
+   "best": false
+  },
+  {
+   "i": 191,
+   "alt": "Welcher Film müsste neu verfilmt werden — aber als TikTok-Tanzchallenge?",
+   "neu": "Was ist der dümmste Grund, aus dem du je zu spät gekommen bist — der echte, nicht der erzählte?",
+   "best": false
+  },
+  {
+   "i": 192,
+   "alt": "Welche Sportart sollte mit völlig falschen Regeln olympisch werden?",
+   "neu": "Welcher Promi taucht in deinen Träumen auf, obwohl du ihn eigentlich gar nicht magst?",
+   "best": false
+  },
+  {
+   "i": 193,
+   "alt": "Welcher Instagram-Filter beschreibt deine Persönlichkeit am besten — nicht dein Aussehen?",
+   "neu": "Welches Gerücht über dich würdest du gern selbst in die Welt setzen?",
+   "best": false
+  },
+  {
+   "i": 194,
+   "alt": "Welche App sollte dringend eine „Das war Sarkasmus!“-Autokorrektur einführen?",
+   "neu": "Was war dein peinlichster Versprecher, der dir bis heute nachhängt?",
+   "best": false
+  },
+  {
+   "i": 196,
+   "alt": "Welcher Wikipedia-Artikel sollte gelöscht werden, um maximales Chaos zu verursachen?",
+   "neu": "Auf welches Thema kommst du auf Partys immer wieder zurück — und wer verdreht schon die Augen?",
+   "best": false
+  },
+  {
+   "i": 199,
+   "alt": "Welche Popsong-Zeile singst du in deinem Kopf, wenn niemand zuschaut?",
+   "neu": "Welchen Songtext hast du jahrelang falsch mitgesungen?",
+   "best": false
+  },
+  {
+   "i": 200,
+   "alt": "Welches Gericht würdest du essen, wenn Kalorien nicht zählen würden — eine Woche lang?",
+   "neu": "Welcher Werbejingle steckt seit Jahren in deinem Kopf fest?",
+   "best": false
+  },
+  {
+   "i": 207,
+   "alt": "Was war das schlimmste Date, das du je hattest?",
+   "neu": "Wann wolltest du ein Date nach fünf Minuten am liebsten abbrechen — und hast du es getan?",
+   "best": false
+  },
+  {
+   "i": 208,
+   "alt": "Was ist das Peinlichste, das dir je beim Feiern passiert ist?",
+   "neu": "Wo bist du nach einer Party schon mal aufgewacht, ohne genau zu wissen, wie du dahin gekommen bist?",
+   "best": false
+  },
+  {
+   "i": 209,
+   "alt": "Was ist das Lustigste, das du beim Feiern erlebt hast?",
+   "neu": "Welche Nacht ist in deinem Freundeskreis bis heute Legende — und was davon stimmt wirklich?",
+   "best": false
+  },
+  {
+   "i": 210,
+   "alt": "Was war das größte Missverständnis, das dir je passiert ist?",
+   "neu": "Welches Missverständnis ist so weit eskaliert, dass es heute noch erzählt wird?",
+   "best": false
+  },
+  {
+   "i": 211,
+   "alt": "Was war das seltsamste Geschenk, das du je bekommen hast?",
+   "neu": "Welches Geschenk musstest du strahlend auspacken, obwohl du innerlich gestorben bist?",
+   "best": false
+  },
+  {
+   "i": 214,
+   "alt": "Gab es einen Moment, in dem du dachtest, du stirbst gleich?",
+   "neu": "Wann dachtest du ganz ernsthaft, das war's jetzt — und was war es am Ende?",
+   "best": false
+  },
+  {
+   "i": 218,
+   "alt": "Was war das Peinlichste, das dir in einer öffentlichen Situation passiert ist?",
+   "neu": "Welcher peinliche Moment in Bus, Bahn oder Supermarkt verfolgt dich bis heute?",
+   "best": false
+  },
+  {
+   "i": 226,
+   "alt": "Gibt es etwas, das andere Leute oft an dir falsch einschätzen?",
+   "neu": "Welchen Gegenstand nimmst du auf jede Reise mit, obwohl du ihn nie benutzt?",
+   "best": false
+  },
+  {
+   "i": 228,
+   "alt": "Wenn dein Leben gerade ein Buch wäre — welchen Titel hätte es?",
+   "neu": "Was hast du zuletzt gelernt, nur weil du neugierig warst?",
+   "best": false
+  },
+  {
+   "i": 230,
+   "alt": "Angenommen, du könntest einen Tag mit deinem 15-jährigen Ich verbringen — was würdet ihr besprechen?",
+   "neu": "Aus welchem Urlaub hast du eine Gewohnheit mitgebracht, die tatsächlich geblieben ist?",
+   "best": false
+  },
+  {
+   "i": 231,
+   "alt": "In welcher Version deiner selbst fühlst du dich am wohlsten — und wann warst du zuletzt dort?",
+   "neu": "In deiner Stadt dürfte ein Ort niemals schließen — welches Café, welche Kneipe oder welcher Laden ist es?",
+   "best": false
+  },
+  {
+   "i": 232,
+   "alt": "Welche Eigenschaft an dir möchtest du unbedingt behalten, selbst wenn du mal 100 Jahre alt bist?",
+   "neu": "Durch welche schwere Zeit hat dich ein Lied, ein Buch oder eine Serie getragen?",
+   "best": false
+  },
+  {
+   "i": 233,
+   "alt": "Wen in deinem Leben würdest du gerne wieder anrufen, hast es aber zu lange nicht getan?",
+   "neu": "Was hast du zuletzt ganz allein gemacht, das man normalerweise zu zweit macht — Kino, Essen, Urlaub?",
+   "best": false
+  },
+  {
+   "i": 237,
+   "alt": "Wenn du eine Sache an der Gesellschaft sofort ändern könntest — welche wäre das und warum?",
+   "neu": "Welches ungeschriebene Gesetz im Alltag sollte endlich offiziell gelten?",
+   "best": false
+  },
+  {
+   "i": 238,
+   "alt": "Welche Frage würdest du gerne mit „Ja“ beantworten können, kannst es aber (noch) nicht?",
+   "neu": "Welche Frage würdest du gern endlich mit Ja beantworten können?",
+   "best": false
+  },
+  {
+   "i": 239,
+   "alt": "Gibt es eine Erfahrung, die sich erst wie ein Misserfolg angefühlt hat, sich aber als wertvolle Lektion entpuppte?",
+   "neu": "Was war die letzte Nachricht, die deinen ganzen Tag umgedreht hat — im Guten oder im Schlechten?",
+   "best": false
+  },
+  {
+   "i": 241,
+   "alt": "Welche Rolle spielst du unbewusst in Gruppen — und passt sie noch zu dir?",
+   "neu": "Bist du im Freundeskreis eher Planer, Kummerkasten, Fahrer oder die Person, die immer zu spät kommt?",
+   "best": false
+  },
+  {
+   "i": 242,
+   "alt": "Was nimmst du dir jedes Jahr vor, machst es aber nicht — und warum wahrscheinlich?",
+   "neu": "Bei welcher deiner Geschichten können deine Freunde die Pointe schon mitsprechen?",
+   "best": false
+  },
+  {
+   "i": 243,
+   "alt": "Welcher Tag aus den letzten 12 Monaten war für dich besonders — und woran hast du das gemerkt?",
+   "neu": "Welcher Abend der letzten Monate hätte ruhig nie enden dürfen?",
+   "best": false
+  },
+  {
+   "i": 245,
+   "alt": "Was würdest du gerne ausprobieren, hast dich aber bisher nie getraut?",
+   "neu": "Welches Hobby hast du schon dreimal angefangen und dreimal wieder aufgegeben?",
+   "best": false
+  },
+  {
+   "i": 246,
+   "alt": "Angenommen, du hättest ab morgen ein Jahr frei von allen Verpflichtungen und genug Geld — wie würdest du es verbringen?",
+   "neu": "Ein freier Dienstag, von dem niemand weiß — was machst du damit?",
+   "best": false
+  },
+  {
+   "i": 250,
+   "alt": "In welcher Beziehung spürst du gerade, dass Aufmerksamkeit fehlt?",
+   "neu": "Worüber würdest du stundenlang erzählen, wenn dich nur mal jemand danach fragen würde?",
+   "best": false
+  },
+  {
+   "i": 254,
+   "alt": "Gibt es eine Fantasie, die du dich nie getraut hast auszusprechen?",
+   "neu": "Was würdest du eher einer fremden Person im Zug erzählen als dem Menschen, mit dem du schläfst?",
+   "best": false
+  },
+  {
+   "i": 257,
+   "alt": "Welches Tabu hast du heimlich spannend gefunden, ohne es laut auszusprechen?",
+   "neu": "Was fandest du früher total abtörnend und heute ziemlich reizvoll?",
+   "best": false
+  },
+  {
+   "i": 261,
+   "alt": "Welche Rolle spielt Sex in deinem Leben — verglichen mit vor fünf Jahren?",
+   "neu": "Woher hattest du als Teenager dein Wissen über Sex — und was davon war kompletter Unsinn?",
+   "best": false
+  },
+  {
+   "i": 263,
+   "alt": "Gibt es etwas, wovon du weißt, dass es dich erregt, du dich aber scheust, es zuzugeben?",
+   "neu": "Welche Filmszene hat dich als Teenager mehr verwirrt, als du zugeben wolltest?",
+   "best": false
+  },
+  {
+   "i": 264,
+   "alt": "Wie ehrlich bist du mit dir selbst in deinen erotischen Wünschen?",
+   "neu": "Was war dein peinlichster Moment im Bett, über den ihr hinterher lachen musstet?",
+   "best": false
+  },
+  {
+   "i": 268,
+   "alt": "Gibt es ein „Erstes Mal“, das noch kommen soll?",
+   "neu": "Wie war dein erstes Mal — eher Komödie oder Drama?",
+   "best": false
+  },
+  {
+   "i": 273,
+   "alt": "Wovon träumst du nachts, worüber du tagsüber nicht sprichst?",
+   "neu": "Welcher Tipp aus einer Zeitschrift oder einem Ratgeber war im echten Leben eine komplette Pleite?",
+   "best": false
+  },
+  {
+   "i": 274,
+   "alt": "Was wäre in deinem Intimleben heute möglich, wenn du weniger Scham hättest?",
+   "neu": "Was hat dir mal jemand im Bett beigebracht, wofür du bis heute dankbar bist?",
+   "best": false
+  },
+  {
+   "i": 275,
+   "alt": "Welcher Geruch eines Menschen wirkt auf dich sofort wie ein körperliches Angebot?",
+   "neu": "Bei welchem Duft an einem Menschen wirst du sofort schwach?",
+   "best": false
+  },
+  {
+   "i": 276,
+   "alt": "Was würdest du jetzt gern ins Ohr geflüstert bekommen — kein Cliché, das echte?",
+   "neu": "Wo war der ungewöhnlichste Ort, an dem du je geküsst hast?",
+   "best": false
+  },
+  {
+   "i": 278,
+   "alt": "Was war das Letzte, was du jemandem nicht zu sagen wagtest, weil es zu ehrlich-erregt war?",
+   "neu": "Was war der eindeutigste Flirtversuch, den du komplett nicht gecheckt hast?",
+   "best": false
+  },
+  {
+   "i": 281,
+   "alt": "Was machst du, was nur dir gefällt, das du nicht öffentlich teilen würdest — aber auch nicht ablegen willst?",
+   "neu": "Was ist für dich ein klarer Abturner, den andere völlig normal finden?",
+   "best": false
+  },
+  {
+   "i": 282,
+   "alt": "Welche Phase deines Lebens war die intensivste sexuell — und warum genau diese?",
+   "neu": "Welches Jahr deines Lebens war sexuell das wildeste — und was war da los?",
+   "best": false
+  },
+  {
+   "i": 283,
+   "alt": "Wie ist dein Verhältnis zu Spiegel und dir selbst — eher Abwender oder Beobachter?",
+   "neu": "Wann hast du dich zuletzt im Spiegel angeschaut und gedacht: Doch, ganz schön gut?",
+   "best": false
+  },
+  {
+   "i": 284,
+   "alt": "Welcher Moment aus deiner Vergangenheit holt sofort warmen Bauch zurück, wenn du dran denkst?",
+   "neu": "An welchen Kuss erinnerst du dich so genau, dass du ihn fast noch spüren kannst?",
+   "best": false
+  },
+  {
+   "i": 289,
+   "alt": "Welche Phantasie kommt dir immer wieder, ohne dass du sie dir aussuchst?",
+   "neu": "Was war der schlechteste Anmachspruch, den du je gehört hast — und hat er trotzdem funktioniert?",
+   "best": false
+  },
+  {
+   "i": 292,
+   "alt": "Welcher Satz im Bett wirkt auf dich, weil er nicht klingt wie eine Floskel?",
+   "neu": "Wie redet man im Bett über Wünsche, ohne dass es nach Bewerbungsgespräch klingt?",
+   "best": false
+  },
+  {
+   "i": 293,
+   "alt": "Welche Tageszeit ist deine ehrlichste sexuelle Tageszeit — und warum?",
+   "neu": "Morgens, mittags oder mitten in der Nacht — wann bist du am ehesten in Stimmung?",
+   "best": false
+  },
+  {
+   "i": 294,
+   "alt": "Welches Wort, das du sonst nie verwendest, würdest du jetzt jemandem sagen wollen?",
+   "neu": "Was hättest du mit zwanzig über Sex gern schon gewusst?",
+   "best": false
+  },
+  {
+   "i": 305,
+   "alt": "Wann hast du zuletzt heimlich die Story von jemandem angeschaut, der dich gerade beschäftigt?",
+   "neu": "Bei wem hast du beim heimlichen Durchscrollen schon mal aus Versehen ein uraltes Foto geliked?",
+   "best": false
+  },
+  {
+   "i": 309,
+   "alt": "Wie oft denkst du an deinen Ex — ehrlich, nicht die Antwort, die du sonst gibst?",
+   "neu": "Wie oft denkst du noch an einen Ex — und in welchen Momenten genau?",
+   "best": false
+  },
+  {
+   "i": 311,
+   "alt": "Welche Eigenschaft bei deinen engsten Freund:innen nervt dich richtig, sagst aber nichts?",
+   "neu": "Was nervt dich an deinem besten Freund oder deiner besten Freundin, und du sagst es seit Jahren nicht?",
+   "best": false
+  },
+  {
+   "i": 312,
+   "alt": "Welcher Mensch fehlt dir, mit dem du seit Monaten nicht geschrieben hast — und warum schreibst du eigentlich nicht?",
+   "neu": "Mit welcher erfundenen Ausrede hast du zuletzt etwas abgesagt?",
+   "best": false
+  },
+  {
+   "i": 316,
+   "alt": "Welche Beleidigung oder kritische Bemerkung gegen dich beschäftigt dich noch Monate später, obwohl sie längst vergessen sein müsste?",
+   "neu": "Welcher fiese Kommentar über dich beschäftigt dich noch, obwohl er Monate her ist?",
+   "best": false
+  },
+  {
+   "i": 317,
+   "alt": "Welche Person würdest du am liebsten heimlich für einen Tag werden — und warum genau die?",
+   "neu": "Mit welcher Lüge über deinen Alltag kommst du seit Jahren durch — Sport, Lesen, Gemüse?",
+   "best": false
+  },
+  {
+   "i": 325,
+   "alt": "Welche kleine Routine zwischen dir und einem geliebten Menschen ist so unscheinbar, dass sie kaum benennbar ist — und trägt trotzdem alles?",
+   "neu": "Ohne welche winzige Routine mit einem geliebten Menschen würde dir etwas fehlen?",
+   "best": false
+  },
+  {
+   "i": 327,
+   "alt": "Was hast du als Kind gefühlt, das du heute nicht mehr fühlst — und vermisst?",
+   "neu": "Wann hattest du als Erwachsener zuletzt dieses Gefühl vom letzten Schultag vor den Sommerferien?",
+   "best": false
+  },
+  {
+   "i": 329,
+   "alt": "Welcher Lieblingssatz deiner Mutter oder deines Vaters taucht in dir auf, wenn dir etwas wehtut?",
+   "neu": "Welchen Chatverlauf hast du nie gelöscht, und du liest ihn manchmal noch?",
+   "best": false
+  },
+  {
+   "i": 333,
+   "alt": "Wann hast du zuletzt geweint, ohne genau zu wissen warum?",
+   "neu": "Bei welcher Werbung, welchem Kinderfilm oder welchem Lied kommen dir zuverlässig die Tränen?",
+   "best": false
+  },
+  {
+   "i": 335,
+   "alt": "An welchem Tag im Jahr ist deine Stimmung jedes Jahr seltsam ähnlich — und welcher Tag ist das?",
+   "neu": "An welchem Tag im Jahr bist du jedes Mal seltsam drauf, egal was du vorhast?",
+   "best": false
+  },
+  {
+   "i": 336,
+   "alt": "Welche gewöhnliche Situation aus deinem Leben würdest du als Foto rahmen, wenn du ehrlich antwortest?",
+   "neu": "Welche ganz gewöhnliche Szene aus deinem Alltag würdest du dir gerahmt an die Wand hängen?",
+   "best": false
+  },
+  {
+   "i": 337,
+   "alt": "Welchen Moment hast du heute oder gestern bewusst zu schnell beendet — und was hätte passieren können, wenn du geblieben wärst?",
+   "neu": "Was machst du als Erstes, wenn du nach einer langen Reise die Wohnungstür aufschließt?",
+   "best": false
+  },
+  {
+   "i": 340,
+   "alt": "Nach welchem System benennst du deine Handy-Kontakte — ehrlich?",
+   "neu": "Welcher Kontakt in deinem Handy hat den seltsamsten Namen?",
+   "best": false
+  },
+  {
+   "i": 342,
+   "alt": "Dein Restaurant hätte genau ein Alleinstellungsmerkmal: Welches?",
+   "neu": "Du eröffnest ein Restaurant mit genau einem Gericht: Welches?",
+   "best": false
+  },
+  {
+   "i": 363,
+   "alt": "Wenn du ein Küchengerät wärst — welches, und warum?",
+   "neu": "Welches Küchengerät hast du genau einmal benutzt?",
+   "best": false
+  },
+  {
+   "i": 379,
+   "alt": "Was war dein letzter kleiner Kauf mit großer Wirkung?",
+   "neu": "Welches Produkt hast du nur wegen der Verpackung gekauft?",
+   "best": false
+  },
+  {
+   "i": 386,
+   "alt": "Welches Kleidungsstück hättest du gern, musst dir aber eingestehen: Es wird nie was?",
+   "neu": "Welches Kleidungsstück steht dir einfach nicht, egal wie oft du es probierst?",
+   "best": false
+  },
+  {
+   "i": 387,
+   "alt": "Bei welchem Genuss spielt Geld für dich keine Rolle?",
+   "neu": "Was ist dein Notfall-Snack?",
+   "best": false
+  },
+  {
+   "i": 390,
+   "alt": "Wie heißt das Kapitel, in dem dein Leben gerade steckt?",
+   "neu": "Welche Serie würdest du gern noch einmal zum ersten Mal sehen?",
+   "best": false
+  },
+  {
+   "i": 415,
+   "alt": "Dürfte ein Haustier in dein Bett — ehrliche Antwort?",
+   "neu": "Haustier im Bett: gemütlich oder Grenzüberschreitung?",
+   "best": false
+  },
+  {
+   "i": 422,
+   "alt": "Welcher Wochentag ist der ehrlichste?",
+   "neu": "Montagmorgen oder Sonntagabend: Was ist schlimmer?",
+   "best": false
+  },
+  {
+   "i": 426,
+   "alt": "Welches Tier wird komplett überschätzt?",
+   "neu": "Hund oder Katze — und was hältst du von Leuten, die das andere sagen?",
+   "best": false
+  },
+  {
+   "i": 435,
+   "alt": "Wie viele offene Tabs hat dein Browser gerade — und was sagt das über dich?",
+   "neu": "Wie viele ungelesene Mails hast du gerade — die echte Zahl?",
+   "best": false
+  },
+  {
+   "i": 437,
+   "alt": "Kino: Werbung mitgucken oder knapp reinkommen — was bist du für ein Mensch?",
+   "neu": "Kino: Werbung mitgucken oder auf den letzten Drücker rein?",
+   "best": false
+  },
+  {
+   "i": 549,
+   "alt": "Was war heute der schrägste Opener, den du auf einer Dating-App bekommen hast?",
+   "neu": "Was war der schrägste Opener, den du je auf einer Dating-App bekommen hast?",
+   "best": false
+  },
+  {
+   "i": 553,
+   "alt": "Ich brauche genau eine Frage, die du dich nie zu fragen traust. Lass hören.",
+   "neu": "Was ist eine Green Flag bei anderen, die kaum jemand auf dem Schirm hat?",
+   "best": false
+  },
+  {
+   "i": 554,
+   "alt": "Du bist Drehbuch-Autorin von einem Film über uns. Wie lautet die erste Szene?",
+   "neu": "Jemand dreht einen Film über unser erstes Treffen — wie lautet die erste Szene?",
+   "best": false
+  },
+  {
+   "i": 558,
+   "alt": "Wenn wir hier matchen, aber nie schreiben — was würdest du dir später wünschen, hättest du gefragt?",
+   "neu": "Welche Red Flag ignorierst du immer wieder, obwohl du es besser weißt?",
+   "best": false
+  },
+  {
+   "i": 561,
+   "alt": "Wenn du jetzt aus dem Fenster schaust — was siehst du, das du sonst nicht beachtest?",
+   "neu": "Was bestellst du, wenn du jemanden beeindrucken willst — und was, wenn nicht?",
+   "best": false
+  },
+  {
+   "i": 567,
+   "alt": "Welche Eigenschaft an dir würden deine engsten Freund:innen sofort als dein Markenzeichen nennen?",
+   "neu": "Woran erkennen dich deine Freunde schon von Weitem?",
+   "best": false
+  },
+  {
+   "i": 568,
+   "alt": "Wenn unsere erste Nachricht der Anfang eines Buchs wäre — wer schreibt's, du oder ich?",
+   "neu": "Mit welchem Song gehst du beim Karaoke ans Mikro — oder bist du die Person, die nur zuschaut?",
+   "best": false
+  },
+  {
+   "i": 569,
+   "alt": "Was ist die schönste Sache, die jemand mal über dich gesagt hat?",
+   "neu": "Frühstück, Feierabendbier oder Mitternachtsimbiss — wann bist du am charmantesten?",
+   "best": false
+  },
+  {
+   "i": 570,
+   "alt": "Ich gebe dir drei Optionen für unser erstes Treffen — Spaziergang, Bar, Galerie. Du gibst mir eine vierte, die ich nicht erwartet hätte.",
+   "neu": "Spaziergang, Bar oder Museum — oder hast du eine vierte Idee, mit der ich nicht rechne?",
+   "best": false
+  },
+  {
+   "i": 571,
+   "alt": "Was machst du, wenn du dich richtig wohl fühlst — etwas, das nur du machst?",
+   "neu": "Wohin bist du mal gereist und wurdest komplett überrascht — im Guten oder im Schlechten?",
+   "best": false
+  },
+  {
+   "i": 572,
+   "alt": "Wenn du heute Abend einen Brief an dein 16-jähriges Ich schreiben dürftest — was wäre der erste Satz?",
+   "neu": "Was hast du mit sechzehn in jeder freien Minute gemacht — und machst du es noch?",
+   "best": false
+  },
+  {
+   "i": 578,
+   "alt": "Ich tippe, du bist eine von den Leuten, die nach außen entspannt wirken und innerlich eine sehr klare Meinung zu allem haben. Wie oft liege ich damit richtig?",
+   "neu": "Ich tippe: außen entspannt, innen zu allem eine klare Meinung. Wie nah bin ich dran?",
+   "best": false
+  },
+  {
+   "i": 579,
+   "alt": "Ehrliche Ansage: Ich schreibe nur Menschen an, bei denen ich mir das Gespräch danach auch vorstellen kann. Was müsste in deinem Profil noch stehen, damit man dich wirklich kennt?",
+   "neu": "Was müsste in deinem Profil noch stehen, damit man dich wirklich kennt?",
+   "best": false
+  },
+  {
+   "i": 587,
+   "alt": "Warum bist du, du?",
+   "neu": "Was steht ganz oben in deiner Gebrauchsanweisung — also das, was man über dich wissen muss?",
+   "best": false
+  },
+  {
+   "i": 588,
+   "alt": "Zu welchem Zeitpunkt in der jüngsten Vergangenheit hast du dich am wohlsten und lebendigsten gefühlt?",
+   "neu": "Wofür bist du bereit, dich richtig lächerlich zu machen?",
+   "best": false
+  },
+  {
+   "i": 589,
+   "alt": "In welcher Situation ist dein innerer Schweinehund am größten — wo fällt dir die Überwindung am schwersten?",
+   "neu": "Wofür musst du deinen inneren Schweinehund jedes Mal aufs Neue überreden?",
+   "best": false
+  },
+  {
+   "i": 590,
+   "alt": "Machst du, woran du von tiefem Herzen glaubst, oder bist du auf deinem Weg faule Kompromisse eingegangen?",
+   "neu": "Welchen Kompromiss bist du eingegangen, über den du früher die Nase gerümpft hättest?",
+   "best": false
+  },
+  {
+   "i": 591,
+   "alt": "Auf was könntest du in deinem Leben nicht verzichten?",
+   "neu": "Worauf könntest du überraschend leicht verzichten, obwohl alle es für unverzichtbar halten?",
+   "best": false
+  },
+  {
+   "i": 592,
+   "alt": "Wenn du drei Wünsche frei hättest — welche wären es?",
+   "neu": "Ein Wunsch frei, aber er muss klein sein und nur dich betreffen — welcher?",
+   "best": false
+  },
+  {
+   "i": 593,
+   "alt": "Ist dein größter Lebenstraum bereits in Erfüllung gegangen?",
+   "neu": "Welcher Traum hat sich erfüllt und sich dann ganz anders angefühlt als gedacht?",
+   "best": false
+  },
+  {
+   "i": 594,
+   "alt": "Was ist deine glücklichste Kindheitserinnerung — und was macht sie so besonders?",
+   "neu": "Welcher Sommer deiner Kindheit fühlt sich in der Erinnerung endlos an — und was habt ihr da gemacht?",
+   "best": false
+  },
+  {
+   "i": 595,
+   "alt": "Was ist die schönste Erinnerung an deine Familie?",
+   "neu": "Welches Familienritual fandest du als Kind peinlich und vermisst es heute?",
+   "best": false
+  },
+  {
+   "i": 596,
+   "alt": "Wenn du wüsstest, dass alle Menschen, die du kennst, morgen sterben würden — wen würdest du heute noch besuchen?",
+   "neu": "Wen besuchst du viel zu selten, obwohl es nur eine Stunde Fahrt wäre?",
+   "best": false
+  },
+  {
+   "i": 597,
+   "alt": "Was ist — abgesehen vom Äußeren — das Attraktivste an einem Menschen?",
+   "neu": "Bei welcher kleinen Geste denkst du sofort: Den Menschen mag ich?",
+   "best": false
+  },
+  {
+   "i": 598,
+   "alt": "Warst du immer der Freund, den du dir für dich selbst gewünscht hättest?",
+   "neu": "Bei welcher Gelegenheit warst du ein richtig mieser Freund — und weiß die Person es?",
+   "best": false
+  },
+  {
+   "i": 599,
+   "alt": "In welchem Bereich gehörst du zu den 1 % Besten — was ist dein Signature-Ding?",
+   "neu": "Worin gehörst du zu den besten ein Prozent — und sei es nur beim Einparken oder beim Kreuzworträtsel?",
+   "best": false
+  },
+  {
+   "i": 600,
+   "alt": "Glaubst du an Gott — und wie stellst du ihn dir vor?",
+   "neu": "Wann hast du zuletzt gebetet oder etwas Ähnliches getan — und zu wem eigentlich?",
+   "best": false
+  },
+  {
+   "i": 601,
+   "alt": "Was ist schlimmer: zu scheitern oder es nicht zu versuchen?",
+   "neu": "Was hast du nie versucht, aus Angst, es könnte dir zu gut gefallen?",
+   "best": false
+  },
+  {
+   "i": 602,
+   "alt": "Wer ist der Ghostwriter deines Lebens?",
+   "neu": "Wer hat mehr Entscheidungen in deinem Leben getroffen, als du zugeben möchtest?",
+   "best": false
+  },
+  {
+   "i": 605,
+   "alt": "Wonach bist du süchtig?",
+   "neu": "Von welcher App, welchem Snack oder welcher Serie kommst du gerade einfach nicht los?",
+   "best": false
+  },
+  {
+   "i": 606,
+   "alt": "Was ist der seltsamste Ort, an dem du je warst?",
+   "neu": "An welchem seltsamen Ort hast du schon mal übernachtet?",
+   "best": false
+  },
+  {
+   "i": 607,
+   "alt": "Was war das gefährlichste Erlebnis deines Lebens?",
+   "neu": "Wobei hattest du unverschämtes Glück, dass nichts passiert ist?",
+   "best": false
+  },
+  {
+   "i": 608,
+   "alt": "Wenn du eine Erfindung rückgängig machen könntest — welche wäre das, und warum?",
+   "neu": "Welche Erfindung würdest du sofort rückgängig machen, obwohl du sie selbst täglich benutzt?",
+   "best": false
+  },
+  {
+   "i": 609,
+   "alt": "Literatur oder Musik?",
+   "neu": "Buch oder Hörbuch — und zählt ein Hörbuch als gelesen?",
+   "best": false
+  }
+ ],
+ "neu": [
+  {
+   "text": "Welche Eigenschaft finden alle an dir anstrengend, und du findest sie ehrlich gesagt super?",
+   "category": "Über dich"
+  },
+  {
+   "text": "Welcher völlig unlogische Trick funktioniert bei dir trotzdem — beim Einschlafen, beim Aufräumen oder beim Losgehen?",
+   "category": "Über dich"
+  },
+  {
+   "text": "Welche Meinung hast du von deinen Eltern übernommen und nie wirklich überprüft?",
+   "category": "Werte & Richtung"
+  },
+  {
+   "text": "Woran misst du heute, ob ein Jahr gut war?",
+   "category": "Werte & Richtung"
+  },
+  {
+   "text": "Welches Abenteuer würdest du sofort machen, wenn deine Mutter nie davon erfahren würde?",
+   "category": "Träume & Zukunft"
+  },
+  {
+   "text": "Welches Lebensziel, das scheinbar alle haben, findest du eigentlich ziemlich öde?",
+   "category": "Träume & Zukunft"
+  },
+  {
+   "text": "Welche Lüge deiner Eltern hast du erstaunlich lange geglaubt?",
+   "category": "Kindheit & Wurzeln"
+  },
+  {
+   "text": "Was hast du als Kind über Erwachsene gedacht, das sich als komplett falsch herausgestellt hat?",
+   "category": "Kindheit & Wurzeln"
+  },
+  {
+   "text": "Welcher Freund hat dich schon mal vor einer richtig dummen Entscheidung bewahrt?",
+   "category": "Herzensmenschen"
+  },
+  {
+   "text": "Welche Freundschaft hält vielleicht nur, weil ihr bestimmte Themen konsequent umschifft?",
+   "category": "Herzensmenschen"
+  },
+  {
+   "text": "Was am Arbeitsleben, das alle hassen, findest du heimlich ganz gut — Großraumbüro, Montage, Meetings?",
+   "category": "Arbeit & Berufung"
+  },
+  {
+   "text": "Was ist das Absurdeste, das du je für Geld gemacht hast?",
+   "category": "Arbeit & Berufung"
+  },
+  {
+   "text": "Welche Frage stellst du anderen gern, weil du sie dir selbst nicht beantworten willst?",
+   "category": "Tiefgang"
+  },
+  {
+   "text": "Über welchen Menschen hast du deine Meinung zuletzt komplett geändert — und was ist passiert?",
+   "category": "Tiefgang"
+  },
+  {
+   "text": "Unpopular Opinion: Welcher Film, den alle lieben, hat dich zu Tode gelangweilt?",
+   "category": "Leicht & Humor"
+  },
+  {
+   "text": "Wie räumt man eine Spülmaschine richtig ein — und mit wem hast du darüber schon gestritten?",
+   "category": "Leicht & Humor"
+  },
+  {
+   "text": "Welchem Promi bist du schon mal begegnet — und wie hast du es verbockt?",
+   "category": "Absurd & Erlebt"
+  },
+  {
+   "text": "Welche Begegnung mit einem Tier ist komplett aus dem Ruder gelaufen?",
+   "category": "Absurd & Erlebt"
+  },
+  {
+   "text": "In welchem Urlaub ist so ziemlich alles schiefgegangen, was schiefgehen konnte?",
+   "category": "Absurd & Erlebt"
+  },
+  {
+   "text": "Wofür hast du dich schon mal als jemand anderes ausgegeben — und bist damit durchgekommen?",
+   "category": "Absurd & Erlebt"
+  },
+  {
+   "text": "Unpopular Opinion: Was gilt als typisch deutsch und ist eigentlich ziemlich gut?",
+   "category": "Bunt gemischt"
+  },
+  {
+   "text": "Welcher Trend ist komplett an dir vorbeigegangen, ohne dass du etwas vermisst hast?",
+   "category": "Bunt gemischt"
+  },
+  {
+   "text": "Unpopular Opinion: Was wird beim Sex völlig überschätzt?",
+   "category": "Ü18 · Spicy"
+  },
+  {
+   "text": "Welche Kleinigkeit beim Flirten wirkt bei dir garantiert, ohne dass die andere Person es ahnt?",
+   "category": "Ü18 · Spicy"
+  },
+  {
+   "text": "Kleines Geständnis: Was hast du mal kaputtgemacht und nie zugegeben?",
+   "category": "Schräg & Ehrlich"
+  },
+  {
+   "text": "Was machst du eigentlich nur, damit es auf Fotos gut aussieht?",
+   "category": "Schräg & Ehrlich"
+  },
+  {
+   "text": "Wen hast du schon mal gegoogelt, kurz bevor ihr euch zum ersten Mal getroffen habt — und was hast du gefunden?",
+   "category": "Schräg & Ehrlich"
+  },
+  {
+   "text": "Wie trinkst du deinen Kaffee oder Tee — und seit wann eigentlich genau so?",
+   "category": "Banal & Tief"
+  },
+  {
+   "text": "Welches Geräusch beruhigt dich sofort — Regen, Spülmaschine, Stimmen aus dem Nebenzimmer?",
+   "category": "Banal & Tief"
+  },
+  {
+   "text": "Welchen Weg gehst du absichtlich länger, nur weil er schöner ist?",
+   "category": "Banal & Tief"
+  },
+  {
+   "text": "Deine Unpopular Opinion über Essen — in einem Satz?",
+   "category": "Blitzrunde"
+  },
+  {
+   "text": "Sprachnachricht über zwei Minuten: Liebesbeweis oder Zumutung?",
+   "category": "Blitzrunde"
+  },
+  {
+   "text": "Was war deine letzte Google-Suche — ungefiltert?",
+   "category": "Blitzrunde"
+  },
+  {
+   "text": "Was ist dein Dealbreaker, der eigentlich total banal ist?",
+   "category": "Match-Eisbrecher"
+  },
+  {
+   "text": "Welches Gericht kannst du so gut, dass es als Argument für ein zweites Date zählt?",
+   "category": "Match-Eisbrecher"
+  }
+ ]
+}
