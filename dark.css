@@ -123,4 +123,6 @@ html:not(.dark) .text-secondary\/60,
 html:not(.dark) .text-secondary\/70 { color: rgb(146 76 0 / 0.95); }
 html:not(.dark) .text-on-primary\/50 { color: rgb(255 255 255 / 0.72); }
 html:not(.dark) .text-on-primary\/60 { color: rgb(255 255 255 / 0.75); }
+/* Gold-Labels („Worum es geht", „Station 3 von 19"): #b7895b hatte nur 2,9:1 */
+html:not(.dark) .text-on-tertiary-container { color: #86602f; }
 }
