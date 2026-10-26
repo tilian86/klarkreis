@@ -177,6 +177,16 @@ const QUESTIONS = [
     ] }
 ];
 
+// Verkleinerte Bildfassungen (images/w480, images/w960), erzeugt mit _scripts/make_thumbs.py
+function imgSrcset(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? `srcset="images/w480/${m[1]} 480w, images/w960/${m[1]} 960w, ${src} 1600w"` : '';
+}
+function imgThumb(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? 'images/w480/' + m[1] : src;
+}
+
 let answers = {};
 let step = 0;
 
@@ -275,10 +285,10 @@ function showResult() {
   const altCards = rec.alts.map(id => {
     const a = T[id]; if (!a) return '';
     return `<a href="thema.html?id=${id}" class="flex items-center gap-4 bg-surface-container-lowest border border-outline-variant/60 hover:border-secondary rounded-xl p-4 transition-all group">
-      <img loading="lazy" src="${a.image}" alt="" class="w-14 h-16 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all"/>
+      <img loading="lazy" src="${imgThumb(a.image)}" alt="" class="w-14 h-16 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all"/>
       <span>
         <span class="block font-semibold text-on-background text-sm">${a.title}</span>
-        <span class="block text-xs text-on-surface-variant/70">${(a.formats.group || a.formats.pair).duration}</span>
+        <span class="block text-xs text-on-surface-variant/70">${(a.formats[formatFor(a, answers.wer)] || a.formats.group || a.formats.pair).duration}</span>
       </span>
     </a>`;
   }).join('');
@@ -290,10 +300,10 @@ function showResult() {
     <div class="q-fade">
       <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4 text-center">Euer Abend</p>
       <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(27,48,34,0.12)] md:flex">
-        <img loading="lazy" src="${t.image}" alt="${t.title}" class="w-full md:w-2/5 aspect-[4/5] object-cover"/>
+        <img loading="lazy" src="${t.image}" ${imgSrcset(t.image)} sizes="(min-width: 768px) 300px, calc(100vw - 5rem)" alt="${t.title}" class="w-full md:w-2/5 aspect-[4/5] object-cover"/>
         <div class="p-8 md:p-10 flex flex-col">
           <h2 class="font-serif text-3xl md:text-4xl text-on-background leading-tight mb-3">${t.title}</h2>
-          <p class="text-sm uppercase tracking-widest text-on-surface-variant/60 mb-5">${fmt.duration} · ${fmt.label}</p>
+          <p class="text-sm uppercase tracking-widest text-on-surface-variant/60 mb-5">${fmt.duration} · ${fmt.label}${t.paid ? ' · kostenpflichtig' : ' · kostenlos'}</p>
           <p class="text-on-surface-variant leading-relaxed mb-8 line-clamp-5">${t.lead}</p>
           <div class="mt-auto flex flex-col sm:flex-row gap-3">
             <a href="${href}" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary px-7 py-4 rounded-lg hover:bg-secondary transition-colors text-xs uppercase tracking-widest font-semibold">Abend ansehen <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>

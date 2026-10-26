@@ -200,6 +200,16 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 <script src="paid.js?v=20261026a"></script>
 <script src="player.js?v=20261022c"></script>
 <script>
+// Verkleinerte Bildfassungen (images/w480, images/w960), erzeugt mit _scripts/make_thumbs.py
+function imgSrcset(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? `srcset="images/w480/${m[1]} 480w, images/w960/${m[1]} 960w, ${src} 1600w"` : '';
+}
+function imgThumb(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? 'images/w480/' + m[1] : src;
+}
+
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
 if (id && !window.THEMES[id]) { location.replace('themen.html'); }
@@ -383,7 +393,11 @@ document.title = theme.title + ' — KlarKreis';
 // Static fields
 document.querySelectorAll('[data-field]').forEach(el => {
   const field = el.getAttribute('data-field');
-  if (field === 'image') { el.src = theme.image; el.alt = theme.title; }
+  if (field === 'image') {
+    const set = imgSrcset(theme.image).replace(/^srcset="|"$/g, '');
+    if (set) { el.srcset = set; el.sizes = '(min-width: 768px) 40vw, calc(100vw - 5rem)'; }
+    el.src = theme.image; el.alt = theme.title;
+  }
   else if (theme[field] !== undefined) el.textContent = theme[field];
 });
 
@@ -547,7 +561,7 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
   return `
     <a href="thema.html?id=${rid}" class="group cursor-pointer block">
       <div class="aspect-video bg-surface-container-low overflow-hidden rounded mb-4">
-        <img alt="${t.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${t.image}"/>
+        <img loading="lazy" alt="${t.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${t.image}" ${imgSrcset(t.image)} sizes="(min-width: 768px) 30vw, calc(100vw - 5rem)"/>
       </div>
       <h5 class="font-headline text-lg group-hover:text-secondary transition-colors italic">${t.title}</h5>
       <p class="font-label text-[10px] uppercase text-on-surface-variant/60">Themenabend · ${firstFormat.duration}</p>
