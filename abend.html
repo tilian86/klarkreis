@@ -327,6 +327,7 @@ const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
 
+if (!window.THEMES[themaId]) location.replace('themen.html');
 const theme = window.THEMES[themaId] || window.THEMES.bindung;
 // Kostenpflichtige Abende: Stationen liegen serverseitig (paid_content) und werden
 // erst nach Login + gültiger Berechtigung geladen. Ohne Zugang → zurück zum Kauf-Modal.

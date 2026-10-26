@@ -364,6 +364,9 @@ document.title = theme.title + ' — KlarKreis';
   const c = document.querySelector('link[rel="canonical"]'); if (c) c.href = url;
   const o = document.querySelector('meta[property="og:url"]'); if (o) o.setAttribute('content', url);
   const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.setAttribute('content', theme.title + ' — KlarKreis');
+  const desc = (theme.lead || '').slice(0, 300);
+  const md = document.querySelector('meta[name="description"]'); if (md && desc) md.setAttribute('content', desc);
+  const od = document.querySelector('meta[property="og:description"]'); if (od && desc) od.setAttribute('content', desc);
 })();
 
 // Handout-PDF anbieten, falls eines für dieses Thema existiert
