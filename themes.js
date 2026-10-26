@@ -1674,7 +1674,7 @@ window.THEMES = {
           { name: 'Einstieg', title: 'Wir werden aneinander', duration: 6*60,
             hostNote: 'Host liest vor.',
             quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
-            description: 'Wir entstehen nicht allein. Wer wir sind, hat viel damit zu tun, wer uns angeschaut hat — und wie. Heute geht es um diese Menschen: die nahen, die verlorenen, die, an die wir denken, ohne es zu sagen.',
+            description: 'Zwei Befunde vorweg. Der Anthropologe Robin Dunbar hat gezeigt, dass die meisten Menschen nur etwa fünf wirklich enge Bezugspersonen haben, rund fünfzehn gute Freundinnen und Freunde und etwa 150 Menschen, die sie überhaupt näher einordnen können. Und die Harvard-Studie zur Erwachsenenentwicklung, die Männer seit 1938 begleitet, fand: Wie zufrieden jemand mit 50 mit seinen Beziehungen war, sagte seine Gesundheit mit 80 besser voraus als sein Cholesterinspiegel.\n\nHeute geht es um diese Menschen: die nahen, die verlorenen, die, an die wir denken, ohne es zu sagen.',
             teaser: 'Worum es heute geht.'
           },
           { name: 'Die Nahen', title: 'Wer dich kennt', duration: 18*60,
@@ -1736,7 +1736,7 @@ window.THEMES = {
           { name: 'Einstieg', title: 'Wir werden aneinander', duration: 5*60,
             hostNote: 'Eine:r liest vor.',
             quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
-            description: 'Wer wir sind, hat viel damit zu tun, wer uns angeschaut hat — und wie.'
+            description: 'Die meisten Menschen haben nur etwa fünf wirklich enge Bezugspersonen (Robin Dunbar). Und die Harvard-Studie zur Erwachsenenentwicklung zeigt seit 1938: Wie zufrieden jemand mit seinen Beziehungen ist, sagt über die Gesundheit im Alter mehr als der Cholesterinspiegel. Heute: wer eure fünf sind — und wer fehlt.'
           },
           { name: 'Die Nahen', title: 'Wer dich kennt', duration: 15*60,
             hostNote: 'Je 7 Minuten pro Frage.',
@@ -1780,7 +1780,7 @@ window.THEMES = {
           },
           { name: 'Einstieg', title: 'Wir werden aneinander', duration: 4*60,
             quote: { text: 'Alles wirkliche Leben ist Begegnung.', author: 'Martin Buber' },
-            description: 'Wer dich angeschaut hat, hat mitgebaut an dem, was du heute bist.'
+            description: 'Die meisten Menschen haben nur etwa fünf wirklich enge Bezugspersonen, hat der Anthropologe Robin Dunbar gezeigt. Schreib heute auf, wer deine sind — und wer fehlt.'
           },
           { name: 'Die Nahen', title: 'Wer dich kennt', duration: 6*60,
             hostNote: 'Schreib die Namen auf. Auch die, die dich überraschen.',
