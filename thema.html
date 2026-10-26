@@ -40,7 +40,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
@@ -193,13 +193,23 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
     <a class="font-['Inter'] text-xs tracking-wider uppercase text-on-surface-variant/50 hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
-<script src="themes.js?v=20261025b"></script>
+<script src="themes.js?v=20261026b"></script>
 <script src="config.js?v=20261022c"></script>
-<script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
-<script src="paid.js?v=20261022c"></script>
+<script src="auth.js?v=20261026a"></script>
+<script src="login-ui.js?v=20261026a"></script>
+<script src="paid.js?v=20261026a"></script>
 <script src="player.js?v=20261022c"></script>
 <script>
+// Verkleinerte Bildfassungen (images/w480, images/w960), erzeugt mit _scripts/make_thumbs.py
+function imgSrcset(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? `srcset="images/w480/${m[1]} 480w, images/w960/${m[1]} 960w, ${src} 1600w"` : '';
+}
+function imgThumb(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? 'images/w480/' + m[1] : src;
+}
+
 const params = new URLSearchParams(location.search);
 const id = params.get('id') || 'bindung';
 if (id && !window.THEMES[id]) { location.replace('themen.html'); }
@@ -259,58 +269,86 @@ async function gateCheck() {
     }
     return;
   }
-  const needsLogin = res.reason === 'login';
+  // 'error' = Server nicht erreichbar: wie „nicht angemeldet" behandeln, aber ehrlich sagen
+  const needsLogin = res.reason === 'login' || res.reason === 'error';
+  const checkFailed = res.reason === 'error';
   {
     // Volles Paid-Modal als Overlay — markengerecht, mobil-freundlich
     const relatedFree = id.startsWith('werte_reise') ? 'thema.html?id=werte_reise_1'
                        : id.startsWith('wir_reise') ? 'thema.html?id=wir_reise_1'
                        : 'themen.html';
     // Solange kein echter Stripe-Link eingetragen ist (Platzhalter), führt der
-    // Kauf-Button auf eine vorbefüllte E-Mail — manueller Verkauf mit Zugangs-Code.
+    // Kauf-Button auf eine vorbefüllte E-Mail — manueller Verkauf, Freischaltung am Konto.
     const linkReady = gate.stripeLink && !gate.stripeLink.includes('REPLACE_MIT');
     const btnStyle = 'display:block;text-align:center;background:#1B3022;color:#fff;padding:1rem 1.75rem;border-radius:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;margin-bottom:0.75rem;transition:background 0.2s;';
     const mailHref = 'mailto:kontakt@klarkreis.de?subject=' + encodeURIComponent('Kauf: ' + gate.title + ' (' + gate.price + ')')
-      + '&body=' + encodeURIComponent('Hallo,\n\nich möchte „' + gate.title + '" für ' + gate.price + ' kaufen. Bitte schickt mir die Zahlungsinfos und meinen Zugangs-Code.\n\nViele Grüße');
+      + '&body=' + encodeURIComponent('Hallo,\n\nich möchte „' + gate.title + '" für ' + gate.price + ' kaufen. Bitte schickt mir die Zahlungsinfos und schaltet den Zugang für diese E-Mail-Adresse frei.\n\nViele Grüße');
     const buyBlock = linkReady
       ? `<a href="${gate.stripeLink}" style="${btnStyle}">Mit Stripe sicher kaufen →</a>`
       : `<a href="${mailHref}" style="${btnStyle}">Per E-Mail kaufen →</a>
-         <p style="font-size:0.8rem;color:#737973;text-align:center;margin-bottom:0.75rem;line-height:1.5;">Kurze E-Mail genügt — du bekommst Zahlungsinfos (PayPal oder Überweisung) und deinen persönlichen Zugangs-Code, in der Regel innerhalb weniger Stunden.</p>`;
+         <p style="font-size:0.8rem;color:#5f655f;text-align:center;margin-bottom:0.75rem;line-height:1.5;">Kurze E-Mail genügt — du bekommst die Zahlungsinfos (PayPal oder Überweisung). Nach Zahlungseingang schalten wir den Zugang für deine E-Mail-Adresse frei, in der Regel innerhalb weniger Stunden. Dann meldest du dich mit dieser Adresse an.</p>`;
+    const userMail = (window.KLARKREIS_AUTH && KLARKREIS_AUTH.user && KLARKREIS_AUTH.user() && KLARKREIS_AUTH.user().email) || '';
+    const accountText = checkFailed
+      ? 'Der Zugang konnte gerade nicht geprüft werden (keine Verbindung zum Server). Schon gekauft? Lade die Seite neu oder melde dich an.'
+      : needsLogin
+        ? 'Schon gekauft? Melde dich mit der E-Mail-Adresse an, mit der du bestellt hast — der Zugang hängt am Konto und gilt auf allen deinen Geräten.'
+        : 'Du bist als <strong>' + userMail.replace(/[<>&"]/g, '') + '</strong> angemeldet. Für dieses Konto liegt noch kein Zugang zu diesem Produkt vor.';
     const modal = document.createElement('div');
+    // Zentrierung über margin:auto statt align-items:center — sonst wird auf kleinen
+    // Bildschirmen der obere Teil des Fensters abgeschnitten und ist nicht erreichbar.
     modal.innerHTML = `
-      <div id="kk-paid-modal" role="dialog" aria-modal="true" aria-label="Kostenpflichtiger Abend" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto;">
-        <div style="background:#FBF9F4;max-width:560px;width:100%;border-radius:1rem;padding:2.5rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,0.4);font-family:'Inter',sans-serif;color:#1B1C19;">
+      <div id="kk-paid-modal" role="dialog" aria-modal="true" aria-labelledby="kk-paid-title" style="position:fixed;inset:0;background:rgba(6,27,14,0.82);backdrop-filter:blur(8px);z-index:9999;display:flex;padding:1.5rem 1rem;overflow-y:auto;">
+        <div style="position:relative;margin:auto;background:#FBF9F4;max-width:560px;width:100%;border-radius:1rem;padding:2.5rem 1.75rem 2rem;box-shadow:0 30px 80px rgba(0,0,0,0.4);font-family:'Inter',sans-serif;color:#1B1C19;">
+          <button type="button" id="kk-paid-close" aria-label="Schließen und Seite ansehen" style="position:absolute;top:0.75rem;right:0.75rem;width:2.75rem;height:2.75rem;border:none;background:transparent;color:#434843;font-size:1.6rem;line-height:1;cursor:pointer;border-radius:999px;">×</button>
           <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#924c00;margin-bottom:1rem;font-weight:600;">Kostenpflichtiger Abend</p>
-          <h2 style="font-family:'Noto Serif',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;">${gate.title}</h2>
+          <h2 id="kk-paid-title" style="font-family:'Noto Serif',serif;font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;line-height:1.2;">${gate.title}</h2>
           <p style="font-family:'Noto Serif',serif;font-style:italic;color:#434843;margin-bottom:1.5rem;font-size:1rem;">${gate.subtitle}</p>
           <div style="background:#f0eee9;border-left:4px solid #924c00;padding:1rem 1.25rem;margin-bottom:1.5rem;border-radius:0 0.5rem 0.5rem 0;">
             <p style="font-size:1.5rem;font-weight:700;color:#1B3022;margin-bottom:0.2rem;">${gate.price}</p>
-            <p style="font-size:0.8rem;color:#737973;">${gate.priceNote}</p>
+            <p style="font-size:0.8rem;color:#5f655f;">${gate.priceNote}</p>
           </div>
           <p style="color:#434843;line-height:1.6;margin-bottom:2rem;font-size:0.95rem;">${gate.body}</p>
           ${buyBlock}
           <div style="background:#f5f3ee;border-radius:0.5rem;padding:1rem 1.25rem;margin-bottom:1.5rem;">
-            <p style="font-size:0.85rem;color:#434843;line-height:1.55;margin-bottom:0.75rem;">
-              ${needsLogin
-                ? 'Schon gekauft? Melde dich mit der E-Mail-Adresse an, mit der du bestellt hast — der Zugang h\u00e4ngt am Konto und gilt auf allen deinen Ger\u00e4ten.'
-                : 'Du bist als <strong>' + ((window.KLARKREIS_AUTH && KLARKREIS_AUTH.user() && KLARKREIS_AUTH.user().email) || '') + '</strong> angemeldet. F\u00fcr dieses Konto liegt noch kein Zugang zu diesem Produkt vor.'}
-            </p>
+            <p style="font-size:0.85rem;color:#434843;line-height:1.55;margin-bottom:0.75rem;">${accountText}</p>
             ${needsLogin
-              ? '<button id="kk-login-btn" style="padding:0.7rem 1.25rem;background:#fff;border:1px solid #1B3022;color:#1B3022;border-radius:0.5rem;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Anmelden</button>'
-              : '<p style="font-size:0.8rem;color:#737973;">Nach dem Kauf schalten wir dein Konto frei — meist innerhalb weniger Stunden.</p>'}
+              ? '<button type="button" id="kk-login-btn" style="padding:0.7rem 1.25rem;background:#fff;border:1px solid #1B3022;color:#1B3022;border-radius:0.5rem;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;">Anmelden</button>'
+              : '<p style="font-size:0.8rem;color:#5f655f;">Nach dem Kauf schalten wir dein Konto frei — meist innerhalb weniger Stunden.</p>'}
           </div>
-          <p style="text-align:center;font-size:0.85rem;margin-bottom:0.5rem;"><a href="${relatedFree}" style="color:#924c00;text-decoration:none;">← Zurück zu den kostenlosen Abenden</a></p>
-          <p style="text-align:center;font-size:0.75rem;color:#737973;margin-top:1rem;">14 Tage Widerrufsrecht · <a href="datenschutz.html" style="color:#737973;">Datenschutz</a> · <a href="agb.html" style="color:#737973;">AGB</a></p>
+          <p style="text-align:center;font-size:0.85rem;margin-bottom:0.5rem;"><button type="button" id="kk-paid-browse" style="background:none;border:none;color:#924c00;cursor:pointer;font-size:0.85rem;padding:0.5rem;">Erst mal ansehen, worum es geht</button></p>
+          <p style="text-align:center;font-size:0.85rem;margin-bottom:0.5rem;"><a href="${relatedFree}" style="color:#924c00;text-decoration:none;">← Zu den kostenlosen Abenden</a></p>
+          <p style="text-align:center;font-size:0.75rem;color:#5f655f;margin-top:1rem;"><a href="widerruf.html" style="color:#5f655f;">Widerrufsbelehrung</a> · <a href="datenschutz.html" style="color:#5f655f;">Datenschutz</a> · <a href="agb.html" style="color:#5f655f;">AGB</a></p>
         </div>
       </div>`;
-    document.body.appendChild(modal);
-    // Body-Scroll sperren, damit nur das Modal interagiert
-    document.body.style.overflow = 'hidden';
-    const loginBtn = document.getElementById('kk-login-btn');
-    if (loginBtn) loginBtn.addEventListener('click', () => {
-      // Login-Modal von login-ui.js öffnen; nach erfolgreichem Login neu laden
-      if (window.KlarKreisLoginUI && KlarKreisLoginUI.open) KlarKreisLoginUI.open();
-      else location.href = 'index.html';
+    const lastFocus = document.activeElement;
+    function openModal() {
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+      document.getElementById('kk-paid-close').focus();
+    }
+    function closeModal() {
+      modal.remove();
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    openModal();
+    modal.addEventListener('click', (e) => {
+      if (e.target.id === 'kk-paid-close' || e.target.id === 'kk-paid-browse' || e.target.id === 'kk-paid-modal') closeModal();
+      if (e.target.id === 'kk-login-btn') {
+        // Login-Fenster (login-ui.js) liegt unter dem Kauf-Fenster — deshalb erst schließen
+        closeModal();
+        if (window.KlarKreisLoginUI && KlarKreisLoginUI.open) KlarKreisLoginUI.open();
+        else location.href = 'index.html';
+      }
     });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.isConnected) closeModal(); });
+    // Ohne Zugang führt der Start-Knopf zurück zum Kauf statt ins Leere
+    const start = document.getElementById('startLink');
+    if (start) {
+      start.textContent = 'Freischalten · ' + gate.price;
+      start.href = '#';
+      start.addEventListener('click', (e) => { e.preventDefault(); if (!modal.isConnected) openModal(); });
+    }
     if (window.KLARKREIS_AUTH && KLARKREIS_AUTH.onChange) {
       KLARKREIS_AUTH.onChange(u => { if (u) location.reload(); });
     }
@@ -326,6 +364,9 @@ document.title = theme.title + ' — KlarKreis';
   const c = document.querySelector('link[rel="canonical"]'); if (c) c.href = url;
   const o = document.querySelector('meta[property="og:url"]'); if (o) o.setAttribute('content', url);
   const ot = document.querySelector('meta[property="og:title"]'); if (ot) ot.setAttribute('content', theme.title + ' — KlarKreis');
+  const desc = (theme.lead || '').slice(0, 300);
+  const md = document.querySelector('meta[name="description"]'); if (md && desc) md.setAttribute('content', desc);
+  const od = document.querySelector('meta[property="og:description"]'); if (od && desc) od.setAttribute('content', desc);
 })();
 
 // Handout-PDF anbieten, falls eines für dieses Thema existiert
@@ -355,7 +396,11 @@ document.title = theme.title + ' — KlarKreis';
 // Static fields
 document.querySelectorAll('[data-field]').forEach(el => {
   const field = el.getAttribute('data-field');
-  if (field === 'image') { el.src = theme.image; el.alt = theme.title; }
+  if (field === 'image') {
+    const set = imgSrcset(theme.image).replace(/^srcset="|"$/g, '');
+    if (set) { el.srcset = set; el.sizes = '(min-width: 768px) 40vw, calc(100vw - 5rem)'; }
+    el.src = theme.image; el.alt = theme.title;
+  }
   else if (theme[field] !== undefined) el.textContent = theme[field];
 });
 
@@ -412,7 +457,7 @@ function renderFormatContent() {
   const hinweisText = document.getElementById('hinweisText');
   if (currentFormat === 'solo') {
     hinweisLabel.textContent = 'Eine Bitte, bevor du anfängst';
-    hinweisText.innerHTML = 'Dieser Abend funktioniert nur, wenn du dir Zeit lässt. Wenn du nur schnell im Kopf antwortest und weiterklickst, bist du in zwanzig Minuten fertig — und hast nichts mitgenommen. <strong>Schreib auf, sprich laut, atme dazwischen.</strong> Die angezeigten Minuten sind Richtwerte, keine Stoppuhr. Eine Station wirklich gemacht ist mehr wert als zehn überflogen. Und am Ende wartet ein kleines Extra: ein vorbereiteter Gesprächs-Auftakt, mit dem du den Abend mit deiner eigenen KI (ChatGPT, Claude &amp; Co.) nachklingen lassen kannst — als Sparringspartner, kostenlos.';
+    hinweisText.innerHTML = 'Dieser Abend funktioniert nur, wenn du dir Zeit lässt. Wenn du nur schnell im Kopf antwortest und weiterklickst, bist du in zwanzig Minuten fertig — und hast nichts mitgenommen. <strong>Schreib auf, sprich laut, mach Pausen.</strong> Die angezeigten Minuten sind Richtwerte, keine Stoppuhr. Eine Station wirklich gemacht ist mehr wert als zehn überflogen. Und am Ende wartet ein kleines Extra: ein vorbereiteter Gesprächs-Auftakt, mit dem du den Abend mit deiner eigenen KI (ChatGPT, Claude &amp; Co.) nachklingen lassen kannst — als Sparringspartner, kostenlos.';
   } else if (currentFormat === 'pair') {
     hinweisLabel.textContent = 'Ein Hinweis';
     hinweisText.innerHTML = 'Wenn ein gutes Gespräch zwischen euch entsteht — <em>bleibt dabei</em>. Ignoriert die nächste Station, lasst die Zeit laufen. Struktur ist dafür da, einen Abend in Gang zu bringen, nicht um ihn zu regieren. Und: nicht nur im Kopf antworten. Wirklich aussprechen, was ihr sonst schluckt — das ist der eigentliche Unterschied.';
@@ -464,7 +509,7 @@ renderFormatContent();
   function apply() {
     document.querySelectorAll('.station-detail').forEach(el => el.classList.toggle('hidden', !shown));
     warn.classList.toggle('hidden', !shown);
-    icon.textContent = shown ? 'visibility_off' : 'visibility';
+    icon.textContent = shown ? 'close' : 'visibility';
     label.textContent = shown ? 'Details ausblenden' : 'Details für Gastgeber:innen zeigen';
   }
   btn.addEventListener('click', () => {
@@ -502,15 +547,24 @@ renderFormatContent();
   });
 })();
 
-// Related themes
-const relatedIds = Object.keys(window.THEMES).filter(k => k !== id).slice(0, 3);
+// Passende Themen: zuerst freie Abende derselben Kategorie, dann andere freie Abende.
+// Bezahlabende und Folge-Abende einer Reise erscheinen hier nicht.
+const relatedIds = (function () {
+  const free = Object.keys(window.THEMES).filter(k => {
+    const t = window.THEMES[k];
+    return k !== id && !t.paid && !(t.reise && !/_1$/.test(k));
+  });
+  const same = free.filter(k => window.THEMES[k].category === theme.category);
+  const rest = free.filter(k => !same.includes(k));
+  return same.concat(rest).slice(0, 3);
+})();
 document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
   const t = window.THEMES[rid];
   const firstFormat = t.formats[Object.keys(t.formats)[0]];
   return `
     <a href="thema.html?id=${rid}" class="group cursor-pointer block">
       <div class="aspect-video bg-surface-container-low overflow-hidden rounded mb-4">
-        <img alt="${t.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${t.image}"/>
+        <img loading="lazy" alt="${t.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${t.image}" ${imgSrcset(t.image)} sizes="(min-width: 768px) 30vw, calc(100vw - 5rem)"/>
       </div>
       <h5 class="font-headline text-lg group-hover:text-secondary transition-colors italic">${t.title}</h5>
       <p class="font-label text-[10px] uppercase text-on-surface-variant/60">Themenabend · ${firstFormat.duration}</p>
@@ -519,5 +573,6 @@ document.getElementById('relatedThemes').innerHTML = relatedIds.map(rid => {
 </script>
 <script src="mobile-nav.js?v=20261022c"></script>
 <script src="page-audio.js?v=20261022c"></script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>

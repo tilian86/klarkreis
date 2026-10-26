@@ -79,6 +79,13 @@
     return _initPromise;
   }
   auth._ensure = initClient;
+  // Gibt es Anzeichen für eine Sitzung? (Ohne: SDK gar nicht erst laden.)
+  auth.mightBeLoggedIn = () => {
+    let stored = false;
+    try { stored = !!localStorage.getItem(SESSION_KEY); } catch (e) {}
+    return stored || !!_initPromise
+      || window.location.hash.includes('access_token') || window.location.search.includes('code=');
+  };
 
   // Nur bei bestehender Sitzung oder Magic-Link-Rücksprung sofort initialisieren
   let hasSession = false;

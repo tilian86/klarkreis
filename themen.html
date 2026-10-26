@@ -46,7 +46,7 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
@@ -75,7 +75,7 @@
     <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4">Die Sammlung</p>
     <h1 class="font-serif text-5xl md:text-7xl leading-tight tracking-tight text-on-background max-w-2xl">Themen-Übersicht</h1>
     <div class="mt-8 flex flex-wrap gap-4 items-center">
-      <p class="text-on-surface-variant font-light italic mr-4">Vorbereitete Abende für tiefe Gespräche — zu zweit oder in kleiner Runde.</p>
+      <p class="text-on-surface-variant font-light italic mr-4">Vorbereitete Abende für ehrliche Gespräche — in kleiner Runde, zu zweit oder allein. Die Abende in der Liste unten sind kostenlos.</p>
       <a href="kompass.html" class="inline-flex items-center gap-2 text-secondary hover:text-on-tertiary-container transition-colors text-xs uppercase tracking-widest font-semibold"><span class="material-symbols-outlined text-[16px]">explore</span> Unsicher? Der Abend-Kompass entscheidet mit euch</a>
     </div>
   </header>
@@ -153,8 +153,18 @@
   </div>
 </footer>
 
-<script src="themes.js?v=20261025b"></script>
+<script src="themes.js?v=20261026b"></script>
 <script>
+// Verkleinerte Bildfassungen (images/w480, images/w960), erzeugt mit _scripts/make_thumbs.py
+function imgSrcset(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? `srcset="images/w480/${m[1]} 480w, images/w960/${m[1]} 960w, ${src} 1600w"` : '';
+}
+function imgThumb(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? 'images/w480/' + m[1] : src;
+}
+
 // Restore previous filter from URL or session
 const params = new URLSearchParams(location.search);
 let currentFilter = params.get('format') || 'all';
@@ -219,7 +229,7 @@ function renderGrid() {
       <article class="group flex flex-col h-full">
         <a href="${cardHref(t)}" class="block">
           <div class="relative overflow-hidden aspect-[4/5] bg-surface-container-highest rounded-lg">
-            <img loading="lazy" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="${t.title}" src="${t.image}"/>
+            <img loading="lazy" class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="${t.title}" src="${t.image}" ${imgSrcset(t.image)} sizes="(min-width: 1024px) 380px, (min-width: 768px) 45vw, calc(100vw - 5rem)"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             <span class="absolute top-4 right-4 bg-surface-bright/90 backdrop-blur px-3 py-1 text-[9px] uppercase tracking-widest font-semibold text-primary">${t.category}</span>
             ${reiseBadge}${priceBadge}
@@ -272,7 +282,7 @@ function renderProducts() {
   grid.innerHTML = PRODUCTS.map(p => `
     <a href="${p.href}" class="group flex gap-4 bg-primary/30 hover:bg-primary/50 border border-secondary-fixed-dim/25 hover:border-secondary-fixed-dim/60 rounded-lg p-4 transition-colors">
       <div class="w-24 h-28 shrink-0 overflow-hidden rounded">
-        <img loading="lazy" src="${p.bild}" alt="${p.titel}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"/>
+        <img loading="lazy" src="${imgThumb(p.bild)}" alt="${p.titel}" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"/>
       </div>
       <div class="min-w-0 flex flex-col">
         <div class="flex items-baseline gap-2 flex-wrap">
@@ -307,7 +317,7 @@ function renderFrageabende() {
     return `
       <a href="${href}" class="group flex gap-4 items-center bg-surface-container-low hover:bg-surface-container border border-outline-variant/20 hover:border-secondary/40 rounded-xl p-4 transition-colors">
         <div class="w-20 h-20 shrink-0 overflow-hidden rounded-lg">
-          <img loading="lazy" src="${t.image}" alt="${t.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"/>
+          <img loading="lazy" src="${imgThumb(t.image)}" alt="${t.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"/>
         </div>
         <div class="min-w-0">
           <h3 class="font-serif text-xl text-on-background leading-snug group-hover:text-secondary transition-colors">${kurz}</h3>
@@ -353,8 +363,9 @@ document.querySelectorAll('.format-filter').forEach(btn => {
 refresh();
 </script>
 <script src="config.js?v=20261022c"></script>
-<script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
+<script src="auth.js?v=20261026a"></script>
+<script src="login-ui.js?v=20261026a"></script>
 <script src="mobile-nav.js?v=20261022c"></script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>

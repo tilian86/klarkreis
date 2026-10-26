@@ -56,7 +56,7 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
@@ -82,7 +82,7 @@
 
 <div class="max-w-5xl mx-auto px-6 md:px-12 pt-8 md:pt-12">
   <div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden relative" style="-webkit-mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%); mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%);">
-    <img src="images/wir-reise.jpg" alt="Zwei Kaffeetassen, Notizbuch und Kerze auf Holztisch" class="w-full h-full object-cover" loading="eager" fetchpriority="high" onerror="this.src='images/wir-reise-1.jpg'"/>
+    <img src="images/wir-reise.jpg" srcset="images/w480/wir-reise.jpg 480w, images/w960/wir-reise.jpg 960w, images/wir-reise.jpg 1280w" sizes="100vw" alt="Zwei Kaffeetassen, Notizbuch und Kerze auf Holztisch" class="w-full h-full object-cover" loading="eager" fetchpriority="high" onerror="this.src='images/wir-reise-1.jpg'"/>
   </div>
 </div>
 
@@ -282,7 +282,7 @@
         <span class="text-[10px] opacity-60 normal-case font-normal tracking-normal">Endpreis, keine USt nach § 19 UStG</span>
       </a>
     </div>
-    <p class="text-[11px] text-on-primary/50 mt-8">Nach der Zahlung: alle sieben Abende sofort verfügbar.<br/>Klick auf „Alle 7 Abende" öffnet das Kauf-Modal — alternativ einfach Abend 1 testen und später entscheiden.</p>
+    <p class="text-[11px] text-on-primary/50 mt-8">Nach dem Kauf hängt der Zugang an deiner E-Mail-Adresse: anmelden, und die Abende sind auf allen Geräten da.<br/>Oder erst Abend 1 ausprobieren und später entscheiden.</p>
   </section>
 
   <!-- Reading-Hint -->
@@ -316,9 +316,10 @@
 </footer>
 
 <script src="config.js?v=20261022c"></script>
-<script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
+<script src="auth.js?v=20261026a"></script>
+<script src="login-ui.js?v=20261026a"></script>
 <script src="mobile-nav.js?v=20261022c"></script>
 <script src="page-audio.js?v=20261022c"></script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>

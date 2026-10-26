@@ -68,7 +68,7 @@ body { background-color: #FBF9F4; }
 .dark .film-grain { opacity: 0.04; }
 .dark input, .dark textarea { background-color: #1c1e17; border-color: rgb(80 84 74 / 0.7); color: #e8e4d9; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script>
 // Abendmodus so früh wie möglich anwenden (kein Hell-Blitz beim Laden).
 (function() {
@@ -109,7 +109,7 @@ body { background-color: #FBF9F4; }
         <span class="material-symbols-outlined text-on-surface-variant">description</span>
         <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hidden md:inline">Karten</span>
       </a>
-      <a id="closeLink" href="thema.html" class="p-2 hover:bg-surface-container transition-colors rounded-lg">
+      <a id="closeLink" href="thema.html" class="p-2 hover:bg-surface-container transition-colors rounded-lg" aria-label="Abend verlassen" title="Abend verlassen">
         <span class="material-symbols-outlined text-on-surface-variant">close</span>
       </a>
     </div>
@@ -125,7 +125,7 @@ body { background-color: #FBF9F4; }
       <span id="timerMobile" class="font-headline text-5xl font-light tracking-tight text-primary-container tabular-nums">00:00</span>
     </div>
 
-    <h1 id="phaseTitle" class="font-headline text-3xl md:text-5xl text-primary-container leading-tight tracking-tight mb-8 text-center fadein">—</h1>
+    <h1 id="phaseTitle" tabindex="-1" class="font-headline text-3xl md:text-5xl text-primary-container leading-tight tracking-tight mb-8 text-center fadein focus:outline-none">—</h1>
 
     <div id="hostNoteBox" class="mb-6 max-w-2xl w-full hidden">
       <div class="flex items-start gap-3 bg-surface-container-low rounded-lg p-4 border-l-2 border-secondary/40">
@@ -209,8 +209,8 @@ body { background-color: #FBF9F4; }
 
     <form id="feedbackForm" class="hidden w-full max-w-2xl space-y-6 bg-surface-container-low rounded-xl p-6 md:p-8 fadein" onsubmit="submitFeedback(event)">
       <div>
-        <label class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-3">Wie war der Abend?</label>
-        <div class="flex gap-2 justify-center md:justify-start" role="radiogroup">
+        <p id="fbRatingLabel" class="font-label text-xs uppercase tracking-widest text-on-tertiary-container block mb-3">Wie war der Abend?</p>
+        <div class="flex gap-2 justify-center md:justify-start" role="radiogroup" aria-labelledby="fbRatingLabel">
           <!-- Stars are injected via JS so they use Material Symbols -->
         </div>
       </div>
@@ -242,7 +242,7 @@ body { background-color: #FBF9F4; }
     <div class="flex items-center gap-6 md:gap-8 order-1 md:order-2">
       <button id="toggleTimerBtn" class="group flex items-center gap-3 text-on-surface-variant hover:text-secondary transition-colors">
         <span id="toggleTimerIcon" class="material-symbols-outlined text-lg">pause</span>
-        <span id="toggleTimerLabel" class="font-label text-xs uppercase tracking-widest hidden md:inline">Timer pausieren</span>
+        <span id="toggleTimerLabel" class="font-label text-xs uppercase tracking-widest sr-only md:not-sr-only">Timer pausieren</span>
       </button>
       <button id="nextBtn" class="bg-primary-container text-on-primary px-8 md:px-10 py-4 md:py-5 rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.15em] flex items-center gap-3 md:gap-4 hover:bg-primary transition-all active:scale-[0.98]">
         <span id="nextBtnLabel">Weiter</span>
@@ -257,14 +257,14 @@ body { background-color: #FBF9F4; }
   </div>
 </main>
 <!-- Gastgeber-SOS: kurze Hilfen für heikle Momente, ohne den Abend zu verlassen -->
-<div id="sosOverlay" class="hidden fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4">
+<div id="sosOverlay" class="hidden fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="sosTitle">
   <div class="bg-surface rounded-xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-outline-variant/30">
     <div class="flex items-center justify-between gap-3 p-5 border-b border-outline-variant/20">
       <div>
-        <h3 class="font-headline text-xl text-primary-container">Wenn es gerade schwierig ist</h3>
+        <h3 id="sosTitle" class="font-headline text-xl text-primary-container">Wenn es gerade schwierig ist</h3>
         <p class="text-xs text-on-surface-variant mt-1">Sechs Momente, die in jedem guten Abend vorkommen dürfen — und was hilft.</p>
       </div>
-      <button id="sosClose" class="text-on-surface-variant/60 hover:text-on-background p-1"><span class="material-symbols-outlined">close</span></button>
+      <button id="sosClose" class="text-on-surface-variant/60 hover:text-on-background p-2" aria-label="Schließen"><span class="material-symbols-outlined">close</span></button>
     </div>
     <div class="overflow-y-auto p-5 space-y-3" id="sosList">
       <details class="group bg-surface-container-low rounded-lg border border-outline-variant/20">
@@ -315,11 +315,11 @@ body { background-color: #FBF9F4; }
   </div>
 </div>
 
-<script src="themes.js?v=20261025b"></script>
+<script src="themes.js?v=20261026b"></script>
 <script src="config.js?v=20261022c"></script>
-<script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
-<script src="paid.js?v=20261022c"></script>
+<script src="auth.js?v=20261026a"></script>
+<script src="login-ui.js?v=20261026a"></script>
+<script src="paid.js?v=20261026a"></script>
 <script src="player.js?v=20261022c"></script>
 <script src="questions.js?v=20261024a"></script>
 <script>
@@ -327,6 +327,7 @@ const params = new URLSearchParams(location.search);
 const themaId = params.get('thema') || 'bindung';
 const formatKey = params.get('format') || 'group';
 
+if (!window.THEMES[themaId]) location.replace('themen.html');
 const theme = window.THEMES[themaId] || window.THEMES.bindung;
 // Kostenpflichtige Abende: Stationen liegen serverseitig (paid_content) und werden
 // erst nach Login + gültiger Berechtigung geladen. Ohne Zugang → zurück zum Kauf-Modal.
@@ -396,7 +397,8 @@ for (let i = 1; i <= 5; i++) {
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.setAttribute('role', 'radio');
-  btn.setAttribute('aria-label', i + ' Sterne');
+  btn.setAttribute('aria-label', i === 1 ? '1 Stern' : i + ' Sterne');
+  btn.setAttribute('aria-checked', 'false');
   btn.className = 'star-btn text-3xl text-on-surface-variant/40 hover:text-secondary transition-colors';
   btn.innerHTML = '<span class="material-symbols-outlined">star</span>';
   btn.dataset.rating = i;
@@ -406,6 +408,7 @@ for (let i = 1; i <= 5; i++) {
       s.querySelector('span').style.fontVariationSettings = (idx < i) ? "'FILL' 1" : "'FILL' 0";
       s.classList.toggle('text-secondary', idx < i);
       s.classList.toggle('text-on-surface-variant/40', idx >= i);
+      s.setAttribute('aria-checked', idx === i - 1 ? 'true' : 'false');
     });
   });
   starRow.appendChild(btn);
@@ -744,10 +747,19 @@ document.getElementById('zugabeBtn').addEventListener('click', drawZugabe);
 // Gastgeber-SOS: Overlay öffnen/schließen
 (function () {
   const overlay = document.getElementById('sosOverlay');
-  document.getElementById('sosBtn').addEventListener('click', () => overlay.classList.remove('hidden'));
-  document.getElementById('sosClose').addEventListener('click', () => overlay.classList.add('hidden'));
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.add('hidden'); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.add('hidden'); });
+  const sosBtn = document.getElementById('sosBtn');
+  const close = () => {
+    if (overlay.classList.contains('hidden')) return;
+    overlay.classList.add('hidden');
+    sosBtn.focus();
+  };
+  sosBtn.addEventListener('click', () => {
+    overlay.classList.remove('hidden');
+    document.getElementById('sosClose').focus();
+  });
+  document.getElementById('sosClose').addEventListener('click', close);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 })();
 
 // Abendmodus-Toggle (früh angewandt im <head>, hier nur Umschalten + Label)
@@ -767,12 +779,13 @@ document.getElementById('darkToggleBtn').addEventListener('click', () => {
 renderDarkToggle();
 
 el.prevBtn.addEventListener('click', () => {
-  if (currentIdx > 0) { currentIdx--; render(); }
+  if (currentIdx > 0) { currentIdx--; render(); el.phaseTitle.focus({ preventScroll: true }); }
 });
 el.nextBtn.addEventListener('click', () => {
   if (currentIdx < stations.length - 1) {
     currentIdx++;
     render();
+    el.phaseTitle.focus({ preventScroll: true });
   } else {
     window.location.href = 'thema.html?id=' + encodeURIComponent(themaId);
   }
@@ -803,5 +816,6 @@ el.toggleTimerBtn.addEventListener('click', () => {
   render();
 })();
 </script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>

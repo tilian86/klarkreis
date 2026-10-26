@@ -18,7 +18,7 @@
     wrap.className = 'hidden lg:flex items-center ml-4 relative';
     wrap.innerHTML = `
       <button id="klarkreisLoginBtn" class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest font-semibold text-on-background/60 hover:text-secondary transition-colors">
-        <span class="material-symbols-outlined text-[16px]">person</span>
+        <span class="material-symbols-outlined text-[16px]">exit_to_app</span>
         <span id="klarkreisLoginLabel" class="hidden xl:inline">Einloggen</span>
       </button>
       <div id="klarkreisUserMenu" class="hidden absolute top-full right-0 mt-2 bg-surface-bright border border-outline-variant/30 rounded-lg shadow-lg py-2 min-w-[180px] z-50">
@@ -80,26 +80,30 @@
           <span class="material-symbols-outlined">close</span>
         </button>
         <p class="font-label uppercase tracking-[0.2em] text-[11px] text-secondary mb-3">Einloggen</p>
-        <h3 class="font-serif text-2xl md:text-3xl text-primary-container mb-3">Ein Faden, der sich durchzieht.</h3>
+        <h3 class="font-serif text-2xl md:text-3xl text-primary-container mb-3">Einmal anmelden, überall weitermachen.</h3>
         <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-5">
-          Ohne Login funktioniert alles. Mit Login kommt dazu:
+          Für die kostenlosen Abende brauchst du kein Login. Mit Login kommt dazu:
         </p>
         <ul class="space-y-2 mb-6 text-sm md:text-base text-on-background/80">
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">lock_outline</span>
+            <span><strong>Gekaufte Abende</strong> — der Zugang hängt an deiner E-Mail-Adresse und gilt auf allen Geräten.</span>
+          </li>
           <li class="flex items-start gap-2.5">
             <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">devices</span>
             <span><strong>Gerätewechsel</strong> — Fragerunde am Handy beginnen, am Laptop weitermachen.</span>
           </li>
           <li class="flex items-start gap-2.5">
-            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">bookmark</span>
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">favorite_border</span>
             <span><strong>Favoriten</strong> — Fragen, die nachklingen, in einer eigenen Liste.</span>
           </li>
           <li class="flex items-start gap-2.5">
-            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">history</span>
+            <span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">event_repeat</span>
             <span><strong>Abende-Historie</strong> — welches Thema ihr wann gemacht habt, und wer dabei war.</span>
           </li>
         </ul>
         <p class="text-sm md:text-base text-on-surface-variant leading-relaxed mb-6">
-          Gib deine Email ein — Du kriegst einen Link. Ein Klick, Du bist drin. Kein Passwort.
+          Gib deine E-Mail-Adresse ein — du bekommst einen Link. Ein Klick, und du bist drin. Kein Passwort.
         </p>
         <form id="klarkreisLoginForm" class="space-y-4">
           <input id="klarkreisEmailInput" type="email" required placeholder="dein@email.de" aria-label="E-Mail-Adresse"

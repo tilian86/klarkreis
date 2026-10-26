@@ -42,7 +42,7 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="bg-surface text-on-background min-h-screen">
@@ -68,7 +68,7 @@
 
 <div class="max-w-5xl mx-auto px-6 md:px-12 pt-8 md:pt-12">
   <div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden relative" style="-webkit-mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%); mask-image: radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%);">
-    <img src="images/impulse-hero.jpg" alt="Offenes Buch mit Kaffee und Brille" class="w-full h-full object-cover" loading="eager" fetchpriority="high"/>
+    <img src="images/impulse-hero.jpg" srcset="images/w480/impulse-hero.jpg 480w, images/w960/impulse-hero.jpg 960w, images/impulse-hero.jpg 1127w" sizes="100vw" alt="Offenes Buch mit Kaffee und Brille" class="w-full h-full object-cover" loading="eager" fetchpriority="high"/>
   </div>
 </div>
 
@@ -281,8 +281,8 @@ function render() {
 render();
 </script>
 <script src="config.js?v=20261022c"></script>
-<script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
+<script src="auth.js?v=20261026a"></script>
+<script src="login-ui.js?v=20261026a"></script>
 <script src="mobile-nav.js?v=20261022c"></script>
 <script src="page-audio.js?v=20261022c"></script>
 <script>
@@ -302,5 +302,6 @@ render();
   auth.onChange && auth.onChange(u => { if (u) mergeFavs(); });
 })();
 </script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026b"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -107,7 +107,7 @@
   </div>
 </footer>
 
-<script src="themes.js?v=20261025b"></script>
+<script src="themes.js?v=20261026b"></script>
 <script>
 // ============================================================
 // Abend-Kompass — 5 Fragen, client-seitig, nichts wird gesendet.
@@ -147,35 +147,45 @@ const QUESTIONS = [
       { v: 'paar',    icon: 'favorite',         t: 'Wir zwei — als Paar',     s: 'Beziehung, Ehe, frisch oder lang' },
       { v: 'freunde', icon: 'handshake',        t: 'Wir zwei — befreundet',   s: 'Enge Freundschaft, WG, Geschwister im Geiste' },
       { v: 'gruppe',  icon: 'groups',           t: 'Kleine Runde',            s: '3-8 Menschen, die einander wohlwollen' },
-      { v: 'familie', icon: 'family_restroom',  t: 'Ich + Familienmensch',    s: 'Mutter, Vater, Oma, Bruder, erwachsenes Kind…' },
-      { v: 'date',    icon: 'local_florist',    t: 'Erstes Date',             s: 'Das Match wird real' }
+      { v: 'familie', icon: 'home',  t: 'Ich + Familienmensch',    s: 'Mutter, Vater, Oma, Bruder, erwachsenes Kind…' },
+      { v: 'date',    icon: 'wine_bar',    t: 'Erstes Date',             s: 'Das Match wird real' }
     ] },
   { key: 'tiefe', label: 'Frage 2 von 5', title: 'Wie tief soll es gehen?',
     options: [
-      { v: 1, icon: 'sentiment_satisfied', t: 'Leicht & lebendig',      s: 'Lachen, erzählen, überraschen lassen' },
-      { v: 2, icon: 'water_lily',          t: 'Tief, aber gemütlich',   s: 'Echte Gespräche ohne Schwere' },
-      { v: 3, icon: 'psychology',          t: 'Richtig tief',           s: 'Auch dahin, wo es leise wird' }
+      { v: 1, icon: 'sentiment_very_satisfied', t: 'Leicht & lebendig',      s: 'Lachen, erzählen, überraschen lassen' },
+      { v: 2, icon: 'coffee',          t: 'Tief, aber gemütlich',   s: 'Echte Gespräche ohne Schwere' },
+      { v: 3, icon: 'question_answer',          t: 'Richtig tief',           s: 'Auch dahin, wo es leise wird' }
     ] },
   { key: 'blick', label: 'Frage 3 von 5', title: 'Wohin soll der Blick?',
     options: [
-      { v: 'herkunft',   icon: 'history',        t: 'Zurück',      s: 'Herkunft, Prägung, Wurzeln' },
-      { v: 'identitaet', icon: 'fingerprint',    t: 'Nach innen',  s: 'Wer ich bin, was mich ausmacht' },
-      { v: 'zukunft',    icon: 'flag',           t: 'Nach vorn',   s: 'Richtung, Träume, das nächste Kapitel' },
-      { v: 'beziehung',  icon: 'diversity_1',    t: 'Auf uns',     s: 'Wie wir verbunden sind' },
+      { v: 'herkunft',   icon: 'home',        t: 'Zurück',      s: 'Herkunft, Prägung, Wurzeln' },
+      { v: 'identitaet', icon: 'self_improvement',    t: 'Nach innen',  s: 'Wer ich bin, was mich ausmacht' },
+      { v: 'zukunft',    icon: 'explore',           t: 'Nach vorn',   s: 'Richtung, Träume, das nächste Kapitel' },
+      { v: 'beziehung',  icon: 'people',    t: 'Auf uns',     s: 'Wie wir verbunden sind' },
       { v: 'bunt',       icon: 'casino',         t: 'Überrascht mich', s: 'Querbeet, Hauptsache gut' }
     ] },
   { key: 'zeit', label: 'Frage 4 von 5', title: 'Wie viel Zeit habt ihr?',
     options: [
       { v: 60,  icon: 'schedule',   t: 'Eine knappe Stunde', s: 'Kompakt, aber echt' },
       { v: 100, icon: 'schedule',   t: 'So 1,5 Stunden',     s: 'Der Klassiker' },
-      { v: 999, icon: 'wb_twilight',t: 'Der Abend gehört uns', s: '2 Stunden plus — keine Eile' }
+      { v: 999, icon: 'dark_mode',t: 'Der Abend gehört uns', s: '2 Stunden plus — keine Eile' }
     ] },
   { key: 'erfahrung', label: 'Frage 5 von 5', title: 'Schon mal einen geführten Abend gemacht?',
     options: [
-      { v: 'neu',    icon: 'spa',            t: 'Nein, erster Versuch', s: 'Der Einstieg darf einladend sein' },
-      { v: 'geuebt', icon: 'workspace_premium', t: 'Ja, wir kennen das', s: 'Gebt uns ruhig was zu kauen' }
+      { v: 'neu',    icon: 'star_border',            t: 'Nein, erster Versuch', s: 'Der Einstieg darf einladend sein' },
+      { v: 'geuebt', icon: 'grade', t: 'Ja, wir kennen das', s: 'Gebt uns ruhig was zu kauen' }
     ] }
 ];
+
+// Verkleinerte Bildfassungen (images/w480, images/w960), erzeugt mit _scripts/make_thumbs.py
+function imgSrcset(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? `srcset="images/w480/${m[1]} 480w, images/w960/${m[1]} 960w, ${src} 1600w"` : '';
+}
+function imgThumb(src) {
+  const m = /^images\/([^/]+\.jpg)$/.exec(src || '');
+  return m ? 'images/w480/' + m[1] : src;
+}
 
 let answers = {};
 let step = 0;
@@ -275,10 +285,10 @@ function showResult() {
   const altCards = rec.alts.map(id => {
     const a = T[id]; if (!a) return '';
     return `<a href="thema.html?id=${id}" class="flex items-center gap-4 bg-surface-container-lowest border border-outline-variant/60 hover:border-secondary rounded-xl p-4 transition-all group">
-      <img loading="lazy" src="${a.image}" alt="" class="w-14 h-16 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all"/>
+      <img loading="lazy" src="${imgThumb(a.image)}" alt="" class="w-14 h-16 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all"/>
       <span>
         <span class="block font-semibold text-on-background text-sm">${a.title}</span>
-        <span class="block text-xs text-on-surface-variant/70">${(a.formats.group || a.formats.pair).duration}</span>
+        <span class="block text-xs text-on-surface-variant/70">${(a.formats[formatFor(a, answers.wer)] || a.formats.group || a.formats.pair).duration}</span>
       </span>
     </a>`;
   }).join('');
@@ -290,10 +300,10 @@ function showResult() {
     <div class="q-fade">
       <p class="font-['Inter'] uppercase tracking-[0.2em] text-[11px] text-secondary mb-4 text-center">Euer Abend</p>
       <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(27,48,34,0.12)] md:flex">
-        <img loading="lazy" src="${t.image}" alt="${t.title}" class="w-full md:w-2/5 aspect-[4/5] object-cover"/>
+        <img loading="lazy" src="${t.image}" ${imgSrcset(t.image)} sizes="(min-width: 768px) 300px, calc(100vw - 5rem)" alt="${t.title}" class="w-full md:w-2/5 aspect-[4/5] object-cover"/>
         <div class="p-8 md:p-10 flex flex-col">
           <h2 class="font-serif text-3xl md:text-4xl text-on-background leading-tight mb-3">${t.title}</h2>
-          <p class="text-sm uppercase tracking-widest text-on-surface-variant/60 mb-5">${fmt.duration} · ${fmt.label}</p>
+          <p class="text-sm uppercase tracking-widest text-on-surface-variant/60 mb-5">${fmt.duration} · ${fmt.label}${t.paid ? ' · kostenpflichtig' : ' · kostenlos'}</p>
           <p class="text-on-surface-variant leading-relaxed mb-8 line-clamp-5">${t.lead}</p>
           <div class="mt-auto flex flex-col sm:flex-row gap-3">
             <a href="${href}" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary px-7 py-4 rounded-lg hover:bg-secondary transition-colors text-xs uppercase tracking-widest font-semibold">Abend ansehen <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
@@ -307,5 +317,6 @@ function showResult() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+<script src="a11y.js?v=20261026a"></script>
 </body>
 </html>
