@@ -35,6 +35,9 @@
 
       const auth = window.KLARKREIS_AUTH;
       if (!auth || !auth.enabled) return { ok: false, reason: 'login', product };
+      // Ohne gespeicherte Sitzung gibt es nichts zu prüfen — und kein Grund,
+      // das SDK zu laden (Datenschutz: kein externer Request beim bloßen Ansehen).
+      if (auth.mightBeLoggedIn && !auth.mightBeLoggedIn()) return { ok: false, reason: 'login', product };
 
       try {
         await auth._ensure();      // lädt das SDK bei Bedarf nachträglich
