@@ -40,7 +40,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 .editorial-shadow { box-shadow: 0 32px 48px -12px rgba(27, 28, 25, 0.05); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
 </style>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026a"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="font-body selection:bg-on-tertiary-container selection:text-white">
@@ -196,7 +196,7 @@ body { background-color: #FBF9F4; color: #1B1C19; position: relative; }
 <script src="themes.js?v=20261026a"></script>
 <script src="config.js?v=20261022c"></script>
 <script src="auth.js?v=20261022c"></script>
-<script src="login-ui.js?v=20261022c"></script>
+<script src="login-ui.js?v=20261026a"></script>
 <script src="paid.js?v=20261022c"></script>
 <script src="player.js?v=20261022c"></script>
 <script>
@@ -492,7 +492,7 @@ renderFormatContent();
   function apply() {
     document.querySelectorAll('.station-detail').forEach(el => el.classList.toggle('hidden', !shown));
     warn.classList.toggle('hidden', !shown);
-    icon.textContent = shown ? 'visibility_off' : 'visibility';
+    icon.textContent = shown ? 'close' : 'visibility';
     label.textContent = shown ? 'Details ausblenden' : 'Details für Gastgeber:innen zeigen';
   }
   btn.addEventListener('click', () => {

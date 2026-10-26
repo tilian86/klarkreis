@@ -18,9 +18,9 @@
 .dark .text-primary-container { color: #ece8dd; }
 .dark .text-on-surface-variant { color: #a8ad9e; }
 .dark .text-on-surface-variant\/40 { color: rgb(168 173 158 / 0.6); }
-.dark .text-on-surface-variant\/50 { color: rgb(168 173 158 / 0.7); }
-.dark .text-on-surface-variant\/60 { color: rgb(168 173 158 / 0.65); }
-.dark .text-on-surface-variant\/70 { color: rgb(168 173 158 / 0.75); }
+.dark .text-on-surface-variant\/50 { color: rgb(168 173 158 / 0.8); }
+.dark .text-on-surface-variant\/60 { color: rgb(168 173 158 / 0.82); }
+.dark .text-on-surface-variant\/70 { color: rgb(168 173 158 / 0.85); }
 .dark .text-secondary { color: #d98f45; }
 .dark .text-secondary\/40 { color: rgb(217 143 69 / 0.4); }
 .dark .text-secondary\/70 { color: rgb(217 143 69 / 0.7); }
@@ -110,3 +110,17 @@
 /* Nichts darf seitlich überstehen (Deko-Kreise, breite Leisten): sonst lässt sich die Seite
    auf dem iPhone hin- und herschieben. clip statt hidden, damit sticky-Kopfleisten bleiben. */
 html, body { overflow-x: clip; }
+
+/* Lesbarkeit (WCAG AA, 4,5:1) im hellen Modus: halbtransparente Kleintexte waren
+   bei 50–70 % Deckkraft nur 2,5–4:1. Spezifischer als die Tailwind-Klassen,
+   damit die Reihenfolge der Stylesheets keine Rolle spielt. */
+@media screen {
+html:not(.dark) .text-on-surface-variant\/50 { color: rgb(67 72 67 / 0.8); }
+html:not(.dark) .text-on-surface-variant\/60 { color: rgb(67 72 67 / 0.82); }
+html:not(.dark) .text-on-surface-variant\/70 { color: rgb(67 72 67 / 0.85); }
+html:not(.dark) .text-on-background\/60 { color: rgb(27 28 25 / 0.72); }
+html:not(.dark) .text-secondary\/60,
+html:not(.dark) .text-secondary\/70 { color: rgb(146 76 0 / 0.95); }
+html:not(.dark) .text-on-primary\/50 { color: rgb(255 255 255 / 0.72); }
+html:not(.dark) .text-on-primary\/60 { color: rgb(255 255 255 / 0.75); }
+}

@@ -37,7 +37,7 @@
     fontFamily: { headline: ["Noto Serif"], body: ["Inter"], label: ["Inter"] }
   } } }
 </script>
-<link rel="stylesheet" href="dark.css?v=20261005a"/>
+<link rel="stylesheet" href="dark.css?v=20261026a"/>
 <script src="theme-toggle.js?v=20261022c"></script>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -147,33 +147,33 @@ const QUESTIONS = [
       { v: 'paar',    icon: 'favorite',         t: 'Wir zwei — als Paar',     s: 'Beziehung, Ehe, frisch oder lang' },
       { v: 'freunde', icon: 'handshake',        t: 'Wir zwei — befreundet',   s: 'Enge Freundschaft, WG, Geschwister im Geiste' },
       { v: 'gruppe',  icon: 'groups',           t: 'Kleine Runde',            s: '3-8 Menschen, die einander wohlwollen' },
-      { v: 'familie', icon: 'family_restroom',  t: 'Ich + Familienmensch',    s: 'Mutter, Vater, Oma, Bruder, erwachsenes Kind…' },
-      { v: 'date',    icon: 'local_florist',    t: 'Erstes Date',             s: 'Das Match wird real' }
+      { v: 'familie', icon: 'home',  t: 'Ich + Familienmensch',    s: 'Mutter, Vater, Oma, Bruder, erwachsenes Kind…' },
+      { v: 'date',    icon: 'wine_bar',    t: 'Erstes Date',             s: 'Das Match wird real' }
     ] },
   { key: 'tiefe', label: 'Frage 2 von 5', title: 'Wie tief soll es gehen?',
     options: [
-      { v: 1, icon: 'sentiment_satisfied', t: 'Leicht & lebendig',      s: 'Lachen, erzählen, überraschen lassen' },
-      { v: 2, icon: 'water_lily',          t: 'Tief, aber gemütlich',   s: 'Echte Gespräche ohne Schwere' },
-      { v: 3, icon: 'psychology',          t: 'Richtig tief',           s: 'Auch dahin, wo es leise wird' }
+      { v: 1, icon: 'sentiment_very_satisfied', t: 'Leicht & lebendig',      s: 'Lachen, erzählen, überraschen lassen' },
+      { v: 2, icon: 'coffee',          t: 'Tief, aber gemütlich',   s: 'Echte Gespräche ohne Schwere' },
+      { v: 3, icon: 'question_answer',          t: 'Richtig tief',           s: 'Auch dahin, wo es leise wird' }
     ] },
   { key: 'blick', label: 'Frage 3 von 5', title: 'Wohin soll der Blick?',
     options: [
-      { v: 'herkunft',   icon: 'history',        t: 'Zurück',      s: 'Herkunft, Prägung, Wurzeln' },
-      { v: 'identitaet', icon: 'fingerprint',    t: 'Nach innen',  s: 'Wer ich bin, was mich ausmacht' },
-      { v: 'zukunft',    icon: 'flag',           t: 'Nach vorn',   s: 'Richtung, Träume, das nächste Kapitel' },
-      { v: 'beziehung',  icon: 'diversity_1',    t: 'Auf uns',     s: 'Wie wir verbunden sind' },
+      { v: 'herkunft',   icon: 'home',        t: 'Zurück',      s: 'Herkunft, Prägung, Wurzeln' },
+      { v: 'identitaet', icon: 'self_improvement',    t: 'Nach innen',  s: 'Wer ich bin, was mich ausmacht' },
+      { v: 'zukunft',    icon: 'explore',           t: 'Nach vorn',   s: 'Richtung, Träume, das nächste Kapitel' },
+      { v: 'beziehung',  icon: 'people',    t: 'Auf uns',     s: 'Wie wir verbunden sind' },
       { v: 'bunt',       icon: 'casino',         t: 'Überrascht mich', s: 'Querbeet, Hauptsache gut' }
     ] },
   { key: 'zeit', label: 'Frage 4 von 5', title: 'Wie viel Zeit habt ihr?',
     options: [
       { v: 60,  icon: 'schedule',   t: 'Eine knappe Stunde', s: 'Kompakt, aber echt' },
       { v: 100, icon: 'schedule',   t: 'So 1,5 Stunden',     s: 'Der Klassiker' },
-      { v: 999, icon: 'wb_twilight',t: 'Der Abend gehört uns', s: '2 Stunden plus — keine Eile' }
+      { v: 999, icon: 'dark_mode',t: 'Der Abend gehört uns', s: '2 Stunden plus — keine Eile' }
     ] },
   { key: 'erfahrung', label: 'Frage 5 von 5', title: 'Schon mal einen geführten Abend gemacht?',
     options: [
-      { v: 'neu',    icon: 'spa',            t: 'Nein, erster Versuch', s: 'Der Einstieg darf einladend sein' },
-      { v: 'geuebt', icon: 'workspace_premium', t: 'Ja, wir kennen das', s: 'Gebt uns ruhig was zu kauen' }
+      { v: 'neu',    icon: 'star_border',            t: 'Nein, erster Versuch', s: 'Der Einstieg darf einladend sein' },
+      { v: 'geuebt', icon: 'grade', t: 'Ja, wir kennen das', s: 'Gebt uns ruhig was zu kauen' }
     ] }
 ];
 
