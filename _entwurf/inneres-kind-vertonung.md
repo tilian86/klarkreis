@@ -1,18 +1,18 @@
-# Inneres Kind – Vorlese-Fassung zur Freigabe
+# Inneres Kind – Vorlese-Fassung (überarbeitet 05.11.2026)
 
-So würde die Stimme es sprechen. Bildschirmtext bleibt unverändert; nur Zahlen, „der/die“ ausgeschrieben (markiert mit ✏️).
+So würde die Stimme es sprechen. Bildschirmtext bleibt unverändert; nur Zahlen, Telefonnummer und „der/die“ ausgeschrieben (markiert mit ✏️).
 Gesprochen wird je Station die Beschreibung (+ Zitat), bei Stationen ohne Beschreibung die Frage – wie bei ADHS und Bindung.
-**42 Audios · 13.759 Zeichen**
+**42 Audios · 14.481 Zeichen**
 
 ## Intro (Lily)
 
-Ein Abend über die Prägungen aus den ersten Jahren: die Sätze, die wir als Kinder über uns gelernt haben, die Schutzstrategien, die daraus wurden — und das freie, neugierige Kind, das unter beidem oft verschüttet liegt. Kein Therapie-Ersatz, keine Familien-Anklage: ein ehrlicher, gut gehaltener Blick. An jeder Station gilt „Pass" — niemand muss irgendwo hin, wo er nicht will.
+Ein Abend über die Prägungen aus den ersten Jahren: die Sätze, die wir als Kinder über uns gelernt haben, die Schutzstrategien, die daraus geworden sind, und das neugierige, verspielte Kind, das unter beidem oft verschüttet liegt. Keine Couch, keine Diagnose, keine Anklage an die Eltern: ein ehrlicher, gut gehaltener Blick. An jeder Station gilt „Pass“, niemand muss etwas erzählen, das sich nicht stimmig anfühlt.
 
 ## Gruppe (Bill)
 
 **01 · Ein Moment, bevor wir anfangen**
 
-Heute geht es dorthin, wo wir alle herkommen — in die Kindheit. Dafür braucht es eine Verabredung: Alles, was hier erzählt wird, bleibt hier. Niemand muss irgendetwas erzählen — „Pass" ist an jeder Station ein vollständiger Satz. Und: Dieser Abend ist keine Therapie. Er ist ein ehrliches Gespräch unter Menschen, die einander wohlwollen. Wenn etwas zu groß wird, darf es zu groß sein — dann tragen wir es nicht alleine weiter.
+Heute geht es dorthin, wo wir alle herkommen — in die Kindheit. Dafür braucht es eine Verabredung: Alles, was hier erzählt wird, bleibt hier. Niemand muss irgendetwas erzählen — „Pass“ ist an jeder Station ein vollständiger Satz. Und: Dieser Abend ist keine Therapie. Er ist ein ehrliches Gespräch unter Menschen, die einander wohlwollen. Wenn etwas zu groß wird, darf es zu groß sein: kurz rausgehen ist erlaubt, und niemand bleibt danach damit allein.
 
 **02 · Wie alt fühlst du dich gerade?**
 
@@ -20,17 +20,17 @@ Wie kommst du heute hier an — und wie alt fühlst du dich gerade? Nicht auf de
 
 **03 · Das Kind, das mitgekommen ist**
 
-Das „innere Kind" ist keine Esoterik, sondern ein Bild für etwas sehr Nüchternes: Die ersten Lebensjahre bauen das emotionale Fundament. Was ein Kind über sich lernt — ob es willkommen ist, ob es genügt, ob Gefühle gefährlich sind —, das lernt es nicht als Meinung, sondern als Betriebssystem. Es wird nicht erinnert, es wird gelebt.
+Das „innere Kind“ ist ein Bild für etwas Nüchternes: Die ersten Lebensjahre legen ein emotionales Fundament. Ob ein Kind willkommen ist, ob es genügt, ob Gefühle sicher sind, das lernt es selten als Satz, eher als Erwartung, die sich wie eine Tatsache anfühlt. So etwas wird nicht erinnert, es wird gelebt.
 
-Die gute Nachricht des Abends: Ein Programm, das sichtbar wird, verliert seine heimliche Macht. Genau das machen wir heute — hinschauen, benennen, und am Ende dem Kind etwas zurückgeben, das ihm gefehlt hat. Sinngemäß nach C.G. Jung: „Im Erwachsenen ist ein Kind verborgen — ein ewiges Kind, das beständiger Pflege, Aufmerksamkeit und Erziehung bedarf.“
+Was benannt ist, lässt sich im Alltag leichter erwischen. Darum geht es heute: hinschauen, benennen und am Ende dem Kind etwas zurückgeben, das ihm gefehlt hat. C. G. Jung: „In jedem Erwachsenen steckt ein Kind, ein ewiges Kind, etwas, das immer wird, nie fertig ist und unablässiger Pflege, Aufmerksamkeit und Erziehung bedarf.“
 
 **04 · Drei, die in dir wohnen**
 
-Ein einfaches Werkzeug für heute Abend, in der Tradition von Transaktionsanalyse und Schematherapie — drei Instanzen, die in jedem von uns wohnen:
+Ein einfaches Werkzeug für heute, angelehnt an die Schematherapie. Sie beschreibt Zustände, in die Erwachsene unter Druck rutschen, und drei davon reichen für diesen Abend. Das sind keine Personen im Kopf, sondern Bilder für Stimmungen, die jede und jeder kennt.
 
 **05 · Die Sätze, die wir mitbekommen haben**
 
-Glaubenssätze sind das Kondensat der Kindheit: kurze Sätze über uns selbst, die sich anfühlen wie Tatsachen. Niemand hat sie uns wörtlich beigebracht — wir haben sie aus tausend kleinen Momenten destilliert. Ein paar der häufigsten:
+Glaubenssätze sind das Kondensat der Kindheit: kurze Sätze über uns selbst, die sich anfühlen wie Tatsachen. Niemand hat sie uns wörtlich beigebracht — wir haben sie aus tausend kleinen Momenten destilliert. Die folgenden acht tauchen besonders oft auf, sie entsprechen grob den Grundüberzeugungen, die die Schematherapie beschreibt.
 
 **06 · Woher der Satz kommt**
 
@@ -40,13 +40,13 @@ Es geht heute nicht darum, jemanden anzuklagen. Eltern sind fast immer selbst Ki
 
 **07 · Was das Kind sich ausgedacht hat**
 
-Kinder sind nicht passiv: Gegen jeden schmerzhaften Satz entwickeln sie eine Strategie. Das war damals klug — es hat funktioniert. Die Frage ist nur, ob die Strategie heute noch dient oder längst selbst das Problem ist:
+Kinder sind nicht passiv: Gegen jeden schmerzhaften Satz entwickeln sie eine Strategie. Das war damals klug — es hat funktioniert. Die Frage ist nur, ob die Strategie heute noch dient oder längst selbst zum Problem geworden ist.
 
 **08 · Wenn das Kind das Steuer übernimmt** ✏️
 
-Woran merkt man, dass das verletzte Kind gerade fährt? An der Unverhältnismäßigkeit. Die Kollegin übergeht dich im Meeting — und du bist nicht zwanzig Prozent verärgert, sondern zweihundert Prozent getroffen. Jemand sagt kurzfristig ab — und in dir sagt jemand: „Siehst du. Zu viel." Der Partner schaut aufs Handy, während du erzählst — und du bist plötzlich fünf.
+Woran merkt man, dass das verletzte Kind gerade fährt? An der Unverhältnismäßigkeit. Die Kollegin übergeht dich im Meeting — und du bist nicht zwanzig Prozent verärgert, sondern zweihundert Prozent getroffen. Jemand sagt kurzfristig ab — und in dir sagt jemand: „Siehst du. Zu viel.“ Der Partner schaut aufs Handy, während du erzählst — und du bist plötzlich fünf.
 
-Der Erwachsene reagiert auf die Situation. Das Kind reagiert auf die Geschichte. Sinngemäß nach John Bradshaw: „Solange das verletzte Kind unbeachtet bleibt, führt es aus dem Verborgenen Regie.“
+Der Erwachsene reagiert auf die Situation. Das Kind reagiert auf die Geschichte.
 
 **09 · Zwei Minuten ohne Worte**
 
@@ -60,35 +60,37 @@ Die meisten Erwachsenen können auf den Tag genau sagen, was sie leisten müssen
 
 **11 · Wo es wohnt**
 
-Prägungen sind nicht nur Gedanken — sie wohnen im Körper. Der eingezogene Nacken, wenn jemand laut wird. Die Enge in der Brust beim Bitten um Hilfe. Das Lächeln, das sich automatisch einschaltet, wenn es innen gerade gar nicht lächelt.
+Prägungen zeigen sich nicht nur in Gedanken, oft meldet sich der Körper zuerst. Der eingezogene Nacken, wenn jemand laut wird. Die Enge in der Brust beim Bitten um Hilfe. Das Lächeln, das sich automatisch einschaltet, wenn es innen gerade gar nicht lächelt.
 
-Einmal kurz nachspüren: Wenn dein Glaubenssatz von vorhin sich meldet — wo im Körper merkst du ihn zuerst? Sinngemäß nach Alice Miller: „Der Körper vergisst nichts.“
+Einmal kurz nachspüren: Wenn dein Glaubenssatz von vorhin sich meldet — wo im Körper merkst du ihn zuerst?
 
 **12 · Die Instanz, die heute da ist**
 
 Hier dreht sich der Abend. Denn eines unterscheidet dich fundamental von dem Kind, das die Sätze gelernt hat: Du bist nicht mehr ausgeliefert. Das Kind konnte sich seine Menschen nicht aussuchen, seine Situation nicht verlassen, das Gehörte nicht überprüfen. Du kannst all das.
 
-Der innere Erwachsene ist kein Über-Ich mit Klemmbrett. Er ist eher wie hinreichend gute Eltern für das eigene Innenleben: Er nimmt das verletzte Kind ernst, ohne ihm das Steuer zu geben. Er sagt nicht „stell dich nicht so an" — er sagt „ich sehe dich, und ich regle das". Sinngemäß nach Donald Winnicott: „Kinder brauchen keine perfekten Eltern — hinreichend gute genügen.“
+Der innere Erwachsene ist kein Über-Ich mit Klemmbrett. Der Kinderarzt und Psychoanalytiker Donald Winnicott hat den Begriff der „hinreichend guten“ Mutter geprägt: Kinder brauchen keine perfekten Eltern, sondern verlässlich genug gute. Der innere Erwachsene ist so etwas für das eigene Innenleben: Er nimmt das verletzte Kind ernst, ohne ihm das Steuer zu geben. Er sagt nicht „stell dich nicht so an“ — er sagt „ich sehe dich, und ich regle das“.
 
 **13 · Was das Kind gebraucht hätte**
 
-Wenn du an das Kind denkst, das du warst — in genau der Szene von vorhin: Es gibt einen Satz, den damals niemand gesagt hat und der alles ein Stück leichter gemacht hätte. „Du genügst — genau so." „Das war nicht deine Schuld." „Du darfst laut sein." „Ich sehe, wie sehr du dich anstrengst."
+Wenn du an das Kind denkst, das du warst — in genau der Szene von vorhin: Es gibt einen Satz, den damals niemand gesagt hat und der alles ein Stück leichter gemacht hätte. „Du genügst — genau so.“ „Das war nicht deine Schuld.“ „Du darfst laut sein.“ „Ich sehe, wie sehr du dich anstrengst.“
 
-Dieser Satz ist nicht verloren. Er ist nur nie ausgesprochen worden. Bis heute.
+Heute kannst du ihn aussprechen. Das ändert nicht, was war, aber es legt etwas Neues neben das Alte.
 
-**14 · Der Ton macht die Heilung**
+**14 · Der Ton macht den Unterschied**
 
-Der Reflex nach so einem Abend ist oft: „Okay, ich arbeite jetzt an meinem Glaubenssatz." Aber ein verletztes Kind braucht keinen Projektplan — es braucht einen anderen Ton. Kristin Neffs Forschung zeigt: Selbstmitgefühl verändert nachhaltiger als Selbstkritik, weil es genau das nachliefert, was gefehlt hat — Wohlwollen ohne Bedingung.
+Der Reflex nach so einem Abend ist oft: „Okay, ich arbeite jetzt an meinem Glaubenssatz.“ Aber ein verletztes Kind braucht keinen Projektplan, es braucht einen anderen Ton.
 
-Der Satz aus der letzten Station ist dafür der Anfang: Er ist der Ton, in dem du künftig mit dir sprechen übst. Sinngemäß nach Kristin Neff: „Behandle dich selbst mit derselben Freundlichkeit, die du einem guten Freund entgegenbringen würdest.“
+Die Psychologin Kristin Neff hat das Selbstmitgefühl in die Forschung gebracht. Studien finden, dass Menschen, die nach einem Fehler freundlich mit sich umgehen, eher bereit sind, es noch einmal zu versuchen, statt sich zu verstecken. Vieles davon sind Zusammenhänge und keine Beweise, aber die Richtung ist plausibel: Unter Härte lernt es sich schlecht.
+
+Der Satz aus der letzten Station ist dafür ein Anfang. Er ist der Ton, in dem du künftig mit dir sprechen übst. Sinngemäß nach Kristin Neff: „Behandle dich selbst mit derselben Freundlichkeit, die du einem guten Freund entgegenbringen würdest.“
 
 **15 · Ein kleines Experiment**
 
 Zwei Richtungen, such dir eine aus:
 
-Für das verletzte Kind: Einmal diese Woche, wenn der alte Satz anspringt, innerlich benennen: „Das ist der alte Satz — nicht die Situation." Mehr nicht. Nur erwischen.
+Für das verletzte Kind: Einmal diese Woche, wenn der alte Satz anspringt, innerlich benennen: „Das ist der alte Satz — nicht die Situation.“ Mehr nicht. Nur erwischen.
 
-Für das freie Kind: Eine Stunde diese Woche für etwas, das du als Kind geliebt hast. Nicht als Optimierung („Malen ist ja achtsam") — als Spiel. Mit Termin im Kalender, sonst gewinnt der Alltag.
+Für das freie Kind: Eine Stunde diese Woche für etwas, das du als Kind geliebt hast. Nicht als Optimierung („Malen ist ja achtsam“) — als Spiel. Mit Termin im Kalender, sonst gewinnt der Alltag.
 
 **16 · Ein Wort zum Abschied**
 
@@ -98,7 +100,7 @@ Ein Wort, mit dem du heute nach Hause gehst.
 
 **01 · Ein Moment, bevor ihr beginnt**
 
-Heute schaut ihr dorthin, wo ihr herkommt — beide. Die Verabredung: Was heute erzählt wird, wird nie im Streit verwendet. Kein „siehst du, das ist wieder dein Kindheitsding". Was ihr einander zeigt, ist geliehen, nicht geschenkt zum Verwerten. Und: „Pass" ist ein vollständiger Satz, für beide, an jeder Station.
+Heute schaut ihr dorthin, wo ihr herkommt — beide. Die Verabredung: Was heute erzählt wird, wird nie im Streit verwendet. Kein „siehst du, das ist wieder dein Kindheitsding“. Was ihr einander zeigt, ist geliehen, nicht geschenkt zum Verwerten. Und: „Pass“ ist ein vollständiger Satz, für beide, an jeder Station. Wenn etwas zu groß wird: Pause machen, ein Glas Wasser, die Kerze darf weiterbrennen. Ihr müsst heute nichts zu Ende bringen.
 
 **02 · Wie alt fühlst du dich gerade?**
 
@@ -108,25 +110,25 @@ Wie kommst du heute an — und wie alt fühlst du dich gerade, innen?
 
 Wenn zwei Menschen sich nahekommen, sitzen nie nur zwei am Tisch. Mit am Tisch sitzen: das Kind, das du warst, und das Kind, das die andere Person war — mit allem, was sie früh über Nähe, Streit, Trost und Verlassen-werden gelernt haben.
 
-Die meisten wiederkehrenden Konflikte zwischen zwei Menschen sind keine Konflikte zwischen den Erwachsenen. Es sind zwei alte Programme, die sich gegenseitig auslösen. Heute lernt ihr die Programme kennen — eures und das des anderen. Sinngemäß nach C.G. Jung: „Im Erwachsenen ist ein Kind verborgen — ein ewiges Kind, das beständiger Pflege und Aufmerksamkeit bedarf.“
+Nicht jeder Streit ist ein Kindheitsthema. Aber der, der immer wiederkommt, hat oft eine zweite Ebene: zwei alte Programme, die sich gegenseitig auslösen. Heute lernt ihr die Programme kennen — eures und das des anderen. C. G. Jung: „In jedem Erwachsenen steckt ein Kind, ein ewiges Kind, etwas, das immer wird, nie fertig ist und unablässiger Pflege, Aufmerksamkeit und Erziehung bedarf.“
 
 **04 · Drei, die in jedem wohnen**
 
-Ein einfaches Modell für heute — drei Instanzen, die in jedem von euch wohnen:
+Ein einfaches Modell für heute, angelehnt an die Schematherapie: drei Zustände, die jede und jeder kennt. Keine Personen im Kopf, sondern Bilder für Stimmungen.
 
 **05 · Mein Satz**
 
-Glaubenssätze sind das Kondensat der Kindheit — kurze Sätze über uns selbst, die sich wie Tatsachen anfühlen. Die häufigsten:
+Glaubenssätze sind das Kondensat der Kindheit — kurze Sätze über uns selbst, die sich wie Tatsachen anfühlen. Diese acht tauchen besonders oft auf.
 
 **06 · Wann ich das Kind in dir sehe**
 
-Von außen sieht man manchmal mehr als von innen. Du kennst Momente, in denen das freie Kind des anderen aufblitzt — beim Albernsein, beim Versinken in etwas, bei einer bestimmten Art zu lachen. Und du kennst vermutlich auch Momente, in denen sein verletztes Kind kurz sichtbar wird — ein Blick, ein Verstummen, ein zu schnelles „ist nicht schlimm".
+Von außen sieht man manchmal mehr als von innen. Du kennst Momente, in denen das freie Kind deines Gegenübers aufblitzt — beim Albernsein, beim Versinken in etwas, bei einer bestimmten Art zu lachen. Und du kennst vermutlich auch Momente, in denen das verletzte Kind kurz sichtbar wird — ein Blick, ein Verstummen, ein zu schnelles „ist nicht schlimm“.
 
 **07 · Wo unsere Kinder sich gegenseitig auslösen**
 
 Fast jedes Paar, fast jede enge Freundschaft hat ihn: den einen Streit, der immer wieder kommt, nur in wechselnden Kostümen. Einer zieht sich zurück, der andere rückt nach. Eine wird laut, der andere wird Stein.
 
-Mit dem Modell von heute wird daraus oft ein anderes Bild: Dein Rückzug ist vielleicht die Schutzstrategie deines Kindes („bloß nicht zur Last fallen") — und genau der triggert beim anderen den ältesten Satz überhaupt („ich werde verlassen"). Zwei Kinder, die sich gegenseitig erschrecken. Keine Bösewichte.
+Mit dem Modell von heute wird daraus oft ein anderes Bild: Dein Rückzug ist vielleicht die Schutzstrategie deines Kindes („bloß nicht zur Last fallen“) — und genau der triggert beim anderen den ältesten Satz überhaupt („ich werde verlassen“). Zwei Kinder, die sich gegenseitig erschrecken. Keine Bösewichte.
 
 **08 · Zwei Minuten ohne Worte**
 
@@ -140,7 +142,7 @@ Die Frage ist verspielter, als sie aussieht: Was den beiden Kindern einfällt, i
 
 **10 · Was dein Kind gebraucht hätte**
 
-Es gibt einen Satz, den das Kind, das du warst, damals gebraucht hätte. „Du genügst." „Das war nicht deine Schuld." „Du darfst laut sein." Ihn heute aus dem Mund eines Menschen zu hören, der dich liebt oder dir nah ist, ersetzt nichts — aber es legt etwas Neues neben das Alte.
+Es gibt einen Satz, den das Kind, das du warst, damals gebraucht hätte. „Du genügst.“ „Das war nicht deine Schuld.“ „Du darfst laut sein.“ Ihn heute aus dem Mund eines Menschen zu hören, der dich liebt oder dir nah ist, ersetzt nichts — aber es legt etwas Neues neben das Alte.
 
 **11 · Eine konkrete Bitte**
 
@@ -152,27 +154,27 @@ Ein Wort, mit dem du aus diesem Abend gehst.
 
 ## Allein (Lily)
 
-**01 · Ein Raum nur für dich**
+**01 · Ein Raum nur für dich** ✏️
 
 Dieser Abend gehört dir und dem Kind, das du warst. Niemand hört zu — das ist die Stärke des Solo-Formats: Du kannst ehrlicher sein als in jedem Gespräch. Schreib mit der Hand, wenn du kannst. Die Hand ist langsamer als der Kopf, und genau das braucht es heute.
 
-Ein Hinweis vorweg: Wenn heute etwas hochkommt, das zu schwer ist, um es allein zu tragen — dann ist das kein Scheitern dieses Abends, sondern seine wichtigste Erkenntnis. Professionelle Begleitung zu suchen ist ein Erwachsenen-Schritt, kein Eingeständnis.
+Ein Hinweis vorweg: Wenn heute etwas hochkommt, das zu schwer ist, um es allein zu tragen — dann ist das kein Scheitern dieses Abends, sondern seine wichtigste Erkenntnis. Professionelle Begleitung zu suchen ist ein Erwachsenen-Schritt, kein Eingeständnis. Und wenn es akut eng wird: Die TelefonSeelsorge null achthundert, eins eins eins, null, eins eins eins ist rund um die Uhr erreichbar, kostenlos und anonym.
 
 **02 · Das Kind, das mitgekommen ist**
 
 Was du in den ersten Jahren über dich gelernt hast — ob du willkommen bist, ob du genügst, ob Gefühle sicher sind — hast du nicht als Meinung gelernt, sondern als Betriebssystem. Es wird nicht erinnert, es wird gelebt: in Beziehungen, im Job, in der Art, wie du mit dir selbst sprichst.
 
-Heute machst du das Programm sichtbar. Sichtbare Programme verlieren ihre heimliche Macht. Sinngemäß nach C.G. Jung: „Im Erwachsenen ist ein Kind verborgen — ein ewiges Kind, das beständiger Pflege und Aufmerksamkeit bedarf.“
+Heute machst du das Programm sichtbar. Was du benennen kannst, erwischst du im Alltag leichter. C. G. Jung: „In jedem Erwachsenen steckt ein Kind, ein ewiges Kind, etwas, das immer wird, nie fertig ist und unablässiger Pflege, Aufmerksamkeit und Erziehung bedarf.“
 
 **03 · Schau dir das Kind an**
 
-Schau das Kind auf dem Foto zwei Minuten lang wirklich an — nicht als „ich damals", sondern wie ein Kind, das dir gegenübersteht. Dann schreib auf:
+Schau das Kind auf dem Foto zwei Minuten lang wirklich an — nicht als „ich damals“, sondern wie ein Kind, das dir gegenübersteht. Dann schreib auf:
 
 Was strahlt dieses Kind aus? Was braucht es gerade, in dem Moment der Aufnahme? Und: Was weißt du über sein Leben, das es selbst noch nicht weiß?
 
 **04 · Dein Satz**
 
-Lies die Liste langsam. Markiere nicht den Satz, der plausibel klingt — markiere den, der körperlich trifft:
+Lies die Liste langsam. Markiere nicht den Satz, der plausibel klingt, sondern den, der körperlich trifft.
 
 **05 · Die Adresse des Satzes** ✏️
 
@@ -182,13 +184,13 @@ Schreib fünf Minuten frei drauflos: Wo kommt dein Satz her? Wer hat ihn — ohn
 
 **06 · Deine Strategie**
 
-Gegen jeden schmerzhaften Satz entwickeln Kinder eine Schutzstrategie. Damals klug — heute oft selbst das Problem:
+Gegen jeden schmerzhaften Satz entwickeln Kinder eine Schutzstrategie. Damals klug, heute oft selbst das Problem.
 
 **07 · Wann das Kind fährt**
 
 Woran du merkst, dass das Kind gerade das Steuer hat: an der Unverhältnismäßigkeit. Du reagierst nicht auf die Situation, sondern auf die Geschichte.
 
-Sammle schriftlich zwei, drei Momente der letzten Wochen, in denen deine Reaktion größer war als der Anlass. Schau dann auf deinen Satz vom Anfang: Wie oft hatte er das Mikrofon? Sinngemäß nach John Bradshaw: „Solange das verletzte Kind unbeachtet bleibt, führt es aus dem Verborgenen Regie.“
+Sammle schriftlich zwei, drei Momente der letzten Wochen, in denen deine Reaktion größer war als der Anlass. Schau dann auf deinen Satz vom Anfang: Wie oft hatte er das Mikrofon?
 
 **08 · Zwei Minuten ohne Worte**
 
@@ -202,7 +204,7 @@ Dann markiere: Was davon hast du in den letzten zwölf Monaten auch nur einmal g
 
 **10 · Ein Brief an das Kind**
 
-Schreib dem Kind auf dem Foto einen kurzen Brief — fünf bis zehn Sätze reichen. Du bist heute der Erwachsene, den es damals gebraucht hätte. Sag ihm, was damals niemand gesagt hat. Sag ihm, was aus euch geworden ist. Und sag ihm, welchen seiner Sätze du ihm heute abnimmst — weil du inzwischen prüfen kannst, was damals stimmte und was nicht.
+Schreib dem Kind auf dem Foto einen kurzen Brief — fünf bis zehn Sätze reichen. Du bist heute die erwachsene Person, die es damals gebraucht hätte. Sag ihm, was damals niemand gesagt hat. Sag ihm, was aus euch geworden ist. Und sag ihm, welchen seiner Sätze du ihm heute abnimmst — weil du inzwischen prüfen kannst, was damals stimmte und was nicht.
 
 Den Brief musst du niemandem zeigen. Aber wirf ihn nicht weg — leg ihn zum Foto.
 
@@ -210,13 +212,13 @@ Den Brief musst du niemandem zeigen. Aber wirf ihn nicht weg — leg ihn zum Fot
 
 Das Kind konnte sich seine Menschen nicht aussuchen und das Gehörte nicht überprüfen. Du kannst beides. Das ist der Unterschied, auf dem alles Weitere aufbaut.
 
-Der innere Erwachsene ist kein strenger Optimierer — er ist wie hinreichend gute Eltern für dein Innenleben: Er nimmt die alte Angst ernst, ohne ihr das Steuer zu geben. Und er muss dabei nicht perfekt sein. Hinreichend gut genügt — auch dir selbst gegenüber. Sinngemäß nach Donald Winnicott: „Kinder brauchen keine perfekten Eltern — hinreichend gute genügen.“
+Der innere Erwachsene ist kein strenger Optimierer. Der Psychoanalytiker Donald Winnicott sprach von „hinreichend guten“ Eltern: nicht perfekt, aber verlässlich genug. So ist der innere Erwachsene für dein Innenleben: Er nimmt die alte Angst ernst, ohne ihr das Steuer zu geben. Und er muss dabei nicht perfekt sein. Hinreichend gut genügt — auch dir selbst gegenüber.
 
 **12 · Ein kleines Experiment**
 
 Zwei Richtungen, wähl eine:
 
-Für das verletzte Kind: Einmal diese Woche, wenn dein Satz anspringt, innerlich benennen: „Das ist der alte Satz — nicht die Situation." Nur erwischen, mehr nicht.
+Für das verletzte Kind: Einmal diese Woche, wenn dein Satz anspringt, innerlich benennen: „Das ist der alte Satz — nicht die Situation.“ Nur erwischen, mehr nicht.
 
 Für das freie Kind: Eine Stunde für etwas von deiner Liste — als Spiel, nicht als Selbstoptimierung. Mit Termin im Kalender.
 
