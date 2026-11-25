@@ -272,6 +272,8 @@ window.QUOTES = [
   { text: "Die Zukunft liegt immer hinter dem Horizont, und lebendig zu sein bedeutet, sich auf der Durchreise zu befinden.", author: "Jenny Odell", category: "Zeit" },
   { text: "Jeder Augenblick ist wie ein Bernstein, der das Leuchten unseres Bewusstseins für immer einfängt.", author: null, category: "Zeit" },
   { text: "Du bist nicht hier, um zu funktionieren — sondern um lebendig zu sein.", author: null, category: "Neuanfang" },
+  // Felitti zitiert den Satz selbst als „the saying“ (Felitti & Anda 2010); engl.: "It's hard to get enough of something that almost works."
+  { text: "Es ist schwer, genug von etwas zu bekommen, das fast funktioniert.", author: "Redensart, bekannt durch Vincent Felitti", category: "Tiefe" },
 ];
 
 window.QUOTE_CATEGORIES = [...new Set(window.QUOTES.map(q => q.category))];
